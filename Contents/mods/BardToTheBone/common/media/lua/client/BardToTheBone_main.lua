@@ -1,15 +1,47 @@
 -- Example ABC song (Killinaskully Thriller)
 local abc_string = [[
-X: 3
-T: Jurassic Park Theme
-C: John Williams
-M: 3/4
-L: 1/8
-Q: 80
-K: Cmaj
-E2 G2 A2 | c'4 B2 | A2 B2 A2 | G4 z2 |
-E2 G2 A2 | c'4 B2 | A2 G2 F2 | E4 z2 |
-C2 E2 F2 | G4 A2 | B2 A2 B2 | c'4 z2 |
+X:1
+T:LIBERTON POLKA
+M:C|
+L:1/8
+Q:80
+C:Traditional
+S:March
+K:HP
+|: e2 | \
+{g}A{d}B/2A/2{g}GA | \
+{Gdc}dA{gfg}f2 |
+{g}fe/2f/2{gf}ge | \
+{g}d3/4B/4d3/4e/4{g}fd | \
+{g}A{gBd}B/2A/2{g}G{d}A |
+{Gdc}dA{gfg}f2 | \
+{g}fe/2f/2{gf}gc | \
+{gef}ed{gdc}d{c}d ::
+{gef}e{g}f/2e/2{gcd}ce | \
+{ag}ac{gef}e2 | \
+{g}e{g}f/2e/2{Gdc}d{e}B |
+{g}fe{gcd}c2 | \
+{gef}e{g}f/2e/2{gcd}ce | \
+{ag}ac{gef}e2 |
+{g}e{g}f/2e/2{Gdc}dG | \
+{gBd}BA{GAG}A2 :: \
+e2 |
+{g}A{d}c{g}A{d}c | \
+{gef}e{g}f/2e/2{gcd}c2 | \
+{gef}e{g}f/2e/2{Gdc}d{e}B |
+{g}A{d}c{gcd}c2 | \
+{g}A{d}c{g}A{d}c | \
+{gef}e{g}f/2e/2{gcd}c2 |
+{gef}e{g}f/2e/2{Gdc}d{g}G | \
+{gBd}BA{GAG}A2 :: \
+{ag}af{g}f{ag}a |
+e{g}f/2e/2{gcd}c2 | \
+{g}e{g}f/2e/2{Gdc}d{e}B | \
+{g}fe{gcd}c2 |
+{ag}af{g}f{ag}a | \
+e{g}f/2e/2{gcd}c2 | \
+{g}e{g}f/2e/2{Gdc}d{g}G |
+{gBd}B{e}A{GAG}A2 :|
 ]]
 
 local Bard = {}
@@ -92,6 +124,9 @@ function Bard.parseABC(abc)
     local key = "C"
     local bpm = 120
     local baseNoteLength = "1/8"
+    local tripletActive = false
+    local lastNote = nil
+
     for line in abc:gmatch("[^\r\n]+") do
         local header, value = line:match("^(%a):%s*(.+)$")
         if header == "L" then
@@ -102,7 +137,50 @@ function Bard.parseABC(abc)
         elseif header == "Q" then
             bpm = tonumber(value:match("(%d+)") or "120")
         elseif not (header == "X" or header == "T" or header == "M" or header == "R" or header == "V" or header == "Z" or header == "S") then
-            for accidental, base, octaveMod, duration in line:gmatch("([_=^]?)([A-Ga-g])([',]*)(%d*%.?%d*)") do
+            -- Triplets
+            if line:find("%(3") then
+                tripletActive = true
+                line = line:gsub("%(3", "") -- remove marker
+            end
+
+            -- Chords
+            for chordText in line:gmatch("%b[]") do
+                local chord = {}
+                for accidental, base, octaveMod, duration in chordText:gmatch("([_=^]?)([A-Ga-g])([',]*)(%d*%.?%d*)") do
+                    local name = accidental .. base:upper()
+                    local octave = base:match("%l") and 5 or 4
+                    for char in octaveMod:gmatch(".") do
+                        if char == "," then octave = octave - 1
+                        elseif char == "'" then octave = octave + 1 end
+                    end
+                    local durationTicks = defaultTicks
+                    if duration ~= "" then
+                        if duration:find("/") then
+                            local div = tonumber(duration:match("/(%d+)")) or 2
+                            durationTicks = math.floor(defaultTicks / div)
+                        else
+                            durationTicks = math.floor(defaultTicks * tonumber(duration))
+                        end
+                    end
+                    if tripletActive then
+                        durationTicks = math.floor(durationTicks * (2 / 3))
+                    end
+
+                    local note = {
+                        rest = false,
+                        base = name,
+                        octave = octave,
+                        ticks = durationTicks
+                    }
+                    Bard.applyKeyAccidental(note, key)
+                    table.insert(chord, note)
+                end
+                table.insert(notes, { chord = chord })
+                line = line:gsub("%b[]", "") -- remove chord block from line
+            end
+
+            -- Individual notes & articulation
+            for prefix, accidental, base, octaveMod, duration, tie in line:gmatch("([~>%.%-]?)([_=^]?)([A-Ga-g])([',]*)(%d*%.?%d*)(%-?)") do
                 local name = accidental .. base:upper()
                 local octave = base:match("%l") and 5 or 4
                 for char in octaveMod:gmatch(".") do
@@ -118,17 +196,43 @@ function Bard.parseABC(abc)
                         durationTicks = math.floor(defaultTicks * tonumber(duration))
                     end
                 end
+                if tripletActive then
+                    durationTicks = math.floor(durationTicks * (2 / 3))
+                end
+
                 local note = {
                     rest = base:upper() == "Z",
                     base = name,
                     octave = octave,
-                    ticks = durationTicks
+                    ticks = durationTicks,
+                    slur = (prefix == "~" or prefix == "-"),
+                    accent = (prefix == ">"),
+                    staccato = (prefix == "."),
+                    tie = (tie == "-")
                 }
+
                 Bard.applyKeyAccidental(note, key)
-                table.insert(notes, note)
+
+                -- Adjust ticks for articulation
+                if note.staccato then
+                    note.ticks = math.floor(note.ticks * 0.5)
+                elseif note.slur then
+                    note.ticks = math.floor(note.ticks * 0.85)
+                end
+
+                -- Handle tie
+                if note.tie and lastNote then
+                    lastNote.ticks = lastNote.ticks + note.ticks
+                else
+                    table.insert(notes, note)
+                    lastNote = note
+                end
             end
+
+            tripletActive = false -- reset
         end
     end
+
     return notes, bpm, baseNoteLength
 end
 
