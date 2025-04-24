@@ -1,29 +1,11 @@
 local abc_string = [[
-X:3618
-T:Cuckoo's Nest, The
-T:An Spealad\'oir (The Mower)
-R:hornpipe
-H:Parts 2 and 3 sometimes played in opposite order for both versions.
-D:Seamus Ennis: The Fox Chase
-D:Willie Clancy: Erin's Lovely Lea (?)
-D:De Dannan: Star Spangled Molly
-D:Conal O'Grada: The Top of Coom
-Z:id:hn-hornpipe-37
-M:C|
-K:G
-dc|BcBA GBdg|fdcB cedc|BcBG FGAB|c2A2 A2dc|
-BcBA GBdg|fdcB cedc|(3Bcd BG FGAc|B2G2 G2:|
-|:z2|dggf gabg|afd^c d2de|fede fgaf|gfdB cedc|
-BcBA GBdg|fdcB cedc|(3Bcd BG FGAc|B2G2 G2:|
-|:Bc|dBGB dBGB|dBcA G2AB|cAFA cAFA|cBAG F2BA|
-GABc dBdg|bgdB cedc|(3Bcd BG FGdc|B2G2 G2:|
-"Version 2:"
-dc|BcBA GBdg|fdcB cedc|BcBG FGAB|c2A2 A2dc|
-BcBA GBdg|fdcB cedc|(3Bcd BG FGAc|B2G2 G2:|
-|:Bc|dBGB dBGB|dBcA G2AB|cA=FA cA=FA|cBAG =F2BA|
-GABc dg~g2|bgdB cedc|(3Bcd BG FGAc|B2G2 G2:|
-|:z2|dggf gabg|afd^c d2de|=fede ^fgaf|gfdB cedc|
-BcBA GBdg|fdcB cedc|(3Bcd BG FGAc|B2G2 G2:|
+X:1
+T:Twinkle, Twinkle Little Star in C
+M:C
+K:C
+L:1/4
+vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
+uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
 ]]
 
 local Bard = {}
@@ -68,14 +50,21 @@ function Bard.getTicksFromLength(length)
     return baseTicks
 end
 
+
 function Bard.convertTicksToTempoDuration(ticks, bpm, baseNoteLength)
     local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
     local fraction = tonumber(l_top) / tonumber(l_bottom)
     local secondsPerBeat = 60 / bpm
     local secondsPerTick = secondsPerBeat * fraction
-    local simTicksPerSecond = 2 / getGameTime():getTrueMultiplier()
-    return math.max(1, math.floor(secondsPerTick * simTicksPerSecond * ticks))
+
+    local trueMultiplier = getGameTime():getTrueMultiplier()
+    local frameRate = getPerformance():getFramerate()
+    local baseFrameRate = 60
+    local simTicksPerSecond = (frameRate / baseFrameRate) * (1.5 / trueMultiplier)
+
+    return (secondsPerTick * simTicksPerSecond * ticks)
 end
+
 
 function Bard.applyKeyAccidental(note, key)
     local base = note.base:sub(-1)
@@ -115,16 +104,31 @@ end
 
 
 function Bard.preprocessABC(abc)
-    -- Remove excessive rests
+    -- Remove comments (starting with %)
+    abc = abc:gsub("%%[^\n]*", "")
+    -- Remove dynamics like !mf!, !pp!
+    abc = abc:gsub("!.-!", "")
+    -- Remove tuplets: (3abc, (2:3:2, etc.
+    abc = abc:gsub("%(%d+:?%d*:?.-?", "")
+    -- Remove grace notes and parenthetical groups
+    abc = abc:gsub("%b()", "")
+    -- Remove ornaments and articulation marks
+    abc = abc:gsub("[~.><\"]", "")
+    -- Flatten chords by keeping only the first note
+    abc = abc:gsub("%[([^%]]-)%]", function(contents)
+        return contents:match("%S+")
+    end)
+    -- Normalize rests (collapse multiple rests into z)
     abc = abc:gsub("(z%d*/?%d*%s*)+", "z ")
-    -- Normalize bars and backslashes
-    abc = abc:gsub("|%s*\\%s*", "|")
-    -- Normalize title lines
-    abc = abc:gsub("T:%s*from%s*.*\\", "T:Jurassic Theme")
-    -- Remove duplicate K: lines within a voice
+    -- Remove complex barlines and slashes
+    abc = abc:gsub("[:|\\]+", " ")
+    -- Normalize title/voice garbage from MIDI converters
+    abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
-    -- Collapse triplet or tuplet syntax to a safer format
-    abc = abc:gsub("%(%d+:?%d*:?%d*", "")  -- Remove malformed tuplets
+    -- Normalize all note lengths to 1/8 (optional but helps)
+    abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
+        return note .. "1/8"
+    end)
     return abc
 end
 
@@ -177,7 +181,7 @@ end
 
 function Bard.startPlayback(player, abc)
     local id = player:getUsername()
-    print("Starting playback for player:", id)
+    --print("Starting playback for player:", id)
     Bard.players[id] = Bard.parseABC(abc)
 end
 
@@ -186,13 +190,17 @@ function Bard.noteToSound(note)
     if note.rest then return nil end
     --print("Converting note:", note.base, "octave:", note.octave)
     local mapped = Bard.accidental_map[note.base] or Bard.natural_map[note.base:sub(-1)]
-    if not mapped then print("No mapping for:", note.base) return nil end
+    if not mapped then
+        --print("No mapping for:", note.base)
+        return nil
+    end
     return mapped .. tostring(note.octave)
 end
 
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
 function Bard.playLoadedSongs(player)
+    if not player then return end
     local id = player:getUsername()
     local voices = Bard.players[id]
 
@@ -207,14 +215,14 @@ function Bard.playLoadedSongs(player)
             data.timer = data.timer - 1
             if data.timer <= 0 then
                 local note = data.notes[data.index]
-                local instrument = "bikehorn"
-                local sound = instrument.."_"..Bard.noteToSound(note)
-                print("sound:",sound)
-                player:getEmitter():playSound(sound)
-                if sound then
+                local instrument = "piano"
+                local sound = Bard.noteToSound(note)
+                local instrumentSound = sound and instrument.."_"..Bard.noteToSound(note)
+                --print("instrumentSound: ",instrument," ",Bard.noteToSound(note))
+
+                if instrumentSound then
                     emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
-                    emitters[voiceId]:playSound(sound, player:getSquare())
-                    --getSoundManager():PlayWorldSound(sound, player:getSquare(), 0.2, 20.0, 1.0, false)
+                    emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                 end
 
                 data.timer = Bard.convertTicksToTempoDuration(note.ticks, data.bpm, data.baseNoteLength)
@@ -225,7 +233,7 @@ function Bard.playLoadedSongs(player)
     end
 
     if allDone then
-        print("Playback finished for player:", id)
+        --print("Playback finished for player:", id)
         Bard.players[id] = nil
     end
 end
