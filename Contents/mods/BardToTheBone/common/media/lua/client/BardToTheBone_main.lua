@@ -184,7 +184,7 @@ end
 
 function Bard.noteToSound(note)
     if note.rest then return nil end
-    print("Converting note:", note.base, "octave:", note.octave)
+    --print("Converting note:", note.base, "octave:", note.octave)
     local mapped = Bard.accidental_map[note.base] or Bard.natural_map[note.base:sub(-1)]
     if not mapped then print("No mapping for:", note.base) return nil end
     return mapped .. tostring(note.octave)
@@ -200,15 +200,21 @@ function Bard.playLoadedSongs(player)
 
     local allDone = true
 
+    local emitters = {}
+
     for voiceId, data in pairs(voices) do
         if data.index <= #data.notes then
             data.timer = data.timer - 1
             if data.timer <= 0 then
                 local note = data.notes[data.index]
-                local sound = Bard.noteToSound(note)
-
+                local instrument = "bikehorn"
+                local sound = instrument.."_"..Bard.noteToSound(note)
+                print("sound:",sound)
+                player:getEmitter():playSound(sound)
                 if sound then
-                    getSoundManager():PlayWorldSound(sound, player:getSquare(), 0.2, 20.0, 1.0, false)
+                    emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
+                    emitters[voiceId]:playSound(sound, player:getSquare())
+                    --getSoundManager():PlayWorldSound(sound, player:getSquare(), 0.2, 20.0, 1.0, false)
                 end
 
                 data.timer = Bard.convertTicksToTempoDuration(note.ticks, data.bpm, data.baseNoteLength)

@@ -5,8 +5,8 @@ sound_dir = os.path.join("Contents", "mods", "BardToTheBone", "common", "media",
 
 # Paths to output the generated sound.script file
 output_paths = [
-    os.path.join("Contents", "mods", "BardToTheBone", "common", "media", "scripts", "sound.script"),
-    os.path.join("Contents", "mods", "BardToTheBone", "media", "scripts", "sound.script"),
+    os.path.join("Contents", "mods", "BardToTheBone", "common", "media", "scripts", "sounds_BardToTheBone.txt"),
+    os.path.join("Contents", "mods", "BardToTheBone", "media", "scripts", "sounds_BardToTheBone.txt"),
 ]
 
 module_name = "BardToTheBone"
@@ -27,7 +27,7 @@ for root, dirs, files in os.walk(sound_dir):
 # Write to each output path with correct prefix
 for path in output_paths:
     lines = [f"module {module_name} {{\n"]
-    prefix = "common/media/sound" if "common" in path else "media/sound"
+    prefix = "common/media/sound" if "common" not in path else "media/sound"
 
     for sound_name, category, rel_path in sounds:
         lines.append(f"    sound {sound_name} {{\n"
