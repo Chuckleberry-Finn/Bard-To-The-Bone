@@ -223,6 +223,7 @@ function Bard.playLoadedSongs(player)
                 if instrumentSound then
                     emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
                     emitters[voiceId]:playSound(instrumentSound, player:getSquare())
+                    addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                 end
 
                 data.timer = Bard.convertTicksToTempoDuration(note.ticks, data.bpm, data.baseNoteLength)
@@ -236,6 +237,23 @@ function Bard.playLoadedSongs(player)
         --print("Playback finished for player:", id)
         Bard.players[id] = nil
     end
+end
+
+
+---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
+-- The folders in sound/instruments/ are used as IDs
+-- SEE: python script `autoGenSoundFiles.py`
+Bard.instrumentIDtoType = {
+    ["Base.Banjo"] = "banjo",
+    ["Base.GuitarElectric"] = "electric_guitar",
+    ["Base.GuitarAcoustic"] = "guitar",
+    ["Base.Harmonica"] = "harmonica",
+    ["Base.Saxophone"] = "saxophone",
+    ["Base.Violin"] = "violin",
+}
+
+function Bard.getInstrumentID(instrument)
+    return Bard.instrumentIDtoType[instrument:getFullType()]
 end
 
 
