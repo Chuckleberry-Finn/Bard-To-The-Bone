@@ -147,7 +147,7 @@ function Bard.parseABC(abc)
         elseif not header then
             local allTokens = {}
             for token in line:gmatch("%b[]") do
-                table.insert(allTokens, token:sub(2, -2)) -- remove brackets
+                table.insert(allTokens, token:sub(2, -2))
             end
             line = line:gsub("%b[]", "")
             for token in line:gmatch("[^%s]+") do
@@ -161,7 +161,6 @@ function Bard.parseABC(abc)
         end
     end
 
-    -- Estimate duration by summing all note ticks across all voices
     local maxDuration = 0
     for _, voice in pairs(voices) do
         local noteTicks = 0
@@ -188,7 +187,6 @@ end
 
 
 function Bard.startPlayback(player, abc)
-    --local id = player:getUsername()
     local music, duration = Bard.parseABC(abc)
     return music, duration
 end
@@ -224,7 +222,6 @@ function Bard.playLoadedSongs(player)
                 local sound = Bard.noteToSound(note)
                 local instrumentSound = sound and instrumentID.."_"..Bard.noteToSound(note)
                 --print("instrumentSound: ",instrument," ",Bard.noteToSound(note))
-
                 if instrumentSound then
                     emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
                     emitters[voiceId]:playSound(instrumentSound, player:getSquare())
