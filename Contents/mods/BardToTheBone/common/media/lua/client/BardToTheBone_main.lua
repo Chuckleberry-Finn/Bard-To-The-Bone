@@ -209,6 +209,7 @@ end
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
 function Bard.playLoadedSongs(player)
+    --player = player or getPlayer()
     if not player then return end
     local id = player:getUsername()
     local bard = Bard.players[id]
