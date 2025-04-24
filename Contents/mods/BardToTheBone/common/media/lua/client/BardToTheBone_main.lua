@@ -1,13 +1,3 @@
-local abc_string = [[
-X:1
-T:Twinkle, Twinkle Little Star in C
-M:C
-K:C
-L:1/4
-vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
-uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
-]]
-
 local Bard = {}
 
 Bard.voices = {}
@@ -56,12 +46,10 @@ function Bard.convertTicksToTempoDuration(ticks, bpm, baseNoteLength)
     local fraction = tonumber(l_top) / tonumber(l_bottom)
     local secondsPerBeat = 60 / bpm
     local secondsPerTick = secondsPerBeat * fraction
-
     local trueMultiplier = getGameTime():getTrueMultiplier()
     local frameRate = getPerformance():getFramerate()
     local baseFrameRate = 60
     local simTicksPerSecond = (frameRate / baseFrameRate) * (1.5 / trueMultiplier)
-
     return (secondsPerTick * simTicksPerSecond * ticks)
 end
 
@@ -134,7 +122,6 @@ end
 
 
 function Bard.parseABC(abc)
-
     Bard.preprocessABC(abc)
 
     local voices = {}
@@ -158,7 +145,6 @@ function Bard.parseABC(abc)
             voices[currentVoice].baseNoteLength = value
             voices[currentVoice].defaultTicks = Bard.getTicksFromLength(value)
         elseif not header then
-
             local allTokens = {}
             for token in line:gmatch("%b[]") do
                 table.insert(allTokens, token:sub(2, -2)) -- remove brackets
@@ -172,28 +158,46 @@ function Bard.parseABC(abc)
                     table.insert(voices[currentVoice].notes, note)
                 end
             end
-
         end
     end
-    return voices
+
+    -- Estimate duration by summing all note ticks across all voices
+    local maxDuration = 0
+    for _, voice in pairs(voices) do
+        local noteTicks = 0
+        for _, note in ipairs(voice.notes) do
+            noteTicks = noteTicks + (note.ticks or 0)
+        end
+        local duration = Bard.convertTicksToTempoDuration(noteTicks, voice.bpm, voice.baseNoteLength)
+        maxDuration = math.max(maxDuration, duration)
+    end
+
+    return voices, maxDuration
+end
+
+
+function Bard.forceStop(player)
+    local actionQueue = ISTimedActionQueue.getTimedActionQueue(player)
+    local currentAction = actionQueue.queue[1]
+    if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
+        currentAction.action:forceStop()
+    end
+    local id = player:getUsername()
+    Bard.players[id] = nil
 end
 
 
 function Bard.startPlayback(player, abc)
-    local id = player:getUsername()
-    --print("Starting playback for player:", id)
-    Bard.players[id] = Bard.parseABC(abc)
+    --local id = player:getUsername()
+    local music, duration = Bard.parseABC(abc)
+    return music, duration
 end
 
 
 function Bard.noteToSound(note)
     if note.rest then return nil end
-    --print("Converting note:", note.base, "octave:", note.octave)
     local mapped = Bard.accidental_map[note.base] or Bard.natural_map[note.base:sub(-1)]
-    if not mapped then
-        --print("No mapping for:", note.base)
-        return nil
-    end
+    if not mapped then return nil end
     return mapped .. tostring(note.octave)
 end
 
@@ -202,22 +206,23 @@ end
 function Bard.playLoadedSongs(player)
     if not player then return end
     local id = player:getUsername()
-    local voices = Bard.players[id]
+    local bard = Bard.players[id]
+    if not bard then return end
 
-    if not voices then if isKeyDown(Keyboard.KEY_H) then Bard.startPlayback(player, abc_string) end return end
+    local music = bard.music
+    local instrumentID = bard.instrumentID
 
     local allDone = true
-
     local emitters = {}
 
-    for voiceId, data in pairs(voices) do
+    for voiceId, data in pairs(music) do
         if data.index <= #data.notes then
             data.timer = data.timer - 1
             if data.timer <= 0 then
                 local note = data.notes[data.index]
-                local instrument = "piano"
+
                 local sound = Bard.noteToSound(note)
-                local instrumentSound = sound and instrument.."_"..Bard.noteToSound(note)
+                local instrumentSound = sound and instrumentID.."_"..Bard.noteToSound(note)
                 --print("instrumentSound: ",instrument," ",Bard.noteToSound(note))
 
                 if instrumentSound then
@@ -233,10 +238,7 @@ function Bard.playLoadedSongs(player)
         end
     end
 
-    if allDone then
-        --print("Playback finished for player:", id)
-        Bard.players[id] = nil
-    end
+    if allDone then Bard.players[id] = nil end
 end
 
 

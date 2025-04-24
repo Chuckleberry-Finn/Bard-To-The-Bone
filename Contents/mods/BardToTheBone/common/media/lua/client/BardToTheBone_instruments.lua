@@ -11,10 +11,11 @@
 -- GuitarElectric
 -- GuitarAcoustic
 -- Harmonica
--- Piano [ON MAP ONLY] ?
--- Flute [Recorder] ?
 -- Saxophone
 -- Violin
+-- Piano [ON MAP ONLY] ?
+-- Flute [Recorder] ?
+
 
 --- [NEED] Sounds For
 -- Trumpet [NEED]
