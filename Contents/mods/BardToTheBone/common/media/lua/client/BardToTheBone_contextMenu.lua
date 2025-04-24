@@ -7,15 +7,15 @@ local bardContext = {}
 function bardContext.triggerTimedAction(character, instrument, abcNotation)
 
     abcNotation = [[
-        X:1
-        T:Twinkle, Twinkle Little Star in C
-        M:C
-        K:C
-        L:1/4
-        Q:88
-        vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
-        uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
-    ]]
+X:1
+T:Twinkle, Twinkle Little Star in C
+M:C
+K:C
+L:1/4
+Q:88
+vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
+uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
+]]
 
     ISTimedActionQueue.add(BardToTheBonePlayMusic:new(character, instrument, abcNotation))
 end
