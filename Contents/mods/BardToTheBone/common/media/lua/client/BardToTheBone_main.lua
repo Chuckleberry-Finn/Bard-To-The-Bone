@@ -132,7 +132,10 @@ function Bard.parseABC(abc)
 
     for line in abc:gmatch("[^\r\n]+") do
         local header, value = line:match("^(%a):%s*(.+)$")
-        if header == "V" then
+
+        if header == "T" or header == "X" or header == "%" then
+            -- Do nothing
+        elseif header == "V" then
             currentVoice = value
             voices[currentVoice] = voices[currentVoice] or {
                 notes = {}, bpm = 120, key = "C", baseNoteLength = "1/8", defaultTicks = Bard.getTicksFromLength("1/8"), index = 1, timer = 0
@@ -144,6 +147,10 @@ function Bard.parseABC(abc)
         elseif header == "L" then
             voices[currentVoice].baseNoteLength = value
             voices[currentVoice].defaultTicks = Bard.getTicksFromLength(value)
+
+        elseif header == "M" then
+            voices[currentVoice].meter = value
+
         elseif not header then
             local allTokens = {}
             for token in line:gmatch("%b[]") do
