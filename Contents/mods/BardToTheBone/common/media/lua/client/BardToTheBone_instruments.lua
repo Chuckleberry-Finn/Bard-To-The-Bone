@@ -1,4 +1,4 @@
---- NEED ITEM TO BE MADE:
+--- NEED ITEM/MODELS TO BE MADE:
 --- Accordion
 --- Bikehorn
 --- GuitarElectricBass
@@ -6,7 +6,7 @@
 --- Trombone
 --- Xylophone
 
---- [SOLID]
+--- [SOLID - Have Both Models and Sounds]
 -- Banjo
 -- GuitarElectric
 -- GuitarAcoustic
