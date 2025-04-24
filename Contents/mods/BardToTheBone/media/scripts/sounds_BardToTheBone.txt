@@ -1,5 +1,245 @@
 module BardToTheBone {
 
+    sound accordion_Ab2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Ab2.mid, } }
+
+    sound accordion_Ab3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Ab3.mid, } }
+
+    sound accordion_Ab4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Ab4.mid, } }
+
+    sound accordion_Ab5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Ab5.mid, } }
+
+    sound accordion_Ab6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Ab6.mid, } }
+
+    sound accordion_An2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/An2.mid, } }
+
+    sound accordion_An3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/An3.mid, } }
+
+    sound accordion_An4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/An4.mid, } }
+
+    sound accordion_An5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/An5.mid, } }
+
+    sound accordion_An6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/An6.mid, } }
+
+    sound accordion_Bb2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bb2.mid, } }
+
+    sound accordion_Bb3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bb3.mid, } }
+
+    sound accordion_Bb4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bb4.mid, } }
+
+    sound accordion_Bb5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bb5.mid, } }
+
+    sound accordion_Bb6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bb6.mid, } }
+
+    sound accordion_Bn2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bn2.mid, } }
+
+    sound accordion_Bn3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bn3.mid, } }
+
+    sound accordion_Bn4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bn4.mid, } }
+
+    sound accordion_Bn5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bn5.mid, } }
+
+    sound accordion_Bn6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Bn6.mid, } }
+
+    sound accordion_Cn2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Cn2.mid, } }
+
+    sound accordion_Cn3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Cn3.mid, } }
+
+    sound accordion_Cn4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Cn4.mid, } }
+
+    sound accordion_Cn5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Cn5.mid, } }
+
+    sound accordion_Cn6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Cn6.mid, } }
+
+    sound accordion_Db2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Db2.mid, } }
+
+    sound accordion_Db3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Db3.mid, } }
+
+    sound accordion_Db4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Db4.mid, } }
+
+    sound accordion_Db5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Db5.mid, } }
+
+    sound accordion_Db6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Db6.mid, } }
+
+    sound accordion_Dn2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Dn2.mid, } }
+
+    sound accordion_Dn3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Dn3.mid, } }
+
+    sound accordion_Dn4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Dn4.mid, } }
+
+    sound accordion_Dn5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Dn5.mid, } }
+
+    sound accordion_Dn6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Dn6.mid, } }
+
+    sound accordion_Eb2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Eb2.mid, } }
+
+    sound accordion_Eb3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Eb3.mid, } }
+
+    sound accordion_Eb4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Eb4.mid, } }
+
+    sound accordion_Eb5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Eb5.mid, } }
+
+    sound accordion_Eb6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Eb6.mid, } }
+
+    sound accordion_En2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/En2.mid, } }
+
+    sound accordion_En3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/En3.mid, } }
+
+    sound accordion_En4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/En4.mid, } }
+
+    sound accordion_En5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/En5.mid, } }
+
+    sound accordion_En6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/En6.mid, } }
+
+    sound accordion_Fn2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Fn2.mid, } }
+
+    sound accordion_Fn3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Fn3.mid, } }
+
+    sound accordion_Fn4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Fn4.mid, } }
+
+    sound accordion_Fn5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Fn5.mid, } }
+
+    sound accordion_Fn6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Fn6.mid, } }
+
+    sound accordion_Gb2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gb2.mid, } }
+
+    sound accordion_Gb3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gb3.mid, } }
+
+    sound accordion_Gb4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gb4.mid, } }
+
+    sound accordion_Gb5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gb5.mid, } }
+
+    sound accordion_Gb6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gb6.mid, } }
+
+    sound accordion_Gn2 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gn2.mid, } }
+
+    sound accordion_Gn3 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gn3.mid, } }
+
+    sound accordion_Gn4 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gn4.mid, } }
+
+    sound accordion_Gn5 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gn5.mid, } }
+
+    sound accordion_Gn6 {
+        category = BardInstrument_accordion, is3D = true,
+        clip { file = common/media/sound/instruments/accordion/Gn6.mid, } }
+
     sound banjo_Ab3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = common/media/sound/instruments/banjo/Ab3.ogg, } }
@@ -452,6 +692,294 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/Gn6.ogg, } }
 
+    sound glockenspiel_Ab2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab2.mid, } }
+
+    sound glockenspiel_Ab3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab3.mid, } }
+
+    sound glockenspiel_Ab4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab4.mid, } }
+
+    sound glockenspiel_Ab5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab5.mid, } }
+
+    sound glockenspiel_Ab6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab6.mid, } }
+
+    sound glockenspiel_Ab7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Ab7.mid, } }
+
+    sound glockenspiel_An2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An2.mid, } }
+
+    sound glockenspiel_An3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An3.mid, } }
+
+    sound glockenspiel_An4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An4.mid, } }
+
+    sound glockenspiel_An5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An5.mid, } }
+
+    sound glockenspiel_An6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An6.mid, } }
+
+    sound glockenspiel_An7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/An7.mid, } }
+
+    sound glockenspiel_Bb2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb2.mid, } }
+
+    sound glockenspiel_Bb3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb3.mid, } }
+
+    sound glockenspiel_Bb4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb4.mid, } }
+
+    sound glockenspiel_Bb5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb5.mid, } }
+
+    sound glockenspiel_Bb6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb6.mid, } }
+
+    sound glockenspiel_Bb7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bb7.mid, } }
+
+    sound glockenspiel_Bn2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn2.mid, } }
+
+    sound glockenspiel_Bn3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn3.mid, } }
+
+    sound glockenspiel_Bn4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn4.mid, } }
+
+    sound glockenspiel_Bn5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn5.mid, } }
+
+    sound glockenspiel_Bn6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn6.mid, } }
+
+    sound glockenspiel_Bn7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Bn7.mid, } }
+
+    sound glockenspiel_Cn2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn2.mid, } }
+
+    sound glockenspiel_Cn3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn3.mid, } }
+
+    sound glockenspiel_Cn4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn4.mid, } }
+
+    sound glockenspiel_Cn5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn5.mid, } }
+
+    sound glockenspiel_Cn6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn6.mid, } }
+
+    sound glockenspiel_Cn7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Cn7.mid, } }
+
+    sound glockenspiel_Db2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db2.mid, } }
+
+    sound glockenspiel_Db3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db3.mid, } }
+
+    sound glockenspiel_Db4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db4.mid, } }
+
+    sound glockenspiel_Db5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db5.mid, } }
+
+    sound glockenspiel_Db6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db6.mid, } }
+
+    sound glockenspiel_Db7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Db7.mid, } }
+
+    sound glockenspiel_Dn2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn2.mid, } }
+
+    sound glockenspiel_Dn3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn3.mid, } }
+
+    sound glockenspiel_Dn4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn4.mid, } }
+
+    sound glockenspiel_Dn5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn5.mid, } }
+
+    sound glockenspiel_Dn6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn6.mid, } }
+
+    sound glockenspiel_Dn7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Dn7.mid, } }
+
+    sound glockenspiel_Eb2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb2.mid, } }
+
+    sound glockenspiel_Eb3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb3.mid, } }
+
+    sound glockenspiel_Eb4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb4.mid, } }
+
+    sound glockenspiel_Eb5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb5.mid, } }
+
+    sound glockenspiel_Eb6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb6.mid, } }
+
+    sound glockenspiel_Eb7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Eb7.mid, } }
+
+    sound glockenspiel_En2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En2.mid, } }
+
+    sound glockenspiel_En3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En3.mid, } }
+
+    sound glockenspiel_En4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En4.mid, } }
+
+    sound glockenspiel_En5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En5.mid, } }
+
+    sound glockenspiel_En6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En6.mid, } }
+
+    sound glockenspiel_En7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/En7.mid, } }
+
+    sound glockenspiel_Fn2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn2.mid, } }
+
+    sound glockenspiel_Fn3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn3.mid, } }
+
+    sound glockenspiel_Fn4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn4.mid, } }
+
+    sound glockenspiel_Fn5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn5.mid, } }
+
+    sound glockenspiel_Fn6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn6.mid, } }
+
+    sound glockenspiel_Fn7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Fn7.mid, } }
+
+    sound glockenspiel_Gb2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb2.mid, } }
+
+    sound glockenspiel_Gb3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb3.mid, } }
+
+    sound glockenspiel_Gb4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb4.mid, } }
+
+    sound glockenspiel_Gb5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb5.mid, } }
+
+    sound glockenspiel_Gb6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb6.mid, } }
+
+    sound glockenspiel_Gb7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gb7.mid, } }
+
+    sound glockenspiel_Gn2 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn2.mid, } }
+
+    sound glockenspiel_Gn3 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn3.mid, } }
+
+    sound glockenspiel_Gn4 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn4.mid, } }
+
+    sound glockenspiel_Gn5 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn5.mid, } }
+
+    sound glockenspiel_Gn6 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn6.mid, } }
+
+    sound glockenspiel_Gn7 {
+        category = BardInstrument_glockenspiel, is3D = true,
+        clip { file = common/media/sound/instruments/glockenspiel/Gn7.mid, } }
+
     sound guitar_Ab3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Ab3.ogg, } }
@@ -627,6 +1155,250 @@ module BardToTheBone {
     sound guitar_Gn6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Gn6.ogg, } }
+
+    sound harmonica_Ab2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Ab2.mid, } }
+
+    sound harmonica_Ab3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Ab3.mid, } }
+
+    sound harmonica_Ab4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Ab4.mid, } }
+
+    sound harmonica_Ab5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Ab5.mid, } }
+
+    sound harmonica_Ab6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Ab6.mid, } }
+
+    sound harmonica_An2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/An2.mid, } }
+
+    sound harmonica_An3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/An3.mid, } }
+
+    sound harmonica_An4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/An4.mid, } }
+
+    sound harmonica_An5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/An5.mid, } }
+
+    sound harmonica_An6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/An6.mid, } }
+
+    sound harmonica_Bb2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bb2.mid, } }
+
+    sound harmonica_Bb3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bb3.mid, } }
+
+    sound harmonica_Bb4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bb4.mid, } }
+
+    sound harmonica_Bb5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bb5.mid, } }
+
+    sound harmonica_Bb6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bb6.mid, } }
+
+    sound harmonica_Bn2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bn2.mid, } }
+
+    sound harmonica_Bn3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bn3.mid, } }
+
+    sound harmonica_Bn4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bn4.mid, } }
+
+    sound harmonica_Bn5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bn5.mid, } }
+
+    sound harmonica_Bn6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Bn6.mid, } }
+
+    sound harmonica_Cn2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn2.mid, } }
+
+    sound harmonica_Cn3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn3.mid, } }
+
+    sound harmonica_Cn4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn4.mid, } }
+
+    sound harmonica_Cn5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn5.mid, } }
+
+    sound harmonica_Cn6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn6.mid, } }
+
+    sound harmonica_Cn7 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Cn7.mid, } }
+
+    sound harmonica_Db2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Db2.mid, } }
+
+    sound harmonica_Db3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Db3.mid, } }
+
+    sound harmonica_Db4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Db4.mid, } }
+
+    sound harmonica_Db5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Db5.mid, } }
+
+    sound harmonica_Db6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Db6.mid, } }
+
+    sound harmonica_Dn2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Dn2.mid, } }
+
+    sound harmonica_Dn3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Dn3.mid, } }
+
+    sound harmonica_Dn4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Dn4.mid, } }
+
+    sound harmonica_Dn5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Dn5.mid, } }
+
+    sound harmonica_Dn6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Dn6.mid, } }
+
+    sound harmonica_Eb2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Eb2.mid, } }
+
+    sound harmonica_Eb3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Eb3.mid, } }
+
+    sound harmonica_Eb4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Eb4.mid, } }
+
+    sound harmonica_Eb5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Eb5.mid, } }
+
+    sound harmonica_Eb6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Eb6.mid, } }
+
+    sound harmonica_En2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/En2.mid, } }
+
+    sound harmonica_En3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/En3.mid, } }
+
+    sound harmonica_En4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/En4.mid, } }
+
+    sound harmonica_En5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/En5.mid, } }
+
+    sound harmonica_En6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/En6.mid, } }
+
+    sound harmonica_Fn2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Fn2.mid, } }
+
+    sound harmonica_Fn3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Fn3.mid, } }
+
+    sound harmonica_Fn4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Fn4.mid, } }
+
+    sound harmonica_Fn5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Fn5.mid, } }
+
+    sound harmonica_Fn6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Fn6.mid, } }
+
+    sound harmonica_Gb2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gb2.mid, } }
+
+    sound harmonica_Gb3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gb3.mid, } }
+
+    sound harmonica_Gb4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gb4.mid, } }
+
+    sound harmonica_Gb5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gb5.mid, } }
+
+    sound harmonica_Gb6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gb6.mid, } }
+
+    sound harmonica_Gn2 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gn2.mid, } }
+
+    sound harmonica_Gn3 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gn3.mid, } }
+
+    sound harmonica_Gn4 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gn4.mid, } }
+
+    sound harmonica_Gn5 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gn5.mid, } }
+
+    sound harmonica_Gn6 {
+        category = BardInstrument_harmonica, is3D = true,
+        clip { file = common/media/sound/instruments/harmonica/Gn6.mid, } }
 
     sound piano_Ab2 {
         category = BardInstrument_piano, is3D = true,
@@ -979,6 +1751,490 @@ module BardToTheBone {
     sound piano_Gn8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/Gn8.ogg, } }
+
+    sound recorder_Ab2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Ab2.mid, } }
+
+    sound recorder_Ab3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Ab3.mid, } }
+
+    sound recorder_Ab4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Ab4.mid, } }
+
+    sound recorder_Ab5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Ab5.mid, } }
+
+    sound recorder_Ab6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Ab6.mid, } }
+
+    sound recorder_An2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/An2.mid, } }
+
+    sound recorder_An3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/An3.mid, } }
+
+    sound recorder_An4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/An4.mid, } }
+
+    sound recorder_An5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/An5.mid, } }
+
+    sound recorder_An6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/An6.mid, } }
+
+    sound recorder_Bb2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bb2.mid, } }
+
+    sound recorder_Bb3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bb3.mid, } }
+
+    sound recorder_Bb4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bb4.mid, } }
+
+    sound recorder_Bb5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bb5.mid, } }
+
+    sound recorder_Bb6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bb6.mid, } }
+
+    sound recorder_Bn2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bn2.mid, } }
+
+    sound recorder_Bn3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bn3.mid, } }
+
+    sound recorder_Bn4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bn4.mid, } }
+
+    sound recorder_Bn5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bn5.mid, } }
+
+    sound recorder_Bn6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Bn6.mid, } }
+
+    sound recorder_Cn2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn2.mid, } }
+
+    sound recorder_Cn3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn3.mid, } }
+
+    sound recorder_Cn4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn4.mid, } }
+
+    sound recorder_Cn5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn5.mid, } }
+
+    sound recorder_Cn6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn6.mid, } }
+
+    sound recorder_Cn7 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Cn7.mid, } }
+
+    sound recorder_Db2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db2.mid, } }
+
+    sound recorder_Db3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db3.mid, } }
+
+    sound recorder_Db4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db4.mid, } }
+
+    sound recorder_Db5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db5.mid, } }
+
+    sound recorder_Db6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db6.mid, } }
+
+    sound recorder_Db7 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Db7.mid, } }
+
+    sound recorder_Dn2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Dn2.mid, } }
+
+    sound recorder_Dn3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Dn3.mid, } }
+
+    sound recorder_Dn4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Dn4.mid, } }
+
+    sound recorder_Dn5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Dn5.mid, } }
+
+    sound recorder_Dn6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Dn6.mid, } }
+
+    sound recorder_Eb2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Eb2.mid, } }
+
+    sound recorder_Eb3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Eb3.mid, } }
+
+    sound recorder_Eb4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Eb4.mid, } }
+
+    sound recorder_Eb5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Eb5.mid, } }
+
+    sound recorder_Eb6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Eb6.mid, } }
+
+    sound recorder_En2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/En2.mid, } }
+
+    sound recorder_En3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/En3.mid, } }
+
+    sound recorder_En4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/En4.mid, } }
+
+    sound recorder_En5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/En5.mid, } }
+
+    sound recorder_En6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/En6.mid, } }
+
+    sound recorder_Fn2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Fn2.mid, } }
+
+    sound recorder_Fn3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Fn3.mid, } }
+
+    sound recorder_Fn4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Fn4.mid, } }
+
+    sound recorder_Fn5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Fn5.mid, } }
+
+    sound recorder_Fn6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Fn6.mid, } }
+
+    sound recorder_Gb2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gb2.mid, } }
+
+    sound recorder_Gb3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gb3.mid, } }
+
+    sound recorder_Gb4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gb4.mid, } }
+
+    sound recorder_Gb5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gb5.mid, } }
+
+    sound recorder_Gb6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gb6.mid, } }
+
+    sound recorder_Gn2 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gn2.mid, } }
+
+    sound recorder_Gn3 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gn3.mid, } }
+
+    sound recorder_Gn4 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gn4.mid, } }
+
+    sound recorder_Gn5 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gn5.mid, } }
+
+    sound recorder_Gn6 {
+        category = BardInstrument_recorder, is3D = true,
+        clip { file = common/media/sound/instruments/recorder/Gn6.mid, } }
+
+    sound saxophone_Ab2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Ab2.mid, } }
+
+    sound saxophone_Ab3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Ab3.mid, } }
+
+    sound saxophone_Ab4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Ab4.mid, } }
+
+    sound saxophone_Ab5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Ab5.mid, } }
+
+    sound saxophone_Ab6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Ab6.mid, } }
+
+    sound saxophone_An2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/An2.mid, } }
+
+    sound saxophone_An3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/An3.mid, } }
+
+    sound saxophone_An4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/An4.mid, } }
+
+    sound saxophone_An5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/An5.mid, } }
+
+    sound saxophone_An6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/An6.mid, } }
+
+    sound saxophone_Bb2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bb2.mid, } }
+
+    sound saxophone_Bb3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bb3.mid, } }
+
+    sound saxophone_Bb4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bb4.mid, } }
+
+    sound saxophone_Bb5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bb5.mid, } }
+
+    sound saxophone_Bb6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bb6.mid, } }
+
+    sound saxophone_Bn2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bn2.mid, } }
+
+    sound saxophone_Bn3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bn3.mid, } }
+
+    sound saxophone_Bn4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bn4.mid, } }
+
+    sound saxophone_Bn5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bn5.mid, } }
+
+    sound saxophone_Bn6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Bn6.mid, } }
+
+    sound saxophone_Cn2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Cn2.mid, } }
+
+    sound saxophone_Cn3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Cn3.mid, } }
+
+    sound saxophone_Cn4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Cn4.mid, } }
+
+    sound saxophone_Cn5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Cn5.mid, } }
+
+    sound saxophone_Cn6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Cn6.mid, } }
+
+    sound saxophone_Db2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Db2.mid, } }
+
+    sound saxophone_Db3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Db3.mid, } }
+
+    sound saxophone_Db4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Db4.mid, } }
+
+    sound saxophone_Db5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Db5.mid, } }
+
+    sound saxophone_Db6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Db6.mid, } }
+
+    sound saxophone_Dn2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Dn2.mid, } }
+
+    sound saxophone_Dn3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Dn3.mid, } }
+
+    sound saxophone_Dn4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Dn4.mid, } }
+
+    sound saxophone_Dn5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Dn5.mid, } }
+
+    sound saxophone_Dn6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Dn6.mid, } }
+
+    sound saxophone_Eb2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Eb2.mid, } }
+
+    sound saxophone_Eb3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Eb3.mid, } }
+
+    sound saxophone_Eb4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Eb4.mid, } }
+
+    sound saxophone_Eb5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Eb5.mid, } }
+
+    sound saxophone_Eb6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Eb6.mid, } }
+
+    sound saxophone_En2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/En2.mid, } }
+
+    sound saxophone_En3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/En3.mid, } }
+
+    sound saxophone_En4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/En4.mid, } }
+
+    sound saxophone_En5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/En5.mid, } }
+
+    sound saxophone_En6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/En6.mid, } }
+
+    sound saxophone_Fn2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Fn2.mid, } }
+
+    sound saxophone_Fn3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Fn3.mid, } }
+
+    sound saxophone_Fn4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Fn4.mid, } }
+
+    sound saxophone_Fn5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Fn5.mid, } }
+
+    sound saxophone_Fn6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Fn6.mid, } }
+
+    sound saxophone_Gb2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gb2.mid, } }
+
+    sound saxophone_Gb3 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gb3.mid, } }
+
+    sound saxophone_Gb4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gb4.mid, } }
+
+    sound saxophone_Gb5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gb5.mid, } }
+
+    sound saxophone_Gb6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gb6.mid, } }
+
+    sound saxophone_Gn2 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gn2.mid, } }
+
+    sound saxophone_Gn4 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gn4.mid, } }
+
+    sound saxophone_Gn5 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gn5.mid, } }
+
+    sound saxophone_Gn6 {
+        category = BardInstrument_saxophone, is3D = true,
+        clip { file = common/media/sound/instruments/saxophone/Gn6.mid, } }
 
     sound crisis_brass_c2 {
         category = BardInstrument_crisis_brass, is3D = true,
@@ -1395,5 +2651,873 @@ module BardToTheBone {
     sound tones_Square {
         category = BardInstrument_tones, is3D = true,
         clip { file = common/media/sound/instruments/synthesis_samples/tones/Square.ogg, } }
+
+    sound trombone_Ab2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Ab2.mid, } }
+
+    sound trombone_Ab3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Ab3.mid, } }
+
+    sound trombone_Ab4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Ab4.mid, } }
+
+    sound trombone_Ab5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Ab5.mid, } }
+
+    sound trombone_Ab6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Ab6.mid, } }
+
+    sound trombone_An2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/An2.mid, } }
+
+    sound trombone_An3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/An3.mid, } }
+
+    sound trombone_An4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/An4.mid, } }
+
+    sound trombone_An5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/An5.mid, } }
+
+    sound trombone_An6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/An6.mid, } }
+
+    sound trombone_Bb2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bb2.mid, } }
+
+    sound trombone_Bb3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bb3.mid, } }
+
+    sound trombone_Bb4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bb4.mid, } }
+
+    sound trombone_Bb5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bb5.mid, } }
+
+    sound trombone_Bb6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bb6.mid, } }
+
+    sound trombone_Bn2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bn2.mid, } }
+
+    sound trombone_Bn3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bn3.mid, } }
+
+    sound trombone_Bn4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bn4.mid, } }
+
+    sound trombone_Bn5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bn5.mid, } }
+
+    sound trombone_Bn6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Bn6.mid, } }
+
+    sound trombone_Cn2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Cn2.mid, } }
+
+    sound trombone_Cn3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Cn3.mid, } }
+
+    sound trombone_Cn4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Cn4.mid, } }
+
+    sound trombone_Cn5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Cn5.mid, } }
+
+    sound trombone_Cn6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Cn6.mid, } }
+
+    sound trombone_Db2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Db2.mid, } }
+
+    sound trombone_Db3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Db3.mid, } }
+
+    sound trombone_Db4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Db4.mid, } }
+
+    sound trombone_Db5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Db5.mid, } }
+
+    sound trombone_Db6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Db6.mid, } }
+
+    sound trombone_Dn2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Dn2.mid, } }
+
+    sound trombone_Dn3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Dn3.mid, } }
+
+    sound trombone_Dn4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Dn4.mid, } }
+
+    sound trombone_Dn5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Dn5.mid, } }
+
+    sound trombone_Dn6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Dn6.mid, } }
+
+    sound trombone_Eb2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Eb2.mid, } }
+
+    sound trombone_Eb3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Eb3.mid, } }
+
+    sound trombone_Eb4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Eb4.mid, } }
+
+    sound trombone_Eb5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Eb5.mid, } }
+
+    sound trombone_Eb6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Eb6.mid, } }
+
+    sound trombone_En2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/En2.mid, } }
+
+    sound trombone_En3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/En3.mid, } }
+
+    sound trombone_En4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/En4.mid, } }
+
+    sound trombone_En5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/En5.mid, } }
+
+    sound trombone_En6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/En6.mid, } }
+
+    sound trombone_Fn2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Fn2.mid, } }
+
+    sound trombone_Fn3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Fn3.mid, } }
+
+    sound trombone_Fn4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Fn4.mid, } }
+
+    sound trombone_Fn5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Fn5.mid, } }
+
+    sound trombone_Fn6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Fn6.mid, } }
+
+    sound trombone_Gb2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gb2.mid, } }
+
+    sound trombone_Gb3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gb3.mid, } }
+
+    sound trombone_Gb4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gb4.mid, } }
+
+    sound trombone_Gb5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gb5.mid, } }
+
+    sound trombone_Gb6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gb6.mid, } }
+
+    sound trombone_Gn2 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gn2.mid, } }
+
+    sound trombone_Gn3 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gn3.mid, } }
+
+    sound trombone_Gn4 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gn4.mid, } }
+
+    sound trombone_Gn5 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gn5.mid, } }
+
+    sound trombone_Gn6 {
+        category = BardInstrument_trombone, is3D = true,
+        clip { file = common/media/sound/instruments/trombone/Gn6.mid, } }
+
+    sound violin_Ab1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab1.mid, } }
+
+    sound violin_Ab2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab2.mid, } }
+
+    sound violin_Ab3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab3.mid, } }
+
+    sound violin_Ab4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab4.mid, } }
+
+    sound violin_Ab5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab5.mid, } }
+
+    sound violin_Ab6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab6.mid, } }
+
+    sound violin_Ab7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab7.mid, } }
+
+    sound violin_Ab8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Ab8.mid, } }
+
+    sound violin_An1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An1.mid, } }
+
+    sound violin_An2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An2.mid, } }
+
+    sound violin_An3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An3.mid, } }
+
+    sound violin_An4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An4.mid, } }
+
+    sound violin_An5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An5.mid, } }
+
+    sound violin_An6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An6.mid, } }
+
+    sound violin_An7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An7.mid, } }
+
+    sound violin_An8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/An8.mid, } }
+
+    sound violin_Bb1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb1.mid, } }
+
+    sound violin_Bb2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb2.mid, } }
+
+    sound violin_Bb3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb3.mid, } }
+
+    sound violin_Bb4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb4.mid, } }
+
+    sound violin_Bb5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb5.mid, } }
+
+    sound violin_Bb6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb6.mid, } }
+
+    sound violin_Bb7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb7.mid, } }
+
+    sound violin_Bb8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bb8.mid, } }
+
+    sound violin_Bn1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn1.mid, } }
+
+    sound violin_Bn2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn2.mid, } }
+
+    sound violin_Bn3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn3.mid, } }
+
+    sound violin_Bn4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn4.mid, } }
+
+    sound violin_Bn5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn5.mid, } }
+
+    sound violin_Bn6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn6.mid, } }
+
+    sound violin_Bn7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn7.mid, } }
+
+    sound violin_Bn8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Bn8.mid, } }
+
+    sound violin_Cn1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn1.mid, } }
+
+    sound violin_Cn2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn2.mid, } }
+
+    sound violin_Cn3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn3.mid, } }
+
+    sound violin_Cn4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn4.mid, } }
+
+    sound violin_Cn5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn5.mid, } }
+
+    sound violin_Cn6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn6.mid, } }
+
+    sound violin_Cn7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn7.mid, } }
+
+    sound violin_Cn8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn8.mid, } }
+
+    sound violin_Cn9 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Cn9.mid, } }
+
+    sound violin_Db1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db1.mid, } }
+
+    sound violin_Db2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db2.mid, } }
+
+    sound violin_Db3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db3.mid, } }
+
+    sound violin_Db4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db4.mid, } }
+
+    sound violin_Db5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db5.mid, } }
+
+    sound violin_Db6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db6.mid, } }
+
+    sound violin_Db7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db7.mid, } }
+
+    sound violin_Db8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Db8.mid, } }
+
+    sound violin_Dn1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn1.mid, } }
+
+    sound violin_Dn2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn2.mid, } }
+
+    sound violin_Dn3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn3.mid, } }
+
+    sound violin_Dn4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn4.mid, } }
+
+    sound violin_Dn5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn5.mid, } }
+
+    sound violin_Dn6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn6.mid, } }
+
+    sound violin_Dn7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn7.mid, } }
+
+    sound violin_Dn8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Dn8.mid, } }
+
+    sound violin_Eb1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb1.mid, } }
+
+    sound violin_Eb2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb2.mid, } }
+
+    sound violin_Eb3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb3.mid, } }
+
+    sound violin_Eb4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb4.mid, } }
+
+    sound violin_Eb5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb5.mid, } }
+
+    sound violin_Eb6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb6.mid, } }
+
+    sound violin_Eb7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb7.mid, } }
+
+    sound violin_Eb8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Eb8.mid, } }
+
+    sound violin_En1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En1.mid, } }
+
+    sound violin_En2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En2.mid, } }
+
+    sound violin_En3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En3.mid, } }
+
+    sound violin_En4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En4.mid, } }
+
+    sound violin_En5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En5.mid, } }
+
+    sound violin_En6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En6.mid, } }
+
+    sound violin_En7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En7.mid, } }
+
+    sound violin_En8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/En8.mid, } }
+
+    sound violin_Fn1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn1.mid, } }
+
+    sound violin_Fn2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn2.mid, } }
+
+    sound violin_Fn3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn3.mid, } }
+
+    sound violin_Fn4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn4.mid, } }
+
+    sound violin_Fn5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn5.mid, } }
+
+    sound violin_Fn6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn6.mid, } }
+
+    sound violin_Fn7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn7.mid, } }
+
+    sound violin_Fn8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Fn8.mid, } }
+
+    sound violin_Gb1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb1.mid, } }
+
+    sound violin_Gb2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb2.mid, } }
+
+    sound violin_Gb3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb3.mid, } }
+
+    sound violin_Gb4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb4.mid, } }
+
+    sound violin_Gb5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb5.mid, } }
+
+    sound violin_Gb6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb6.mid, } }
+
+    sound violin_Gb7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb7.mid, } }
+
+    sound violin_Gb8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gb8.mid, } }
+
+    sound violin_Gn1 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn1.mid, } }
+
+    sound violin_Gn2 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn2.mid, } }
+
+    sound violin_Gn3 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn3.mid, } }
+
+    sound violin_Gn4 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn4.mid, } }
+
+    sound violin_Gn5 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn5.mid, } }
+
+    sound violin_Gn6 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn6.mid, } }
+
+    sound violin_Gn7 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn7.mid, } }
+
+    sound violin_Gn8 {
+        category = BardInstrument_violin, is3D = true,
+        clip { file = common/media/sound/instruments/violin/Gn8.mid, } }
+
+    sound xylophone_Ab2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Ab2.mid, } }
+
+    sound xylophone_Ab3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Ab3.mid, } }
+
+    sound xylophone_Ab4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Ab4.mid, } }
+
+    sound xylophone_Ab5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Ab5.mid, } }
+
+    sound xylophone_Ab6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Ab6.mid, } }
+
+    sound xylophone_An2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/An2.mid, } }
+
+    sound xylophone_An3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/An3.mid, } }
+
+    sound xylophone_An4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/An4.mid, } }
+
+    sound xylophone_An5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/An5.mid, } }
+
+    sound xylophone_An6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/An6.mid, } }
+
+    sound xylophone_Bb2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bb2.mid, } }
+
+    sound xylophone_Bb3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bb3.mid, } }
+
+    sound xylophone_Bb4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bb4.mid, } }
+
+    sound xylophone_Bb5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bb5.mid, } }
+
+    sound xylophone_Bb6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bb6.mid, } }
+
+    sound xylophone_Bn2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bn2.mid, } }
+
+    sound xylophone_Bn3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bn3.mid, } }
+
+    sound xylophone_Bn4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bn4.mid, } }
+
+    sound xylophone_Bn5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bn5.mid, } }
+
+    sound xylophone_Bn6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Bn6.mid, } }
+
+    sound xylophone_Cn2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Cn2.mid, } }
+
+    sound xylophone_Cn3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Cn3.mid, } }
+
+    sound xylophone_Cn4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Cn4.mid, } }
+
+    sound xylophone_Cn5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Cn5.mid, } }
+
+    sound xylophone_Cn6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Cn6.mid, } }
+
+    sound xylophone_Db2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Db2.mid, } }
+
+    sound xylophone_Db3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Db3.mid, } }
+
+    sound xylophone_Db4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Db4.mid, } }
+
+    sound xylophone_Db5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Db5.mid, } }
+
+    sound xylophone_Db6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Db6.mid, } }
+
+    sound xylophone_Dn2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Dn2.mid, } }
+
+    sound xylophone_Dn3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Dn3.mid, } }
+
+    sound xylophone_Dn4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Dn4.mid, } }
+
+    sound xylophone_Dn5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Dn5.mid, } }
+
+    sound xylophone_Dn6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Dn6.mid, } }
+
+    sound xylophone_Eb2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Eb2.mid, } }
+
+    sound xylophone_Eb3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Eb3.mid, } }
+
+    sound xylophone_Eb4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Eb4.mid, } }
+
+    sound xylophone_Eb5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Eb5.mid, } }
+
+    sound xylophone_Eb6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Eb6.mid, } }
+
+    sound xylophone_En2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/En2.mid, } }
+
+    sound xylophone_En3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/En3.mid, } }
+
+    sound xylophone_En4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/En4.mid, } }
+
+    sound xylophone_En5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/En5.mid, } }
+
+    sound xylophone_En6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/En6.mid, } }
+
+    sound xylophone_Fn2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Fn2.mid, } }
+
+    sound xylophone_Fn3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Fn3.mid, } }
+
+    sound xylophone_Fn4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Fn4.mid, } }
+
+    sound xylophone_Fn5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Fn5.mid, } }
+
+    sound xylophone_Fn6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Fn6.mid, } }
+
+    sound xylophone_Gb2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gb2.mid, } }
+
+    sound xylophone_Gb3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gb3.mid, } }
+
+    sound xylophone_Gb4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gb4.mid, } }
+
+    sound xylophone_Gb5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gb5.mid, } }
+
+    sound xylophone_Gb6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gb6.mid, } }
+
+    sound xylophone_Gn2 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gn2.mid, } }
+
+    sound xylophone_Gn3 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gn3.mid, } }
+
+    sound xylophone_Gn4 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gn4.mid, } }
+
+    sound xylophone_Gn5 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gn5.mid, } }
+
+    sound xylophone_Gn6 {
+        category = BardInstrument_xylophone, is3D = true,
+        clip { file = common/media/sound/instruments/xylophone/Gn6.mid, } }
 
 }

@@ -11,12 +11,14 @@ output_paths = [
 
 module_name = "BardToTheBone"
 category_base = "BardInstrument"
+supported_extensions = {".ogg", ".mid"}  # Add more if needed
 
 # Walk through all subdirectories under sound_dir
 sounds = []
 for root, dirs, files in os.walk(sound_dir):
     for file in files:
-        if file.endswith(".ogg"):
+        ext = os.path.splitext(file)[1].lower()
+        if ext in supported_extensions:
             rel_path = os.path.relpath(os.path.join(root, file), sound_dir).replace("\\", "/")
             note_name = os.path.splitext(file)[0]
             instrument = os.path.basename(os.path.dirname(os.path.join(root, file)))
@@ -40,4 +42,4 @@ for path in output_paths:
     with open(path, "w") as f:
         f.write("\n".join(lines))
 
-print("✅ sound.script generated with appropriate file paths.")
+print("✅ sound.script generated with multi-format support.")
