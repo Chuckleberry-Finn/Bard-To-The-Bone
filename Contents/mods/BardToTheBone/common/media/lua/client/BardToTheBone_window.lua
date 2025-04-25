@@ -185,9 +185,10 @@ end
 
 
 function BardUIWindow:onPlay()
-    local item = self.songList.items[self.songList.selected]
-    if not item then return end
-    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, item.item))
+    local notes = self.abcEntry:getText()
+    if (not notes) then return end
+    
+    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes))
 end
 
 function BardUIWindow:update()
