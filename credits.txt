@@ -1,1 +1,2 @@
 Music Note Sounds - https://github.com/tgstation/tgstation
+Default Songs - https://abcnotation.com

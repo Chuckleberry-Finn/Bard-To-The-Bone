@@ -4,20 +4,11 @@ local Bard = require "BardToTheBone_main"
 
 local bardContext = {}
 
-function bardContext.triggerTimedAction(character, instrument, abcNotation)
-
-    abcNotation = [[
-X:1
-T:Twinkle, Twinkle Little Star in C
-M:C
-K:C
-L:1/4
-Q:88
-vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
-uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
-]]
-
-    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(character, instrument, abcNotation))
+function bardContext.triggerTimedAction(character, instrument)
+    if not character:getInventory():contains(instrument) then return end
+    local ui = BardUIWindow:new(200, 200, 400, 640, character, instrument)
+    ui:initialise()
+    ui:addToUIManager()
 end
 
 ---@param context ISContextMenu
@@ -36,7 +27,7 @@ function bardContext.addInventoryItemContext(playerID, context, items)
 
         local instrumentID = item and Bard.getInstrumentID(item)
         if instrumentID then
-            local play = context:addOptionOnTop(getText("IGUI_Play"), playerObj, bardContext.triggerTimedAction, item)
+            local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, item)
             --play.iconTexture = getTexture()
             break
         end
