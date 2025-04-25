@@ -35,13 +35,11 @@ function BardToTheBonePlayMusic:update() end
 ---@param character IsoGameCharacter
 function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, recipe, container, containers)
     if not instrument or not character or not abcNotation then return end
-    local o = {}
-    setmetatable(o, self)
-    self.__index = self
-
+    local o = ISBaseTimedAction.new(self, character)
     o.character = character
     o.item = instrument
     o.stopOnWalk = false
+    o.stopOnAim = true
     o.stopOnRun = true
     o.ignoreHandsWounds = true
     o.caloriesModifier = 0.5
