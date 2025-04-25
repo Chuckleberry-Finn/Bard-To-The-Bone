@@ -92,28 +92,24 @@ end
 
 
 function Bard.preprocessABC(abc)
-    -- Remove comments (starting with %)
+    ---try to indentify MIDI converted files, if it looks ok play as is
+    if abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!") then
+    else
+        return abc
+    end
+
     abc = abc:gsub("%%[^\n]*", "")
-    -- Remove dynamics like !mf!, !pp!
     abc = abc:gsub("!.-!", "")
-    -- Remove tuplets: (3abc, (2:3:2, etc.
     abc = abc:gsub("%(%d+:?%d*:?.-?", "")
-    -- Remove grace notes and parenthetical groups
     abc = abc:gsub("%b()", "")
-    -- Remove ornaments and articulation marks
     abc = abc:gsub("[~.><\"]", "")
-    -- Flatten chords by keeping only the first note
     abc = abc:gsub("%[([^%]]-)%]", function(contents)
         return contents:match("%S+")
     end)
-    -- Normalize rests (collapse multiple rests into z)
     abc = abc:gsub("(z%d*/?%d*%s*)+", "z ")
-    -- Remove complex barlines and slashes
     abc = abc:gsub("[:|\\]+", " ")
-    -- Normalize title/voice garbage from MIDI converters
     abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
-    -- Normalize all note lengths to 1/8 (optional but helps)
     abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
         return note .. "1/8"
     end)
@@ -122,7 +118,7 @@ end
 
 
 function Bard.parseABC(abc)
-    Bard.preprocessABC(abc)
+    abc = Bard.preprocessABC(abc)
 
     local voices = {}
     local currentVoice = "default"
@@ -157,7 +153,7 @@ function Bard.parseABC(abc)
                 table.insert(allTokens, token:sub(2, -2))
             end
             line = line:gsub("%b[]", "")
-            for token in line:gmatch("[^%s]+") do
+            for token in line:gmatch("[^%s|]+") do
                 table.insert(allTokens, token)
             end
             for _, token in ipairs(allTokens) do
