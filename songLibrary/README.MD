@@ -1,6 +1,6 @@
 ## Bard to the Bone Song Library
 **Collection of 900+ songs ready to be entered in-game.**<br>
-*<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp) using [./renameSongLibrary.py](renameSongLibrary.py)</sup>*
+*<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp) using [renameSongLibrary.py](./renameSongLibrary.py)</sup>*
 ####
 
 ## ABC Notation Field Reference

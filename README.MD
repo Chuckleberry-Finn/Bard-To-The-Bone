@@ -14,7 +14,7 @@ Notable Games that use ABC Notation Music Systems:
 - Spacestation 13
 ###
 
-### [Bard to The Bone Song Library](./songLibrary/)
+### [Bard to The Bone Song Library](./songLibrary#readme)
 **Collection of 900+ songs ready to be entered in-game.**<br>
 *<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp)</sup>*
 
