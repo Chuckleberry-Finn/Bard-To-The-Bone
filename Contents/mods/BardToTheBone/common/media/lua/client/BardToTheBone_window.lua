@@ -196,6 +196,7 @@ function BardUIWindow:update()
     end
 end
 
+---@param instrument InventoryItem
 function BardUIWindow:new(x, y, width, height, character, instrument)
 
     if BardUIWindow.instance then BardUIWindow.instance:close() end
@@ -203,7 +204,7 @@ function BardUIWindow:new(x, y, width, height, character, instrument)
     local o = ISCollapsableWindow:new(x, y, width, height)
     setmetatable(o, self)
     self.__index = self
-    o.title = "Bard to the Bone"
+    o.title = "Bard to the Bone - "..instrument:getDisplayName()
     o:setResizable(false)
     o.character = character
     o.instrument = instrument
