@@ -1,7 +1,13 @@
 ## Bard to the Bone Song Library
 **Collection of 900+ songs ready to be entered in-game.**<br>
 *<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp) using [renameSongLibrary.py](./renameSongLibrary.py)</sup>*
-####
+<br><br>
+
+### ⚠️ WARNING:
+**When adding songs, always specify an `X:` (index/reference) number.**
+- If you use an `X:` number that already exists, the new song will overwrite the existing one at that position.
+- Choose a unique `X:` number whenever possible to avoid unintentional overwriting.
+
 
 ## ABC Notation Field Reference
 
@@ -44,7 +50,7 @@ This guide outlines the most commonly used fields in [ABC notation](https://abcn
 | `w:`  | Lyrics (must follow music line, lowercase `w`) |
 </details>
 
-####
+
 ## Music Body
 
 After the header, the music is written in a compact format using notes, measures (`|`), rests (`z`), and voices (`[V:1]`).
