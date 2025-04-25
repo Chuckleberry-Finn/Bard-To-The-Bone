@@ -28,14 +28,14 @@ K:G
 
 defaultSongs[3] = [[
 X:3
-T: Alan he ahua
-N: C2069
-O: China,ÿZhejiang Dongtou
-S: III, 613, 1)]
-R: Xiaodiao]
-M: 2/4
-L: 1/16
-K: C
+T:Alan he ahua
+N:C2069
+O:China,Zhejiang Dongtou
+S:III, 613, 1
+R:Xiaodiao
+M:2/4
+L:1/16
+K:C
 E2E4G2 | E2D2E8 | E2G4D2 | E8 |
 A,2E4D2 | C4D2C2 | A,8 |
 D2E2D2C2 | A,2C2A,8
