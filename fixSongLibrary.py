@@ -2,6 +2,8 @@ import os
 import re
 
 def clean_title_for_filename(title):
+    # Remove timestamps like (M:S) or (MM:SS)
+    title = re.sub(r'\(\d{1,2}:\d{2}\)', '', title)
     # Remove characters illegal for filenames across platforms
     title = re.sub(r'[<>:"/\\|?*\n\r]', '', title)
     title = title.strip().replace(' ', '_')
