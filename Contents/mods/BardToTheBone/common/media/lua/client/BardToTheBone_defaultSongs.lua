@@ -10,8 +10,8 @@ M:C
 K:C
 L:1/4
 Q:88
-vC C G G|A A G2|F F E E|D D C2|vG G F F|E E D2|
-uG G F F|E E D2|vC C G G|A A G2|uF F E E|D D C2|]
+vC C G G A A G2 F F E E D D C2 vG G F F E E D2
+uG G F F E E D2 vC C G G A A G2 uF F E E D D C2 ]
 ]]
 
 defaultSongs[2] = [[
@@ -45,3 +45,4 @@ D2E2D2C2 | A,2C2A,8
 ]]
 
 return defaultSongs
+
