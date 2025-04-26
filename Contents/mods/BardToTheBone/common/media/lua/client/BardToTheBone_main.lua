@@ -92,16 +92,7 @@ end
 
 
 function Bard.preprocessABC(abc)
-    local isMessy = false
-
-    -- Check for signs of MIDI export garbage
-    if abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!") then
-        isMessy = true
-    end
-
-    if not isMessy then
-        return abc -- ✨ Clean, so no heavy edits
-    end
+    if not (abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!")) then return abc end
 
     abc = abc:gsub("%%[^\n]*", "")
     abc = abc:gsub("!.-!", "")
@@ -116,10 +107,10 @@ function Bard.preprocessABC(abc)
     abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
     local baseLength = abc:match("L:%s*(%d+%s*/%s*%d+)")
-    baseLength = baseLength or "1/8" -- fallback if none
+    baseLength = baseLength or "1/8"
     abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
         if dur == "" then
-            return note .. baseLength -- use the declared base length
+            return note .. baseLength
         else
             return note .. dur
         end
