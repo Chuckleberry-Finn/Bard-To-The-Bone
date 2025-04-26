@@ -41,16 +41,19 @@ function Bard.getTicksFromLength(length)
 end
 
 
-function Bard.convertTicksToTempoDuration(ticks, bpm, baseNoteLength)
+function Bard.convertTicksToSimDuration(ticks, bpm, baseNoteLength)
     local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
+    if not l_top or not l_bottom then l_top, l_bottom = 1, 8 end
     local fraction = tonumber(l_top) / tonumber(l_bottom)
     local secondsPerBeat = 60 / bpm
     local secondsPerTick = secondsPerBeat * fraction
     local trueMultiplier = getGameTime():getTrueMultiplier()
     local frameRate = getPerformance():getFramerate()
     local baseFrameRate = 60
-    local simTicksPerSecond = (frameRate / baseFrameRate) * (1.5 / trueMultiplier)
-    return (secondsPerTick * simTicksPerSecond * ticks)
+    local simTicksPerSecond = (frameRate / baseFrameRate) * (1 / trueMultiplier)
+    local simulatedDurationSeconds = secondsPerTick * simTicksPerSecond * ticks
+
+    return simulatedDurationSeconds * 60
 end
 
 
@@ -92,56 +95,56 @@ end
 
 
 function Bard.preprocessABC(abc)
-    -- Only preprocess if messy
-    if not (abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!")) then return abc end
+    -- Insert default Key and Meter if missing
+    if not abc:find("K:") then abc = "K:C\n" .. abc end
+    if not abc:find("M:") then abc = "M:4/4\n" .. abc end
 
-    -- Basic cleaning
-    abc = abc:gsub("%%[^\n]*", "")         -- Remove comments
-    abc = abc:gsub("!.-!", "")              -- Remove dynamics
-    abc = abc:gsub("%(%d+:?%d*:?.-?", "")    -- Remove tuplets
-    abc = abc:gsub("%b()", "")               -- Remove grace notes
-    abc = abc:gsub("[~.><\"]", "")           -- Remove ornaments
-    abc = abc:gsub("%[([^%]]-)%]", function(contents) return contents:match("%S+") or "" end) -- Flatten chords
-    abc = abc:gsub("[:|\\]+", " ")           -- Normalize barlines
+    -- Split into true lines first
+    local lines = {}
+    for line in abc:gmatch("[^\r\n]+") do
+        table.insert(lines, line)
+    end
 
-    -- Normalize title garbage
-    abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
-    abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
+    local cleaned = {}
+    local tag = "CLEAN"
 
-    -- Merge consecutive rests
-    abc = abc:gsub("(z%d*/?%d*%s*)+", function(rests)
-        local totalFraction = 0
-        for dur in rests:gmatch("z(%d*/?%d*)") do
-            if dur == "" then
-                totalFraction = totalFraction + 1
-            elseif dur:find("/") then
-                local num, den = dur:match("(%d*)/(%d+)")
-                num = tonumber(num) or 1
-                den = tonumber(den)
-                totalFraction = totalFraction + (num / den)
-            else
-                totalFraction = totalFraction + tonumber(dur)
-            end
+    for _, line in ipairs(lines) do
+        -- Light cleanup
+        line = line:gsub("%s*[vu]%u%s*", " ") -- Remove fake voice switches
+        line = line:gsub("(%b[])%s*", "%1 ")   -- Space after [chords]
+        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- After notes
+        line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- After rests
+
+        -- Detect messy artifacts
+        if line:find("\\") or line:find("{") or line:find("}") or line:find("!%a+!") or line:find("T:%s*from") or line:find("z1/32") or line:find("z1/64") or line:find("z1/128") then
+            tag = "MESSY"
+            line = line:gsub("%%[^\n]*", "")
+            line = line:gsub("!.-!", "")
+            line = line:gsub("%(%d+:?%d*:?.-?", "")
+            line = line:gsub("%b()", "")
+            line = line:gsub("[~.><\"]", "")
+            line = line:gsub("[%|:]+", " ")
         end
-        if totalFraction == 0 then return "" end -- Remove 0-length rests
-        if totalFraction < 1/16 then return "" end -- Delete rests smaller than 1/16
-        if totalFraction > 1 then totalFraction = 1 end -- Clamp huge rests to 1 beat
 
-        if math.abs(totalFraction - math.floor(totalFraction)) < 0.01 then
-            return "z" .. tostring(math.floor(totalFraction)) .. " "
-        else
-            return "z" .. tostring(totalFraction) .. " "
-        end
-    end)
+        -- Collapse spaces inside this line
+        line = line:gsub("[ \t]+", " ")
+        line = line:match("^%s*(.-)%s*$") or line -- Trim this line
 
-    -- Detect declared base note length
-    local baseLength = abc:match("L:%s*(%d+%s*/%s*%d+)")
-    baseLength = baseLength or "1/8"
+        table.insert(cleaned, line)
+    end
 
-    -- Normalize notes to fill missing durations only
-    abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
-        return (dur == "") and (note .. baseLength) or (note .. dur)
-    end)
+    -- Rejoin the cleaned lines into full text
+    abc = table.concat(cleaned, "\n")
+
+    -- Force newline after headers just in case
+    abc = abc:gsub("([XTMKLQ]):%s*([^%\n]*)%s+", "%1:%2\n")
+
+    -- Clean up any remaining messy spaces around newlines
+    abc = abc:gsub(" *\n *", "\n")
+    abc = abc:match("^%s*(.-)%s*$") or abc
+
+    -- Optional: log processed output
+    print("\nPROCESSED ABC:  ("..tag..")\n", abc, "\n\n_______")
 
     return abc
 end
@@ -153,27 +156,39 @@ function Bard.parseABC(abc)
     local voices = {}
     local currentVoice = "default"
     voices[currentVoice] = {
-        notes = {}, bpm = 120, key = "C", baseNoteLength = "1/8", defaultTicks = Bard.getTicksFromLength("1/8"), index = 1, timer = 0
+        events = {},
+        bpm = 120,
+        key = "C",
+        baseNoteLength = "1/8",
+        defaultTicks = Bard.getTicksFromLength("1/8"),
     }
 
+    local currentTicks = {}
+    currentTicks[currentVoice] = 0
+    local totalTicks = 0 -- New: track total ticks across all voices (longest one)
+
     for line in abc:gmatch("[^\r\n]+") do
-
-        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)", "%1 ")
-        line = line:gsub("(z%d*/?%d*)", "%1 ")
-
         local header, value = line:match("^(%a):%s*(.+)$")
 
         if header == "T" or header == "X" or header == "%" then
-            -- Do nothing
+            -- Ignore
         elseif header == "V" then
             currentVoice = value
             voices[currentVoice] = voices[currentVoice] or {
-                notes = {}, bpm = 120, key = "C", baseNoteLength = "1/8", defaultTicks = Bard.getTicksFromLength("1/8"), index = 1, timer = 0
+                events = {},
+                bpm = 120,
+                key = "C",
+                baseNoteLength = "1/8",
+                defaultTicks = Bard.getTicksFromLength("1/8"),
             }
+            currentTicks[currentVoice] = currentTicks[currentVoice] or 0
+
         elseif header == "K" then
             voices[currentVoice].key = value
+
         elseif header == "Q" then
             voices[currentVoice].bpm = tonumber(value:match("%d+")) or 120
+
         elseif header == "L" then
             voices[currentVoice].baseNoteLength = value
             voices[currentVoice].defaultTicks = Bard.getTicksFromLength(value)
@@ -182,33 +197,51 @@ function Bard.parseABC(abc)
             voices[currentVoice].meter = value
 
         elseif not header then
+            -- It's a line of notes
             local allTokens = {}
-            for token in line:gmatch("%b[]") do
-                table.insert(allTokens, token:sub(2, -2))
-            end
-            line = line:gsub("%b[]", "")
-            for token in line:gmatch("[^%s|]+") do
+            for token in line:gmatch("[^%s]+") do
                 table.insert(allTokens, token)
             end
+
             for _, token in ipairs(allTokens) do
-                for _, note in ipairs(Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)) do
-                    table.insert(voices[currentVoice].notes, note)
+
+                local isChord = token:match("^%b[]$") ~= nil
+
+
+                local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
+                if #parsedNotes > 0 then
+
+                    local bpm = voices[currentVoice].bpm
+                    local secondsPerBeat = 60 / bpm
+                    local ticksPerBeat = 120
+
+                    local elapsedSeconds = (currentTicks[currentVoice] / ticksPerBeat) * secondsPerBeat
+                    local timeOffsetMs = math.floor(elapsedSeconds * 1000)
+
+                    table.insert(voices[currentVoice].events, {
+                        timeOffset = timeOffsetMs,
+                        notes = parsedNotes,
+                    })
+
+                    if parsedNotes[1] and parsedNotes[1].ticks then
+                        if isChord then
+                            local maxTicks = 0
+                            for _, note in ipairs(parsedNotes) do
+                                maxTicks = math.max(maxTicks, note.ticks or 0)
+                            end
+                            currentTicks[currentVoice] = currentTicks[currentVoice] + maxTicks
+                        else
+                            currentTicks[currentVoice] = currentTicks[currentVoice] + parsedNotes[1].ticks
+                        end
+                    end
                 end
             end
+
         end
     end
 
-    local maxDuration = 0
-    for _, voice in pairs(voices) do
-        local noteTicks = 0
-        for _, note in ipairs(voice.notes) do
-            noteTicks = noteTicks + (note.ticks or 0)
-        end
-        local duration = Bard.convertTicksToTempoDuration(noteTicks, voice.bpm, voice.baseNoteLength)
-        maxDuration = math.max(maxDuration, duration)
-    end
-
-    return voices, maxDuration
+    -- Return totalTicks separately to calculate true duration later
+    return voices, totalTicks
 end
 
 
@@ -224,9 +257,30 @@ end
 
 
 function Bard.startPlayback(player, abc)
-    local music, duration = Bard.parseABC(abc)
-    return music, duration
+    local music, totalTicks = Bard.parseABC(abc)
+
+    local defaultVoiceName = "default"
+    if not music[defaultVoiceName] then
+        defaultVoiceName = next(music)
+    end
+
+    local defaultVoice = music[defaultVoiceName]
+    local bpm = defaultVoice.bpm
+    local secondsPerBeat = 60 / bpm
+    local ticksPerBeat = 120
+    local realSeconds = (totalTicks / ticksPerBeat) * secondsPerBeat
+
+    local trueMultiplier = getGameTime():getTrueMultiplier()
+    local simAdjustedSeconds = realSeconds / trueMultiplier
+
+    local durationTicks = math.ceil(simAdjustedSeconds * 60)
+
+    local bufferTicks = math.ceil(0.5 * 60) -- 500ms buffer
+    durationTicks = durationTicks + bufferTicks
+
+    return music, durationTicks * 100
 end
+
 
 
 function Bard.noteToSound(note)
@@ -239,7 +293,6 @@ end
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
 function Bard.playLoadedSongs(player)
-    --player = player or getPlayer()
     if not player then return end
     local id = player:getUsername()
     local bard = Bard.players[id]
@@ -247,34 +300,49 @@ function Bard.playLoadedSongs(player)
 
     local music = bard.music
     local instrumentID = bard.instrumentID
+    local startTime = bard.startTime
+    local now = getTimestampMs()
 
     local allDone = true
     local emitters = {}
 
     for voiceId, data in pairs(music) do
-        if data.index <= #data.notes then
-            data.timer = data.timer - 1
-            if data.timer <= 0 then
-                local note = data.notes[data.index]
+        data.eventIndex = data.eventIndex or 1
 
-                local sound = Bard.noteToSound(note)
-                local instrumentSound = sound and instrumentID.."_"..Bard.noteToSound(note)
-                --print("instrumentSound: ",instrument," ",Bard.noteToSound(note))
-                if instrumentSound then
-                    emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
-                    emitters[voiceId]:playSound(instrumentSound, player:getSquare())
-                    addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
+        while data.eventIndex <= #data.events do
+            local event = data.events[data.eventIndex]
+            local eventTime = startTime + event.timeOffset
+
+            local latencyBufferMs = 30
+            if now + latencyBufferMs >= eventTime then
+                -- Play all notes in this event
+                for _, note in ipairs(event.notes) do
+                    local sound = Bard.noteToSound(note)
+                    if sound then
+                        local instrumentSound = instrumentID .. "_" .. sound
+                        print("Play: ", instrumentSound, " (", event.timeOffset, ")")
+                        emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
+                        emitters[voiceId]:playSound(instrumentSound, player:getSquare())
+                        addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
+                    end
                 end
 
-                data.timer = Bard.convertTicksToTempoDuration(note.ticks, data.bpm, data.baseNoteLength)
-                data.index = data.index + 1
+                -- Move to the next event
+                data.eventIndex = data.eventIndex + 1
+            else
+                -- If the next event is not ready yet, stop checking
+                allDone = false
+                break
             end
-            allDone = false
         end
     end
 
-    if allDone then Bard.players[id] = nil end
+    if allDone then
+        Bard.players[id] = nil
+    end
 end
+
+
 
 
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone

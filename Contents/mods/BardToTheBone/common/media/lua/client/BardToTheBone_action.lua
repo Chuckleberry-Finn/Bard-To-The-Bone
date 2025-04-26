@@ -17,6 +17,12 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id].duration = self.maxTime
     local instrumentID = Bard.getInstrumentID(self.item)
     Bard.players[id].instrumentID = instrumentID
+    Bard.players[id].startTime = getTimestampMs()
+end
+
+function BardToTheBonePlayMusic:perform()
+    Bard.forceStop(self.character)
+    ISBaseTimedAction.perform(self)
 end
 
 function BardToTheBonePlayMusic:forceStop()
@@ -28,9 +34,7 @@ function BardToTheBonePlayMusic:stop()
     ISBaseTimedAction.stop(self)
 end
 
-function BardToTheBonePlayMusic:perform() ISBaseTimedAction.perform(self) end
 function BardToTheBonePlayMusic:update() end
-
 
 ---@param character IsoGameCharacter
 function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, recipe, container, containers)
