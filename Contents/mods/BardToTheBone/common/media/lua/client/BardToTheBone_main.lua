@@ -93,29 +93,24 @@ end
 
 function Bard.preprocessABC(abc)
     if not (abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!")) then return abc end
-
     abc = abc:gsub("%%[^\n]*", "")
     abc = abc:gsub("!.-!", "")
     abc = abc:gsub("%(%d+:?%d*:?.-?", "")
     abc = abc:gsub("%b()", "")
     abc = abc:gsub("[~.><\"]", "")
-    abc = abc:gsub("%[([^%]]-)%]", function(contents)
-        return contents:match("%S+") or ""
-    end)
+    abc = abc:gsub("%[([^%]]-)%]", function(contents) return contents:match("%S+") or "" end)
     abc = abc:gsub("(z%d*/?%d*%s*)+", "z ")
     abc = abc:gsub("[:|\\]+", " ")
     abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
+
     local baseLength = abc:match("L:%s*(%d+%s*/%s*%d+)")
     baseLength = baseLength or "1/8"
-    abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
-        if dur == "" then
-            return note .. baseLength
-        else
-            return note .. dur
-        end
-    end)
 
+    abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
+        return (dur == "") and (note .. baseLength) or (note .. dur)
+    end)
+    
     return abc
 end
 
