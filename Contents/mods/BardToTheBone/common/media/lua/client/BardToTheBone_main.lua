@@ -92,25 +92,57 @@ end
 
 
 function Bard.preprocessABC(abc)
+    -- Only preprocess if messy
     if not (abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!")) then return abc end
-    abc = abc:gsub("%%[^\n]*", "")
-    abc = abc:gsub("!.-!", "")
-    abc = abc:gsub("%(%d+:?%d*:?.-?", "")
-    abc = abc:gsub("%b()", "")
-    abc = abc:gsub("[~.><\"]", "")
-    abc = abc:gsub("%[([^%]]-)%]", function(contents) return contents:match("%S+") or "" end)
-    abc = abc:gsub("(z%d*/?%d*%s*)+", "z ")
-    abc = abc:gsub("[:|\\]+", " ")
+
+    -- Basic cleaning
+    abc = abc:gsub("%%[^\n]*", "")         -- Remove comments
+    abc = abc:gsub("!.-!", "")              -- Remove dynamics
+    abc = abc:gsub("%(%d+:?%d*:?.-?", "")    -- Remove tuplets
+    abc = abc:gsub("%b()", "")               -- Remove grace notes
+    abc = abc:gsub("[~.><\"]", "")           -- Remove ornaments
+    abc = abc:gsub("%[([^%]]-)%]", function(contents) return contents:match("%S+") or "" end) -- Flatten chords
+    abc = abc:gsub("[:|\\]+", " ")           -- Normalize barlines
+
+    -- Normalize title garbage
     abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
 
+    -- Merge consecutive rests
+    abc = abc:gsub("(z%d*/?%d*%s*)+", function(rests)
+        local totalFraction = 0
+        for dur in rests:gmatch("z(%d*/?%d*)") do
+            if dur == "" then
+                totalFraction = totalFraction + 1
+            elseif dur:find("/") then
+                local num, den = dur:match("(%d*)/(%d+)")
+                num = tonumber(num) or 1
+                den = tonumber(den)
+                totalFraction = totalFraction + (num / den)
+            else
+                totalFraction = totalFraction + tonumber(dur)
+            end
+        end
+        if totalFraction == 0 then return "" end -- Remove 0-length rests
+        if totalFraction < 1/16 then return "" end -- Delete rests smaller than 1/16
+        if totalFraction > 1 then totalFraction = 1 end -- Clamp huge rests to 1 beat
+
+        if math.abs(totalFraction - math.floor(totalFraction)) < 0.01 then
+            return "z" .. tostring(math.floor(totalFraction)) .. " "
+        else
+            return "z" .. tostring(totalFraction) .. " "
+        end
+    end)
+
+    -- Detect declared base note length
     local baseLength = abc:match("L:%s*(%d+%s*/%s*%d+)")
     baseLength = baseLength or "1/8"
 
+    -- Normalize notes to fill missing durations only
     abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
         return (dur == "") and (note .. baseLength) or (note .. dur)
     end)
-    
+
     return abc
 end
 
@@ -125,6 +157,10 @@ function Bard.parseABC(abc)
     }
 
     for line in abc:gmatch("[^\r\n]+") do
+
+        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)", "%1 ")
+        line = line:gsub("(z%d*/?%d*)", "%1 ")
+
         local header, value = line:match("^(%a):%s*(.+)$")
 
         if header == "T" or header == "X" or header == "%" then
