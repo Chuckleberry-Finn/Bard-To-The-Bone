@@ -28,7 +28,7 @@
 **Useful Links:**
 
 **[Starbound Composer](https://www.starboundcomposer.com/)**<br>
-<sup>A program to convert MIDIs to ABC specifically written for Starbound.</sup>
+<sup>A program to convert MIDIs to ABC specifically written for Starbound. <sup>Requires Starbound to be installed.</sup></sup>
 
 **[abcnotation.com](https://abcnotation.com/)**<br>
 <sup>A great website that features all things ABC-notation, includes: thousands of public-domain songs, links to various related programs and information.</sup>
