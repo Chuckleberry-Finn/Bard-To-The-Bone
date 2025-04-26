@@ -92,10 +92,15 @@ end
 
 
 function Bard.preprocessABC(abc)
-    ---try to indentify MIDI converted files, if it looks ok play as is
+    local isMessy = false
+
+    -- Check for signs of MIDI export garbage
     if abc:find("\\") or abc:find("{") or abc:find("}") or abc:find("!%a+!") then
-    else
-        return abc
+        isMessy = true
+    end
+
+    if not isMessy then
+        return abc -- ✨ Clean, so no heavy edits
     end
 
     abc = abc:gsub("%%[^\n]*", "")
@@ -104,15 +109,22 @@ function Bard.preprocessABC(abc)
     abc = abc:gsub("%b()", "")
     abc = abc:gsub("[~.><\"]", "")
     abc = abc:gsub("%[([^%]]-)%]", function(contents)
-        return contents:match("%S+")
+        return contents:match("%S+") or ""
     end)
     abc = abc:gsub("(z%d*/?%d*%s*)+", "z ")
     abc = abc:gsub("[:|\\]+", " ")
     abc = abc:gsub("T:%s*from%s*.*\\", "T:Converted Tune")
     abc = abc:gsub("K:[^\n]+\n%s*K:", "K:")
+    local baseLength = abc:match("L:%s*(%d+%s*/%s*%d+)")
+    baseLength = baseLength or "1/8" -- fallback if none
     abc = abc:gsub("([_=^]*[A-Ga-g][',]*)(%d*/?%d*)", function(note, dur)
-        return note .. "1/8"
+        if dur == "" then
+            return note .. baseLength -- use the declared base length
+        else
+            return note .. dur
+        end
     end)
+
     return abc
 end
 
