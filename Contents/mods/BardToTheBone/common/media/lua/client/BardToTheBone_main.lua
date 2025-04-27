@@ -388,6 +388,8 @@ function Bard.playLoadedSongs(player)
     for voiceId, data in pairs(music) do
         data.eventIndex = data.eventIndex or 1
 
+        emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
+
         while data.eventIndex <= #data.events do
             local event = data.events[data.eventIndex]
             local eventTime = startTime + event.timeOffset
@@ -400,7 +402,6 @@ function Bard.playLoadedSongs(player)
                     if sound then
                         local instrumentSound = instrumentID .. "_" .. sound
                         print("Play: ", instrumentSound, " (", event.timeOffset, ")")
-                        emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                     else
