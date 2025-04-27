@@ -123,7 +123,6 @@ function Bard.preprocessABC(abc)
             line = line:gsub("%(%d+:?%d*:?.-?", "")
             line = line:gsub("%b()", "")
             line = line:gsub("[~.><\"]", "")
-            line = line:gsub("[%|:]+", " ")
         end
 
         -- Collapse spaces inside this line
@@ -165,13 +164,22 @@ function Bard.parseABC(abc)
 
     local currentTicks = {}
     currentTicks[currentVoice] = 0
-    local totalTicks = 0 -- New: track total ticks across all voices (longest one)
+    local totalTicks = 0
+
+    local repeatBuffer = {}
+    local recordingRepeat = false
+    local inRepeat = false
+    local currentEnding = nil
+    local skipEnding = false
+    local tupletNotesRemaining = 0
+    local tupletMultiplier = 1.0
 
     for line in abc:gmatch("[^\r\n]+") do
         local header, value = line:match("^(%a):%s*(.+)$")
 
         if header == "T" or header == "X" or header == "%" then
             -- Ignore
+
         elseif header == "V" then
             currentVoice = value
             voices[currentVoice] = voices[currentVoice] or {
@@ -204,43 +212,86 @@ function Bard.parseABC(abc)
             end
 
             for _, token in ipairs(allTokens) do
+                if token == "|:" then
+                    recordingRepeat = true
+                    repeatBuffer = {}
+                    inRepeat = true
 
-                local isChord = token:match("^%b[]$") ~= nil
+                elseif token == ":|" then
+                    recordingRepeat = false
+                    -- Replay repeat buffer once
+                    for _, repeatToken in ipairs(repeatBuffer) do
+                        table.insert(allTokens, repeatToken)
+                    end
+                    repeatBuffer = {}
 
+                elseif token:match("^|+$") or token:match("^|%]+$") then
+                    -- Simple barlines -- ignore
 
-                local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
-                if #parsedNotes > 0 then
+                elseif token:match("^%[1$") or token:match("^%[2$") or token:match("^%[3$") then
+                    currentEnding = tonumber(token:sub(2))
+                    skipEnding = (currentEnding ~= 1)
 
-                    local bpm = voices[currentVoice].bpm
-                    local secondsPerBeat = 60 / bpm
-                    local ticksPerBeat = 120
+                elseif token:match("^%(%d") then
+                    -- Tuplet start (e.g., (3 for triplet)
+                    local n = tonumber(token:match("^%((%d)"))
+                    if n and n > 0 then
+                        tupletNotesRemaining = n
+                        tupletMultiplier = (n == 3) and (2/3) or (1) -- default rule
+                        -- Note: You can add more sophisticated rules if needed
+                    end
 
-                    local elapsedSeconds = (currentTicks[currentVoice] / ticksPerBeat) * secondsPerBeat
-                    local timeOffsetMs = math.floor(elapsedSeconds * 1000)
+                else
+                    if skipEnding then
+                        -- Skip notes inside wrong ending
+                    else
+                        if recordingRepeat then
+                            table.insert(repeatBuffer, token)
+                        end
 
-                    table.insert(voices[currentVoice].events, {
-                        timeOffset = timeOffsetMs,
-                        notes = parsedNotes,
-                    })
+                        local isChord = token:match("^%b[]$") ~= nil
+                        local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
+                        if #parsedNotes > 0 then
+                            local bpm = voices[currentVoice].bpm
+                            local secondsPerBeat = 60 / bpm
+                            local ticksPerBeat = 120
+                            local elapsedSeconds = (currentTicks[currentVoice] / ticksPerBeat) * secondsPerBeat
+                            local timeOffsetMs = math.floor(elapsedSeconds * 1000)
 
-                    if parsedNotes[1] and parsedNotes[1].ticks then
-                        if isChord then
-                            local maxTicks = 0
+                            -- Apply tuplet scaling if active
                             for _, note in ipairs(parsedNotes) do
-                                maxTicks = math.max(maxTicks, note.ticks or 0)
+                                if tupletNotesRemaining > 0 then
+                                    note.ticks = math.max(1, math.floor(note.ticks * tupletMultiplier))
+                                    tupletNotesRemaining = tupletNotesRemaining - 1
+                                    if tupletNotesRemaining <= 0 then
+                                        tupletMultiplier = 1.0
+                                    end
+                                end
                             end
-                            currentTicks[currentVoice] = currentTicks[currentVoice] + maxTicks
-                        else
-                            currentTicks[currentVoice] = currentTicks[currentVoice] + parsedNotes[1].ticks
+
+                            table.insert(voices[currentVoice].events, {
+                                timeOffset = timeOffsetMs,
+                                notes = parsedNotes,
+                            })
+
+                            if parsedNotes[1] and parsedNotes[1].ticks then
+                                if isChord then
+                                    local maxTicks = 0
+                                    for _, note in ipairs(parsedNotes) do
+                                        maxTicks = math.max(maxTicks, note.ticks or 0)
+                                    end
+                                    currentTicks[currentVoice] = currentTicks[currentVoice] + maxTicks
+                                else
+                                    currentTicks[currentVoice] = currentTicks[currentVoice] + parsedNotes[1].ticks
+                                end
+                            end
                         end
                     end
                 end
             end
-
         end
     end
 
-    -- Return totalTicks separately to calculate true duration later
     return voices, totalTicks
 end
 
