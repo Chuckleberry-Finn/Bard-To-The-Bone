@@ -174,6 +174,9 @@ function Bard.parseABC(abc)
     local tupletNotesRemaining = 0
     local tupletMultiplier = 1.0
 
+    local brokenRhythm = nil -- ">" or "<"
+    local lastParsedNoteEvent = nil -- Track previous note for broken rhythm adjustments
+
     for line in abc:gmatch("[^\r\n]+") do
         local header, value = line:match("^(%a):%s*(.+)$")
 
@@ -222,35 +225,32 @@ function Bard.parseABC(abc)
 
                 elseif token == ":|" then
                     recordingRepeat = false
-                    -- Insert repeatBuffer immediately after current token
                     for i = #repeatBuffer, 1, -1 do
                         table.insert(allTokens, tokenIndex + 1, repeatBuffer[i])
                     end
                     repeatBuffer = {}
 
                 elseif token:match("^|+$") or token:match("^|%]+$") then
-                    -- Simple barlines -- ignore
+                    --ignore
 
                 elseif token:match("^%[1$") or token:match("^%[2$") or token:match("^%[3$") then
                     currentEnding = tonumber(token:sub(2))
                     skipEnding = (currentEnding ~= 1)
 
                 elseif token:match("^%(%d") then
-                    -- Tuplet start
                     local n = tonumber(token:match("^%((%d)"))
                     if n and n > 0 then
                         tupletNotesRemaining = n
-                        -- Adjust tuplets: triplet (3 means 3 notes in time of 2
-                        if n == 3 then
-                            tupletMultiplier = 2/3
-                        else
-                            tupletMultiplier = 1.0 -- Other tuplets not scaling unless you add
-                        end
+                        tupletMultiplier = (n == 3) and (2/3) or (1.0)
                     end
-                    -- Do not treat (3 as note, just setup tuplet mode
 
                 else
-                    if not skipEnding then
+                    if token:find("[<>]") then
+                        brokenRhythm = token:match("([<>])")
+                        token = token:gsub("[<>]", "")
+                    end
+
+                    if not skipEnding and token ~= "" then
                         if recordingRepeat then
                             table.insert(repeatBuffer, token)
                         end
@@ -275,6 +275,22 @@ function Bard.parseABC(abc)
                                 end
                             end
 
+                            -- Apply broken rhythm adjustments
+                            if brokenRhythm and lastParsedNoteEvent then
+                                local prevEvent = lastParsedNoteEvent
+                                local currentEvent = parsedNotes[1]
+
+                                if brokenRhythm == ">" then
+                                    prevEvent.ticks = math.floor(prevEvent.ticks * 3 / 2)
+                                    currentEvent.ticks = math.floor(currentEvent.ticks * 1 / 2)
+                                elseif brokenRhythm == "<" then
+                                    prevEvent.ticks = math.floor(prevEvent.ticks * 1 / 2)
+                                    currentEvent.ticks = math.floor(currentEvent.ticks * 3 / 2)
+                                end
+
+                                brokenRhythm = nil -- Clear after applying
+                            end
+
                             table.insert(voices[currentVoice].events, {
                                 timeOffset = timeOffsetMs,
                                 notes = parsedNotes,
@@ -291,6 +307,8 @@ function Bard.parseABC(abc)
                                     currentTicks[currentVoice] = currentTicks[currentVoice] + parsedNotes[1].ticks
                                 end
                             end
+
+                            lastParsedNoteEvent = parsedNotes[1] -- update for broken rhythm
                         end
                     end
                 end
