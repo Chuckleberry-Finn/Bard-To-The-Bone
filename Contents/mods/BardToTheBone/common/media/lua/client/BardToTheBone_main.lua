@@ -323,11 +323,14 @@ function Bard.parseABC(abc)
                         local isChord = token:match("^%b[]$") ~= nil
                         local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
                         if #parsedNotes > 0 then
-                            local bpm = voices[currentVoice].bpm
-                            local secondsPerBeat = 60 / bpm
-                            local ticksPerBeat = 120
-                            local elapsedSeconds = (currentTicks[currentVoice] / ticksPerBeat) * secondsPerBeat
-                            local timeOffsetMs = math.floor(elapsedSeconds * 1000)
+
+                            local elapsedSimTicks = Bard.convertTicksToSimDuration(
+                                    currentTicks[currentVoice],
+                                    voices[currentVoice].bpm,
+                                    voices[currentVoice].baseNoteLength,
+                                    voices[currentVoice].tempoNoteLength or "1/4"
+                            )
+                            local timeOffsetMs = math.floor(elapsedSimTicks * (1000 / 60)) -- convert simTicks (60 per sec) to ms
 
                             -- Apply tuplet scaling if active
                             for _, note in ipairs(parsedNotes) do
@@ -408,19 +411,20 @@ function Bard.startPlayback(player, abc)
 
     local defaultVoice = music[defaultVoiceName]
     local bpm = defaultVoice.bpm
-    local secondsPerBeat = 60 / bpm
-    local ticksPerBeat = 120
-    local realSeconds = (totalTicks / ticksPerBeat) * secondsPerBeat
+    local baseNoteLength = defaultVoice.baseNoteLength
+    local tempoNoteLength = defaultVoice.tempoNoteLength or "1/4"
 
-    local trueMultiplier = getGameTime():getTrueMultiplier()
-    local simAdjustedSeconds = realSeconds / trueMultiplier
+    local totalSimTicks = Bard.convertTicksToSimDuration(
+            totalTicks,
+            bpm,
+            baseNoteLength,
+            tempoNoteLength
+    )
 
-    local durationTicks = math.ceil(simAdjustedSeconds * 60)
+    local bufferTicks = math.ceil(0.5 * 60) -- 500ms safety buffer
+    local durationTicks = totalSimTicks + bufferTicks
 
-    local bufferTicks = math.ceil(0.5 * 60) -- 500ms buffer
-    durationTicks = durationTicks + bufferTicks
-
-    return music, durationTicks * 100
+    return music, durationTicks * 100 -- *100 to convert ticks to milliseconds for playback deadline
 end
 
 
