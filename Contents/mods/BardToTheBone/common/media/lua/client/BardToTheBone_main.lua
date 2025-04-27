@@ -110,7 +110,7 @@ function Bard.preprocessABC(abc)
 
     for _, line in ipairs(lines) do
         -- Light cleanup
-        line = line:gsub("%s*[vu]%u%s*", " ") -- Remove fake voice switches
+        line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") --remove decoration
         line = line:gsub("(%b[])%s*", "%1 ")   -- Space after [chords]
         line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- After notes
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- After rests
