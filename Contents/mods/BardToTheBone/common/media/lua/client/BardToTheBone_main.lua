@@ -115,8 +115,15 @@ function Bard.preprocessABC(abc)
         line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
 
-        -- Remove extra spaces inside chords
-        line = line:gsub("%s+%]", "]")
+        -- Remove ALL spaces inside true chords (skip [V:], [|] cases)
+        line = line:gsub("%[(.-)%]", function(inner)
+            local trimmed = inner:match("^%s*(.-)%s*$") or inner
+            if trimmed:find("^V:") or trimmed:find("^|") then
+                return "[" .. inner .. "]"
+            else
+                return "[" .. inner:gsub("%s+", "") .. "]"
+            end
+        end)
 
         -- Detect messy artifacts
         if line:find("\\") or line:find("{") or line:find("}") or line:find("!%a+!") or line:find("T:%s*from") or line:find("z1/32") or line:find("z1/64") or line:find("z1/128") then
@@ -219,6 +226,8 @@ function Bard.parseABC(abc)
             local tokenIndex = 1
             while tokenIndex <= #allTokens do
                 local token = allTokens[tokenIndex]
+
+                print("token: ", token)
 
                 if token == "|:" then
                     recordingRepeat = true
