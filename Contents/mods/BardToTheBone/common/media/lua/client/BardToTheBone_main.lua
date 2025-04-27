@@ -42,19 +42,39 @@ end
 
 
 function Bard.convertTicksToSimDuration(ticks, bpm, baseNoteLength)
-    local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
-    if not l_top or not l_bottom then l_top, l_bottom = 1, 8 end
-    local fraction = tonumber(l_top) / tonumber(l_bottom)
+    local baseTicksPerBeat = 120 -- Always 120 ticks = 1 "default" beat
     local secondsPerBeat = 60 / bpm
-    local secondsPerTick = secondsPerBeat * fraction
+
+    -- Parse L: value properly
+    local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
+    l_top = tonumber(l_top) or 1
+    l_bottom = tonumber(l_bottom) or 8
+    local baseFraction = l_top / l_bottom
+
+    -- In ABC, a "beat" is usually a quarter note (1/4), not necessarily your L: value
+    -- So adjust the tick-to-time scale depending on the base note length
+    -- e.g., if L:1/8, you need two ticks to reach 1/4 beat (if default beat is 1/4)
+
+    local ticksPerQuarterNote = baseTicksPerBeat
+    if baseFraction ~= 1/4 then
+        ticksPerQuarterNote = baseTicksPerBeat * (baseFraction / (1/4))
+    end
+
+    local secondsPerTick = secondsPerBeat / ticksPerQuarterNote
+
+    -- Adjust for simulation frame rate and speed
     local trueMultiplier = getGameTime():getTrueMultiplier()
     local frameRate = getPerformance():getFramerate()
     local baseFrameRate = 60
     local simTicksPerSecond = (frameRate / baseFrameRate) * (1 / trueMultiplier)
-    local simulatedDurationSeconds = secondsPerTick * simTicksPerSecond * ticks
 
-    return simulatedDurationSeconds * 60
+    -- Final conversion
+    local realWorldSeconds = secondsPerTick * ticks
+    local simulatedTicks = realWorldSeconds * simTicksPerSecond * 60
+
+    return simulatedTicks
 end
+
 
 
 function Bard.applyKeyAccidental(note, key)
@@ -70,27 +90,49 @@ end
 
 
 function Bard.parseNoteToken(token, defaultTicks, key)
-    if token:match("^z") then
-        local duration = token:match("z(%d*/?%d*)") or "1"
-        local ticks = Bard.getTicksFromLength(duration)
-        return { { rest = true, ticks = ticks } }
-    end
+    if token:match("^%b[]$") then
+        -- This is a chord
+        local inner = token:sub(2, -2) -- Remove [ and ]
+        local notes = {}
 
-    local notes = {}
-    local duration = token:match("%d+/?%d*") or ""
-    local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
-    for accidental, base, octaveMod in token:gmatch("([_=^]*)([A-Ga-g])([',]*)") do
-        local octave = 4
-        if base:match("%l") then octave = 5 end
-        for char in octaveMod:gmatch("[',]") do
-            octave = octave + (char == "'" and 1 or -1)
+        -- Separate multiple notes inside chord
+        for noteToken in inner:gmatch("[^%s]+") do
+            local duration = noteToken:match("%d*/?%d*") or ""
+            local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
+
+            for accidental, base, octaveMod in noteToken:gmatch("([_=^]*)([A-Ga-g])([',]*)") do
+                local octave = 4
+                if base:match("%l") then octave = 5 end
+                for char in octaveMod:gmatch("[',]") do
+                    octave = octave + (char == "'" and 1 or -1)
+                end
+                local fullBase = accidental .. base:upper()
+                local note = { rest = false, base = fullBase, octave = octave, ticks = ticks }
+                Bard.applyKeyAccidental(note, key)
+                table.insert(notes, note)
+            end
         end
-        local fullBase = accidental .. base:upper()
-        local note = { rest = false, base = fullBase, octave = octave, ticks = ticks }
-        Bard.applyKeyAccidental(note, key)
-        table.insert(notes, note)
+
+        return notes
+    else
+        -- Not a chord
+        local notes = {}
+        local duration = token:match("%d*/?%d*") or ""
+        local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
+
+        for accidental, base, octaveMod in token:gmatch("([_=^]*)([A-Ga-g])([',]*)") do
+            local octave = 4
+            if base:match("%l") then octave = 5 end
+            for char in octaveMod:gmatch("[',]") do
+                octave = octave + (char == "'" and 1 or -1)
+            end
+            local fullBase = accidental .. base:upper()
+            local note = { rest = false, base = fullBase, octave = octave, ticks = ticks }
+            Bard.applyKeyAccidental(note, key)
+            table.insert(notes, note)
+        end
+        return notes
     end
-    return notes
 end
 
 
@@ -207,14 +249,26 @@ function Bard.parseABC(abc)
             voices[currentVoice].key = value
 
         elseif header == "Q" then
-            voices[currentVoice].bpm = tonumber(value:match("%d+")) or 120
+            local noteLength, bpm = value:match("(%d+%s*/%s*%d+)%s*=%s*(%d+)")
+            if bpm then
+                bpm = tonumber(bpm)
+            else
+                bpm = tonumber(value:match("%d+")) or 120
+            end
+            voices[currentVoice].bpm = bpm
+
+            if noteLength then
+                voices[currentVoice].tempoNoteLength = noteLength
+            else
+                voices[currentVoice].tempoNoteLength = "1/4" -- Assume 1/4 note if not specified
+            end
 
         elseif header == "L" then
             voices[currentVoice].baseNoteLength = value
             voices[currentVoice].defaultTicks = Bard.getTicksFromLength(value)
 
         elseif header == "M" then
-            voices[currentVoice].meter = value
+            voices[currentVoice].meter = value -- Currently unused for timing
 
         elseif not header then
             -- It's a line of notes
