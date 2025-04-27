@@ -384,7 +384,7 @@ function Bard.playLoadedSongs(player)
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                     else
-                        print("Play: ", note.rest and "rest" or tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
+                        print(note.rest and "Play: rest" or "ERROR: "..tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
                     end
                 end
 
