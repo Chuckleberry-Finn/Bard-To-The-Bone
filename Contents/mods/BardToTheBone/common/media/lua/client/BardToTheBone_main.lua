@@ -110,25 +110,25 @@ function Bard.preprocessABC(abc)
 
     for _, line in ipairs(lines) do
         -- Light cleanup
-        line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") --remove decoration
-        line = line:gsub("(%b[])%s*", "%1 ")   -- Space after [chords]
-        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- After notes
-        line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- After rests
+        line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") -- Remove decorations but keep notes
+        line = line:gsub("(%b[])%s*", "%1 ")   -- Add space after [chords]
+        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
+        line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
 
         -- Detect messy artifacts
         if line:find("\\") or line:find("{") or line:find("}") or line:find("!%a+!") or line:find("T:%s*from") or line:find("z1/32") or line:find("z1/64") or line:find("z1/128") then
             tag = "MESSY"
-            line = line:gsub("%%[^\n]*", "")
-            line = line:gsub("!.-!", "")
-            line = line:gsub("%(%d+:?%d*:?.-?", "")
-            line = line:gsub("%b()", "")
-            line = line:gsub("[~.><\"]", "")
+            line = line:gsub("%%[^\n]*", "")   -- Remove comments
+            line = line:gsub("!.-!", "")       -- Remove decorations
+            line = line:gsub("%b{}", "")       -- Remove grace notes
+            line = line:gsub("%b()", "")        -- Remove slurs
+            line = line:gsub("[~.\"><]", "")    -- Remove broken rhythms
+            -- Note: DO NOT touch | : [ ] (important for repeats/endings/tuplets)
         end
 
         -- Collapse spaces inside this line
         line = line:gsub("[ \t]+", " ")
         line = line:match("^%s*(.-)%s*$") or line -- Trim this line
-
         table.insert(cleaned, line)
     end
 
@@ -136,9 +136,9 @@ function Bard.preprocessABC(abc)
     abc = table.concat(cleaned, "\n")
 
     -- Force newline after headers just in case
-    abc = abc:gsub("([XTMKLQ]):%s*([^%\n]*)%s+", "%1:%2\n")
+    abc = abc:gsub("([XTMKLQV]):%s*([^%\n]*)%s+", "%1:%2\n")
 
-    -- Clean up any remaining messy spaces around newlines
+    -- Clean up spaces around newlines
     abc = abc:gsub(" *\n *", "\n")
     abc = abc:match("^%s*(.-)%s*$") or abc
 
@@ -147,6 +147,7 @@ function Bard.preprocessABC(abc)
 
     return abc
 end
+
 
 
 function Bard.parseABC(abc)
