@@ -122,7 +122,6 @@ function Bard.preprocessABC(abc)
             line = line:gsub("!.-!", "")       -- Remove decorations
             line = line:gsub("%b{}", "")       -- Remove grace notes
             line = line:gsub("%b()", "")        -- Remove slurs
-            line = line:gsub("[~.\"><]", "")    -- Remove broken rhythms
             -- Note: DO NOT touch | : [ ] (important for repeats/endings/tuplets)
         end
 
