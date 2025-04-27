@@ -139,7 +139,37 @@ end
 function Bard.preprocessABC(abc)
     -- Insert default Key and Meter if missing
     if not abc:find("K:") then abc = "K:C\n" .. abc end
-    if not abc:find("M:") then abc = "M:4/4\n" .. abc end
+    if not abc:find("M:") then
+        abc = "M:4/4\n" .. abc
+    else
+        abc = abc:gsub("M:%s*C|%s*", "M:2/2")
+        abc = abc:gsub("M:%s*C%s*", "M:4/4")
+    end
+    -- Derive default L: based on M: if missing
+    if not abc:find("L:") then
+        local meter = abc:match("M:(%d+)%s*/%s*(%d+)")
+        if meter then
+            local top, bottom = meter:match("(%d+)%s*/%s*(%d+)")
+            top = tonumber(top)
+            bottom = tonumber(bottom)
+
+            if bottom == 2 and (top == 2 or top == 3) then
+                -- M:2/2 or M:3/2 → Cut time → L:1/4
+                abc = "L:1/4\n" .. abc
+            else
+                -- Otherwise, L:1/8
+                abc = "L:1/8\n" .. abc
+            end
+        else
+            -- No readable M: found, fallback
+            abc = "L:1/8\n" .. abc
+        end
+    end
+
+    -- Optional: Insert default tempo if missing
+    if not abc:find("Q:") then
+        abc = "Q:1/4=120\n" .. abc
+    end
 
     -- Split into true lines first
     local lines = {}
@@ -207,7 +237,7 @@ function Bard.parseABC(abc)
     local currentVoice = "default"
     voices[currentVoice] = {
         events = {},
-        bpm = 120,
+        bpm = 180,
         key = "C",
         baseNoteLength = "1/8",
         defaultTicks = Bard.getTicksFromLength("1/8"),
@@ -238,7 +268,7 @@ function Bard.parseABC(abc)
             currentVoice = value
             voices[currentVoice] = voices[currentVoice] or {
                 events = {},
-                bpm = 120,
+                bpm = 180,
                 key = "C",
                 baseNoteLength = "1/8",
                 defaultTicks = Bard.getTicksFromLength("1/8"),
@@ -281,7 +311,7 @@ function Bard.parseABC(abc)
             while tokenIndex <= #allTokens do
                 local token = allTokens[tokenIndex]
 
-                print("token: ", token)
+                ---print("token: ", token)
 
                 if token == "|:" then
                     recordingRepeat = true
@@ -468,11 +498,11 @@ function Bard.playLoadedSongs(player)
                     local sound = Bard.noteToSound(note)
                     if sound then
                         local instrumentSound = instrumentID .. "_" .. sound
-                        print("Play: ", instrumentSound, " (", event.timeOffset, ")")
+                        ---print("Play: ", instrumentSound, " (", event.timeOffset, ")")
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
-                    else
-                        print(note.rest and "Play: rest" or "ERROR: "..tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
+                    ---else
+                        ---print(note.rest and "Play: rest" or "ERROR: "..tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
                     end
                 end
 
