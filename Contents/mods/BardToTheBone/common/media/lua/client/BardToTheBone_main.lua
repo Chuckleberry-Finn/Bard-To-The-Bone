@@ -115,6 +115,9 @@ function Bard.preprocessABC(abc)
         line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
 
+        -- Remove extra spaces inside chords
+        line = line:gsub("%s+%]", "]")
+
         -- Detect messy artifacts
         if line:find("\\") or line:find("{") or line:find("}") or line:find("!%a+!") or line:find("T:%s*from") or line:find("z1/32") or line:find("z1/64") or line:find("z1/128") then
             tag = "MESSY"
