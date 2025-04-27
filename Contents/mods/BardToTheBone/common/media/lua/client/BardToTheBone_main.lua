@@ -149,7 +149,6 @@ function Bard.preprocessABC(abc)
 end
 
 
-
 function Bard.parseABC(abc)
     abc = Bard.preprocessABC(abc)
 
@@ -212,7 +211,10 @@ function Bard.parseABC(abc)
                 table.insert(allTokens, token)
             end
 
-            for _, token in ipairs(allTokens) do
+            local tokenIndex = 1
+            while tokenIndex <= #allTokens do
+                local token = allTokens[tokenIndex]
+
                 if token == "|:" then
                     recordingRepeat = true
                     repeatBuffer = {}
@@ -220,9 +222,9 @@ function Bard.parseABC(abc)
 
                 elseif token == ":|" then
                     recordingRepeat = false
-                    -- Replay repeat buffer once
-                    for _, repeatToken in ipairs(repeatBuffer) do
-                        table.insert(allTokens, repeatToken)
+                    -- Insert repeatBuffer immediately after current token
+                    for i = #repeatBuffer, 1, -1 do
+                        table.insert(allTokens, tokenIndex + 1, repeatBuffer[i])
                     end
                     repeatBuffer = {}
 
@@ -234,18 +236,21 @@ function Bard.parseABC(abc)
                     skipEnding = (currentEnding ~= 1)
 
                 elseif token:match("^%(%d") then
-                    -- Tuplet start (e.g., (3 for triplet)
+                    -- Tuplet start
                     local n = tonumber(token:match("^%((%d)"))
                     if n and n > 0 then
                         tupletNotesRemaining = n
-                        tupletMultiplier = (n == 3) and (2/3) or (1) -- default rule
-                        -- Note: You can add more sophisticated rules if needed
+                        -- Adjust tuplets: triplet (3 means 3 notes in time of 2
+                        if n == 3 then
+                            tupletMultiplier = 2/3
+                        else
+                            tupletMultiplier = 1.0 -- Other tuplets not scaling unless you add
+                        end
                     end
+                    -- Do not treat (3 as note, just setup tuplet mode
 
                 else
-                    if skipEnding then
-                        -- Skip notes inside wrong ending
-                    else
+                    if not skipEnding then
                         if recordingRepeat then
                             table.insert(repeatBuffer, token)
                         end
@@ -289,6 +294,8 @@ function Bard.parseABC(abc)
                         end
                     end
                 end
+
+                tokenIndex = tokenIndex + 1
             end
         end
     end
@@ -376,6 +383,8 @@ function Bard.playLoadedSongs(player)
                         emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
+                    else
+                        print("Play: ", note.rest and "rest" or tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
                     end
                 end
 
