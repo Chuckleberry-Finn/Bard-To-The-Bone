@@ -39,4 +39,5 @@
 - Music Note Sounds - https://github.com/tgstation/tgstation
 - Default Songs - https://abcnotation.com
 - Luxx's Starbound Song Pack - https://github.com/luxx/sbsp
+- [Shurutsue](https://github.com/Shurutsue) for helping with troubleshooting/research.
 ###
