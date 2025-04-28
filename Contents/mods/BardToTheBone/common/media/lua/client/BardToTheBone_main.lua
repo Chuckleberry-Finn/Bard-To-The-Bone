@@ -40,7 +40,7 @@ function Bard.getTicksFromLength(length)
     return baseTicks
 end
 
-function Bard.convertTicksToMilliseconds(ticks, bpm, baseNoteLength, tempoNoteLength)
+function Bard.convertMusicTicksToMilliseconds(ticks, bpm, baseNoteLength, tempoNoteLength)
     local secondsPerTempoNote = 60 / bpm
 
     local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
@@ -337,7 +337,7 @@ function Bard.parseABC(abc)
                         local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
                         if #parsedNotes > 0 then
 
-                            local elapsedMs = Bard.convertTicksToMilliseconds(
+                            local elapsedMs = Bard.convertMusicTicksToMilliseconds(
                                     currentTicks[currentVoice],
                                     voices[currentVoice].bpm or 120,
                                     voices[currentVoice].baseNoteLength or "1/8",
@@ -388,6 +388,7 @@ function Bard.parseABC(abc)
                                 else
                                     currentTicks[currentVoice] = currentTicks[currentVoice] + parsedNotes[1].ticks
                                 end
+                                totalTicks = math.max(totalTicks, currentTicks[currentVoice]) -- update total song ticks
                             end
 
                             lastParsedNoteEvent = parsedNotes[1] -- update for broken rhythm
@@ -428,12 +429,13 @@ function Bard.startPlayback(player, abc)
     local baseNoteLength = defaultVoice.baseNoteLength
     local tempoNoteLength = defaultVoice.tempoNoteLength or "1/4"
 
-    local totalSimTicks = Bard.convertTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
+    local totalSimTicks = Bard.convertMusicTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
 
-    local bufferTicks = math.ceil(0.5 * 60) -- 500ms safety buffer
-    local durationTicks = totalSimTicks + bufferTicks
+    print("totalSimTicks: ", totalSimTicks)
 
-    return music, durationTicks * 100 --to convert ticks to milliseconds for playback deadline
+    local durationTicks = totalSimTicks / (1000 / 60)
+
+    return music, durationTicks --to convert ticks to milliseconds for playback deadline
 end
 
 
