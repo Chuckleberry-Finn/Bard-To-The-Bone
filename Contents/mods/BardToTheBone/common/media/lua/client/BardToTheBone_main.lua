@@ -40,41 +40,24 @@ function Bard.getTicksFromLength(length)
     return baseTicks
 end
 
+function Bard.convertTicksToMilliseconds(ticks, bpm, baseNoteLength, tempoNoteLength)
+    local secondsPerTempoNote = 60 / bpm
 
-function Bard.convertTicksToSimDuration(ticks, bpm, baseNoteLength)
-    local baseTicksPerBeat = 120 -- Always 120 ticks = 1 "default" beat
-    local secondsPerBeat = 60 / bpm
-
-    -- Parse L: value properly
     local l_top, l_bottom = baseNoteLength:match("(%d+)%s*/%s*(%d+)")
     l_top = tonumber(l_top) or 1
     l_bottom = tonumber(l_bottom) or 8
     local baseFraction = l_top / l_bottom
 
-    -- In ABC, a "beat" is usually a quarter note (1/4), not necessarily your L: value
-    -- So adjust the tick-to-time scale depending on the base note length
-    -- e.g., if L:1/8, you need two ticks to reach 1/4 beat (if default beat is 1/4)
+    local t_top, t_bottom = tempoNoteLength:match("(%d+)%s*/%s*(%d+)")
+    t_top = tonumber(t_top) or 1
+    t_bottom = tonumber(t_bottom) or 4
+    local tempoFraction = t_top / t_bottom
 
-    local ticksPerQuarterNote = baseTicksPerBeat
-    if baseFraction ~= 1/4 then
-        ticksPerQuarterNote = baseTicksPerBeat * (baseFraction / (1/4))
-    end
+    local ticksPerTempoNote = 120 * (tempoFraction / baseFraction)
+    local secondsPerTick = secondsPerTempoNote / ticksPerTempoNote
 
-    local secondsPerTick = secondsPerBeat / ticksPerQuarterNote
-
-    -- Adjust for simulation frame rate and speed
-    local trueMultiplier = getGameTime():getTrueMultiplier()
-    local frameRate = getPerformance():getFramerate()
-    local baseFrameRate = 60
-    local simTicksPerSecond = (frameRate / baseFrameRate) * (1 / trueMultiplier)
-
-    -- Final conversion
-    local realWorldSeconds = secondsPerTick * ticks
-    local simulatedTicks = realWorldSeconds * simTicksPerSecond * 60
-
-    return simulatedTicks
+    return ticks * secondsPerTick * 1000
 end
-
 
 
 function Bard.applyKeyAccidental(note, key)
@@ -224,7 +207,7 @@ function Bard.preprocessABC(abc)
     abc = abc:match("^%s*(.-)%s*$") or abc
 
     -- Optional: log processed output
-    print("\nPROCESSED ABC:  ("..tag..")\n", abc, "\n\n_______")
+    ---print("\nPROCESSED ABC:  ("..tag..")\n", abc, "\n\n_______")
 
     return abc
 end
@@ -354,13 +337,14 @@ function Bard.parseABC(abc)
                         local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
                         if #parsedNotes > 0 then
 
-                            local elapsedSimTicks = Bard.convertTicksToSimDuration(
+                            local elapsedMs = Bard.convertTicksToMilliseconds(
                                     currentTicks[currentVoice],
-                                    voices[currentVoice].bpm,
-                                    voices[currentVoice].baseNoteLength,
+                                    voices[currentVoice].bpm or 120,
+                                    voices[currentVoice].baseNoteLength or "1/8",
                                     voices[currentVoice].tempoNoteLength or "1/4"
                             )
-                            local timeOffsetMs = math.floor(elapsedSimTicks * (1000 / 60)) -- convert simTicks (60 per sec) to ms
+
+                            local timeOffsetMs = math.floor(elapsedMs)
 
                             -- Apply tuplet scaling if active
                             for _, note in ipairs(parsedNotes) do
@@ -444,17 +428,12 @@ function Bard.startPlayback(player, abc)
     local baseNoteLength = defaultVoice.baseNoteLength
     local tempoNoteLength = defaultVoice.tempoNoteLength or "1/4"
 
-    local totalSimTicks = Bard.convertTicksToSimDuration(
-            totalTicks,
-            bpm,
-            baseNoteLength,
-            tempoNoteLength
-    )
+    local totalSimTicks = Bard.convertTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
 
     local bufferTicks = math.ceil(0.5 * 60) -- 500ms safety buffer
     local durationTicks = totalSimTicks + bufferTicks
 
-    return music, durationTicks * 100 -- *100 to convert ticks to milliseconds for playback deadline
+    return music, durationTicks * 100 --to convert ticks to milliseconds for playback deadline
 end
 
 
@@ -498,7 +477,7 @@ function Bard.playLoadedSongs(player)
                     local sound = Bard.noteToSound(note)
                     if sound then
                         local instrumentSound = instrumentID .. "_" .. sound
-                        ---print("Play: ", instrumentSound, " (", event.timeOffset, ")")
+                        ---print("startTime-now: "..startTime-now.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                     ---else
