@@ -429,15 +429,11 @@ function Bard.startPlayback(player, abc)
     local baseNoteLength = defaultVoice.baseNoteLength
     local tempoNoteLength = defaultVoice.tempoNoteLength or "1/4"
 
-    local totalSimTicks = Bard.convertMusicTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
-
-    print("totalSimTicks: ", totalSimTicks)
-
-    local durationTicks = totalSimTicks / (1000 / 60)
+    local totalMilliseconds  = Bard.convertMusicTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
+    local durationTicks = totalMilliseconds / (1000 / getAverageFPS())
 
     return music, durationTicks --to convert ticks to milliseconds for playback deadline
 end
-
 
 
 function Bard.noteToSound(note)
@@ -449,6 +445,7 @@ end
 
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
 function Bard.playLoadedSongs(player)
     if not player then return end
     local id = player:getUsername()
@@ -457,40 +454,50 @@ function Bard.playLoadedSongs(player)
 
     local music = bard.music
     local instrumentID = bard.instrumentID
-    local startTime = bard.startTime
+
+    -- Initialize start and elapsed tracking if not already
+    bard.startTime = bard.startTime or getTimestampMs()
+    bard.lastUpdateTime = bard.lastUpdateTime or bard.startTime
+    bard.elapsedTime = bard.elapsedTime or 0
+
     local now = getTimestampMs()
+    local speedMultiplier = getGameSpeed()
+
+    -- If game is paused, don't advance music, but still update lastUpdateTime to avoid jump later
+    if speedMultiplier == 0 then
+        bard.lastUpdateTime = now
+        return
+    end
+
+    -- Advance elapsed time, scaled by speed
+    bard.elapsedTime = bard.elapsedTime + (now - bard.lastUpdateTime) * speedMultiplier
+    bard.lastUpdateTime = now
 
     local allDone = true
     local emitters = {}
 
     for voiceId, data in pairs(music) do
         data.eventIndex = data.eventIndex or 1
-
         emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
 
         while data.eventIndex <= #data.events do
             local event = data.events[data.eventIndex]
-            local eventTime = startTime + event.timeOffset
+            local eventTime = event.timeOffset
 
             local latencyBufferMs = 30
-            if now + latencyBufferMs >= eventTime then
-                -- Play all notes in this event
+            if bard.elapsedTime + latencyBufferMs >= eventTime then
                 for _, note in ipairs(event.notes) do
                     local sound = Bard.noteToSound(note)
                     if sound then
                         local instrumentSound = instrumentID .. "_" .. sound
-                        ---print("startTime-now: "..startTime-now.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
+                        ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         emitters[voiceId]:playSound(instrumentSound, player:getSquare())
                         addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
-                    ---else
-                        ---print(note.rest and "Play: rest" or "ERROR: "..tostring(note.base)..tostring(note.octave), " (", event.timeOffset, ")")
                     end
                 end
 
-                -- Move to the next event
                 data.eventIndex = data.eventIndex + 1
             else
-                -- If the next event is not ready yet, stop checking
                 allDone = false
                 break
             end
@@ -501,8 +508,6 @@ function Bard.playLoadedSongs(player)
         Bard.players[id] = nil
     end
 end
-
-
 
 
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
