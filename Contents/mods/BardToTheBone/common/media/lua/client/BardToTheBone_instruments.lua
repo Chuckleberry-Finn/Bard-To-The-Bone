@@ -19,7 +19,4 @@
 --- [NEED] Sounds For
 -- Trumpet [NEED]
 -- Keytar [NEED]
--- Whistle [NEED] ?
--- Whistle_Bone [NEED] ?
--- TuningFork [NEED] ?
 

@@ -520,6 +520,7 @@ Bard.instrumentIDtoType = {
     ["Base.Harmonica"] = "harmonica",
     ["Base.Saxophone"] = "saxophone",
     ["Base.Violin"] = "violin",
+    ["Base.Keytar"] = "keytar",
 }
 
 function Bard.getInstrumentID(instrument)

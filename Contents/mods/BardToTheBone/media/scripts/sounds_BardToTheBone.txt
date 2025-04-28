@@ -252,6 +252,10 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = common/media/sound/instruments/banjo/Ab5.ogg, } }
 
+    sound banjo_An2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = common/media/sound/instruments/banjo/An2.ogg, } }
+
     sound banjo_An3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = common/media/sound/instruments/banjo/An3.ogg, } }
@@ -388,6 +392,10 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = common/media/sound/instruments/banjo/Gb5.ogg, } }
 
+    sound banjo_Gn2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = common/media/sound/instruments/banjo/Gn2.ogg, } }
+
     sound banjo_Gn3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = common/media/sound/instruments/banjo/Gn3.ogg, } }
@@ -411,6 +419,14 @@ module BardToTheBone {
     sound bikehorn_Ab4 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = common/media/sound/instruments/bikehorn/Ab4.ogg, } }
+
+    sound bikehorn_An0 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = common/media/sound/instruments/bikehorn/An0.ogg, } }
+
+    sound bikehorn_An1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = common/media/sound/instruments/bikehorn/An1.ogg, } }
 
     sound bikehorn_An2 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -556,6 +572,10 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/Ab6.ogg, } }
 
+    sound electric_guitar_An3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/electric_guitar/An3.ogg, } }
+
     sound electric_guitar_An4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/An4.ogg, } }
@@ -656,6 +676,10 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/En6.ogg, } }
 
+    sound electric_guitar_Fn3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/electric_guitar/Fn3.ogg, } }
+
     sound electric_guitar_Fn4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/Fn4.ogg, } }
@@ -679,6 +703,10 @@ module BardToTheBone {
     sound electric_guitar_Gb6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = common/media/sound/instruments/electric_guitar/Gb6.ogg, } }
+
+    sound electric_guitar_Gn3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/electric_guitar/Gn3.ogg, } }
 
     sound electric_guitar_Gn4 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -980,6 +1008,10 @@ module BardToTheBone {
         category = BardInstrument_glockenspiel, is3D = true,
         clip { file = common/media/sound/instruments/glockenspiel/Gn7.mid, } }
 
+    sound guitar_A2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/A2.ogg, } }
+
     sound guitar_Ab3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Ab3.ogg, } }
@@ -995,6 +1027,10 @@ module BardToTheBone {
     sound guitar_Ab6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Ab6.ogg, } }
+
+    sound guitar_An2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/An2.ogg, } }
 
     sound guitar_An3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1012,6 +1048,10 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/An6.ogg, } }
 
+    sound guitar_Bb2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Bb2.ogg, } }
+
     sound guitar_Bb3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Bb3.ogg, } }
@@ -1027,6 +1067,10 @@ module BardToTheBone {
     sound guitar_Bb6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Bb6.ogg, } }
+
+    sound guitar_Bn2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Bn2.ogg, } }
 
     sound guitar_Bn3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1044,6 +1088,10 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Bn6.ogg, } }
 
+    sound guitar_Cn3 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Cn3.ogg, } }
+
     sound guitar_Cn4 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Cn4.ogg, } }
@@ -1055,6 +1103,10 @@ module BardToTheBone {
     sound guitar_Cn6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Cn6.ogg, } }
+
+    sound guitar_Db3 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Db3.ogg, } }
 
     sound guitar_Db4 {
         category = BardInstrument_guitar, is3D = true,
@@ -1068,6 +1120,10 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Db6.ogg, } }
 
+    sound guitar_Dn3 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Dn3.ogg, } }
+
     sound guitar_Dn4 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Dn4.ogg, } }
@@ -1080,6 +1136,10 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Dn6.ogg, } }
 
+    sound guitar_Eb3 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/Eb3.ogg, } }
+
     sound guitar_Eb4 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Eb4.ogg, } }
@@ -1091,6 +1151,10 @@ module BardToTheBone {
     sound guitar_Eb6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = common/media/sound/instruments/guitar/Eb6.ogg, } }
+
+    sound guitar_En2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = common/media/sound/instruments/guitar/En2.ogg, } }
 
     sound guitar_En3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1400,6 +1464,194 @@ module BardToTheBone {
         category = BardInstrument_harmonica, is3D = true,
         clip { file = common/media/sound/instruments/harmonica/Gn6.mid, } }
 
+    sound keytar_A2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/A2.ogg, } }
+
+    sound keytar_Ab3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Ab3.ogg, } }
+
+    sound keytar_Ab4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Ab4.ogg, } }
+
+    sound keytar_Ab5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Ab5.ogg, } }
+
+    sound keytar_An3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/An3.ogg, } }
+
+    sound keytar_An4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/An4.ogg, } }
+
+    sound keytar_An5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/An5.ogg, } }
+
+    sound keytar_Bb2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bb2.ogg, } }
+
+    sound keytar_Bb3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bb3.ogg, } }
+
+    sound keytar_Bb4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bb4.ogg, } }
+
+    sound keytar_Bb5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bb5.ogg, } }
+
+    sound keytar_Bn2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bn2.ogg, } }
+
+    sound keytar_Bn3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bn3.ogg, } }
+
+    sound keytar_Bn4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bn4.ogg, } }
+
+    sound keytar_Bn5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Bn5.ogg, } }
+
+    sound keytar_Cn3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Cn3.ogg, } }
+
+    sound keytar_Cn4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Cn4.ogg, } }
+
+    sound keytar_Cn5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Cn5.ogg, } }
+
+    sound keytar_Cn6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Cn6.ogg, } }
+
+    sound keytar_Db3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Db3.ogg, } }
+
+    sound keytar_Db4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Db4.ogg, } }
+
+    sound keytar_Db5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Db5.ogg, } }
+
+    sound keytar_Db6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Db6.ogg, } }
+
+    sound keytar_Dn3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Dn3.ogg, } }
+
+    sound keytar_Dn4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Dn4.ogg, } }
+
+    sound keytar_Dn5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Dn5.ogg, } }
+
+    sound keytar_Dn6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Dn6.ogg, } }
+
+    sound keytar_Eb3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Eb3.ogg, } }
+
+    sound keytar_Eb4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Eb4.ogg, } }
+
+    sound keytar_Eb5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Eb5.ogg, } }
+
+    sound keytar_Eb6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Eb6.ogg, } }
+
+    sound keytar_En3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/En3.ogg, } }
+
+    sound keytar_En4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/En4.ogg, } }
+
+    sound keytar_En5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/En5.ogg, } }
+
+    sound keytar_En6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/En6.ogg, } }
+
+    sound keytar_Fn3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Fn3.ogg, } }
+
+    sound keytar_Fn4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Fn4.ogg, } }
+
+    sound keytar_Fn5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Fn5.ogg, } }
+
+    sound keytar_Fn6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Fn6.ogg, } }
+
+    sound keytar_Gb3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gb3.ogg, } }
+
+    sound keytar_Gb4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gb4.ogg, } }
+
+    sound keytar_Gb5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gb5.ogg, } }
+
+    sound keytar_Gb6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gb6.ogg, } }
+
+    sound keytar_Gn3 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gn3.ogg, } }
+
+    sound keytar_Gn4 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gn4.ogg, } }
+
+    sound keytar_Gn5 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gn5.ogg, } }
+
+    sound keytar_Gn6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = common/media/sound/instruments/keytar/Gn6.ogg, } }
+
     sound piano_Ab2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/Ab2.ogg, } }
@@ -1427,6 +1679,10 @@ module BardToTheBone {
     sound piano_Ab8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/Ab8.ogg, } }
+
+    sound piano_An0 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = common/media/sound/instruments/piano/An0.ogg, } }
 
     sound piano_An1 {
         category = BardInstrument_piano, is3D = true,
@@ -1460,6 +1716,10 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/An8.ogg, } }
 
+    sound piano_Bb0 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = common/media/sound/instruments/piano/Bb0.ogg, } }
+
     sound piano_Bb1 {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/Bb1.ogg, } }
@@ -1491,6 +1751,10 @@ module BardToTheBone {
     sound piano_Bb8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = common/media/sound/instruments/piano/Bb8.ogg, } }
+
+    sound piano_Bn0 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = common/media/sound/instruments/piano/Bn0.ogg, } }
 
     sound piano_Bn1 {
         category = BardInstrument_piano, is3D = true,
@@ -2235,422 +2499,6 @@ module BardToTheBone {
     sound saxophone_Gn6 {
         category = BardInstrument_saxophone, is3D = true,
         clip { file = common/media/sound/instruments/saxophone/Gn6.mid, } }
-
-    sound crisis_brass_c2 {
-        category = BardInstrument_crisis_brass, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_brass/c2.ogg, } }
-
-    sound crisis_brass_c3 {
-        category = BardInstrument_crisis_brass, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_brass/c3.ogg, } }
-
-    sound crisis_brass_c4 {
-        category = BardInstrument_crisis_brass, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_brass/c4.ogg, } }
-
-    sound crisis_brass_c5 {
-        category = BardInstrument_crisis_brass, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_brass/c5.ogg, } }
-
-    sound crisis_trombone_C2 {
-        category = BardInstrument_crisis_trombone, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trombone/C2.ogg, } }
-
-    sound crisis_trombone_C3 {
-        category = BardInstrument_crisis_trombone, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trombone/C3.ogg, } }
-
-    sound crisis_trombone_C4 {
-        category = BardInstrument_crisis_trombone, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trombone/C4.ogg, } }
-
-    sound crisis_trombone_C5 {
-        category = BardInstrument_crisis_trombone, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trombone/C5.ogg, } }
-
-    sound crisis_trumpet_C4 {
-        category = BardInstrument_crisis_trumpet, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trumpet/C4.ogg, } }
-
-    sound crisis_trumpet_C5 {
-        category = BardInstrument_crisis_trumpet, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/brass/crisis_trumpet/C5.ogg, } }
-
-    sound fluid_celeste_C2 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C2.ogg, } }
-
-    sound fluid_celeste_C3 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C3.ogg, } }
-
-    sound fluid_celeste_C4 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C4.ogg, } }
-
-    sound fluid_celeste_C5 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C5.ogg, } }
-
-    sound fluid_celeste_C6 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C6.ogg, } }
-
-    sound fluid_celeste_C7 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C7.ogg, } }
-
-    sound fluid_celeste_C8 {
-        category = BardInstrument_fluid_celeste, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/fluid_celeste/C8.ogg, } }
-
-    sound sgmbox_c2 {
-        category = BardInstrument_sgmbox, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/sgmbox/c2.ogg, } }
-
-    sound sgmbox_c3 {
-        category = BardInstrument_sgmbox, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/sgmbox/c3.ogg, } }
-
-    sound sgmbox_c4 {
-        category = BardInstrument_sgmbox, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/sgmbox/c4.ogg, } }
-
-    sound sgmbox_c5 {
-        category = BardInstrument_sgmbox, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/sgmbox/c5.ogg, } }
-
-    sound vibraphone1_c2 {
-        category = BardInstrument_vibraphone1, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/vibraphone1/c2.ogg, } }
-
-    sound vibraphone1_c3 {
-        category = BardInstrument_vibraphone1, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/vibraphone1/c3.ogg, } }
-
-    sound vibraphone1_c4 {
-        category = BardInstrument_vibraphone1, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/vibraphone1/c4.ogg, } }
-
-    sound vibraphone1_c5 {
-        category = BardInstrument_vibraphone1, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/chromatic/vibraphone1/c5.ogg, } }
-
-    sound crisis_clean_C2 {
-        category = BardInstrument_crisis_clean, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_clean/C2.ogg, } }
-
-    sound crisis_clean_C3 {
-        category = BardInstrument_crisis_clean, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_clean/C3.ogg, } }
-
-    sound crisis_clean_C4 {
-        category = BardInstrument_crisis_clean, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_clean/C4.ogg, } }
-
-    sound crisis_clean_C5 {
-        category = BardInstrument_crisis_clean, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_clean/C5.ogg, } }
-
-    sound crisis_muted_C2 {
-        category = BardInstrument_crisis_muted, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_muted/C2.ogg, } }
-
-    sound crisis_muted_C3 {
-        category = BardInstrument_crisis_muted, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_muted/C3.ogg, } }
-
-    sound crisis_muted_C4 {
-        category = BardInstrument_crisis_muted, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_muted/C4.ogg, } }
-
-    sound crisis_muted_C5 {
-        category = BardInstrument_crisis_muted, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_muted/C5.ogg, } }
-
-    sound crisis_nylon_c2 {
-        category = BardInstrument_crisis_nylon, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_nylon/c2.ogg, } }
-
-    sound crisis_nylon_c3 {
-        category = BardInstrument_crisis_nylon, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_nylon/c3.ogg, } }
-
-    sound crisis_nylon_c4 {
-        category = BardInstrument_crisis_nylon, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_nylon/c4.ogg, } }
-
-    sound crisis_nylon_c5 {
-        category = BardInstrument_crisis_nylon, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_nylon/c5.ogg, } }
-
-    sound crisis_steel_c2 {
-        category = BardInstrument_crisis_steel, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_steel/c2.ogg, } }
-
-    sound crisis_steel_c3 {
-        category = BardInstrument_crisis_steel, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_steel/c3.ogg, } }
-
-    sound crisis_steel_c4 {
-        category = BardInstrument_crisis_steel, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_steel/c4.ogg, } }
-
-    sound crisis_steel_c5 {
-        category = BardInstrument_crisis_steel, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/guitar/crisis_steel/c5.ogg, } }
-
-    sound meowsynth_c2 {
-        category = BardInstrument_meowsynth, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/meowsynth/c2.ogg, } }
-
-    sound meowsynth_c3 {
-        category = BardInstrument_meowsynth, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/meowsynth/c3.ogg, } }
-
-    sound meowsynth_c4 {
-        category = BardInstrument_meowsynth, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/meowsynth/c4.ogg, } }
-
-    sound meowsynth_c5 {
-        category = BardInstrument_meowsynth, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/meowsynth/c5.ogg, } }
-
-    sound meowsynth_c6 {
-        category = BardInstrument_meowsynth, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/meowsynth/c6.ogg, } }
-
-    sound crisis_accordian_c2 {
-        category = BardInstrument_crisis_accordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_accordian/c2.ogg, } }
-
-    sound crisis_accordian_c3 {
-        category = BardInstrument_crisis_accordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_accordian/c3.ogg, } }
-
-    sound crisis_accordian_c4 {
-        category = BardInstrument_crisis_accordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_accordian/c4.ogg, } }
-
-    sound crisis_accordian_c5 {
-        category = BardInstrument_crisis_accordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_accordian/c5.ogg, } }
-
-    sound crisis_church_c2 {
-        category = BardInstrument_crisis_church, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_church/c2.ogg, } }
-
-    sound crisis_church_c3 {
-        category = BardInstrument_crisis_church, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_church/c3.ogg, } }
-
-    sound crisis_church_c4 {
-        category = BardInstrument_crisis_church, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_church/c4.ogg, } }
-
-    sound crisis_church_c5 {
-        category = BardInstrument_crisis_church, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_church/c5.ogg, } }
-
-    sound crisis_hammond_c2 {
-        category = BardInstrument_crisis_hammond, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_hammond/c2.ogg, } }
-
-    sound crisis_hammond_c3 {
-        category = BardInstrument_crisis_hammond, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_hammond/c3.ogg, } }
-
-    sound crisis_hammond_c4 {
-        category = BardInstrument_crisis_hammond, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_hammond/c4.ogg, } }
-
-    sound crisis_hammond_c5 {
-        category = BardInstrument_crisis_hammond, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_hammond/c5.ogg, } }
-
-    sound crisis_harmonica_c3 {
-        category = BardInstrument_crisis_harmonica, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_harmonica/c3.ogg, } }
-
-    sound crisis_harmonica_c4 {
-        category = BardInstrument_crisis_harmonica, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_harmonica/c4.ogg, } }
-
-    sound crisis_harmonica_c5 {
-        category = BardInstrument_crisis_harmonica, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_harmonica/c5.ogg, } }
-
-    sound crisis_tangaccordian_c2 {
-        category = BardInstrument_crisis_tangaccordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_tangaccordian/c2.ogg, } }
-
-    sound crisis_tangaccordian_c3 {
-        category = BardInstrument_crisis_tangaccordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_tangaccordian/c3.ogg, } }
-
-    sound crisis_tangaccordian_c4 {
-        category = BardInstrument_crisis_tangaccordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_tangaccordian/c4.ogg, } }
-
-    sound crisis_tangaccordian_c5 {
-        category = BardInstrument_crisis_tangaccordian, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/organ/crisis_tangaccordian/c5.ogg, } }
-
-    sound crisis_bright_piano_c2 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c2.ogg, } }
-
-    sound crisis_bright_piano_c3 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c3.ogg, } }
-
-    sound crisis_bright_piano_c4 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c4.ogg, } }
-
-    sound crisis_bright_piano_c5 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c5.ogg, } }
-
-    sound crisis_bright_piano_c6 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c6.ogg, } }
-
-    sound crisis_bright_piano_c7 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c7.ogg, } }
-
-    sound crisis_bright_piano_c8 {
-        category = BardInstrument_crisis_bright_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_bright_piano/c8.ogg, } }
-
-    sound crisis_grand_piano_c2 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c2.ogg, } }
-
-    sound crisis_grand_piano_c3 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c3.ogg, } }
-
-    sound crisis_grand_piano_c4 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c4.ogg, } }
-
-    sound crisis_grand_piano_c5 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c5.ogg, } }
-
-    sound crisis_grand_piano_c6 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c6.ogg, } }
-
-    sound crisis_grand_piano_c7 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c7.ogg, } }
-
-    sound crisis_grand_piano_c8 {
-        category = BardInstrument_crisis_grand_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_grand_piano/c8.ogg, } }
-
-    sound crisis_harpsichord_c2 {
-        category = BardInstrument_crisis_harpsichord, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_harpsichord/c2.ogg, } }
-
-    sound crisis_harpsichord_c3 {
-        category = BardInstrument_crisis_harpsichord, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_harpsichord/c3.ogg, } }
-
-    sound crisis_harpsichord_c4 {
-        category = BardInstrument_crisis_harpsichord, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_harpsichord/c4.ogg, } }
-
-    sound crisis_harpsichord_c5 {
-        category = BardInstrument_crisis_harpsichord, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/crisis_harpsichord/c5.ogg, } }
-
-    sound fluid_harpsi_C2 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C2.ogg, } }
-
-    sound fluid_harpsi_C3 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C3.ogg, } }
-
-    sound fluid_harpsi_C4 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C4.ogg, } }
-
-    sound fluid_harpsi_C5 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C5.ogg, } }
-
-    sound fluid_harpsi_C6 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C6.ogg, } }
-
-    sound fluid_harpsi_C7 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C7.ogg, } }
-
-    sound fluid_harpsi_C8 {
-        category = BardInstrument_fluid_harpsi, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_harpsi/C8.ogg, } }
-
-    sound fluid_piano_c2 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c2.ogg, } }
-
-    sound fluid_piano_c3 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c3.ogg, } }
-
-    sound fluid_piano_c4 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c4.ogg, } }
-
-    sound fluid_piano_c5 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c5.ogg, } }
-
-    sound fluid_piano_c6 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c6.ogg, } }
-
-    sound fluid_piano_c7 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c7.ogg, } }
-
-    sound fluid_piano_c8 {
-        category = BardInstrument_fluid_piano, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/piano/fluid_piano/c8.ogg, } }
-
-    sound spaceman_c2 {
-        category = BardInstrument_spaceman, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/spaceman/c2.ogg, } }
-
-    sound spaceman_c3 {
-        category = BardInstrument_spaceman, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/spaceman/c3.ogg, } }
-
-    sound spaceman_c4 {
-        category = BardInstrument_spaceman, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/spaceman/c4.ogg, } }
-
-    sound spaceman_c5 {
-        category = BardInstrument_spaceman, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/spaceman/c5.ogg, } }
-
-    sound tones_Sawtooth {
-        category = BardInstrument_tones, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/tones/Sawtooth.ogg, } }
-
-    sound tones_Sine {
-        category = BardInstrument_tones, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/tones/Sine.ogg, } }
-
-    sound tones_Square {
-        category = BardInstrument_tones, is3D = true,
-        clip { file = common/media/sound/instruments/synthesis_samples/tones/Square.ogg, } }
 
     sound trombone_Ab2 {
         category = BardInstrument_trombone, is3D = true,
