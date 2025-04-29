@@ -1,5 +1,9 @@
 import os
 
+###########################################################################################################
+# This script takes the sound/instrument/ directory and generates sound-scripts named <instrument>_<note> #
+###########################################################################################################
+
 # Base directory where the sound files are located
 sound_dir = os.path.join("Contents", "mods", "BardToTheBone", "common", "media", "sound")
 

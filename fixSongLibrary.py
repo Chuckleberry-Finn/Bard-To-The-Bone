@@ -1,6 +1,10 @@
 import os
 import re
 
+###########################################################################
+# This script renames the file to match the T(tile) line within the file. #
+###########################################################################
+
 def clean_title_for_filename(title):
     # Remove timestamps like (M:S) or (MM:SS)
     title = re.sub(r'\(\d{1,2}:\d{2}\)', '', title)

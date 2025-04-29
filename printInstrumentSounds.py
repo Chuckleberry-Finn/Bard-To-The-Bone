@@ -1,5 +1,9 @@
 import os
 
+###########################################################################################
+# This script prints the sounds found in the sounds/instruments/ directory per instrument #
+###########################################################################################
+
 def print_tree(startpath, prefix=""):
     entries = os.listdir(startpath)
     entries.sort()
