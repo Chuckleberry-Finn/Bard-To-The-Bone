@@ -4,7 +4,7 @@
 <br><br>
 
 ### ⚠️ WARNING:
-**When adding songs, always specify an `X:` (index/reference) number.**
+**When adding songs in-game, always specify an `X:` (index/reference) number.**
 - If you use an `X:` number that already exists, the new song will overwrite the existing one at that position.
 - Choose a unique `X:` number whenever possible to avoid unintentional overwriting.
 
