@@ -490,10 +490,12 @@ function Bard.playLoadedSongs(player)
                 for _, note in ipairs(event.notes) do
                     local sound = Bard.noteToSound(note)
                     if sound then
-                        local instrumentSound = instrumentID .. "_" .. sound
+                        local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
-                        emitters[voiceId]:playSound(instrumentSound, player:getSquare())
-                        addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
+                        if instrumentID then
+                            emitters[voiceId]:playSound(instrumentSound, player:getSquare())
+                            addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
+                        end
                     end
                 end
 
@@ -515,14 +517,14 @@ end
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundFiles.py`
 Bard.instrumentData = {
-    ["Base.Banjo"] = { sounDir = "banjo", anim = "BttB_strumming" },
-    ["Base.GuitarElectric"] = { sounDir = "electric_guitar", anim = "BttB_strumming" },
-    ["Base.GuitarAcoustic"] = { sounDir = "guitar", anim = "BttB_strumming" },
-    ["Base.Keytar"] = { sounDir = "keytar", anim = "BttB_strumming" },
-    ["Base.Harmonica"] = { sounDir = "harmonica" },
-    ["Base.Saxophone"] = { sounDir = "saxophone" },
-    ["Base.Violin"] = { sounDir = "violin" },
-    ["Base.Flute"] = { sounDir = "recorder" },
+    ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
+    ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming" },
+    ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
+    ["Base.Keytar"] = { soundDir = "keytar", anim = "strumming" },
+    ["Base.Harmonica"] = { soundDir = "harmonica" },
+    ["Base.Saxophone"] = { soundDir = "saxophone" },
+    ["Base.Violin"] = { soundDir = "violin" },
+    ["Base.Flute"] = { soundDir = "recorder" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
 
 }
