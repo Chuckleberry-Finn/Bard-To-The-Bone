@@ -21,7 +21,7 @@ def print_tree(startpath, prefix=""):
 if __name__ == "__main__":
     # This assumes the script is placed inside 'Bard-To-The-Bone' folder
     base_dir = os.path.join(
-        "../Contents", "mods", "BardToTheBone", "common", "media", "sound", "instruments"
+        "..","Contents", "mods", "BardToTheBone", "common", "media", "sound", "instruments"
     )
 
     if not os.path.exists(base_dir):

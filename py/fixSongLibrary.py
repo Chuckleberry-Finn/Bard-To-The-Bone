@@ -40,5 +40,5 @@ def rename_abc_files_in_folder(folder_path):
 if __name__ == '__main__':
     # Use the current script's location to resolve relative path
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    song_library_path = os.path.join(base_dir, '../songLibrary')
+    song_library_path = os.path.join(base_dir, '..','songLibrary')
     rename_abc_files_in_folder(song_library_path)
