@@ -19,6 +19,10 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id].instrumentID = instrumentID
     Bard.players[id].startTime = getTimestampMs()
     self:setActionAnim("BttB_strumming")
+
+    local defaultVoiceId = Bard.next(Bard.players[id].music)
+    local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
+    self.character:setVariable("BttB_strumSpeed", (1 * (bpm / 180)))
 end
 
 function BardToTheBonePlayMusic:perform()
@@ -44,7 +48,6 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, 
     o.character = character
     o.item = instrument
     o.stopOnWalk = false
-    o.stopOnAim = true
     o.stopOnRun = true
     o.ignoreHandsWounds = true
     o.caloriesModifier = 0.5

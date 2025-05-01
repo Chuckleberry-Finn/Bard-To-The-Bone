@@ -415,13 +415,14 @@ function Bard.completeAction(player)
     Bard.players[id] = nil
 end
 
+function Bard.next(t) for k, _ in pairs(t) do return k end end
 
 function Bard.startPlayback(player, abc)
     local music, totalTicks = Bard.parseABC(abc)
 
     local defaultVoiceName = "default"
     if not music[defaultVoiceName] then
-        defaultVoiceName = next(music)
+        defaultVoiceName = Bard.next(music)
     end
 
     local defaultVoice = music[defaultVoiceName]
