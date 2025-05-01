@@ -15,14 +15,16 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id] = {}
     Bard.players[id].music = self.music
     Bard.players[id].duration = self.maxTime
-    local instrumentID = Bard.getInstrumentID(self.item)
-    Bard.players[id].instrumentID = instrumentID
+    local instrumentData = Bard.getInstrumentData(self.item)
+    Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
-    self:setActionAnim("BttB_strumming")
 
-    local defaultVoiceId = Bard.next(Bard.players[id].music)
-    local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
-    self.character:setVariable("BttB_strumSpeed", (1 * (bpm / 180)))
+    if instrumentData and instrumentData.anim then
+        self:setActionAnim("BttB_"..instrumentData.anim)
+        local defaultVoiceId = Bard.next(Bard.players[id].music)
+        local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
+        self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
+    end
 end
 
 function BardToTheBonePlayMusic:perform()

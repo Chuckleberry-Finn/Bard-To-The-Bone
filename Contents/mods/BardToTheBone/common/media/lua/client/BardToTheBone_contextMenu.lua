@@ -25,8 +25,8 @@ function bardContext.addInventoryItemContext(playerID, context, items)
             item = v.items[1]
         end
 
-        local instrumentID = item and Bard.getInstrumentID(item)
-        if instrumentID then
+        local instrumentData = item and Bard.getInstrumentData(item)
+        if instrumentData then
             local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, item)
             --play.iconTexture = getTexture()
             break

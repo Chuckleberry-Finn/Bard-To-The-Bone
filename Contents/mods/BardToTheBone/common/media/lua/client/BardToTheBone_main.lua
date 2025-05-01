@@ -514,18 +514,21 @@ end
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundFiles.py`
-Bard.instrumentIDtoType = {
-    ["Base.Banjo"] = "banjo",
-    ["Base.GuitarElectric"] = "electric_guitar",
-    ["Base.GuitarAcoustic"] = "guitar",
-    ["Base.Harmonica"] = "harmonica",
-    ["Base.Saxophone"] = "saxophone",
-    ["Base.Violin"] = "violin",
-    ["Base.Keytar"] = "keytar",
+Bard.instrumentData = {
+    ["Base.Banjo"] = { sounDir = "banjo", anim = "BttB_strumming" },
+    ["Base.GuitarElectric"] = { sounDir = "electric_guitar", anim = "BttB_strumming" },
+    ["Base.GuitarAcoustic"] = { sounDir = "guitar", anim = "BttB_strumming" },
+    ["Base.Keytar"] = { sounDir = "keytar", anim = "BttB_strumming" },
+    ["Base.Harmonica"] = { sounDir = "harmonica" },
+    ["Base.Saxophone"] = { sounDir = "saxophone" },
+    ["Base.Violin"] = { sounDir = "violin" },
+    ["Base.Flute"] = { sounDir = "recorder" },
+    ["Base.Rubberducky"] = { soundDir = "bikehorn" },
+
 }
 
-function Bard.getInstrumentID(instrument)
-    return Bard.instrumentIDtoType[instrument:getFullType()]
+function Bard.getInstrumentData(instrument)
+    return Bard.instrumentData[instrument:getFullType()]
 end
 
 
