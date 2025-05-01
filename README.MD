@@ -1,5 +1,6 @@
 ## Bard to the Bone
 #### *ABC Music System for Project Zomboid*
+![image](./images/githubBanner.png)
 <br>
 
 ### Disclaimers:
