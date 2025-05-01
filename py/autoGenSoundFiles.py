@@ -5,12 +5,12 @@ import os
 ###########################################################################################################
 
 # Base directory where the sound files are located
-sound_dir = os.path.join("Contents", "mods", "BardToTheBone", "common", "media", "sound")
+sound_dir = os.path.join("../Contents", "mods", "BardToTheBone", "common", "media", "sound")
 
 # Paths to output the generated sound.script file
 output_paths = [
-    os.path.join("Contents", "mods", "BardToTheBone", "common", "media", "scripts", "sounds_BardToTheBone.txt"),
-    os.path.join("Contents", "mods", "BardToTheBone", "media", "scripts", "sounds_BardToTheBone.txt"),
+    os.path.join("../Contents", "mods", "BardToTheBone", "common", "media", "scripts", "sounds_BardToTheBone.txt"),
+    os.path.join("../Contents", "mods", "BardToTheBone", "media", "scripts", "sounds_BardToTheBone.txt"),
 ]
 
 module_name = "BardToTheBone"
