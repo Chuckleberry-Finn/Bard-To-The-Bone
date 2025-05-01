@@ -405,7 +405,7 @@ function Bard.parseABC(abc)
 end
 
 
-function Bard.forceStop(player)
+function Bard.completeAction(player)
     local actionQueue = ISTimedActionQueue.getTimedActionQueue(player)
     local currentAction = actionQueue.queue[1]
     if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<animNode x_extends='looped.xml'>
+	<m_Name>BttB_strumming</m_Name>
+	<m_AnimName>BttB_strumming</m_AnimName>
+	<m_BlendTime>0.1</m_BlendTime>
+	<m_Conditions>
+		<m_Name>PerformingAction</m_Name>
+		<m_Type>STRING</m_Type>
+		<m_StringValue>BttB_strumming</m_StringValue>
+	</m_Conditions>
+</animNode>

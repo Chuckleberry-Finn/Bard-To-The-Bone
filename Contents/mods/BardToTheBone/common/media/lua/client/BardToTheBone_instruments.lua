@@ -13,10 +13,10 @@
 -- Harmonica
 -- Saxophone
 -- Violin
+-- Keytar
+-- Flute [Recorder]
 -- Piano [ON MAP ONLY] ?
--- Flute [Recorder] ?
 
 --- [NEED] Sounds For
 -- Trumpet [NEED]
--- Keytar [NEED]
 

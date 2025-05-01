@@ -18,19 +18,20 @@ function BardToTheBonePlayMusic:start()
     local instrumentID = Bard.getInstrumentID(self.item)
     Bard.players[id].instrumentID = instrumentID
     Bard.players[id].startTime = getTimestampMs()
+    self:setActionAnim("BttB_strumming")
 end
 
 function BardToTheBonePlayMusic:perform()
-    Bard.forceStop(self.character)
+    Bard.completeAction(self.character)
     ISBaseTimedAction.perform(self)
 end
 
 function BardToTheBonePlayMusic:forceStop()
-    Bard.forceStop(self.character)
+    Bard.completeAction(self.character)
     ISBaseTimedAction.forceStop(self)
 end
 function BardToTheBonePlayMusic:stop()
-    Bard.forceStop(self.character)
+    Bard.completeAction(self.character)
     ISBaseTimedAction.stop(self)
 end
 
