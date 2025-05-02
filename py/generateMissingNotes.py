@@ -3,7 +3,6 @@ import re
 import sys
 import subprocess
 
-# === Auto-install required libraries (on PATH) ===
 def ensure_libs():
     required = ["librosa", "soundfile", "numpy"]
     for lib in required:
@@ -19,18 +18,15 @@ def ensure_libs():
 
 ensure_libs()
 
-# === Re-import now that everything's installed ===
 import librosa
 import soundfile as sf
 import numpy as np
 
-# === Config ===
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "Contents", "mods", "BardToTheBone", "common", "media", "sound", "instruments"))
 TARGET_RANGE = range(21, 128)  # MIDI notes A0 (21) to G9 (127)
 NOTE_ORDER = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
 
-# === MIDI helpers ===
 def midi_to_note_name(midi_num):
     note = NOTE_ORDER[midi_num % 12]
     octave = midi_num // 12 - 1
@@ -46,13 +42,11 @@ def note_name_to_midi(note):
         return None
     return NOTE_ORDER.index(name) + (int(octave) + 1) * 12
 
-# === Pitch shifting without affecting duration/volume ===
 def pitch_shift_sample(source_path, semitone_shift, output_path):
     y, sr = librosa.load(source_path, sr=None)
     y_shifted = librosa.effects.pitch_shift(y=y, sr=sr, n_steps=semitone_shift)
     sf.write(output_path, y_shifted, sr)
 
-# === Process one instrument folder ===
 def process_instrument_folder(instrument_path):
     print(f"\n▶ Processing: {instrument_path}")
     files = [f for f in os.listdir(instrument_path) if f.lower().endswith(".ogg")]
@@ -79,7 +73,6 @@ def process_instrument_folder(instrument_path):
             print(f"  + Generating {out_name} from {donor_file} (shift {shift:+} semitones)")
             pitch_shift_sample(donor_path, shift, out_path)
 
-# === Entry point ===
 def main():
     if not os.path.exists(ROOT_DIR):
         print(f"Error: Cannot find instrument folder at {ROOT_DIR}")
