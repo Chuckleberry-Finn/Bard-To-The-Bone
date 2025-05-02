@@ -3,6 +3,10 @@ import re
 import sys
 import subprocess
 
+#################################################################################################################
+# This script takes existing notes and tries to generate an approximation of missing notes using pitch shifting #
+#################################################################################################################
+
 def ensure_libs():
     required = ["librosa", "soundfile", "numpy"]
     for lib in required:
