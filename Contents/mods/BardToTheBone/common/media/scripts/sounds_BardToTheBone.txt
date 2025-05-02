@@ -240,6 +240,34 @@ module BardToTheBone {
         category = BardInstrument_accordion, is3D = true,
         clip { file = media/sound/instruments/accordion/Gn6.mid, } }
 
+    sound banjo_A0 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/A0.ogg, } }
+
+    sound banjo_A1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/A1.ogg, } }
+
+    sound banjo_A6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/A6.ogg, } }
+
+    sound banjo_A7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/A7.ogg, } }
+
+    sound banjo_A8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/A8.ogg, } }
+
+    sound banjo_Ab1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Ab1.ogg, } }
+
+    sound banjo_Ab2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Ab2.ogg, } }
+
     sound banjo_Ab3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Ab3.ogg, } }
@@ -251,6 +279,18 @@ module BardToTheBone {
     sound banjo_Ab5 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Ab5.ogg, } }
+
+    sound banjo_Ab6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Ab6.ogg, } }
+
+    sound banjo_Ab7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Ab7.ogg, } }
+
+    sound banjo_Ab8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Ab8.ogg, } }
 
     sound banjo_An2 {
         category = BardInstrument_banjo, is3D = true,
@@ -268,6 +308,38 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/An5.ogg, } }
 
+    sound banjo_B0 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/B0.ogg, } }
+
+    sound banjo_B1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/B1.ogg, } }
+
+    sound banjo_B6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/B6.ogg, } }
+
+    sound banjo_B7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/B7.ogg, } }
+
+    sound banjo_B8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/B8.ogg, } }
+
+    sound banjo_Bb0 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb0.ogg, } }
+
+    sound banjo_Bb1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb1.ogg, } }
+
+    sound banjo_Bb2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb2.ogg, } }
+
     sound banjo_Bb3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Bb3.ogg, } }
@@ -279,6 +351,18 @@ module BardToTheBone {
     sound banjo_Bb5 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Bb5.ogg, } }
+
+    sound banjo_Bb6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb6.ogg, } }
+
+    sound banjo_Bb7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb7.ogg, } }
+
+    sound banjo_Bb8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Bb8.ogg, } }
 
     sound banjo_Bn2 {
         category = BardInstrument_banjo, is3D = true,
@@ -296,6 +380,26 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Bn5.ogg, } }
 
+    sound banjo_C1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/C1.ogg, } }
+
+    sound banjo_C2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/C2.ogg, } }
+
+    sound banjo_C7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/C7.ogg, } }
+
+    sound banjo_C8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/C8.ogg, } }
+
+    sound banjo_C9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/C9.ogg, } }
+
     sound banjo_Cn3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Cn3.ogg, } }
@@ -311,6 +415,34 @@ module BardToTheBone {
     sound banjo_Cn6 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Cn6.ogg, } }
+
+    sound banjo_D1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/D1.ogg, } }
+
+    sound banjo_D2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/D2.ogg, } }
+
+    sound banjo_D7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/D7.ogg, } }
+
+    sound banjo_D8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/D8.ogg, } }
+
+    sound banjo_D9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/D9.ogg, } }
+
+    sound banjo_Db1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Db1.ogg, } }
+
+    sound banjo_Db2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Db2.ogg, } }
 
     sound banjo_Db3 {
         category = BardInstrument_banjo, is3D = true,
@@ -328,6 +460,18 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Db6.ogg, } }
 
+    sound banjo_Db7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Db7.ogg, } }
+
+    sound banjo_Db8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Db8.ogg, } }
+
+    sound banjo_Db9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Db9.ogg, } }
+
     sound banjo_Dn3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Dn3.ogg, } }
@@ -344,6 +488,38 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Dn6.ogg, } }
 
+    sound banjo_E1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E1.ogg, } }
+
+    sound banjo_E2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E2.ogg, } }
+
+    sound banjo_E6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E6.ogg, } }
+
+    sound banjo_E7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E7.ogg, } }
+
+    sound banjo_E8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E8.ogg, } }
+
+    sound banjo_E9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/E9.ogg, } }
+
+    sound banjo_Eb1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb1.ogg, } }
+
+    sound banjo_Eb2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb2.ogg, } }
+
     sound banjo_Eb3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Eb3.ogg, } }
@@ -355,6 +531,22 @@ module BardToTheBone {
     sound banjo_Eb5 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Eb5.ogg, } }
+
+    sound banjo_Eb6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb6.ogg, } }
+
+    sound banjo_Eb7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb7.ogg, } }
+
+    sound banjo_Eb8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb8.ogg, } }
+
+    sound banjo_Eb9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Eb9.ogg, } }
 
     sound banjo_En3 {
         category = BardInstrument_banjo, is3D = true,
@@ -368,6 +560,30 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/En5.ogg, } }
 
+    sound banjo_F1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F1.ogg, } }
+
+    sound banjo_F2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F2.ogg, } }
+
+    sound banjo_F6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F6.ogg, } }
+
+    sound banjo_F7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F7.ogg, } }
+
+    sound banjo_F8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F8.ogg, } }
+
+    sound banjo_F9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/F9.ogg, } }
+
     sound banjo_Fn3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Fn3.ogg, } }
@@ -380,6 +596,34 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Fn5.ogg, } }
 
+    sound banjo_G1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/G1.ogg, } }
+
+    sound banjo_G6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/G6.ogg, } }
+
+    sound banjo_G7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/G7.ogg, } }
+
+    sound banjo_G8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/G8.ogg, } }
+
+    sound banjo_G9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/G9.ogg, } }
+
+    sound banjo_Gb1 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb1.ogg, } }
+
+    sound banjo_Gb2 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb2.ogg, } }
+
     sound banjo_Gb3 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Gb3.ogg, } }
@@ -391,6 +635,22 @@ module BardToTheBone {
     sound banjo_Gb5 {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Gb5.ogg, } }
+
+    sound banjo_Gb6 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb6.ogg, } }
+
+    sound banjo_Gb7 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb7.ogg, } }
+
+    sound banjo_Gb8 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb8.ogg, } }
+
+    sound banjo_Gb9 {
+        category = BardInstrument_banjo, is3D = true,
+        clip { file = media/sound/instruments/banjo/Gb9.ogg, } }
 
     sound banjo_Gn2 {
         category = BardInstrument_banjo, is3D = true,
@@ -408,6 +668,26 @@ module BardToTheBone {
         category = BardInstrument_banjo, is3D = true,
         clip { file = media/sound/instruments/banjo/Gn5.ogg, } }
 
+    sound bikehorn_A5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/A5.ogg, } }
+
+    sound bikehorn_A6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/A6.ogg, } }
+
+    sound bikehorn_A7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/A7.ogg, } }
+
+    sound bikehorn_A8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/A8.ogg, } }
+
+    sound bikehorn_Ab1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Ab1.ogg, } }
+
     sound bikehorn_Ab2 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Ab2.ogg, } }
@@ -419,6 +699,22 @@ module BardToTheBone {
     sound bikehorn_Ab4 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Ab4.ogg, } }
+
+    sound bikehorn_Ab5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Ab5.ogg, } }
+
+    sound bikehorn_Ab6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Ab6.ogg, } }
+
+    sound bikehorn_Ab7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Ab7.ogg, } }
+
+    sound bikehorn_Ab8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Ab8.ogg, } }
 
     sound bikehorn_An0 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -440,6 +736,38 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/An4.ogg, } }
 
+    sound bikehorn_B0 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B0.ogg, } }
+
+    sound bikehorn_B1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B1.ogg, } }
+
+    sound bikehorn_B5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B5.ogg, } }
+
+    sound bikehorn_B6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B6.ogg, } }
+
+    sound bikehorn_B7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B7.ogg, } }
+
+    sound bikehorn_B8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/B8.ogg, } }
+
+    sound bikehorn_Bb0 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb0.ogg, } }
+
+    sound bikehorn_Bb1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb1.ogg, } }
+
     sound bikehorn_Bb2 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Bb2.ogg, } }
@@ -451,6 +779,22 @@ module BardToTheBone {
     sound bikehorn_Bb4 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Bb4.ogg, } }
+
+    sound bikehorn_Bb5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb5.ogg, } }
+
+    sound bikehorn_Bb6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb6.ogg, } }
+
+    sound bikehorn_Bb7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb7.ogg, } }
+
+    sound bikehorn_Bb8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Bb8.ogg, } }
 
     sound bikehorn_Bn2 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -464,6 +808,30 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Bn4.ogg, } }
 
+    sound bikehorn_C1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C1.ogg, } }
+
+    sound bikehorn_C2 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C2.ogg, } }
+
+    sound bikehorn_C6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C6.ogg, } }
+
+    sound bikehorn_C7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C7.ogg, } }
+
+    sound bikehorn_C8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C8.ogg, } }
+
+    sound bikehorn_C9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/C9.ogg, } }
+
     sound bikehorn_Cn3 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Cn3.ogg, } }
@@ -475,6 +843,38 @@ module BardToTheBone {
     sound bikehorn_Cn5 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Cn5.ogg, } }
+
+    sound bikehorn_D1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D1.ogg, } }
+
+    sound bikehorn_D2 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D2.ogg, } }
+
+    sound bikehorn_D6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D6.ogg, } }
+
+    sound bikehorn_D7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D7.ogg, } }
+
+    sound bikehorn_D8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D8.ogg, } }
+
+    sound bikehorn_D9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/D9.ogg, } }
+
+    sound bikehorn_Db1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db1.ogg, } }
+
+    sound bikehorn_Db2 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db2.ogg, } }
 
     sound bikehorn_Db3 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -488,6 +888,22 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Db5.ogg, } }
 
+    sound bikehorn_Db6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db6.ogg, } }
+
+    sound bikehorn_Db7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db7.ogg, } }
+
+    sound bikehorn_Db8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db8.ogg, } }
+
+    sound bikehorn_Db9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Db9.ogg, } }
+
     sound bikehorn_Dn3 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Dn3.ogg, } }
@@ -499,6 +915,38 @@ module BardToTheBone {
     sound bikehorn_Dn5 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Dn5.ogg, } }
+
+    sound bikehorn_E1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E1.ogg, } }
+
+    sound bikehorn_E5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E5.ogg, } }
+
+    sound bikehorn_E6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E6.ogg, } }
+
+    sound bikehorn_E7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E7.ogg, } }
+
+    sound bikehorn_E8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E8.ogg, } }
+
+    sound bikehorn_E9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/E9.ogg, } }
+
+    sound bikehorn_Eb1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb1.ogg, } }
+
+    sound bikehorn_Eb2 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb2.ogg, } }
 
     sound bikehorn_Eb3 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -512,6 +960,22 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Eb5.ogg, } }
 
+    sound bikehorn_Eb6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb6.ogg, } }
+
+    sound bikehorn_Eb7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb7.ogg, } }
+
+    sound bikehorn_Eb8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb8.ogg, } }
+
+    sound bikehorn_Eb9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Eb9.ogg, } }
+
     sound bikehorn_En2 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/En2.ogg, } }
@@ -523,6 +987,30 @@ module BardToTheBone {
     sound bikehorn_En4 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/En4.ogg, } }
+
+    sound bikehorn_F1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F1.ogg, } }
+
+    sound bikehorn_F5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F5.ogg, } }
+
+    sound bikehorn_F6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F6.ogg, } }
+
+    sound bikehorn_F7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F7.ogg, } }
+
+    sound bikehorn_F8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F8.ogg, } }
+
+    sound bikehorn_F9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/F9.ogg, } }
 
     sound bikehorn_Fn2 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -536,6 +1024,34 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Fn4.ogg, } }
 
+    sound bikehorn_G1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G1.ogg, } }
+
+    sound bikehorn_G5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G5.ogg, } }
+
+    sound bikehorn_G6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G6.ogg, } }
+
+    sound bikehorn_G7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G7.ogg, } }
+
+    sound bikehorn_G8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G8.ogg, } }
+
+    sound bikehorn_G9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/G9.ogg, } }
+
+    sound bikehorn_Gb1 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb1.ogg, } }
+
     sound bikehorn_Gb2 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Gb2.ogg, } }
@@ -547,6 +1063,26 @@ module BardToTheBone {
     sound bikehorn_Gb4 {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Gb4.ogg, } }
+
+    sound bikehorn_Gb5 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb5.ogg, } }
+
+    sound bikehorn_Gb6 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb6.ogg, } }
+
+    sound bikehorn_Gb7 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb7.ogg, } }
+
+    sound bikehorn_Gb8 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb8.ogg, } }
+
+    sound bikehorn_Gb9 {
+        category = BardInstrument_bikehorn, is3D = true,
+        clip { file = media/sound/instruments/bikehorn/Gb9.ogg, } }
 
     sound bikehorn_Gn2 {
         category = BardInstrument_bikehorn, is3D = true,
@@ -560,6 +1096,38 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Gn4.ogg, } }
 
+    sound electric_guitar_A0 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/A0.ogg, } }
+
+    sound electric_guitar_A1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/A1.ogg, } }
+
+    sound electric_guitar_A2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/A2.ogg, } }
+
+    sound electric_guitar_A7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/A7.ogg, } }
+
+    sound electric_guitar_A8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/A8.ogg, } }
+
+    sound electric_guitar_Ab1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Ab1.ogg, } }
+
+    sound electric_guitar_Ab2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Ab2.ogg, } }
+
+    sound electric_guitar_Ab3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Ab3.ogg, } }
+
     sound electric_guitar_Ab4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Ab4.ogg, } }
@@ -571,6 +1139,14 @@ module BardToTheBone {
     sound electric_guitar_Ab6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Ab6.ogg, } }
+
+    sound electric_guitar_Ab7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Ab7.ogg, } }
+
+    sound electric_guitar_Ab8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Ab8.ogg, } }
 
     sound electric_guitar_An3 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -588,6 +1164,46 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/An6.ogg, } }
 
+    sound electric_guitar_B0 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B0.ogg, } }
+
+    sound electric_guitar_B1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B1.ogg, } }
+
+    sound electric_guitar_B2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B2.ogg, } }
+
+    sound electric_guitar_B3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B3.ogg, } }
+
+    sound electric_guitar_B7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B7.ogg, } }
+
+    sound electric_guitar_B8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/B8.ogg, } }
+
+    sound electric_guitar_Bb0 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb0.ogg, } }
+
+    sound electric_guitar_Bb1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb1.ogg, } }
+
+    sound electric_guitar_Bb2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb2.ogg, } }
+
+    sound electric_guitar_Bb3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb3.ogg, } }
+
     sound electric_guitar_Bb4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Bb4.ogg, } }
@@ -600,6 +1216,14 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Bb6.ogg, } }
 
+    sound electric_guitar_Bb7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb7.ogg, } }
+
+    sound electric_guitar_Bb8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Bb8.ogg, } }
+
     sound electric_guitar_Bn4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Bn4.ogg, } }
@@ -611,6 +1235,26 @@ module BardToTheBone {
     sound electric_guitar_Bn6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Bn6.ogg, } }
+
+    sound electric_guitar_C1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/C1.ogg, } }
+
+    sound electric_guitar_C2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/C2.ogg, } }
+
+    sound electric_guitar_C3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/C3.ogg, } }
+
+    sound electric_guitar_C8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/C8.ogg, } }
+
+    sound electric_guitar_C9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/C9.ogg, } }
 
     sound electric_guitar_Cn4 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -628,6 +1272,42 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Cn7.ogg, } }
 
+    sound electric_guitar_D1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D1.ogg, } }
+
+    sound electric_guitar_D2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D2.ogg, } }
+
+    sound electric_guitar_D3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D3.ogg, } }
+
+    sound electric_guitar_D7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D7.ogg, } }
+
+    sound electric_guitar_D8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D8.ogg, } }
+
+    sound electric_guitar_D9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/D9.ogg, } }
+
+    sound electric_guitar_Db1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db1.ogg, } }
+
+    sound electric_guitar_Db2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db2.ogg, } }
+
+    sound electric_guitar_Db3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db3.ogg, } }
+
     sound electric_guitar_Db4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Db4.ogg, } }
@@ -639,6 +1319,18 @@ module BardToTheBone {
     sound electric_guitar_Db6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Db6.ogg, } }
+
+    sound electric_guitar_Db7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db7.ogg, } }
+
+    sound electric_guitar_Db8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db8.ogg, } }
+
+    sound electric_guitar_Db9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Db9.ogg, } }
 
     sound electric_guitar_Dn4 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -652,6 +1344,42 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Dn6.ogg, } }
 
+    sound electric_guitar_E1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E1.ogg, } }
+
+    sound electric_guitar_E2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E2.ogg, } }
+
+    sound electric_guitar_E3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E3.ogg, } }
+
+    sound electric_guitar_E7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E7.ogg, } }
+
+    sound electric_guitar_E8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E8.ogg, } }
+
+    sound electric_guitar_E9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/E9.ogg, } }
+
+    sound electric_guitar_Eb1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb1.ogg, } }
+
+    sound electric_guitar_Eb2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb2.ogg, } }
+
+    sound electric_guitar_Eb3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb3.ogg, } }
+
     sound electric_guitar_Eb4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Eb4.ogg, } }
@@ -664,6 +1392,18 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Eb6.ogg, } }
 
+    sound electric_guitar_Eb7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb7.ogg, } }
+
+    sound electric_guitar_Eb8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb8.ogg, } }
+
+    sound electric_guitar_Eb9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Eb9.ogg, } }
+
     sound electric_guitar_En4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/En4.ogg, } }
@@ -675,6 +1415,26 @@ module BardToTheBone {
     sound electric_guitar_En6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/En6.ogg, } }
+
+    sound electric_guitar_F1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/F1.ogg, } }
+
+    sound electric_guitar_F2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/F2.ogg, } }
+
+    sound electric_guitar_F7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/F7.ogg, } }
+
+    sound electric_guitar_F8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/F8.ogg, } }
+
+    sound electric_guitar_F9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/F9.ogg, } }
 
     sound electric_guitar_Fn3 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -692,6 +1452,38 @@ module BardToTheBone {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Fn6.ogg, } }
 
+    sound electric_guitar_G1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/G1.ogg, } }
+
+    sound electric_guitar_G2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/G2.ogg, } }
+
+    sound electric_guitar_G7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/G7.ogg, } }
+
+    sound electric_guitar_G8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/G8.ogg, } }
+
+    sound electric_guitar_G9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/G9.ogg, } }
+
+    sound electric_guitar_Gb1 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb1.ogg, } }
+
+    sound electric_guitar_Gb2 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb2.ogg, } }
+
+    sound electric_guitar_Gb3 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb3.ogg, } }
+
     sound electric_guitar_Gb4 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Gb4.ogg, } }
@@ -703,6 +1495,18 @@ module BardToTheBone {
     sound electric_guitar_Gb6 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Gb6.ogg, } }
+
+    sound electric_guitar_Gb7 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb7.ogg, } }
+
+    sound electric_guitar_Gb8 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb8.ogg, } }
+
+    sound electric_guitar_Gb9 {
+        category = BardInstrument_electric_guitar, is3D = true,
+        clip { file = media/sound/instruments/electric_guitar/Gb9.ogg, } }
 
     sound electric_guitar_Gn3 {
         category = BardInstrument_electric_guitar, is3D = true,
@@ -1008,9 +1812,33 @@ module BardToTheBone {
         category = BardInstrument_glockenspiel, is3D = true,
         clip { file = media/sound/instruments/glockenspiel/Gn7.mid, } }
 
+    sound guitar_A0 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/A0.ogg, } }
+
+    sound guitar_A1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/A1.ogg, } }
+
     sound guitar_A2 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/A2.ogg, } }
+
+    sound guitar_A7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/A7.ogg, } }
+
+    sound guitar_A8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/A8.ogg, } }
+
+    sound guitar_Ab1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Ab1.ogg, } }
+
+    sound guitar_Ab2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Ab2.ogg, } }
 
     sound guitar_Ab3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1027,6 +1855,14 @@ module BardToTheBone {
     sound guitar_Ab6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Ab6.ogg, } }
+
+    sound guitar_Ab7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Ab7.ogg, } }
+
+    sound guitar_Ab8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Ab8.ogg, } }
 
     sound guitar_An2 {
         category = BardInstrument_guitar, is3D = true,
@@ -1048,6 +1884,30 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/An6.ogg, } }
 
+    sound guitar_B0 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/B0.ogg, } }
+
+    sound guitar_B1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/B1.ogg, } }
+
+    sound guitar_B7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/B7.ogg, } }
+
+    sound guitar_B8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/B8.ogg, } }
+
+    sound guitar_Bb0 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Bb0.ogg, } }
+
+    sound guitar_Bb1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Bb1.ogg, } }
+
     sound guitar_Bb2 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Bb2.ogg, } }
@@ -1067,6 +1927,14 @@ module BardToTheBone {
     sound guitar_Bb6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Bb6.ogg, } }
+
+    sound guitar_Bb7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Bb7.ogg, } }
+
+    sound guitar_Bb8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Bb8.ogg, } }
 
     sound guitar_Bn2 {
         category = BardInstrument_guitar, is3D = true,
@@ -1088,6 +1956,26 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Bn6.ogg, } }
 
+    sound guitar_C1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/C1.ogg, } }
+
+    sound guitar_C2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/C2.ogg, } }
+
+    sound guitar_C7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/C7.ogg, } }
+
+    sound guitar_C8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/C8.ogg, } }
+
+    sound guitar_C9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/C9.ogg, } }
+
     sound guitar_Cn3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Cn3.ogg, } }
@@ -1103,6 +1991,34 @@ module BardToTheBone {
     sound guitar_Cn6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Cn6.ogg, } }
+
+    sound guitar_D1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/D1.ogg, } }
+
+    sound guitar_D2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/D2.ogg, } }
+
+    sound guitar_D7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/D7.ogg, } }
+
+    sound guitar_D8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/D8.ogg, } }
+
+    sound guitar_D9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/D9.ogg, } }
+
+    sound guitar_Db1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Db1.ogg, } }
+
+    sound guitar_Db2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Db2.ogg, } }
 
     sound guitar_Db3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1120,6 +2036,18 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Db6.ogg, } }
 
+    sound guitar_Db7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Db7.ogg, } }
+
+    sound guitar_Db8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Db8.ogg, } }
+
+    sound guitar_Db9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Db9.ogg, } }
+
     sound guitar_Dn3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Dn3.ogg, } }
@@ -1136,6 +2064,30 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Dn6.ogg, } }
 
+    sound guitar_E1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/E1.ogg, } }
+
+    sound guitar_E7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/E7.ogg, } }
+
+    sound guitar_E8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/E8.ogg, } }
+
+    sound guitar_E9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/E9.ogg, } }
+
+    sound guitar_Eb1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Eb1.ogg, } }
+
+    sound guitar_Eb2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Eb2.ogg, } }
+
     sound guitar_Eb3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Eb3.ogg, } }
@@ -1151,6 +2103,18 @@ module BardToTheBone {
     sound guitar_Eb6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Eb6.ogg, } }
+
+    sound guitar_Eb7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Eb7.ogg, } }
+
+    sound guitar_Eb8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Eb8.ogg, } }
+
+    sound guitar_Eb9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Eb9.ogg, } }
 
     sound guitar_En2 {
         category = BardInstrument_guitar, is3D = true,
@@ -1172,6 +2136,26 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/En6.ogg, } }
 
+    sound guitar_F1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/F1.ogg, } }
+
+    sound guitar_F2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/F2.ogg, } }
+
+    sound guitar_F7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/F7.ogg, } }
+
+    sound guitar_F8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/F8.ogg, } }
+
+    sound guitar_F9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/F9.ogg, } }
+
     sound guitar_Fn3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Fn3.ogg, } }
@@ -1188,6 +2172,34 @@ module BardToTheBone {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Fn6.ogg, } }
 
+    sound guitar_G1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/G1.ogg, } }
+
+    sound guitar_G2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/G2.ogg, } }
+
+    sound guitar_G7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/G7.ogg, } }
+
+    sound guitar_G8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/G8.ogg, } }
+
+    sound guitar_G9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/G9.ogg, } }
+
+    sound guitar_Gb1 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Gb1.ogg, } }
+
+    sound guitar_Gb2 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Gb2.ogg, } }
+
     sound guitar_Gb3 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Gb3.ogg, } }
@@ -1203,6 +2215,18 @@ module BardToTheBone {
     sound guitar_Gb6 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Gb6.ogg, } }
+
+    sound guitar_Gb7 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Gb7.ogg, } }
+
+    sound guitar_Gb8 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Gb8.ogg, } }
+
+    sound guitar_Gb9 {
+        category = BardInstrument_guitar, is3D = true,
+        clip { file = media/sound/instruments/guitar/Gb9.ogg, } }
 
     sound guitar_Gn3 {
         category = BardInstrument_guitar, is3D = true,
@@ -1464,9 +2488,37 @@ module BardToTheBone {
         category = BardInstrument_harmonica, is3D = true,
         clip { file = media/sound/instruments/harmonica/Gn6.mid, } }
 
+    sound keytar_A0 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/A0.ogg, } }
+
+    sound keytar_A1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/A1.ogg, } }
+
     sound keytar_A2 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/A2.ogg, } }
+
+    sound keytar_A6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/A6.ogg, } }
+
+    sound keytar_A7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/A7.ogg, } }
+
+    sound keytar_A8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/A8.ogg, } }
+
+    sound keytar_Ab1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Ab1.ogg, } }
+
+    sound keytar_Ab2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Ab2.ogg, } }
 
     sound keytar_Ab3 {
         category = BardInstrument_keytar, is3D = true,
@@ -1480,6 +2532,18 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Ab5.ogg, } }
 
+    sound keytar_Ab6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Ab6.ogg, } }
+
+    sound keytar_Ab7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Ab7.ogg, } }
+
+    sound keytar_Ab8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Ab8.ogg, } }
+
     sound keytar_An3 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/An3.ogg, } }
@@ -1491,6 +2555,34 @@ module BardToTheBone {
     sound keytar_An5 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/An5.ogg, } }
+
+    sound keytar_B0 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/B0.ogg, } }
+
+    sound keytar_B1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/B1.ogg, } }
+
+    sound keytar_B6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/B6.ogg, } }
+
+    sound keytar_B7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/B7.ogg, } }
+
+    sound keytar_B8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/B8.ogg, } }
+
+    sound keytar_Bb0 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Bb0.ogg, } }
+
+    sound keytar_Bb1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Bb1.ogg, } }
 
     sound keytar_Bb2 {
         category = BardInstrument_keytar, is3D = true,
@@ -1508,6 +2600,18 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Bb5.ogg, } }
 
+    sound keytar_Bb6 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Bb6.ogg, } }
+
+    sound keytar_Bb7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Bb7.ogg, } }
+
+    sound keytar_Bb8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Bb8.ogg, } }
+
     sound keytar_Bn2 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Bn2.ogg, } }
@@ -1523,6 +2627,26 @@ module BardToTheBone {
     sound keytar_Bn5 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Bn5.ogg, } }
+
+    sound keytar_C1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/C1.ogg, } }
+
+    sound keytar_C2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/C2.ogg, } }
+
+    sound keytar_C7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/C7.ogg, } }
+
+    sound keytar_C8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/C8.ogg, } }
+
+    sound keytar_C9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/C9.ogg, } }
 
     sound keytar_Cn3 {
         category = BardInstrument_keytar, is3D = true,
@@ -1540,6 +2664,34 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Cn6.ogg, } }
 
+    sound keytar_D1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/D1.ogg, } }
+
+    sound keytar_D2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/D2.ogg, } }
+
+    sound keytar_D7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/D7.ogg, } }
+
+    sound keytar_D8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/D8.ogg, } }
+
+    sound keytar_D9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/D9.ogg, } }
+
+    sound keytar_Db1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Db1.ogg, } }
+
+    sound keytar_Db2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Db2.ogg, } }
+
     sound keytar_Db3 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Db3.ogg, } }
@@ -1555,6 +2707,18 @@ module BardToTheBone {
     sound keytar_Db6 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Db6.ogg, } }
+
+    sound keytar_Db7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Db7.ogg, } }
+
+    sound keytar_Db8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Db8.ogg, } }
+
+    sound keytar_Db9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Db9.ogg, } }
 
     sound keytar_Dn3 {
         category = BardInstrument_keytar, is3D = true,
@@ -1572,6 +2736,34 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Dn6.ogg, } }
 
+    sound keytar_E1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/E1.ogg, } }
+
+    sound keytar_E2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/E2.ogg, } }
+
+    sound keytar_E7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/E7.ogg, } }
+
+    sound keytar_E8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/E8.ogg, } }
+
+    sound keytar_E9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/E9.ogg, } }
+
+    sound keytar_Eb1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Eb1.ogg, } }
+
+    sound keytar_Eb2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Eb2.ogg, } }
+
     sound keytar_Eb3 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Eb3.ogg, } }
@@ -1587,6 +2779,18 @@ module BardToTheBone {
     sound keytar_Eb6 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Eb6.ogg, } }
+
+    sound keytar_Eb7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Eb7.ogg, } }
+
+    sound keytar_Eb8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Eb8.ogg, } }
+
+    sound keytar_Eb9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Eb9.ogg, } }
 
     sound keytar_En3 {
         category = BardInstrument_keytar, is3D = true,
@@ -1604,6 +2808,26 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/En6.ogg, } }
 
+    sound keytar_F1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/F1.ogg, } }
+
+    sound keytar_F2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/F2.ogg, } }
+
+    sound keytar_F7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/F7.ogg, } }
+
+    sound keytar_F8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/F8.ogg, } }
+
+    sound keytar_F9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/F9.ogg, } }
+
     sound keytar_Fn3 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Fn3.ogg, } }
@@ -1619,6 +2843,34 @@ module BardToTheBone {
     sound keytar_Fn6 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Fn6.ogg, } }
+
+    sound keytar_G1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/G1.ogg, } }
+
+    sound keytar_G2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/G2.ogg, } }
+
+    sound keytar_G7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/G7.ogg, } }
+
+    sound keytar_G8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/G8.ogg, } }
+
+    sound keytar_G9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/G9.ogg, } }
+
+    sound keytar_Gb1 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Gb1.ogg, } }
+
+    sound keytar_Gb2 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Gb2.ogg, } }
 
     sound keytar_Gb3 {
         category = BardInstrument_keytar, is3D = true,
@@ -1636,6 +2888,18 @@ module BardToTheBone {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Gb6.ogg, } }
 
+    sound keytar_Gb7 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Gb7.ogg, } }
+
+    sound keytar_Gb8 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Gb8.ogg, } }
+
+    sound keytar_Gb9 {
+        category = BardInstrument_keytar, is3D = true,
+        clip { file = media/sound/instruments/keytar/Gb9.ogg, } }
+
     sound keytar_Gn3 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Gn3.ogg, } }
@@ -1651,6 +2915,10 @@ module BardToTheBone {
     sound keytar_Gn6 {
         category = BardInstrument_keytar, is3D = true,
         clip { file = media/sound/instruments/keytar/Gn6.ogg, } }
+
+    sound piano_Ab1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Ab1.ogg, } }
 
     sound piano_Ab2 {
         category = BardInstrument_piano, is3D = true,
@@ -1788,6 +3056,10 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Bn8.ogg, } }
 
+    sound piano_C1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/C1.ogg, } }
+
     sound piano_Cn2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Cn2.ogg, } }
@@ -1820,6 +3092,18 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Cn9.ogg, } }
 
+    sound piano_D1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/D1.ogg, } }
+
+    sound piano_D9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/D9.ogg, } }
+
+    sound piano_Db1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Db1.ogg, } }
+
     sound piano_Db2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Db2.ogg, } }
@@ -1847,6 +3131,10 @@ module BardToTheBone {
     sound piano_Db8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Db8.ogg, } }
+
+    sound piano_Db9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Db9.ogg, } }
 
     sound piano_Dn2 {
         category = BardInstrument_piano, is3D = true,
@@ -1876,6 +3164,18 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Dn8.ogg, } }
 
+    sound piano_E1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/E1.ogg, } }
+
+    sound piano_E9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/E9.ogg, } }
+
+    sound piano_Eb1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Eb1.ogg, } }
+
     sound piano_Eb2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Eb2.ogg, } }
@@ -1903,6 +3203,10 @@ module BardToTheBone {
     sound piano_Eb8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Eb8.ogg, } }
+
+    sound piano_Eb9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Eb9.ogg, } }
 
     sound piano_En2 {
         category = BardInstrument_piano, is3D = true,
@@ -1932,6 +3236,14 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/En8.ogg, } }
 
+    sound piano_F1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/F1.ogg, } }
+
+    sound piano_F9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/F9.ogg, } }
+
     sound piano_Fn2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Fn2.ogg, } }
@@ -1960,6 +3272,18 @@ module BardToTheBone {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Fn8.ogg, } }
 
+    sound piano_G1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/G1.ogg, } }
+
+    sound piano_G9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/G9.ogg, } }
+
+    sound piano_Gb1 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Gb1.ogg, } }
+
     sound piano_Gb2 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Gb2.ogg, } }
@@ -1987,6 +3311,10 @@ module BardToTheBone {
     sound piano_Gb8 {
         category = BardInstrument_piano, is3D = true,
         clip { file = media/sound/instruments/piano/Gb8.ogg, } }
+
+    sound piano_Gb9 {
+        category = BardInstrument_piano, is3D = true,
+        clip { file = media/sound/instruments/piano/Gb9.ogg, } }
 
     sound piano_Gn2 {
         category = BardInstrument_piano, is3D = true,
