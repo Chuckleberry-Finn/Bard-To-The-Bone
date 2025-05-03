@@ -29,7 +29,7 @@ import numpy as np
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "Contents", "mods", "BardToTheBone", "common", "media", "sound", "instruments"))
 TARGET_RANGE = range(21, 128)  # MIDI notes A0 (21) to G9 (127)
-NOTE_ORDER = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
+NOTE_ORDER = ['Cn', 'Db', 'Dn', 'Eb', 'En', 'Fn', 'Gb', 'Gn', 'Ab', 'An', 'Bb', 'Bn']
 
 def midi_to_note_name(midi_num):
     note = NOTE_ORDER[midi_num % 12]
