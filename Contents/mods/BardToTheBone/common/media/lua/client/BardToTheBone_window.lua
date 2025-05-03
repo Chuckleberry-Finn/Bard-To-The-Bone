@@ -207,7 +207,9 @@ end
 function BardUIWindow:onPlay()
     local notes = self.abcEntry:getText()
     if (not notes) then return end
-    
+    if self.character:getPrimaryHandItem() ~= self.instrument then
+        ISTimedActionQueue.add(ISEquipWeaponAction:new(self.character, self.instrument, 50, true));
+    end
     ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes))
 end
 
@@ -230,5 +232,10 @@ function BardUIWindow:new(x, y, width, height, character, instrument)
     o.character = character
     o.instrument = instrument
     BardUIWindow.instance = o
+
+    if o.character:getPrimaryHandItem() ~= instrument then
+        ISTimedActionQueue.add(ISEquipWeaponAction:new(o.character, instrument, 50, true));
+    end
+
     return o
 end
