@@ -59,7 +59,6 @@ def process_instrument_folder(instrument_path):
         match = re.match(r'([A-Ga-g][b#n]?)(\d)\.ogg', file)
         if match:
             note, octave = match.groups()
-            note = note.replace("n", "")  # normalize "An" to "A"
             midi = note_name_to_midi(f"{note}{octave}")
             if midi is not None:
                 present[midi] = file
