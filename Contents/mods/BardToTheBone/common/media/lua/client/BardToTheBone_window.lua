@@ -34,6 +34,16 @@ function BardUIWindow:initialise()
     self.loadButton:instantiate()
     self:addChild(self.loadButton)
 
+    self.newButton = ISButton:new(140, buttonY, 60, 25, "New", self, BardUIWindow.onNewButton)
+    self.newButton:initialise()
+    self.newButton:instantiate()
+    self:addChild(self.newButton)
+
+    self.removeButton = ISButton:new(205, buttonY, 60, 25, "Remove", self, BardUIWindow.onRemoveButton)
+    self.removeButton:initialise()
+    self.removeButton:instantiate()
+    self:addChild(self.removeButton)
+
     --[[
     self.closeButton = ISButton:new(self.width - 70, buttonY, 60, 25, "Close", self, BardUIWindow.close)
     self.closeButton:initialise()
@@ -73,32 +83,29 @@ function BardUIWindow:onSave()
     if (not notes) then return end
 
     local title = notes:match("T:(.-)\n")
-    if (not title) then return end
+    local index = notes:match("X:(.-)\n")
 
-    local index = tonumber(notes:match("X:(.-)\n"))
-    if (not index) then return end
+    if not title then notes = "T:[No Title]\n"..notes end
+    if not index then notes = "X:1\n"..notes end
 
-    if title then
-
-        local song = self.songList.items[index]
-        if not song then
-            self.songList:addItem(title, notes)
-        else
-            song.text = title
-            song.item = notes
-        end
-
-        local compiled = ""
-        for i,songData in ipairs(self.songList.items) do
-            compiled = compiled .. songData.item
-        end
-
-        local writer = getFileWriter("BardToTheBone_Songs.txt", true, false)
-        writer:write(compiled)
-        writer:close()
-
-        self:onLoadAll(index)
+    local song = self.songList.items[self.songList.selected]
+    if not song then
+        self.songList:addItem(title, notes)
+    else
+        song.text = title
+        song.item = notes
     end
+
+    local compiled = ""
+    for i,songData in ipairs(self.songList.items) do
+        compiled = compiled .. songData.item
+    end
+
+    local writer = getFileWriter("BardToTheBone_Songs.txt", true, false)
+    writer:write(compiled)
+    writer:close()
+
+    self:onLoadAll(self.songList.selected)
 end
 
 function BardUIWindow:fetchSavedSongs()
@@ -113,7 +120,9 @@ function BardUIWindow:fetchSavedSongs()
         end
         reader:close()
 
-    else
+    end
+
+    if not reader or content == "" then
         for _,song in pairs(defaultSongs) do
             content = content .. song .. "\n\n"
         end
@@ -141,7 +150,9 @@ function BardUIWindow:onLoadAll(index)
 
             local next_start = bigString:find("X:%s*%d+", start_pos + 1)
             local song_block = next_start and bigString:sub(start_pos, next_start - 1) or bigString:sub(start_pos)
-            local title = song_block:match("T:(.-)\n") or "[No Title]"
+
+            local title_found = song_block:match("T:(.-)\n")
+            local title = title_found or "[No Title]"
 
             table.insert(songs, { title = title, content = song_block })
 
@@ -157,6 +168,15 @@ function BardUIWindow:onLoadAll(index)
     self:loadSongAtIndex(old_selected)
 end
 
+function BardUIWindow:onNewButton()
+    self.songList:addItem("New Song", "")
+    self:loadSongAtIndex(self.songList:size())
+end
+function BardUIWindow:onRemoveButton()
+    if not self.songList.selected then return end
+    self.songList:removeItemByIndex(self.songList.selected)
+    self:loadSongAtIndex(self.songList.selected)
+end
 
 function BardUIWindow:doDrawSong(y, item, alt)
     local r, g, b, a = 1, 1, 1, 0.9

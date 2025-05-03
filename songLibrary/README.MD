@@ -3,12 +3,6 @@
 *<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp) using [renameSongLibrary.py](./renameSongLibrary.py)</sup>*
 <br><br>
 
-### ⚠️ WARNING:
-**When adding songs in-game, always specify an `X:` (index/reference) number.**
-- If you use an `X:` number that already exists, the new song will overwrite the existing one at that position.
-- Choose a unique `X:` number whenever possible to avoid unintentional overwriting.
-
-
 ## ABC Notation Field Reference
 
 This guide outlines the most commonly used fields in [ABC notation](https://abcnotation.com/wiki/abc:standard). These metadata tags appear at the top of `.abc` files and describe key musical information.
