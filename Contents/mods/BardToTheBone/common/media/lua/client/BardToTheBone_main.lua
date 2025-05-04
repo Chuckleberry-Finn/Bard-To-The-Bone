@@ -515,7 +515,7 @@ end
 
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
 -- The folders in sound/instruments/ are used as IDs
--- SEE: python script `autoGenSoundFiles.py`
+-- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
     ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
     ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming" },
