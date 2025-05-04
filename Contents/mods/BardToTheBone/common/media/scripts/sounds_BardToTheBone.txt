@@ -5564,6 +5564,434 @@ module BardToTheBone {
         category = BardInstrument_trombone, is3D = true,
         clip { file = media/sound/instruments/trombone/Gn9.ogg, } }
 
+    sound trumpet_Ab1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab1.ogg, } }
+
+    sound trumpet_Ab2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab2.ogg, } }
+
+    sound trumpet_Ab3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab3.ogg, } }
+
+    sound trumpet_Ab4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab4.ogg, } }
+
+    sound trumpet_Ab5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab5.ogg, } }
+
+    sound trumpet_Ab6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab6.ogg, } }
+
+    sound trumpet_Ab7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab7.ogg, } }
+
+    sound trumpet_Ab8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab8.ogg, } }
+
+    sound trumpet_An0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An0.ogg, } }
+
+    sound trumpet_An1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An1.ogg, } }
+
+    sound trumpet_An2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An2.ogg, } }
+
+    sound trumpet_An3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An3.ogg, } }
+
+    sound trumpet_An4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An4.ogg, } }
+
+    sound trumpet_An5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An5.ogg, } }
+
+    sound trumpet_An6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An6.ogg, } }
+
+    sound trumpet_An7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An7.ogg, } }
+
+    sound trumpet_An8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/An8.ogg, } }
+
+    sound trumpet_Bb0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb0.ogg, } }
+
+    sound trumpet_Bb1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb1.ogg, } }
+
+    sound trumpet_Bb2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb2.ogg, } }
+
+    sound trumpet_Bb3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb3.ogg, } }
+
+    sound trumpet_Bb4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb4.ogg, } }
+
+    sound trumpet_Bb5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb5.ogg, } }
+
+    sound trumpet_Bb6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb6.ogg, } }
+
+    sound trumpet_Bb7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb7.ogg, } }
+
+    sound trumpet_Bb8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bb8.ogg, } }
+
+    sound trumpet_Bn0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn0.ogg, } }
+
+    sound trumpet_Bn1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn1.ogg, } }
+
+    sound trumpet_Bn2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn2.ogg, } }
+
+    sound trumpet_Bn3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn3.ogg, } }
+
+    sound trumpet_Bn4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn4.ogg, } }
+
+    sound trumpet_Bn5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn5.ogg, } }
+
+    sound trumpet_Bn6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn6.ogg, } }
+
+    sound trumpet_Bn7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn7.ogg, } }
+
+    sound trumpet_Bn8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Bn8.ogg, } }
+
+    sound trumpet_Cn1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn1.ogg, } }
+
+    sound trumpet_Cn2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn2.ogg, } }
+
+    sound trumpet_Cn3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn3.ogg, } }
+
+    sound trumpet_Cn4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn4.ogg, } }
+
+    sound trumpet_Cn5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn5.ogg, } }
+
+    sound trumpet_Cn6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn6.ogg, } }
+
+    sound trumpet_Cn7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn7.ogg, } }
+
+    sound trumpet_Cn8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn8.ogg, } }
+
+    sound trumpet_Cn9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn9.ogg, } }
+
+    sound trumpet_Db1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db1.ogg, } }
+
+    sound trumpet_Db2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db2.ogg, } }
+
+    sound trumpet_Db3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db3.ogg, } }
+
+    sound trumpet_Db4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db4.ogg, } }
+
+    sound trumpet_Db5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db5.ogg, } }
+
+    sound trumpet_Db6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db6.ogg, } }
+
+    sound trumpet_Db7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db7.ogg, } }
+
+    sound trumpet_Db8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db8.ogg, } }
+
+    sound trumpet_Db9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db9.ogg, } }
+
+    sound trumpet_Dn1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn1.ogg, } }
+
+    sound trumpet_Dn2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn2.ogg, } }
+
+    sound trumpet_Dn3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn3.ogg, } }
+
+    sound trumpet_Dn4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn4.ogg, } }
+
+    sound trumpet_Dn5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn5.ogg, } }
+
+    sound trumpet_Dn6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn6.ogg, } }
+
+    sound trumpet_Dn7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn7.ogg, } }
+
+    sound trumpet_Dn8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn8.ogg, } }
+
+    sound trumpet_Dn9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn9.ogg, } }
+
+    sound trumpet_Eb1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb1.ogg, } }
+
+    sound trumpet_Eb2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb2.ogg, } }
+
+    sound trumpet_Eb3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb3.ogg, } }
+
+    sound trumpet_Eb4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb4.ogg, } }
+
+    sound trumpet_Eb5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb5.ogg, } }
+
+    sound trumpet_Eb6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb6.ogg, } }
+
+    sound trumpet_Eb7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb7.ogg, } }
+
+    sound trumpet_Eb8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb8.ogg, } }
+
+    sound trumpet_Eb9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb9.ogg, } }
+
+    sound trumpet_En1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En1.ogg, } }
+
+    sound trumpet_En2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En2.ogg, } }
+
+    sound trumpet_En3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En3.ogg, } }
+
+    sound trumpet_En4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En4.ogg, } }
+
+    sound trumpet_En5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En5.ogg, } }
+
+    sound trumpet_En6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En6.ogg, } }
+
+    sound trumpet_En7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En7.ogg, } }
+
+    sound trumpet_En8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En8.ogg, } }
+
+    sound trumpet_En9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En9.ogg, } }
+
+    sound trumpet_Fn1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn1.ogg, } }
+
+    sound trumpet_Fn2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn2.ogg, } }
+
+    sound trumpet_Fn3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn3.ogg, } }
+
+    sound trumpet_Fn4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn4.ogg, } }
+
+    sound trumpet_Fn5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn5.ogg, } }
+
+    sound trumpet_Fn6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn6.ogg, } }
+
+    sound trumpet_Fn7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn7.ogg, } }
+
+    sound trumpet_Fn8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn8.ogg, } }
+
+    sound trumpet_Fn9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn9.ogg, } }
+
+    sound trumpet_Gb1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb1.ogg, } }
+
+    sound trumpet_Gb2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb2.ogg, } }
+
+    sound trumpet_Gb3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb3.ogg, } }
+
+    sound trumpet_Gb4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb4.ogg, } }
+
+    sound trumpet_Gb5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb5.ogg, } }
+
+    sound trumpet_Gb6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb6.ogg, } }
+
+    sound trumpet_Gb7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb7.ogg, } }
+
+    sound trumpet_Gb8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb8.ogg, } }
+
+    sound trumpet_Gb9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb9.ogg, } }
+
+    sound trumpet_Gn1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn1.ogg, } }
+
+    sound trumpet_Gn2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn2.ogg, } }
+
+    sound trumpet_Gn3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn3.ogg, } }
+
+    sound trumpet_Gn4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn4.ogg, } }
+
+    sound trumpet_Gn5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn5.ogg, } }
+
+    sound trumpet_Gn6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn6.ogg, } }
+
+    sound trumpet_Gn7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn7.ogg, } }
+
+    sound trumpet_Gn8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn8.ogg, } }
+
+    sound trumpet_Gn9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn9.ogg, } }
+
     sound violin_Ab1 {
         category = BardInstrument_violin, is3D = true,
         clip { file = media/sound/instruments/violin/Ab1.ogg, } }

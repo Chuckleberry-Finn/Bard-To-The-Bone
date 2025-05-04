@@ -527,7 +527,7 @@ Bard.instrumentData = {
     ["Base.Violin"] = { soundDir = "violin" },
     ["Base.Flute"] = { soundDir = "recorder" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
-
+    ["Base.Trumpet"] = { soundDir = "trumpet" },
 }
 
 function Bard.getInstrumentData(instrument)

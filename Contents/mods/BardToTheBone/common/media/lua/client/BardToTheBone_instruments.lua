@@ -13,7 +13,7 @@
 -- Saxophone
 -- Violin
 -- Keytar
--- Flute [Recorder]
+-- Flute //using the recorder sounds
 -- Piano [ON MAP ONLY] ?
 -- Bikehorn - https://skfb.ly/p8NAs //rubberDuck for now
 
