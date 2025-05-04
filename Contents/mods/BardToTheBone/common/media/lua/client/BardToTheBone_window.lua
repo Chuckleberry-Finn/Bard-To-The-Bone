@@ -8,9 +8,11 @@ local defaultSongs = require "BardToTheBone_defaultSongs"
 
 BardUIWindow = ISCollapsableWindow:derive("BardUIWindow")
 
+
 function BardUIWindow:createChildren()
     ISCollapsableWindow.createChildren(self)
 end
+
 
 function BardUIWindow:initialise()
     ISCollapsableWindow.initialise(self)
@@ -19,7 +21,9 @@ function BardUIWindow:initialise()
     self.abcEntry:initialise()
     self.abcEntry:instantiate()
     self.abcEntry:setMultipleLine(true)
-    self.abcEntry.javaObject:setMaxLines(9999)
+    self.abcEntry:setMaxLines(999999)
+    self.abcEntry.javaObject:setMaxTextLength(-1)
+    self.abcEntry.javaObject:setWrapLines(true)
     self:addChild(self.abcEntry)
 
     local buttonY = self.abcEntry.y + self.abcEntry.height + 10
@@ -73,10 +77,12 @@ function BardUIWindow:initialise()
     self:onLoadAll()
 end
 
+
 function BardUIWindow:close()
     self:setVisible(false)
     self:removeFromUIManager()
 end
+
 
 function BardUIWindow:onSave()
     local notes = self.abcEntry:getText()
@@ -106,7 +112,9 @@ function BardUIWindow:onSave()
     writer:close()
 
     self:onLoadAll(self.songList.selected)
+    self:setSaveButtonStatus(false)
 end
+
 
 function BardUIWindow:fetchSavedSongs()
     local reader = getFileReader("BardToTheBone_Songs.txt", false)
@@ -168,15 +176,27 @@ function BardUIWindow:onLoadAll(index)
     self:loadSongAtIndex(old_selected)
 end
 
+
 function BardUIWindow:onNewButton()
     self.songList:addItem("New Song", "")
     self:loadSongAtIndex(self.songList:size())
 end
+
+
 function BardUIWindow:onRemoveButton()
     if not self.songList.selected then return end
     self.songList:removeItemByIndex(self.songList.selected)
     self:loadSongAtIndex(self.songList.selected)
+    self:setSaveButtonStatus(true)
 end
+
+
+function BardUIWindow:setSaveButtonStatus(set)
+    if set ~= nil then self.unsavedChanges = set end
+    local r, g, b, a = 0, set==true and 0.5 or 0, 0, 0.5
+    self.saveButton.backgroundColor = {r=r, g=g, b=b, a=a}
+end
+
 
 function BardUIWindow:doDrawSong(y, item, alt)
     local r, g, b, a = 1, 1, 1, 0.9
@@ -194,6 +214,7 @@ function BardUIWindow:loadSongAtIndex(index)
 
     self.songList.selected = index
     self.abcEntry:setText(item.item)
+    self.abcEntry:setYScroll(0)
 end
 
 
@@ -213,11 +234,13 @@ function BardUIWindow:onPlay()
     ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes))
 end
 
+
 function BardUIWindow:update()
     if (not self.character:getInventory():contains(self.instrument)) and BardUIWindow.instance then
         BardUIWindow.instance:close()
     end
 end
+
 
 ---@param instrument InventoryItem
 function BardUIWindow:new(x, y, width, height, character, instrument)
@@ -231,6 +254,7 @@ function BardUIWindow:new(x, y, width, height, character, instrument)
     o:setResizable(false)
     o.character = character
     o.instrument = instrument
+    o.unsavedChanges = false
     BardUIWindow.instance = o
 
     if o.character:getPrimaryHandItem() ~= instrument then
