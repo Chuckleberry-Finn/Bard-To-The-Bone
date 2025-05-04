@@ -1,0 +1,43 @@
+import subprocess
+import sys
+import os
+
+# You can also import from a .py file if preferred
+instruments = [
+    {"program": 22, "folder": "accordion"},
+    {"program": 106, "folder": "banjo"},
+    # "bikehorn" has no midi
+    {"program": 34, "folder": "electric_bass"},
+    {"program": 28, "folder": "electric_guitar"},
+    {"program": 74, "folder": "flute"},
+    {"program": 10, "folder": "glockenspiel"},
+    {"program": 25, "folder": "guitar"},
+    {"program": 23, "folder": "harmonica"},
+    {"program": 85, "folder": "keytar"},
+    {"program": 2, "folder": "piano"},
+    {"program": 75, "folder": "recorder"},
+    {"program": 67, "folder": "saxophone"},
+    {"program": 58, "folder": "trombone"},
+    {"program": 56, "folder": "trumpet"},
+    {"program": 41, "folder": "violin"},
+    {"program": 14, "folder": "xylophone"},
+]
+
+script = os.path.join(os.path.dirname(__file__), "generateOgg.py")
+
+for inst in instruments:
+    program = str(inst["program"])
+    outdir = inst["folder"]
+
+    print(f"\n=== Generating instrument: {outdir} (Program {program}) ===\n")
+
+    result = subprocess.run([
+        sys.executable, script,
+        "--program", program,
+        "--outdir", outdir
+    ])
+
+    if result.returncode != 0:
+        print(f"Failed to generate {outdir}")
+    else:
+        print(f"Finished generating {outdir}")
