@@ -57,7 +57,7 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
 
     track.append(Message('program_change', program=program, time=0))
     track.append(Message('note_on', note=midi_note, velocity=90, time=0))
-    track.append(Message('note_off', note=midi_note, velocity=64, time=1920))
+    track.append(Message('note_off', note=midi_note, velocity=64, time=960))
 
     midi_path = Path(outdir) / f"{note_name}{octave}.mid"
     mid.save(midi_path)
