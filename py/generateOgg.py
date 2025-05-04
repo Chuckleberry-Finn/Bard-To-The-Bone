@@ -104,7 +104,7 @@ def convert_midi_file(midi_path):
         y = y[:int(sr * max_duration_sec)]
 
         # Apply fast fade-in to smooth harsh transient (~25 ms)
-        fade_in_duration = int(sr * 0.025)  # 25ms
+        fade_in_duration = int(sr * 0.005)  # 5 ms
         fade_in = np.linspace(0, 1, fade_in_duration)
         y[:fade_in_duration] *= fade_in
 
