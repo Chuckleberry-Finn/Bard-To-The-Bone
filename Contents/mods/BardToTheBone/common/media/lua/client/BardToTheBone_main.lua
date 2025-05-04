@@ -535,7 +535,7 @@ Bard.instrumentData = {
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { soundDir = "Bottle"},
+    ["GlassBottle"] = { soundDir = "bottle"},
 }
 
 Bard.populatedFromTagData = false
@@ -560,6 +560,7 @@ end
 ---@param instrument InventoryItem
 function Bard.getInstrumentData(instrument)
     Bard.populateTags()
+
     return Bard.instrumentData[instrument:getFullType()]
 end
 
