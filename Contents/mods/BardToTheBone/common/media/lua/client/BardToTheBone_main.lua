@@ -532,7 +532,34 @@ Bard.instrumentData = {
     ["Base.Whistle_Bone"] = { soundDir = "whistle"},
 }
 
+
+---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
+Bard.instrumentTagData = {
+    ["GlassBottle"] = { soundDir = "Bottle"},
+}
+
+Bard.populatedFromTagData = false
+
+function Bard.populateTags()
+    if Bard.populatedFromTagData then return end
+
+    for tag,data in pairs(Bard.instrumentTagData) do
+        local items = getScriptManager():getItemsTag(tag)
+        for i=1,items:size() do
+            ---@type Item
+            local item = items:get(i-1)
+            local moduleDotType = item:getFullName()
+            Bard.instrumentData[moduleDotType] = data
+        end
+    end
+
+    Bard.populatedFromTagData = true
+end
+
+
+---@param instrument InventoryItem
 function Bard.getInstrumentData(instrument)
+    Bard.populateTags()
     return Bard.instrumentData[instrument:getFullType()]
 end
 
