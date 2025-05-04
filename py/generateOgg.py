@@ -3,6 +3,7 @@ import sys
 import argparse
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def ensure_libs():
     for lib in ["librosa", "soundfile", "numpy"]:
@@ -31,7 +32,7 @@ note_map = {
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 parser.add_argument('--program', type=int, default=56, help='Program change number (0–127)')
-parser.add_argument('--outdir', type=str, default='generated_sounds', help='Output directory for OGG files')
+parser.add_argument('--outdir', type=str, default='trumpet', help='Output directory for OGG files')
 args = parser.parse_args()
 
 # --- Resolve paths relative to script ---
@@ -60,13 +61,19 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
     mid.save(midi_path)
     mid = None
 
-    # Wait until the file is stable
-    for _ in range(20):
+    # Wait until the file exists and is readable
+    for _ in range(30):
         if midi_path.exists() and midi_path.stat().st_size > 0:
-            return str(midi_path)
+            try:
+                # Try to reopen and read the file
+                with open(midi_path, "rb") as f:
+                    f.read(1)
+                return str(midi_path)
+            except Exception:
+                pass
         time.sleep(0.1)
 
-    print(f"Failed to write MIDI file: {midi_path}")
+    print(f"Failed to fully write or access MIDI file: {midi_path}")
     return None
 
 
@@ -88,11 +95,15 @@ def convert_midi_file(midi_path):
             "-ni", "-F", str(wav_path), "-r", "44100",
             soundfont_path,
             str(midi_path)
-        ], check=True, timeout=10)
+        ], check=True, timeout=10, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
         max_duration_sec = 3
         y = y[:int(sr * max_duration_sec)]
+
+        # Apply +6 dB gain
+        y *= 1.995
+
         sf.write(ogg_path, y, sr)
 
         os.remove(wav_path)
@@ -106,22 +117,31 @@ def convert_midi_file(midi_path):
 midi_paths = []
 
 # 1. Generate all MIDI files first
-print(f"\nGenerating MIDI files...")
-for octave in range(0, 10):  # Includes octave 0
-    for note_name, semitone in note_map.items():
-        midi_note = semitone + (octave + 1) * 12
-        if not (0 <= midi_note <= 127):
-            continue
+print(f"\nGenerating MIDI files asynchronously...")
 
-        path = generate_midi(note_name, octave, midi_note, args.program, args.outdir)
+tasks = []
+midi_paths = []
+
+with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
+    for octave in range(0, 10):  # Includes octave 0
+        for note_name, semitone in note_map.items():
+            midi_note = semitone + (octave + 1) * 12
+            if not (0 <= midi_note <= 127):
+                continue
+            future = executor.submit(generate_midi, note_name, octave, midi_note, args.program, args.outdir)
+            tasks.append(future)
+
+    for future in as_completed(tasks):
+        path = future.result()
         if path:
             midi_paths.append(path)
 
-input("\nPAUSED: Press Enter after confirming the output_dir was created to continue with conversion...")
+print(f"\nMIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
+input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there's issues at first.")
 
 # 2. Pause briefly to let file system settle
 print(f"\nPausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
-time.sleep(10)
+time.sleep(5)
 
 # 3. Convert all MIDI files to .ogg
 print("\nBeginning batch conversion to OGG...")
