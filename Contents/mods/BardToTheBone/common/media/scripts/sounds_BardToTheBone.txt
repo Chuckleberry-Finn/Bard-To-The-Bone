@@ -6484,6 +6484,458 @@ module BardToTheBone {
         category = BardInstrument_violin, is3D = true,
         clip { file = media/sound/instruments/violin/Gn6.ogg, } }
 
+    sound whistle_Ab0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab0.ogg, } }
+
+    sound whistle_Ab1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab1.ogg, } }
+
+    sound whistle_Ab2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab2.ogg, } }
+
+    sound whistle_Ab3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab3.ogg, } }
+
+    sound whistle_Ab4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab4.ogg, } }
+
+    sound whistle_Ab5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab5.ogg, } }
+
+    sound whistle_Ab6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab6.ogg, } }
+
+    sound whistle_Ab7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Ab7.ogg, } }
+
+    sound whistle_An0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An0.ogg, } }
+
+    sound whistle_An1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An1.ogg, } }
+
+    sound whistle_An2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An2.ogg, } }
+
+    sound whistle_An3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An3.ogg, } }
+
+    sound whistle_An4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An4.ogg, } }
+
+    sound whistle_An5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An5.ogg, } }
+
+    sound whistle_An6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An6.ogg, } }
+
+    sound whistle_An7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/An7.ogg, } }
+
+    sound whistle_Bb0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb0.ogg, } }
+
+    sound whistle_Bb1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb1.ogg, } }
+
+    sound whistle_Bb2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb2.ogg, } }
+
+    sound whistle_Bb3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb3.ogg, } }
+
+    sound whistle_Bb4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb4.ogg, } }
+
+    sound whistle_Bb5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb5.ogg, } }
+
+    sound whistle_Bb6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb6.ogg, } }
+
+    sound whistle_Bb7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bb7.ogg, } }
+
+    sound whistle_Bn0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn0.ogg, } }
+
+    sound whistle_Bn1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn1.ogg, } }
+
+    sound whistle_Bn2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn2.ogg, } }
+
+    sound whistle_Bn3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn3.ogg, } }
+
+    sound whistle_Bn4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn4.ogg, } }
+
+    sound whistle_Bn5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn5.ogg, } }
+
+    sound whistle_Bn6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn6.ogg, } }
+
+    sound whistle_Bn7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Bn7.ogg, } }
+
+    sound whistle_Cb0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb0.ogg, } }
+
+    sound whistle_Cb1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb1.ogg, } }
+
+    sound whistle_Cb2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb2.ogg, } }
+
+    sound whistle_Cb3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb3.ogg, } }
+
+    sound whistle_Cb4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb4.ogg, } }
+
+    sound whistle_Cb5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb5.ogg, } }
+
+    sound whistle_Cb6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb6.ogg, } }
+
+    sound whistle_Cb7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cb7.ogg, } }
+
+    sound whistle_Cn0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn0.ogg, } }
+
+    sound whistle_Cn1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn1.ogg, } }
+
+    sound whistle_Cn2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn2.ogg, } }
+
+    sound whistle_Cn3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn3.ogg, } }
+
+    sound whistle_Cn4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn4.ogg, } }
+
+    sound whistle_Cn5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn5.ogg, } }
+
+    sound whistle_Cn6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn6.ogg, } }
+
+    sound whistle_Cn7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn7.ogg, } }
+
+    sound whistle_Cn8 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Cn8.ogg, } }
+
+    sound whistle_Db0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db0.ogg, } }
+
+    sound whistle_Db1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db1.ogg, } }
+
+    sound whistle_Db2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db2.ogg, } }
+
+    sound whistle_Db3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db3.ogg, } }
+
+    sound whistle_Db4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db4.ogg, } }
+
+    sound whistle_Db5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db5.ogg, } }
+
+    sound whistle_Db6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db6.ogg, } }
+
+    sound whistle_Db7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Db7.ogg, } }
+
+    sound whistle_Dn0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn0.ogg, } }
+
+    sound whistle_Dn1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn1.ogg, } }
+
+    sound whistle_Dn2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn2.ogg, } }
+
+    sound whistle_Dn3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn3.ogg, } }
+
+    sound whistle_Dn4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn4.ogg, } }
+
+    sound whistle_Dn5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn5.ogg, } }
+
+    sound whistle_Dn6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn6.ogg, } }
+
+    sound whistle_Dn7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Dn7.ogg, } }
+
+    sound whistle_Eb0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb0.ogg, } }
+
+    sound whistle_Eb1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb1.ogg, } }
+
+    sound whistle_Eb2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb2.ogg, } }
+
+    sound whistle_Eb3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb3.ogg, } }
+
+    sound whistle_Eb4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb4.ogg, } }
+
+    sound whistle_Eb5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb5.ogg, } }
+
+    sound whistle_Eb6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb6.ogg, } }
+
+    sound whistle_Eb7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Eb7.ogg, } }
+
+    sound whistle_En0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En0.ogg, } }
+
+    sound whistle_En1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En1.ogg, } }
+
+    sound whistle_En2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En2.ogg, } }
+
+    sound whistle_En3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En3.ogg, } }
+
+    sound whistle_En4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En4.ogg, } }
+
+    sound whistle_En5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En5.ogg, } }
+
+    sound whistle_En6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En6.ogg, } }
+
+    sound whistle_En7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/En7.ogg, } }
+
+    sound whistle_Fb0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb0.ogg, } }
+
+    sound whistle_Fb1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb1.ogg, } }
+
+    sound whistle_Fb2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb2.ogg, } }
+
+    sound whistle_Fb3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb3.ogg, } }
+
+    sound whistle_Fb4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb4.ogg, } }
+
+    sound whistle_Fb5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb5.ogg, } }
+
+    sound whistle_Fb6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb6.ogg, } }
+
+    sound whistle_Fb7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fb7.ogg, } }
+
+    sound whistle_Fn0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn0.ogg, } }
+
+    sound whistle_Fn1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn1.ogg, } }
+
+    sound whistle_Fn2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn2.ogg, } }
+
+    sound whistle_Fn3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn3.ogg, } }
+
+    sound whistle_Fn4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn4.ogg, } }
+
+    sound whistle_Fn5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn5.ogg, } }
+
+    sound whistle_Fn6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn6.ogg, } }
+
+    sound whistle_Fn7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Fn7.ogg, } }
+
+    sound whistle_Gb0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb0.ogg, } }
+
+    sound whistle_Gb1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb1.ogg, } }
+
+    sound whistle_Gb2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb2.ogg, } }
+
+    sound whistle_Gb3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb3.ogg, } }
+
+    sound whistle_Gb4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb4.ogg, } }
+
+    sound whistle_Gb5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb5.ogg, } }
+
+    sound whistle_Gb6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb6.ogg, } }
+
+    sound whistle_Gb7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gb7.ogg, } }
+
+    sound whistle_Gn0 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn0.ogg, } }
+
+    sound whistle_Gn1 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn1.ogg, } }
+
+    sound whistle_Gn2 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn2.ogg, } }
+
+    sound whistle_Gn3 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn3.ogg, } }
+
+    sound whistle_Gn4 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn4.ogg, } }
+
+    sound whistle_Gn5 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn5.ogg, } }
+
+    sound whistle_Gn6 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn6.ogg, } }
+
+    sound whistle_Gn7 {
+        category = BardInstrument_whistle, is3D = true,
+        clip { file = media/sound/instruments/whistle/Gn7.ogg, } }
+
     sound xylophone_Ab0 {
         category = BardInstrument_xylophone, is3D = true,
         clip { file = media/sound/instruments/xylophone/Ab0.ogg, } }
