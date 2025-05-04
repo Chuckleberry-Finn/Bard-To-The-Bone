@@ -35,7 +35,7 @@
 
 
 **Credits:**
-- Music Note Sounds - [SS13 Tg](https://github.com/tgstation/tgstation), [VSCO](https://github.com/sgossner/VSCO-2-CE)
+- Music Note Sounds - [SS13 Tg](https://github.com/tgstation/tgstation), fluidSynth & FluidR3_GM.sf2
 - Default Songs - [abcnotation](https://abcnotation.com) & [@duVillage](https://www.youtube.com/@duVillage)
 - Song Library - [Luxx's Starbound Song Pack](https://github.com/luxx/sbsp)
 - CrystalChris - Animations
