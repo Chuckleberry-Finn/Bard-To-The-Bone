@@ -33,8 +33,8 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=41, help='Program change number (0–127)')
-parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
+parser.add_argument('--program', type=int, default=79, help='Program change number (0–127)')
+parser.add_argument('--outdir', type=str, default='whistle', help='Output directory for OGG files')
 args = parser.parse_args()
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -43,7 +43,7 @@ os.makedirs(args.outdir, exist_ok=True)
 
 # Hardcoded paths (relative to this script)
 fluidsynth_path = os.path.join(script_dir, "fluidSynth", "bin", "fluidsynth.exe")
-soundfont_path = os.path.join(script_dir, "FluidR3_GM.sf2")
+soundfont_path = os.path.join(script_dir, "fluidSynth", "fluidSynth/FluidR3_GM.sf2")
 
 # --- Setup ---
 os.makedirs(args.outdir, exist_ok=True)
