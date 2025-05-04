@@ -5564,6 +5564,10 @@ module BardToTheBone {
         category = BardInstrument_trombone, is3D = true,
         clip { file = media/sound/instruments/trombone/Gn9.ogg, } }
 
+    sound trumpet_Ab0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Ab0.ogg, } }
+
     sound trumpet_Ab1 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Ab1.ogg, } }
@@ -5704,6 +5708,46 @@ module BardToTheBone {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Bn8.ogg, } }
 
+    sound trumpet_Cb0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb0.ogg, } }
+
+    sound trumpet_Cb1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb1.ogg, } }
+
+    sound trumpet_Cb2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb2.ogg, } }
+
+    sound trumpet_Cb3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb3.ogg, } }
+
+    sound trumpet_Cb4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb4.ogg, } }
+
+    sound trumpet_Cb5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb5.ogg, } }
+
+    sound trumpet_Cb6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb6.ogg, } }
+
+    sound trumpet_Cb7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb7.ogg, } }
+
+    sound trumpet_Cb8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cb8.ogg, } }
+
+    sound trumpet_Cn0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Cn0.ogg, } }
+
     sound trumpet_Cn1 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Cn1.ogg, } }
@@ -5739,6 +5783,10 @@ module BardToTheBone {
     sound trumpet_Cn9 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Cn9.ogg, } }
+
+    sound trumpet_Db0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Db0.ogg, } }
 
     sound trumpet_Db1 {
         category = BardInstrument_trumpet, is3D = true,
@@ -5776,6 +5824,10 @@ module BardToTheBone {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Db9.ogg, } }
 
+    sound trumpet_Dn0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Dn0.ogg, } }
+
     sound trumpet_Dn1 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Dn1.ogg, } }
@@ -5811,6 +5863,10 @@ module BardToTheBone {
     sound trumpet_Dn9 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Dn9.ogg, } }
+
+    sound trumpet_Eb0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Eb0.ogg, } }
 
     sound trumpet_Eb1 {
         category = BardInstrument_trumpet, is3D = true,
@@ -5848,6 +5904,10 @@ module BardToTheBone {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Eb9.ogg, } }
 
+    sound trumpet_En0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/En0.ogg, } }
+
     sound trumpet_En1 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/En1.ogg, } }
@@ -5883,6 +5943,50 @@ module BardToTheBone {
     sound trumpet_En9 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/En9.ogg, } }
+
+    sound trumpet_Fb0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb0.ogg, } }
+
+    sound trumpet_Fb1 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb1.ogg, } }
+
+    sound trumpet_Fb2 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb2.ogg, } }
+
+    sound trumpet_Fb3 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb3.ogg, } }
+
+    sound trumpet_Fb4 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb4.ogg, } }
+
+    sound trumpet_Fb5 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb5.ogg, } }
+
+    sound trumpet_Fb6 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb6.ogg, } }
+
+    sound trumpet_Fb7 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb7.ogg, } }
+
+    sound trumpet_Fb8 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb8.ogg, } }
+
+    sound trumpet_Fb9 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fb9.ogg, } }
+
+    sound trumpet_Fn0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Fn0.ogg, } }
 
     sound trumpet_Fn1 {
         category = BardInstrument_trumpet, is3D = true,
@@ -5920,6 +6024,10 @@ module BardToTheBone {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Fn9.ogg, } }
 
+    sound trumpet_Gb0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gb0.ogg, } }
+
     sound trumpet_Gb1 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Gb1.ogg, } }
@@ -5955,6 +6063,10 @@ module BardToTheBone {
     sound trumpet_Gb9 {
         category = BardInstrument_trumpet, is3D = true,
         clip { file = media/sound/instruments/trumpet/Gb9.ogg, } }
+
+    sound trumpet_Gn0 {
+        category = BardInstrument_trumpet, is3D = true,
+        clip { file = media/sound/instruments/trumpet/Gn0.ogg, } }
 
     sound trumpet_Gn1 {
         category = BardInstrument_trumpet, is3D = true,
