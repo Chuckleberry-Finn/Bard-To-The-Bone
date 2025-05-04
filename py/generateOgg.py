@@ -6,7 +6,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def ensure_libs():
-    for lib in ["librosa", "soundfile", "numpy"]:
+    for lib in ["librosa", "soundfile", "numpy", "pyloudnorm"]:
         try:
             __import__(lib)
         except ImportError:
@@ -15,6 +15,8 @@ def ensure_libs():
 
 ensure_libs()
 
+import pyloudnorm as pyln
+import numpy as np
 import librosa
 import soundfile as sf
 from mido import Message, MidiFile, MidiTrack
@@ -31,7 +33,7 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=56, help='Program change number (0–127)')
+parser.add_argument('--program', type=int, default=57, help='Program change number (0–127)')
 parser.add_argument('--outdir', type=str, default='trumpet', help='Output directory for OGG files')
 args = parser.parse_args()
 
@@ -55,7 +57,7 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
 
     track.append(Message('program_change', program=program, time=0))
     track.append(Message('note_on', note=midi_note, velocity=90, time=0))
-    track.append(Message('note_off', note=midi_note, velocity=64, time=960))
+    track.append(Message('note_off', note=midi_note, velocity=64, time=1920))
 
     midi_path = Path(outdir) / f"{note_name}{octave}.mid"
     mid.save(midi_path)
@@ -101,8 +103,27 @@ def convert_midi_file(midi_path):
         max_duration_sec = 3
         y = y[:int(sr * max_duration_sec)]
 
-        # Apply +6 dB gain
-        y *= 1.995
+        # Apply fast fade-in to smooth harsh transient (~25 ms)
+        fade_in_duration = int(sr * 0.025)  # 25ms
+        fade_in = np.linspace(0, 1, fade_in_duration)
+        y[:fade_in_duration] *= fade_in
+
+        meter = pyln.Meter(sr)
+        loudness = meter.integrated_loudness(y)
+
+        # Check for silence or invalid loudness
+        if not np.isfinite(loudness) or np.max(np.abs(y)) < 0.01:
+            print(f"Skipping normalization for {os.path.basename(midi_path)} (silent or invalid)")
+            os.remove(wav_path)
+            os.remove(midi_path)
+            return
+
+        y = pyln.normalize.loudness(y, loudness, -24.0)  # perceptual loudness target
+
+        # Peak limit: -1 dBFS ≈ 0.89
+        peak = np.max(np.abs(y))
+        if peak > 0.89:
+            y *= 0.89 / peak  # scale down to ensure no hard clipping
 
         sf.write(ogg_path, y, sr)
 
@@ -137,7 +158,7 @@ with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
             midi_paths.append(path)
 
 print(f"\nMIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
-input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there's issues at first.")
+input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there are issues.")
 
 # 2. Pause briefly to let file system settle
 print(f"\nPausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
@@ -146,7 +167,7 @@ time.sleep(5)
 # 3. Convert all MIDI files to .ogg
 print("\nBeginning batch conversion to OGG...")
 for i, midi_path in enumerate(midi_paths, 1):
-    print(f"[{i}/{len(midi_paths)}] {os.path.basename(midi_path)}")
+    print(f"[{i}/{len(midi_paths)}] {os.path.basename(midi_path)} converted.")
     convert_midi_file(midi_path)
 
 print(f"\nDone. {len(midi_paths)} OGG files generated in: {args.outdir}")
