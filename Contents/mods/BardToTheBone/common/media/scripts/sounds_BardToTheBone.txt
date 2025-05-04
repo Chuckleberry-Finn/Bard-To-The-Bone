@@ -1284,6 +1284,434 @@ module BardToTheBone {
         category = BardInstrument_bikehorn, is3D = true,
         clip { file = media/sound/instruments/bikehorn/Gn9.ogg, } }
 
+    sound electric_bass_Ab1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab1.ogg, } }
+
+    sound electric_bass_Ab2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab2.ogg, } }
+
+    sound electric_bass_Ab3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab3.ogg, } }
+
+    sound electric_bass_Ab4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab4.ogg, } }
+
+    sound electric_bass_Ab5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab5.ogg, } }
+
+    sound electric_bass_Ab6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab6.ogg, } }
+
+    sound electric_bass_Ab7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab7.ogg, } }
+
+    sound electric_bass_Ab8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Ab8.ogg, } }
+
+    sound electric_bass_An0 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An0.ogg, } }
+
+    sound electric_bass_An1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An1.ogg, } }
+
+    sound electric_bass_An2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An2.ogg, } }
+
+    sound electric_bass_An3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An3.ogg, } }
+
+    sound electric_bass_An4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An4.ogg, } }
+
+    sound electric_bass_An5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An5.ogg, } }
+
+    sound electric_bass_An6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An6.ogg, } }
+
+    sound electric_bass_An7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An7.ogg, } }
+
+    sound electric_bass_An8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/An8.ogg, } }
+
+    sound electric_bass_Bb0 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb0.ogg, } }
+
+    sound electric_bass_Bb1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb1.ogg, } }
+
+    sound electric_bass_Bb2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb2.ogg, } }
+
+    sound electric_bass_Bb3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb3.ogg, } }
+
+    sound electric_bass_Bb4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb4.ogg, } }
+
+    sound electric_bass_Bb5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb5.ogg, } }
+
+    sound electric_bass_Bb6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb6.ogg, } }
+
+    sound electric_bass_Bb7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb7.ogg, } }
+
+    sound electric_bass_Bb8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bb8.ogg, } }
+
+    sound electric_bass_Bn0 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn0.ogg, } }
+
+    sound electric_bass_Bn1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn1.ogg, } }
+
+    sound electric_bass_Bn2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn2.ogg, } }
+
+    sound electric_bass_Bn3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn3.ogg, } }
+
+    sound electric_bass_Bn4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn4.ogg, } }
+
+    sound electric_bass_Bn5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn5.ogg, } }
+
+    sound electric_bass_Bn6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn6.ogg, } }
+
+    sound electric_bass_Bn7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn7.ogg, } }
+
+    sound electric_bass_Bn8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Bn8.ogg, } }
+
+    sound electric_bass_Cn1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn1.ogg, } }
+
+    sound electric_bass_Cn2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn2.ogg, } }
+
+    sound electric_bass_Cn3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn3.ogg, } }
+
+    sound electric_bass_Cn4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn4.ogg, } }
+
+    sound electric_bass_Cn5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn5.ogg, } }
+
+    sound electric_bass_Cn6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn6.ogg, } }
+
+    sound electric_bass_Cn7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn7.ogg, } }
+
+    sound electric_bass_Cn8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn8.ogg, } }
+
+    sound electric_bass_Cn9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Cn9.ogg, } }
+
+    sound electric_bass_Db1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db1.ogg, } }
+
+    sound electric_bass_Db2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db2.ogg, } }
+
+    sound electric_bass_Db3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db3.ogg, } }
+
+    sound electric_bass_Db4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db4.ogg, } }
+
+    sound electric_bass_Db5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db5.ogg, } }
+
+    sound electric_bass_Db6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db6.ogg, } }
+
+    sound electric_bass_Db7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db7.ogg, } }
+
+    sound electric_bass_Db8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db8.ogg, } }
+
+    sound electric_bass_Db9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Db9.ogg, } }
+
+    sound electric_bass_Dn1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn1.ogg, } }
+
+    sound electric_bass_Dn2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn2.ogg, } }
+
+    sound electric_bass_Dn3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn3.ogg, } }
+
+    sound electric_bass_Dn4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn4.ogg, } }
+
+    sound electric_bass_Dn5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn5.ogg, } }
+
+    sound electric_bass_Dn6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn6.ogg, } }
+
+    sound electric_bass_Dn7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn7.ogg, } }
+
+    sound electric_bass_Dn8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn8.ogg, } }
+
+    sound electric_bass_Dn9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Dn9.ogg, } }
+
+    sound electric_bass_Eb1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb1.ogg, } }
+
+    sound electric_bass_Eb2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb2.ogg, } }
+
+    sound electric_bass_Eb3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb3.ogg, } }
+
+    sound electric_bass_Eb4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb4.ogg, } }
+
+    sound electric_bass_Eb5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb5.ogg, } }
+
+    sound electric_bass_Eb6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb6.ogg, } }
+
+    sound electric_bass_Eb7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb7.ogg, } }
+
+    sound electric_bass_Eb8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb8.ogg, } }
+
+    sound electric_bass_Eb9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Eb9.ogg, } }
+
+    sound electric_bass_En1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En1.ogg, } }
+
+    sound electric_bass_En2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En2.ogg, } }
+
+    sound electric_bass_En3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En3.ogg, } }
+
+    sound electric_bass_En4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En4.ogg, } }
+
+    sound electric_bass_En5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En5.ogg, } }
+
+    sound electric_bass_En6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En6.ogg, } }
+
+    sound electric_bass_En7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En7.ogg, } }
+
+    sound electric_bass_En8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En8.ogg, } }
+
+    sound electric_bass_En9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/En9.ogg, } }
+
+    sound electric_bass_Fn1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn1.ogg, } }
+
+    sound electric_bass_Fn2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn2.ogg, } }
+
+    sound electric_bass_Fn3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn3.ogg, } }
+
+    sound electric_bass_Fn4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn4.ogg, } }
+
+    sound electric_bass_Fn5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn5.ogg, } }
+
+    sound electric_bass_Fn6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn6.ogg, } }
+
+    sound electric_bass_Fn7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn7.ogg, } }
+
+    sound electric_bass_Fn8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn8.ogg, } }
+
+    sound electric_bass_Fn9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Fn9.ogg, } }
+
+    sound electric_bass_Gb1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb1.ogg, } }
+
+    sound electric_bass_Gb2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb2.ogg, } }
+
+    sound electric_bass_Gb3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb3.ogg, } }
+
+    sound electric_bass_Gb4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb4.ogg, } }
+
+    sound electric_bass_Gb5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb5.ogg, } }
+
+    sound electric_bass_Gb6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb6.ogg, } }
+
+    sound electric_bass_Gb7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb7.ogg, } }
+
+    sound electric_bass_Gb8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb8.ogg, } }
+
+    sound electric_bass_Gb9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gb9.ogg, } }
+
+    sound electric_bass_Gn1 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn1.ogg, } }
+
+    sound electric_bass_Gn2 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn2.ogg, } }
+
+    sound electric_bass_Gn3 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn3.ogg, } }
+
+    sound electric_bass_Gn4 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn4.ogg, } }
+
+    sound electric_bass_Gn5 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn5.ogg, } }
+
+    sound electric_bass_Gn6 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn6.ogg, } }
+
+    sound electric_bass_Gn7 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn7.ogg, } }
+
+    sound electric_bass_Gn8 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn8.ogg, } }
+
+    sound electric_bass_Gn9 {
+        category = BardInstrument_electric_bass, is3D = true,
+        clip { file = media/sound/instruments/electric_bass/Gn9.ogg, } }
+
     sound electric_guitar_Ab1 {
         category = BardInstrument_electric_guitar, is3D = true,
         clip { file = media/sound/instruments/electric_guitar/Ab1.ogg, } }

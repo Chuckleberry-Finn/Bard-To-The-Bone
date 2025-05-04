@@ -521,6 +521,7 @@ Bard.instrumentData = {
     ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming" },
     ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
     ["Base.Keytar"] = { soundDir = "keytar", anim = "strumming" },
+    ["Base.GuitarElectricBass"] = { soundDir = "electric_bass", anim = "strumming" },
     ["Base.Harmonica"] = { soundDir = "harmonica" },
     ["Base.Saxophone"] = { soundDir = "saxophone" },
     ["Base.Violin"] = { soundDir = "violin" },

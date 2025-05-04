@@ -67,7 +67,10 @@ def process_instrument_folder(instrument_path):
         if midi not in present:
             if not present:
                 continue
-            donor_midi = min(present.keys(), key=lambda m: abs(m - midi))
+            donor_midi = min(
+                present.keys(),
+                key=lambda m: (abs(m - midi), m > midi)  # Prefer lower donors if tie
+            )
             shift = midi - donor_midi
             donor_file = present[donor_midi]
             donor_path = os.path.join(instrument_path, donor_file)
