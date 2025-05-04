@@ -37,9 +37,9 @@ parser.add_argument('--program', type=int, default=41, help='Program change numb
 parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
 args = parser.parse_args()
 
-# --- Resolve paths relative to script ---
 script_dir = os.path.dirname(os.path.abspath(__file__))
-args.outdir = os.path.join(script_dir, args.outdir)
+args.outdir = os.path.join(script_dir, 'generated', args.outdir)
+os.makedirs(args.outdir, exist_ok=True)
 
 # Hardcoded paths (relative to this script)
 fluidsynth_path = os.path.join(script_dir, "fluidSynth", "bin", "fluidsynth.exe")
