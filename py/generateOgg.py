@@ -33,8 +33,8 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=57, help='Program change number (0–127)')
-parser.add_argument('--outdir', type=str, default='trumpet', help='Output directory for OGG files')
+parser.add_argument('--program', type=int, default=41, help='Program change number (0–127)')
+parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
 args = parser.parse_args()
 
 # --- Resolve paths relative to script ---
@@ -158,7 +158,7 @@ with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
             midi_paths.append(path)
 
 print(f"\nMIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
-input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there are issues.")
+# input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there are issues.")
 
 # 2. Pause briefly to let file system settle
 print(f"\nPausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
