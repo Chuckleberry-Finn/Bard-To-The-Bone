@@ -73,6 +73,11 @@ def process_instrument_folder(instrument_path):
             donor_path = os.path.join(instrument_path, donor_file)
             out_name = midi_to_note_name(midi) + ".ogg"
             out_path = os.path.join(instrument_path, out_name)
+
+            if os.path.exists(out_path):
+                print(f"  - Skipping {out_name}: already exists")
+                continue
+            
             print(f"  + Generating {out_name} from {donor_file} (shift {shift:+} semitones)")
             pitch_shift_sample(donor_path, shift, out_path)
 
