@@ -525,9 +525,11 @@ Bard.instrumentData = {
     ["Base.Harmonica"] = { soundDir = "harmonica" },
     ["Base.Saxophone"] = { soundDir = "saxophone" },
     ["Base.Violin"] = { soundDir = "violin" },
-    ["Base.Flute"] = { soundDir = "recorder" },
+    ["Base.Flute"] = { soundDir = "flute" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
     ["Base.Trumpet"] = { soundDir = "trumpet" },
+    ["Base.Whistle"] = { soundDir = "whistle"},
+    ["Base.Whistle_Bone"] = { soundDir = "whistle"},
 }
 
 function Bard.getInstrumentData(instrument)
