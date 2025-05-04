@@ -545,9 +545,9 @@ function Bard.populateTags()
 
     for tag,data in pairs(Bard.instrumentTagData) do
         local items = getScriptManager():getItemsTag(tag)
-        for i=1,items:size() do
+        for i=0,items:size()-1 do
             ---@type Item
-            local item = items:get(i-1)
+            local item = items:get(i)
             local moduleDotType = item:getFullName()
             Bard.instrumentData[moduleDotType] = data
         end
