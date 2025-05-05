@@ -15,7 +15,7 @@ end
 
 function BardUIWindow.onTextChange(box)
     if not box then return end
-    self:setSaveButtonStatus(true)
+    box.parent:setSaveButtonStatus(true)
 end
 
 function BardUIWindow:initialise()
