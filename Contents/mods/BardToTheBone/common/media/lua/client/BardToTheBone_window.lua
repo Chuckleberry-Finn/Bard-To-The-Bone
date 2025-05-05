@@ -13,6 +13,10 @@ function BardUIWindow:createChildren()
     ISCollapsableWindow.createChildren(self)
 end
 
+function BardUIWindow.onTextChange(box)
+    if not box then return end
+    self:setSaveButtonStatus(true)
+end
 
 function BardUIWindow:initialise()
     ISCollapsableWindow.initialise(self)
@@ -20,6 +24,7 @@ function BardUIWindow:initialise()
     self.abcEntry = ISTextEntryBox:new("", 10, self:titleBarHeight() + 10, self.width - 20, 300)
     self.abcEntry:initialise()
     self.abcEntry:instantiate()
+    self.abcEntry.onTextChange = BardUIWindow.onTextChange
     self.abcEntry:setMultipleLine(true)
     self.abcEntry:setMaxLines(999999)
     self.abcEntry.javaObject:setMaxTextLength(-1)
