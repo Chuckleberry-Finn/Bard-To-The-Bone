@@ -512,6 +512,13 @@ function Bard.playLoadedSongs(player)
     end
 end
 
+Bard.instrumentSpecials = {}
+
+function Bard.instrumentSpecials.sexySax(player)
+    if ZombRand(100) < 7 then
+        player:setVariable("BttB_Special", "BttB_SexySaxPlaying")
+    end
+end
 
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
 -- The folders in sound/instruments/ are used as IDs
@@ -520,12 +527,12 @@ Bard.instrumentData = {
     ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
     ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming" },
     ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
-    ["Base.Keytar"] = { soundDir = "keytar", anim = "strumming" },
+    ["Base.Keytar"] = { soundDir = "keytar", anim = "Keytar" },
     ["Base.GuitarElectricBass"] = { soundDir = "electric_bass", anim = "strumming" },
-    ["Base.Harmonica"] = { soundDir = "harmonica" },
-    ["Base.Saxophone"] = { soundDir = "saxophone" },
-    ["Base.Violin"] = { soundDir = "violin" },
-    ["Base.Flute"] = { soundDir = "flute" },
+    ["Base.Harmonica"] = { soundDir = "harmonica", anim = "Harmonica" },
+    ["Base.Saxophone"] = { soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
+    ["Base.Violin"] = { soundDir = "violin", anim = "Violin" },
+    ["Base.Flute"] = { soundDir = "flute", anim = "Flute" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
     ["Base.Trumpet"] = { soundDir = "trumpet" },
     ["Base.Whistle"] = { soundDir = "whistle"},
@@ -535,7 +542,7 @@ Bard.instrumentData = {
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { soundDir = "bottle"},
+    ["GlassBottle"] = { soundDir = "bottle", anim = "Harmonica"},
 }
 
 Bard.populatedFromTagData = false

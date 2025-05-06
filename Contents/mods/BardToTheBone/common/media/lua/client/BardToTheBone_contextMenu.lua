@@ -5,7 +5,13 @@ local Bard = require "BardToTheBone_main"
 local bardContext = {}
 
 function bardContext.triggerTimedAction(character, instrument)
-    if not character:getInventory():contains(instrument) then return end
+
+    if luautils.haveToBeTransfered(character, instrument) then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory()))
+    end
+
+    --if not character:getInventory():contains(instrument) then return end
+
     local ui = BardUIWindow:new(200, 200, 400, 640, character, instrument)
     ui:initialise()
     ui:addToUIManager()
