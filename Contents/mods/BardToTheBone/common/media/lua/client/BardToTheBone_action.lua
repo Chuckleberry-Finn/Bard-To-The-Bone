@@ -19,17 +19,21 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
 
-    if instrumentData and instrumentData.anim then
-        self:setActionAnim("BttB_"..instrumentData.anim)
+    if instrumentData then
+
+        self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
+
+        if instrumentData.anim then
+            self:setActionAnim("BttB_"..instrumentData.anim)
+            local defaultVoiceId = Bard.next(Bard.players[id].music)
+            local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
+            self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
+        end
 
         self.character:clearVariable("BttB_Special")
         if instrumentData.special then
             Bard.instrumentSpecials[instrumentData.special](self.character)
         end
-
-        local defaultVoiceId = Bard.next(Bard.players[id].music)
-        local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
-        self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
     end
 end
 
