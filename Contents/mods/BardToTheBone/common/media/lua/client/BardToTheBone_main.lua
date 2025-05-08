@@ -531,7 +531,7 @@ Bard.instrumentData = {
     ["Base.GuitarElectricBass"] = { soundDir = "electric_bass", anim = "strumming" },
     ["Base.Harmonica"] = { soundDir = "harmonica", anim = "Harmonica" },
     ["Base.Saxophone"] = { soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
-    ["Base.Violin"] = { soundDir = "violin", anim = "Violin", left = "Violin_Bow" },
+    ["Base.Violin"] = { soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
     ["Base.Xylophone"] = { soundDir = "xylophone", anim = "Violin", left = "Xylophone", right = "Xylophone_mallet"},
     ["Base.Flute"] = { soundDir = "flute", anim = "Flute" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
