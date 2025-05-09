@@ -41,7 +41,6 @@ function bardContext.addInventoryItemContext(playerID, context, items)
 end
 
 ---SAVE THIS FOR IN WORLD OBJECTS, LIKE A PIANO OR GLOCKENSPIEL ?
---[[
 function bardContext.addWorldContext(playerID, context, worldObjects, test)
 
     ---@type IsoObject|IsoGameCharacter|IsoPlayer
@@ -52,29 +51,20 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
     if not square then return false end
 
     if square and ( square:DistToProper(playerObj) <= 1.5 ) then
-
-        local validObjectCount = 0
-
-        for i=0,square:getObjects():size()-1 do
-            ---@type IsoObject|IsoWorldInventoryObject
-            --TODO: CHECK FOR MAP OBJECTS NOT IsoWorldInventoryObject
-            local object = square:getObjects():get(i)
-            if object and instanceof(object, "IsoWorldInventoryObject") then
-                local item = object:getItem()
-                if item and TEST then
-                    validObjectCount = validObjectCount+1
-                end
+        local objects = square:getObjects()
+        for i=0,objects:size()-1 do
+            ---@type IsoObject
+            local object = objects:get(i)
+            if object and instanceof(object, "IsoObject") then
+                print(object:getName() , ", ", object:getSpriteName())
+                --local option = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, playerObj)
+                --return true
             end
-        end
-
-        if validObjectCount > 0 then
-            local option = context:addOptionOnTop(getText("IGUI_Play_Game"), worldObjects, gameNightWindow.open, playerObj, square)
-            option.iconTexture = getTexture()
         end
     end
     return false
 end
 Events.OnFillWorldObjectContextMenu.Add(bardContext.addWorldContext)
--------------------------------------------------------------------------------------------]]
+
 
 return bardContext
