@@ -446,7 +446,6 @@ end
 
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
----@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
 function Bard.playLoadedSongs(player)
     if not player then return end
     local id = player:getUsername()
@@ -479,7 +478,6 @@ function Bard.playLoadedSongs(player)
 
     for voiceId, data in pairs(music) do
         data.eventIndex = data.eventIndex or 1
-        emitters[voiceId] = emitters[voiceId] or getWorld():getFreeEmitter()
 
         while data.eventIndex <= #data.events do
             local event = data.events[data.eventIndex]
@@ -493,7 +491,8 @@ function Bard.playLoadedSongs(player)
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
-                            emitters[voiceId]:playSound(instrumentSound, player:getSquare())
+                            player:getEmitter():playSound(instrumentSound)
+                            --player:getEmitter():playSound(instrumentSound, player:getSquare())
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
                     end
