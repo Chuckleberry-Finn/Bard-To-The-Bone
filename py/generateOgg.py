@@ -33,8 +33,8 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=77, help='Program change number (0–127)')
-parser.add_argument('--outdir', type=str, default='bottle', help='Output directory for OGG files')
+parser.add_argument('--program', type=int, default=113, help='Program change number (0–127)')
+parser.add_argument('--outdir', type=str, default='xylophone', help='Output directory for OGG files')
 args = parser.parse_args()
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
