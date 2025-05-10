@@ -539,6 +539,14 @@ Bard.instrumentData = {
     ["Base.Whistle_Bone"] = { soundDir = "whistle"},
 }
 
+Bard.instrumentTiles = {
+    --[""] = { soundDir = "", anim = ""},
+    ---["Kick Drum"] = { soundDir = "", anim = ""},
+    ---["Tom Drum"] = { soundDir = "", anim = ""},
+    ---["Snare Drum"] = { soundDir = "", anim = ""},
+    ["Western Piano"] = { soundDir = "piano"},
+    ["Black Grand Piano"] = { soundDir = "piano"},
+}
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
