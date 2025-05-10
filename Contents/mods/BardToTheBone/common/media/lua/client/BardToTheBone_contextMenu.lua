@@ -56,7 +56,7 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
             ---@type IsoObject
             local object = objects:get(i)
             if object and instanceof(object, "IsoObject") then
-                print(object:getName() , ", ", object:getSpriteName())
+                print(object:getProperties():Is("GroupName"))
                 --local option = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, playerObj)
                 --return true
             end
