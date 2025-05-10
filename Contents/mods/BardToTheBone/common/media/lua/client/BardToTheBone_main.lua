@@ -97,6 +97,12 @@ function Bard.parseNoteToken(token, defaultTicks, key)
         end
 
         return notes
+
+    elseif token:match("^z") then
+        local duration = token:match("^z(%d*/?%d*)") or "1"
+        local ticks = Bard.getTicksFromLength(duration)
+        return { { rest = true, ticks = ticks } }
+
     else
         -- Not a chord
         local notes = {}
