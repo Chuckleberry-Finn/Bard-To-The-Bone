@@ -474,7 +474,6 @@ function Bard.playLoadedSongs(player)
     bard.lastUpdateTime = now
 
     local allDone = true
-    local emitters = {}
 
     for voiceId, data in pairs(music) do
         data.eventIndex = data.eventIndex or 1
@@ -491,8 +490,9 @@ function Bard.playLoadedSongs(player)
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
-                            player:getEmitter():playSound(instrumentSound)
-                            --player:getEmitter():playSound(instrumentSound, player:getSquare())
+                            local soundID = player:getEmitter():playSound(instrumentSound)
+
+                            --getWorld():getFreeEmitter():playSound(instrumentSound, player)
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
                     end
