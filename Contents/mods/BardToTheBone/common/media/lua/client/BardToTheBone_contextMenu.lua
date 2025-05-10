@@ -6,7 +6,7 @@ local bardContext = {}
 
 function bardContext.triggerTimedAction(character, instrument)
 
-    if luautils.haveToBeTransfered(character, instrument) then
+    if instanceof(instrument, "InventoryItem") and luautils.haveToBeTransfered(character, instrument) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory()))
     end
 
@@ -34,7 +34,6 @@ function bardContext.addInventoryItemContext(playerID, context, items)
         local instrumentData = item and Bard.getInstrumentData(item)
         if instrumentData then
             local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, item)
-            --play.iconTexture = getTexture()
             break
         end
     end
@@ -56,9 +55,15 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
             ---@type IsoObject
             local object = objects:get(i)
             if object and instanceof(object, "IsoObject") then
-                print(object:getProperties():Is("GroupName"))
-                --local option = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, playerObj)
-                --return true
+                local properties = object:getProperties()
+                if properties and properties:Is("CustomName") then
+                    local groupName = properties:Val("CustomName")
+                    print(groupName)
+                    if Bard.instrumentData[groupName] then
+                        local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object)
+                        return true
+                    end
+                end
             end
         end
     end

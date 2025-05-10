@@ -6,8 +6,11 @@ local Bard = require "BardToTheBone_main"
 BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
 
 function BardToTheBonePlayMusic:isValid()
-    return self.character:getPrimaryHandItem() == self.item
+    local held = self.heldItem and (self.character:getPrimaryHandItem() == self.item)
+    local near = (not self.heldItem) and (self.item:getSquare():DistToProper(self.character) <= 1.5)
+    return (held or near)
 end
+
 
 function BardToTheBonePlayMusic:start()
     --self:setOverrideHandModels(self.item, nil)
@@ -21,7 +24,9 @@ function BardToTheBonePlayMusic:start()
 
     if instrumentData then
 
-        self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
+        if self.heldItem then
+            self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
+        end
 
         if instrumentData.anim then
             self:setActionAnim("BttB_"..instrumentData.anim)
@@ -61,7 +66,9 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, 
     o.item = instrument
     o.stopOnWalk = false
     o.stopOnRun = true
-    
+
+    o.heldItem = instanceof(self.item, "InventoryItem")
+
     local music, duration = Bard.startPlayback(character, abcNotation)
     o.music = music
     o.maxTime = duration or 1

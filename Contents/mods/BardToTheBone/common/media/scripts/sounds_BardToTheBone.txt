@@ -2812,6 +2812,442 @@ module BardToTheBone {
         category = BardInstrument_glockenspiel, is3D = true,
         clip { file = media/sound/instruments/glockenspiel/Gn7.ogg, } }
 
+    sound grandPiano_Ab0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab0.ogg, } }
+
+    sound grandPiano_Ab1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab1.ogg, } }
+
+    sound grandPiano_Ab2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab2.ogg, } }
+
+    sound grandPiano_Ab3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab3.ogg, } }
+
+    sound grandPiano_Ab4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab4.ogg, } }
+
+    sound grandPiano_Ab5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab5.ogg, } }
+
+    sound grandPiano_Ab6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Ab6.ogg, } }
+
+    sound grandPiano_An0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An0.ogg, } }
+
+    sound grandPiano_An1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An1.ogg, } }
+
+    sound grandPiano_An2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An2.ogg, } }
+
+    sound grandPiano_An3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An3.ogg, } }
+
+    sound grandPiano_An4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An4.ogg, } }
+
+    sound grandPiano_An5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An5.ogg, } }
+
+    sound grandPiano_An6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An6.ogg, } }
+
+    sound grandPiano_An7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/An7.ogg, } }
+
+    sound grandPiano_Bb0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb0.ogg, } }
+
+    sound grandPiano_Bb1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb1.ogg, } }
+
+    sound grandPiano_Bb2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb2.ogg, } }
+
+    sound grandPiano_Bb3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb3.ogg, } }
+
+    sound grandPiano_Bb4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb4.ogg, } }
+
+    sound grandPiano_Bb5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb5.ogg, } }
+
+    sound grandPiano_Bb6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb6.ogg, } }
+
+    sound grandPiano_Bb7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bb7.ogg, } }
+
+    sound grandPiano_Bn0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn0.ogg, } }
+
+    sound grandPiano_Bn1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn1.ogg, } }
+
+    sound grandPiano_Bn2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn2.ogg, } }
+
+    sound grandPiano_Bn3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn3.ogg, } }
+
+    sound grandPiano_Bn4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn4.ogg, } }
+
+    sound grandPiano_Bn5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn5.ogg, } }
+
+    sound grandPiano_Bn6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn6.ogg, } }
+
+    sound grandPiano_Bn7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Bn7.ogg, } }
+
+    sound grandPiano_Cb0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb0.ogg, } }
+
+    sound grandPiano_Cb1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb1.ogg, } }
+
+    sound grandPiano_Cb2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb2.ogg, } }
+
+    sound grandPiano_Cb3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb3.ogg, } }
+
+    sound grandPiano_Cb4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb4.ogg, } }
+
+    sound grandPiano_Cb5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb5.ogg, } }
+
+    sound grandPiano_Cb6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb6.ogg, } }
+
+    sound grandPiano_Cb7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cb7.ogg, } }
+
+    sound grandPiano_Cn0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn0.ogg, } }
+
+    sound grandPiano_Cn1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn1.ogg, } }
+
+    sound grandPiano_Cn2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn2.ogg, } }
+
+    sound grandPiano_Cn3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn3.ogg, } }
+
+    sound grandPiano_Cn4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn4.ogg, } }
+
+    sound grandPiano_Cn5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn5.ogg, } }
+
+    sound grandPiano_Cn6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn6.ogg, } }
+
+    sound grandPiano_Cn7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn7.ogg, } }
+
+    sound grandPiano_Cn8 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Cn8.ogg, } }
+
+    sound grandPiano_Db0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db0.ogg, } }
+
+    sound grandPiano_Db1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db1.ogg, } }
+
+    sound grandPiano_Db2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db2.ogg, } }
+
+    sound grandPiano_Db3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db3.ogg, } }
+
+    sound grandPiano_Db4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db4.ogg, } }
+
+    sound grandPiano_Db5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db5.ogg, } }
+
+    sound grandPiano_Db6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db6.ogg, } }
+
+    sound grandPiano_Db7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Db7.ogg, } }
+
+    sound grandPiano_Dn0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn0.ogg, } }
+
+    sound grandPiano_Dn1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn1.ogg, } }
+
+    sound grandPiano_Dn2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn2.ogg, } }
+
+    sound grandPiano_Dn3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn3.ogg, } }
+
+    sound grandPiano_Dn4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn4.ogg, } }
+
+    sound grandPiano_Dn5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn5.ogg, } }
+
+    sound grandPiano_Dn6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn6.ogg, } }
+
+    sound grandPiano_Dn7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Dn7.ogg, } }
+
+    sound grandPiano_Eb0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb0.ogg, } }
+
+    sound grandPiano_Eb1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb1.ogg, } }
+
+    sound grandPiano_Eb2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb2.ogg, } }
+
+    sound grandPiano_Eb3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb3.ogg, } }
+
+    sound grandPiano_Eb4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb4.ogg, } }
+
+    sound grandPiano_Eb5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb5.ogg, } }
+
+    sound grandPiano_Eb6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb6.ogg, } }
+
+    sound grandPiano_Eb7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Eb7.ogg, } }
+
+    sound grandPiano_En0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En0.ogg, } }
+
+    sound grandPiano_En1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En1.ogg, } }
+
+    sound grandPiano_En2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En2.ogg, } }
+
+    sound grandPiano_En3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En3.ogg, } }
+
+    sound grandPiano_En4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En4.ogg, } }
+
+    sound grandPiano_En5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En5.ogg, } }
+
+    sound grandPiano_En6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En6.ogg, } }
+
+    sound grandPiano_En7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/En7.ogg, } }
+
+    sound grandPiano_Fb0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb0.ogg, } }
+
+    sound grandPiano_Fb1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb1.ogg, } }
+
+    sound grandPiano_Fb2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb2.ogg, } }
+
+    sound grandPiano_Fb3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb3.ogg, } }
+
+    sound grandPiano_Fb4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb4.ogg, } }
+
+    sound grandPiano_Fb5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb5.ogg, } }
+
+    sound grandPiano_Fb6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb6.ogg, } }
+
+    sound grandPiano_Fb7 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fb7.ogg, } }
+
+    sound grandPiano_Fn0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn0.ogg, } }
+
+    sound grandPiano_Fn1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn1.ogg, } }
+
+    sound grandPiano_Fn2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn2.ogg, } }
+
+    sound grandPiano_Fn3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn3.ogg, } }
+
+    sound grandPiano_Fn4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn4.ogg, } }
+
+    sound grandPiano_Fn5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn5.ogg, } }
+
+    sound grandPiano_Fn6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Fn6.ogg, } }
+
+    sound grandPiano_Gb0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb0.ogg, } }
+
+    sound grandPiano_Gb1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb1.ogg, } }
+
+    sound grandPiano_Gb2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb2.ogg, } }
+
+    sound grandPiano_Gb3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb3.ogg, } }
+
+    sound grandPiano_Gb4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb4.ogg, } }
+
+    sound grandPiano_Gb5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb5.ogg, } }
+
+    sound grandPiano_Gb6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gb6.ogg, } }
+
+    sound grandPiano_Gn0 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn0.ogg, } }
+
+    sound grandPiano_Gn1 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn1.ogg, } }
+
+    sound grandPiano_Gn2 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn2.ogg, } }
+
+    sound grandPiano_Gn3 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn3.ogg, } }
+
+    sound grandPiano_Gn4 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn4.ogg, } }
+
+    sound grandPiano_Gn5 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn5.ogg, } }
+
+    sound grandPiano_Gn6 {
+        category = BardInstrument_grandPiano, is3D = true,
+        clip { file = media/sound/instruments/grandPiano/Gn6.ogg, } }
+
     sound guitar_Ab0 {
         category = BardInstrument_guitar, is3D = true,
         clip { file = media/sound/instruments/guitar/Ab0.ogg, } }

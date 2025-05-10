@@ -233,15 +233,20 @@ end
 function BardUIWindow:onPlay()
     local notes = self.abcEntry:getText()
     if (not notes) then return end
-    if self.character:getPrimaryHandItem() ~= self.instrument then
+
+    if self.isItem and self.character:getPrimaryHandItem() ~= self.instrument then
         ISTimedActionQueue.add(ISEquipWeaponAction:new(self.character, self.instrument, 50, true));
     end
+
     ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes))
 end
 
 
 function BardUIWindow:update()
-    if (not self.character:getInventory():contains(self.instrument)) and BardUIWindow.instance then
+    if not BardUIWindow.instance then return end
+
+    if (self.isItem and (self.character:getPrimaryHandItem() ~= self.instrument))
+            or (not self.isItem and (self.instrument:getSquare():DistToProper(self.character) > 1.5)) then
         BardUIWindow.instance:close()
     end
 end
@@ -255,16 +260,20 @@ function BardUIWindow:new(x, y, width, height, character, instrument)
     local o = ISCollapsableWindow:new(x, y, width, height)
     setmetatable(o, self)
     self.__index = self
-    o.title = "Bard to the Bone - "..instrument:getDisplayName()
     o:setResizable(false)
     o.character = character
     o.instrument = instrument
     o.unsavedChanges = false
-    BardUIWindow.instance = o
 
-    if o.character:getPrimaryHandItem() ~= instrument then
+    o.isItem = instanceof(instrument, "InventoryItem")
+
+    o.title = "Bard to the Bone - ".. (o.isItem and instrument:getDisplayName() or instrument:getTileName())
+
+    if o.isItem and o.character:getPrimaryHandItem() ~= instrument then
         ISTimedActionQueue.add(ISEquipWeaponAction:new(o.character, instrument, 50, true));
     end
+
+    BardUIWindow.instance = o
 
     return o
 end

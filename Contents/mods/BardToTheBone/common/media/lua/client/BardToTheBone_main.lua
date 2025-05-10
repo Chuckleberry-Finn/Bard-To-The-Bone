@@ -537,15 +537,13 @@ Bard.instrumentData = {
     ["Base.Trumpet"] = { soundDir = "trumpet" },
     ["Base.Whistle"] = { soundDir = "whistle"},
     ["Base.Whistle_Bone"] = { soundDir = "whistle"},
-}
 
-Bard.instrumentTiles = {
     --[""] = { soundDir = "", anim = ""},
     ---["Kick Drum"] = { soundDir = "", anim = ""},
     ---["Tom Drum"] = { soundDir = "", anim = ""},
     ---["Snare Drum"] = { soundDir = "", anim = ""},
-    ["Western Piano"] = { soundDir = "piano"},
-    ["Black Grand Piano"] = { soundDir = "grandPiano"},
+    ["Piano"] = { soundDir = "piano"},
+    ["Grand Piano"] = { soundDir = "grandPiano"},
 }
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
@@ -575,6 +573,12 @@ end
 ---@param instrument InventoryItem
 function Bard.getInstrumentData(instrument)
     Bard.populateTags()
+
+    if not instanceof(instrument, "InventoryItem") then
+        local properties = instrument:getProperties()
+        local groupName = properties:Is("CustomName") and properties:Val("CustomName")
+        return Bard.instrumentData[groupName]
+    end
 
     return Bard.instrumentData[instrument:getFullType()]
 end
