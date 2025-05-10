@@ -6,7 +6,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def ensure_libs():
-    for lib in ["librosa", "soundfile", "numpy", "pyloudnorm"]:
+    for lib in ["librosa", "soundfile", "numpy", "pyloudnorm", "mido"]:
         try:
             __import__(lib)
         except ImportError:
