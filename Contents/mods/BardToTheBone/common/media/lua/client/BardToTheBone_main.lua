@@ -545,7 +545,7 @@ Bard.instrumentTiles = {
     ---["Tom Drum"] = { soundDir = "", anim = ""},
     ---["Snare Drum"] = { soundDir = "", anim = ""},
     ["Western Piano"] = { soundDir = "piano"},
-    ["Black Grand Piano"] = { soundDir = "piano"},
+    ["Black Grand Piano"] = { soundDir = "grandPiano"},
 }
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
