@@ -576,8 +576,8 @@ function Bard.getInstrumentData(instrument)
 
     if not instanceof(instrument, "InventoryItem") then
         local properties = instrument:getProperties()
-        local groupName = properties:Is("CustomName") and properties:Val("CustomName")
-        return Bard.instrumentData[groupName]
+        local name = properties:Is("CustomName") and properties:Val("CustomName")
+        return Bard.instrumentData[name]
     end
 
     return Bard.instrumentData[instrument:getFullType()]

@@ -57,9 +57,8 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
             if object and instanceof(object, "IsoObject") then
                 local properties = object:getProperties()
                 if properties and properties:Is("CustomName") then
-                    local groupName = properties:Val("CustomName")
-                    print(groupName)
-                    if Bard.instrumentData[groupName] then
+                    local name = properties:Val("CustomName")
+                    if Bard.instrumentData[name] then
                         local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object)
                         return true
                     end
