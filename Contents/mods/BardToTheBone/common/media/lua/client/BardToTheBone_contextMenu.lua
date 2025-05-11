@@ -17,7 +17,7 @@ function bardContext.triggerTimedAction(character, instrument, square)
         return
     end
 
-    BardUIWindow:open(character, instrument)
+    BardUIWindow.open(character, instrument)
 end
 
 
