@@ -6,8 +6,22 @@ local bardContext = {}
 
 function bardContext.triggerTimedAction(character, instrument, square)
 
-    if instanceof(instrument, "InventoryItem") and luautils.haveToBeTransfered(character, instrument) then
-        ISTimedActionQueue.add(ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory()))
+    if instanceof(instrument, "InventoryItem") then
+        if luautils.haveToBeTransfered(character, instrument) then
+            local transfer = ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory())
+            transfer:setOnComplete(BardUIWindow.open, character, instrument)
+            ISTimedActionQueue.add(transfer)
+        end
+
+        if character:getPrimaryHandItem() ~= instrument then
+            local equip = ISEquipWeaponAction:new(character, instrument, 50, true)
+            ISTimedActionQueue.add(equip)
+
+            local wait = ISWaitWhileGettingUp:new(character, square)
+            wait:setOnComplete(BardUIWindow.open, character, instrument)
+            ISTimedActionQueue.add(wait)
+            return
+        end
     end
 
     if square and ( square:DistToProper(character) > 1.5 ) then
