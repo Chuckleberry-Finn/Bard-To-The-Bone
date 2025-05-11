@@ -58,6 +58,7 @@ end
 
 function BardToTheBonePlayMusic:update() end
 
+
 ---@param character IsoGameCharacter
 function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, recipe, container, containers)
     if not instrument or not character or not abcNotation then return end
