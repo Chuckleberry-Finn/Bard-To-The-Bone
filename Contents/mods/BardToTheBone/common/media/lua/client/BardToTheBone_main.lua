@@ -543,14 +543,39 @@ Bard.instrumentData = {
     ["Base.Trumpet"] = { soundDir = "trumpet" },
     ["Base.Whistle"] = { soundDir = "whistle"},
     ["Base.Whistle_Bone"] = { soundDir = "whistle"},
+}
 
+
+---SIMILAR TO ABOVE, BUT WITH MAPOBJECTS' GROUPNAMES, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
+Bard.instrumentMapObjectData = {
     --[""] = { soundDir = "", anim = ""},
     ---["Kick Drum"] = { soundDir = "", anim = ""},
     ---["Tom Drum"] = { soundDir = "", anim = ""},
     ---["Snare Drum"] = { soundDir = "", anim = ""},
-    ["Piano"] = { soundDir = "piano"},
-    ["Grand Piano"] = { soundDir = "grandPiano"},
+
+    --recreational_01_12,13  8,9
+    ["Piano"] = { soundDir = "piano", sprites = {"recreational_01_12","recreational_01_13","recreational_01_8","recreational_01_9"} },
+
+    --recreational_01_40,41  48,49
+    ["Grand Piano"] = { soundDir = "grandPiano", sprites = {"recreational_01_40","recreational_01_41","recreational_01_48","recreational_01_49"}},
 }
+
+Bard.populatedFromMapObjectData = false
+function Bard.populateMapObjectData()
+    if Bard.populatedFromMapObjectData then return end
+
+    for name,data in pairs(Bard.instrumentMapObjectData) do
+        local populatedSprites = {}
+        for _,sprite in pairs(data.sprites) do
+            populatedSprites[sprite] = true
+        end
+        Bard.instrumentData[name] = data
+        Bard.instrumentData[name].playFromSprites = populatedSprites
+    end
+
+    Bard.populatedFromMapObjectData = true
+end
+
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
@@ -559,7 +584,7 @@ Bard.instrumentTagData = {
 
 Bard.populatedFromTagData = false
 
-function Bard.populateTags()
+function Bard.populateTagData()
     if Bard.populatedFromTagData then return end
 
     for tag,data in pairs(Bard.instrumentTagData) do
@@ -578,15 +603,21 @@ end
 
 ---@param instrument InventoryItem
 function Bard.getInstrumentData(instrument)
-    Bard.populateTags()
+    Bard.populateTagData()
+    Bard.populateMapObjectData()
+    if not instrument then return end
 
-    if not instanceof(instrument, "InventoryItem") then
+    if instanceof(instrument, "IsoObject") then
         local properties = instrument:getProperties()
-        local name = properties:Is("CustomName") and properties:Val("CustomName")
-        return Bard.instrumentData[name]
+        local name = properties and properties:Is("CustomName") and properties:Val("CustomName")
+        if name then
+            return Bard.instrumentData[name]
+        end
     end
 
-    return Bard.instrumentData[instrument:getFullType()]
+    if instanceof(instrument, "InventoryItem") then
+        return Bard.instrumentData[instrument:getFullType()]
+    end
 end
 
 

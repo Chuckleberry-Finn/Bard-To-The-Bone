@@ -251,16 +251,23 @@ function BardUIWindow:update()
     end
 end
 
+function BardUIWindow.open(character, instrument)
+    local ui = BardUIWindow:new(character, instrument)
+    ui:initialise()
+    ui:addToUIManager()
+    return ui
+end
 
 ---@param instrument InventoryItem
-function BardUIWindow:new(x, y, width, height, character, instrument)
+function BardUIWindow:new(character, instrument)
 
     if BardUIWindow.instance then BardUIWindow.instance:close() end
 
-    local o = ISCollapsableWindow:new(x, y, width, height)
+    local o = ISCollapsableWindow:new(200, 200, 400, 640)
     setmetatable(o, self)
     self.__index = self
     o:setResizable(false)
+    ---@type IsoPlayer|IsoGameCharacter|IsoMovingObject
     o.character = character
     o.instrument = instrument
     o.unsavedChanges = false
@@ -268,6 +275,10 @@ function BardUIWindow:new(x, y, width, height, character, instrument)
     o.isItem = instanceof(instrument, "InventoryItem")
 
     o.title = "Bard to the Bone - ".. (o.isItem and instrument:getDisplayName() or instrument:getTileName())
+
+    if not o.isItem then
+        o.character:faceThisObject(instrument)
+    end
 
     if o.isItem and o.character:getPrimaryHandItem() ~= instrument then
         ISTimedActionQueue.add(ISEquipWeaponAction:new(o.character, instrument, 50, true));

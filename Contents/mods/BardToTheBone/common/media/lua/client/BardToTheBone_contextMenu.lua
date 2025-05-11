@@ -4,18 +4,22 @@ local Bard = require "BardToTheBone_main"
 
 local bardContext = {}
 
-function bardContext.triggerTimedAction(character, instrument)
+function bardContext.triggerTimedAction(character, instrument, square)
 
     if instanceof(instrument, "InventoryItem") and luautils.haveToBeTransfered(character, instrument) then
         ISTimedActionQueue.add(ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory()))
     end
 
-    --if not character:getInventory():contains(instrument) then return end
+    if square and ( square:DistToProper(character) > 1.5 ) then
+        local walkTo = ISWalkToTimedAction:new(character, square)
+        walkTo:setOnComplete(BardUIWindow.open, character, instrument)
+        ISTimedActionQueue.add(walkTo)
+        return
+    end
 
-    local ui = BardUIWindow:new(200, 200, 400, 640, character, instrument)
-    ui:initialise()
-    ui:addToUIManager()
+    BardUIWindow:open(character, instrument)
 end
+
 
 ---@param context ISContextMenu
 function bardContext.addInventoryItemContext(playerID, context, items)
@@ -46,20 +50,25 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
     local playerObj = getSpecificPlayer(playerID)
     local square
 
-    for _,v in ipairs(worldObjects) do square = v:getSquare() end
+    for _,v in ipairs(worldObjects) do
+        square = v:getSquare()
+    end
     if not square then return false end
 
-    if square and ( square:DistToProper(playerObj) <= 1.5 ) then
+    if square then
         local objects = square:getObjects()
         for i=0,objects:size()-1 do
             ---@type IsoObject
             local object = objects:get(i)
             if object and instanceof(object, "IsoObject") then
-                local properties = object:getProperties()
-                if properties and properties:Is("CustomName") then
-                    local name = properties:Val("CustomName")
-                    if Bard.instrumentData[name] then
-                        local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object)
+                local data = Bard.getInstrumentData(object)
+                if data then
+                    local sprites = data.playFromSprites
+                    local sprite = object:getSpriteName()
+                    if (not sprites) or sprites[sprite] then
+                        local dir = object:getFacing()
+                        local sq = square:getAdjacentSquare(dir)
+                        local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object, sq)
                         return true
                     end
                 end
