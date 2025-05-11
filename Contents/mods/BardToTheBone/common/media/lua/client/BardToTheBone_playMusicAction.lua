@@ -67,7 +67,7 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation) --time, 
     o.stopOnWalk = false
     o.stopOnRun = true
 
-    o.heldItem = instanceof(self.item, "InventoryItem")
+    o.heldItem = instanceof(instrument, "InventoryItem")
 
     local music, duration = Bard.startPlayback(character, abcNotation)
     o.music = music
