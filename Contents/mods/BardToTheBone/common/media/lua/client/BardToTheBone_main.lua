@@ -379,10 +379,21 @@ function Bard.parseABC(abc)
                                 brokenRhythm = nil -- Clear after applying
                             end
 
-                            table.insert(voices[currentVoice].events, {
-                                timeOffset = timeOffsetMs,
-                                notes = parsedNotes,
-                            })
+                            local chordStaggerMs = 4
+
+                            if isChord and #parsedNotes > 1 then
+                                for i, note in ipairs(parsedNotes) do
+                                    table.insert(voices[currentVoice].events, {
+                                        timeOffset = timeOffsetMs + ((i - 1) * chordStaggerMs),
+                                        notes = { note }
+                                    })
+                                end
+                            else
+                                table.insert(voices[currentVoice].events, {
+                                    timeOffset = timeOffsetMs,
+                                    notes = parsedNotes
+                                })
+                            end
 
                             if parsedNotes[1] and parsedNotes[1].ticks then
                                 if isChord then
