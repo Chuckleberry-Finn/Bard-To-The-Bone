@@ -538,9 +538,7 @@ function Bard.playLoadedSongs(player)
     end
     bard.playingNotes = playingNotes
 
-    if allDone then
-        Bard.players[id] = nil
-    end
+    if allDone then Bard.completeAction(player) end
 end
 
 Bard.instrumentSpecials = {}
