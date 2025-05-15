@@ -525,6 +525,7 @@ function Bard.playLoadedSongs(player)
         end
     end
 
+    ---These keeps total notes that are active capped to 50, stops the oldest note per tick
     local playingNotes = {}
     for n,soundID in ipairs(bard.playingNotes) do
         if player:getEmitter():isPlaying(soundID) then
@@ -536,6 +537,7 @@ function Bard.playLoadedSongs(player)
         end
     end
     bard.playingNotes = playingNotes
+
     if allDone then
         Bard.players[id] = nil
     end
