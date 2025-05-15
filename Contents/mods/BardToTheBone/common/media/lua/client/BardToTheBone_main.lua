@@ -490,6 +490,8 @@ function Bard.playLoadedSongs(player)
     bard.elapsedTime = bard.elapsedTime + (now - bard.lastUpdateTime) * speedMultiplier
     bard.lastUpdateTime = now
 
+    bard.playingNotes = bard.playingNotes or {}
+
     local allDone = true
 
     for voiceId, data in pairs(music) do
@@ -508,7 +510,7 @@ function Bard.playLoadedSongs(player)
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
                             local soundID = player:getEmitter():playSound(instrumentSound)
-
+                            table.insert(bard.playingNotes, soundID)
                             --getWorld():getFreeEmitter():playSound(instrumentSound, player)
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
@@ -523,6 +525,17 @@ function Bard.playLoadedSongs(player)
         end
     end
 
+    local playingNotes = {}
+    for n,soundID in ipairs(bard.playingNotes) do
+        if player:getEmitter():isPlaying(soundID) then
+            if #bard.playingNotes > 50 and n == 1 then
+                player:getEmitter():stopSound(soundID)
+            else
+                table.insert(playingNotes, soundID)
+            end
+        end
+    end
+    bard.playingNotes = playingNotes
     if allDone then
         Bard.players[id] = nil
     end
