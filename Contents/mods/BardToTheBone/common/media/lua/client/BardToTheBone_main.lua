@@ -75,11 +75,10 @@ end
 function Bard.parseNoteToken(token, defaultTicks, key)
 
     -- Handle grace notes like gA, g^C'
-    if token:match("^g") then
-        local durationTicks = 20 -- fixed short duration for grace notes
-
+    if token:match("^gr:") then
+        local durationTicks = 20
         local notes = {}
-        for accidental, base, octaveMod in token:sub(2):gmatch("([_=^]*)([A-Ga-g])([',]*)") do
+        for accidental, base, octaveMod in token:sub(4):gmatch("([_=^]*)([A-Ga-g])([',]*)") do
             local octave = 4
             if base:match("%l") then octave = 5 end
             for char in octaveMod:gmatch("[',]") do
@@ -217,7 +216,7 @@ function Bard.preprocessABC(abc)
         end)
 
         --preprocess grace notes
-        line = line:gsub("{([_=^]?[A-Ga-g][',]*)}", "g%1")
+        line = line:gsub("{([_=^]?[A-Ga-g][',]*)}", "gr:%1")
 
         -- Remove decorations
         line = line:gsub("!.-!", "")
