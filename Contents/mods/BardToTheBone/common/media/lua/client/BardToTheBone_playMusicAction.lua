@@ -15,12 +15,14 @@ end
 function BardToTheBonePlayMusic:start()
     --self:setOverrideHandModels(self.item, nil)
     local id = self.character:getUsername()
+    Bard.players[id] = nil
     Bard.players[id] = {}
     Bard.players[id].music = self.music
     Bard.players[id].duration = self.maxTime
     local instrumentData = Bard.getInstrumentData(self.item)
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
+    Bard.players[id].emitter = getWorld():getFreeEmitter()
 
     if instrumentData then
 
