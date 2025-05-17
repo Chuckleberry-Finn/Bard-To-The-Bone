@@ -528,9 +528,9 @@ function Bard.playLoadedSongs(player)
     ---These keeps total notes that are active capped to 50, stops the oldest note per tick
     local playingNotes = {}
     for n,soundID in ipairs(bard.playingNotes) do
-        if player:getEmitter():isPlaying(soundID) then
+        if bard.emitter:isPlaying(soundID) then
             if #bard.playingNotes > 50 and n == 1 then
-                player:getEmitter():stopSound(soundID)
+                bard.emitter:stopSound(soundID)
             else
                 table.insert(playingNotes, soundID)
             end
