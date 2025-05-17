@@ -485,11 +485,64 @@ function Bard.startPlayback(player, abc)
 end
 
 
-function Bard.noteToSound(note)
+function Bard.noteToMidi(note)
+    local baseMap = {C=0, D=2, E=4, F=5, G=7, A=9, B=11}
+    local accidentalOffset = {["^"] = 1, ["_"] = -1, ["="] = 0}
+    local acc = note.base:sub(1, 1)
+    local letter = note.base:sub(-1)
+    local pitch = baseMap[letter] + (accidentalOffset[acc] or 0)
+    return (note.octave + 1) * 12 + pitch
+end
+
+
+function Bard.midiToNote(midi, fallbackBase)
+    local baseMap = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}
+    local pitchClass = midi % 12
+    local octave = math.floor(midi / 12) - 1
+    local name = baseMap[pitchClass + 1]
+    local base = name:sub(1, 1)
+    local acc = name:sub(2)
+    local accidental = acc == "#" and "^" or (acc == "b" and "_" or "")
+    return { base = accidental .. base, octave = octave, ticks = 1 }
+end
+
+
+function Bard.noteToSound(note, instrumentID)
     if note.rest then return nil end
-    local mapped = Bard.accidental_map[note.base] or Bard.natural_map[note.base:sub(-1)]
-    if not mapped then return nil end
-    return mapped .. tostring(note.octave)
+
+    local function getSoundName(n)
+        local mapped = Bard.accidental_map[n.base] or Bard.natural_map[n.base:sub(-1)]
+        if not mapped then return nil end
+        return mapped .. tostring(n.octave)
+    end
+
+    -- Direct match
+    local sound = getSoundName(note)
+    if sound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
+        return sound
+    end
+
+    -- Search nearby notes (±12 semitones)
+    local semitoneOffsets = {}
+    for i = 1, 12 do
+        table.insert(semitoneOffsets, i)
+        table.insert(semitoneOffsets, -i)
+    end
+
+    for _, offset in ipairs(semitoneOffsets) do
+        local newNote = { base = note.base, octave = note.octave }
+        local midi = Bard.noteToMidi(newNote)
+        midi = midi + offset
+        if midi >= 0 and midi <= 127 then
+            newNote = Bard.midiToNote(midi, note.base)
+            local altSound = getSoundName(newNote)
+            if altSound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. altSound .. ".ogg") then
+                return altSound
+            end
+        end
+    end
+
+    return nil
 end
 
 
@@ -535,8 +588,11 @@ function Bard.playLoadedSongs(player)
             local latencyBufferMs = 30
             if bard.elapsedTime + latencyBufferMs >= eventTime then
                 for _, note in ipairs(event.notes) do
-                    local sound = Bard.noteToSound(note)
+                    local sound = Bard.noteToSound(note, instrumentID)
                     if sound then
+
+                        print("note: ", note.base..note.octave, "-->", sound)
+
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
