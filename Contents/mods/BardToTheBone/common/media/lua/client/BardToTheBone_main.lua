@@ -595,7 +595,7 @@ Bard.instrumentData = {
     ["Base.Xylophone"] = { soundDir = "xylophone", anim = "Violin", left = "Xylophone_Mallet", right = "Xylophone"},
     ["Base.Flute"] = { soundDir = "flute", anim = "Flute" },
     ["Base.Rubberducky"] = { soundDir = "bikehorn" },
-    ["Base.Trumpet"] = { soundDir = "trumpet" },
+    ["Base.Trumpet"] = { soundDir = "trumpet", anim = "Trumpet" },
     ["Base.Whistle"] = { soundDir = "whistle"},
     ["Base.Whistle_Bone"] = { soundDir = "whistle"},
 }
@@ -634,7 +634,7 @@ end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { soundDir = "bottle", anim = "Harmonica"},
+    ["GlassBottle"] = { soundDir = "bottle", anim = "Bottle"},
 }
 
 Bard.populatedFromTagData = false
