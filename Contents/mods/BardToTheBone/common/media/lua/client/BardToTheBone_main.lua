@@ -200,7 +200,9 @@ function Bard.preprocessABC(abc)
         -- Light cleanup
         line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") -- Remove decorations but keep notes
         line = line:gsub("(%b[])%s*", "%1 ")   -- Add space after [chords]
-        line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
+        if not line:match("^%a:") then
+            line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
+        end
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
         line = line:gsub("%%[^\n]*", "")   -- Remove comments
         line = line:gsub("%b()", "")        -- Remove slurs
@@ -273,6 +275,7 @@ function Bard.parseABC(abc)
     local lastParsedNoteEvent = nil -- Track previous note for broken rhythm adjustments
 
     for line in abc:gmatch("[^\r\n]+") do
+
         local header, value = line:match("^(%a):%s*(.+)$")
 
         if header == "T" or header == "X" or header == "%" then
