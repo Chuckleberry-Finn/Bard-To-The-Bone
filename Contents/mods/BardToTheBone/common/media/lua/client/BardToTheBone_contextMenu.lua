@@ -24,7 +24,7 @@ function bardContext.triggerTimedAction(character, instrument, square)
         end
     end
 
-    if square and ( square:DistToProper(character) > 1.5 ) then
+    if square and ( square:DistToProper(character) > 1.4 ) then
         local walkTo = ISWalkToTimedAction:new(character, square)
         walkTo:setOnComplete(BardUIWindow.open, character, instrument)
         ISTimedActionQueue.add(walkTo)
