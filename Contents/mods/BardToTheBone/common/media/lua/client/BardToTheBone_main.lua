@@ -155,10 +155,14 @@ function Bard.preprocessABC(abc)
         end
     end
 
-    -- Optional: Insert default tempo if missing
+    -- Insert default tempo if missing
     if not abc:find("Q:") then
         abc = "Q:1/4=120\n" .. abc
     end
+
+    -- Normalize durations like z/2 → z1/2
+    abc = abc:gsub("z(/%d+)", "z1%1")
+    abc = abc:gsub("([A-Ga-g])(/%d+)", "%11%2")
 
     -- Split into true lines first
     local lines = {}
