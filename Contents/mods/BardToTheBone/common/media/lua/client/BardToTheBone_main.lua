@@ -455,6 +455,7 @@ function Bard.completeAction(player)
         currentAction.action:forceStop()
     end
     local id = player:getUsername()
+
     Bard.players[id] = nil
 end
 
@@ -496,7 +497,6 @@ function Bard.playLoadedSongs(player)
     local id = player:getUsername()
     local bard = Bard.players[id]
     if not bard then return end
-    if not bard.emitter then return end
 
     local music = bard.music
     local instrumentID = bard.instrumentID
@@ -539,9 +539,7 @@ function Bard.playLoadedSongs(player)
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
 
-                            print("bard.emitter: ", bard.emitter)
-
-                            local soundID = bard.emitter:playSound(instrumentSound, player)
+                            local soundID = player:getEmitter():playSound(instrumentSound, player)
                             table.insert(bard.playingNotes, soundID)
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
@@ -559,9 +557,9 @@ function Bard.playLoadedSongs(player)
     ---These keeps total notes that are active capped to 50, stops the oldest note per tick
     local playingNotes = {}
     for n,soundID in ipairs(bard.playingNotes) do
-        if bard.emitter:isPlaying(soundID) then
+        if player:getEmitter():isPlaying(soundID) then
             if #bard.playingNotes > 50 and n == 1 then
-                bard.emitter:stopSound(soundID)
+                player:getEmitter():stopSound(soundID)
             else
                 table.insert(playingNotes, soundID)
             end
