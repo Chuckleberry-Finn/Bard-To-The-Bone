@@ -22,7 +22,6 @@ function BardToTheBonePlayMusic:start()
     local instrumentData = Bard.getInstrumentData(self.item)
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
-    Bard.players[id].emitter = getWorld():getFreeEmitter()
 
     if instrumentData then
 
