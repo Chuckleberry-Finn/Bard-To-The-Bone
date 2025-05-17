@@ -73,8 +73,28 @@ end
 
 
 function Bard.parseNoteToken(token, defaultTicks, key)
+
+    -- Handle grace notes like gA, g^C'
+    if token:match("^g") then
+        local durationTicks = 20 -- fixed short duration for grace notes
+
+        local notes = {}
+        for accidental, base, octaveMod in token:sub(2):gmatch("([_=^]*)([A-Ga-g])([',]*)") do
+            local octave = 4
+            if base:match("%l") then octave = 5 end
+            for char in octaveMod:gmatch("[',]") do
+                octave = octave + (char == "'" and 1 or -1)
+            end
+            local fullBase = accidental .. base:upper()
+            local note = { rest = false, base = fullBase, octave = octave, ticks = durationTicks }
+            Bard.applyKeyAccidental(note, key)
+            table.insert(notes, note)
+        end
+        return notes
+    end
+
+    -- This is a chord
     if token:match("^%b[]$") then
-        -- This is a chord
         local inner = token:sub(2, -2) -- Remove [ and ]
         local notes = {}
 
@@ -98,13 +118,14 @@ function Bard.parseNoteToken(token, defaultTicks, key)
 
         return notes
 
+        -- this is a rest
     elseif token:match("^z") then
         local duration = token:match("^z(%d*/?%d*)") or "1"
         local ticks = Bard.getTicksFromLength(duration)
         return { { rest = true, ticks = ticks } }
 
     else
-        -- Not a chord
+        -- Not a chord/rest/grace
         local notes = {}
         local duration = token:match("%d*/?%d*") or ""
         local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
@@ -126,6 +147,10 @@ end
 
 
 function Bard.preprocessABC(abc)
+
+    -- Normalize headers like "K: C" → "K:C"
+    abc = abc:gsub("([A-Z]):%s+", "%1:")
+
     -- Insert default Key and Meter if missing
     if not abc:find("K:") then abc = "K:C\n" .. abc end
     if not abc:find("M:") then
@@ -171,7 +196,6 @@ function Bard.preprocessABC(abc)
     end
 
     local cleaned = {}
-    local tag = "CLEAN"
 
     for _, line in ipairs(lines) do
         -- Light cleanup
@@ -179,6 +203,8 @@ function Bard.preprocessABC(abc)
         line = line:gsub("(%b[])%s*", "%1 ")   -- Add space after [chords]
         line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
+        line = line:gsub("%%[^\n]*", "")   -- Remove comments
+        line = line:gsub("%b()", "")        -- Remove slurs
 
         -- Remove ALL spaces inside true chords (skip [V:], [|] cases)
         line = line:gsub("%[(.-)%]", function(inner)
@@ -190,15 +216,11 @@ function Bard.preprocessABC(abc)
             end
         end)
 
-        -- Detect messy artifacts
-        if line:find("\\") or line:find("{") or line:find("}") or line:find("!%a+!") or line:find("T:%s*from") or line:find("z1/32") or line:find("z1/64") or line:find("z1/128") then
-            tag = "MESSY"
-            line = line:gsub("%%[^\n]*", "")   -- Remove comments
-            line = line:gsub("!.-!", "")       -- Remove decorations
-            line = line:gsub("%b{}", "")       -- Remove grace notes
-            line = line:gsub("%b()", "")        -- Remove slurs
-            -- Note: DO NOT touch | : [ ] (important for repeats/endings/tuplets)
-        end
+        --preprocess grace notes
+        line = line:gsub("{([_=^]?[A-Ga-g][',]*)}", "g%1")
+
+        -- Remove decorations
+        line = line:gsub("!.-!", "")
 
         -- Collapse spaces inside this line
         line = line:gsub("[ \t]+", " ")
@@ -454,6 +476,8 @@ function Bard.startPlayback(player, abc)
     local totalMilliseconds  = Bard.convertMusicTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
     local durationTicks = totalMilliseconds / (1000 / getAverageFPS())
 
+    for _, voice in pairs(music) do voice.eventIndex = 1 end
+
     return music, durationTicks --to convert ticks to milliseconds for playback deadline
 end
 
@@ -472,6 +496,7 @@ function Bard.playLoadedSongs(player)
     local id = player:getUsername()
     local bard = Bard.players[id]
     if not bard then return end
+    if not bard.emitter then return end
 
     local music = bard.music
     local instrumentID = bard.instrumentID
@@ -495,7 +520,6 @@ function Bard.playLoadedSongs(player)
     bard.lastUpdateTime = now
 
     bard.playingNotes = bard.playingNotes or {}
-    bard.emitter = bard.emitter or getWorld():getFreeEmitter()
 
     local allDone = true
 
@@ -514,6 +538,9 @@ function Bard.playLoadedSongs(player)
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
+
+                            print("bard.emitter: ", bard.emitter)
+
                             local soundID = bard.emitter:playSound(instrumentSound, player)
                             table.insert(bard.playingNotes, soundID)
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
