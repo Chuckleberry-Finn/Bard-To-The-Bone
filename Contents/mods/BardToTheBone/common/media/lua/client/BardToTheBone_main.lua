@@ -507,17 +507,18 @@ function Bard.midiToNote(midi, fallbackBase)
 end
 
 
+function Bard.getSoundName(n)
+    local mapped = Bard.accidental_map[n.base] or Bard.natural_map[n.base:sub(-1)]
+    if not mapped then return nil end
+    return mapped .. tostring(n.octave)
+end
+
+
 function Bard.noteToSound(note, instrumentID)
     if note.rest then return nil end
 
-    local function getSoundName(n)
-        local mapped = Bard.accidental_map[n.base] or Bard.natural_map[n.base:sub(-1)]
-        if not mapped then return nil end
-        return mapped .. tostring(n.octave)
-    end
-
     -- Direct match
-    local sound = getSoundName(note)
+    local sound = Bard.getSoundName(note)
     if sound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
         return sound
     end
@@ -535,7 +536,7 @@ function Bard.noteToSound(note, instrumentID)
         midi = midi + offset
         if midi >= 0 and midi <= 127 then
             newNote = Bard.midiToNote(midi, note.base)
-            local altSound = getSoundName(newNote)
+            local altSound = Bard.getSoundName(newNote)
             if altSound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. altSound .. ".ogg") then
                 return altSound
             end
@@ -590,13 +591,9 @@ function Bard.playLoadedSongs(player)
                 for _, note in ipairs(event.notes) do
                     local sound = Bard.noteToSound(note, instrumentID)
                     if sound then
-
-                        print("note: ", note.base..note.octave, "-->", sound)
-
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
                         if instrumentID then
-
                             local soundID = player:getEmitter():playSound(instrumentSound)
                             table.insert(bard.playingNotes, soundID)
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
