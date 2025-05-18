@@ -645,12 +645,12 @@ Bard.instrumentData = {
     ["Base.Harmonica"] = { soundDir = "harmonica", anim = "Harmonica" },
     ["Base.Saxophone"] = { soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
     ["Base.Violin"] = { soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
-    ["Base.Xylophone"] = { soundDir = "xylophone", anim = "Violin", left = "Xylophone_Mallet", right = "Xylophone"},
+    ["Base.Xylophone"] = { soundDir = "xylophone", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
     ["Base.Flute"] = { soundDir = "flute", anim = "Flute" },
-    ["Base.Rubberducky"] = { soundDir = "bikehorn" },
+    ["Base.Rubberducky"] = { soundDir = "bikehorn", anim = "Rubberducky", },
     ["Base.Trumpet"] = { soundDir = "trumpet", anim = "Trumpet" },
-    ["Base.Whistle"] = { soundDir = "whistle"},
-    ["Base.Whistle_Bone"] = { soundDir = "whistle"},
+    ["Base.Whistle"] = { soundDir = "whistle", anim = "Whistle"},
+    ["Base.Whistle_Bone"] = { soundDir = "whistle", anim = "Whistle"},
 }
 
 
