@@ -613,7 +613,7 @@ function Bard.playLoadedSongs(player)
     local playingNotes = {}
     for n,soundID in ipairs(bard.playingNotes) do
         if player:getEmitter():isPlaying(soundID) then
-            if #bard.playingNotes > 50 and n == 1 then
+            if #bard.playingNotes > 40 and n == 1 then
                 player:getEmitter():stopSound(soundID)
             else
                 table.insert(playingNotes, soundID)
