@@ -638,7 +638,7 @@ end
 -- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
     ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
-    ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming" },
+    ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
     ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
     ["Base.Keytar"] = { soundDir = "keytar", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
     ["Base.GuitarElectricBass"] = { soundDir = "electric_bass", anim = "strumming" },

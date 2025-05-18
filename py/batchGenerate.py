@@ -4,6 +4,11 @@ import os
 
 # You can also import from a .py file if preferred
 instruments = [
+    {"program": 29, "folder": "electric_guitarMuted"},
+    {"program": 30, "folder": "electric_guitarOverdrive"},
+    {"program": 31, "folder": "electric_guitarDistortion"},
+    {"program": 32, "folder": "electric_guitarHarmonics"},
+    '''
     {"program": 81, "folder": "keytarSquare"},
     {"program": 82, "folder": "keytarSawtooth"},
     {"program": 83, "folder": "keytarCalliope"},
@@ -12,6 +17,8 @@ instruments = [
     {"program": 86, "folder": "keytarVoice"},
     {"program": 87, "folder": "keytarFifths"},
     {"program": 88, "folder": "keytarBrass"},
+    '''
+    
     '''
     {"program": 22, "folder": "accordion"},
     {"program": 106, "folder": "banjo"},

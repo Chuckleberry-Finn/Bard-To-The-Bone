@@ -1648,345 +1648,2133 @@ module BardToTheBone {
         category = BardInstrument_electric_bass, is3D = true,
         clip { file = media/sound/instruments/electric_bass/Gn5.ogg, } }
 
-    sound electric_guitar_Ab0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab0.ogg, } }
-
-    sound electric_guitar_Ab1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab1.ogg, } }
-
-    sound electric_guitar_Ab2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab2.ogg, } }
-
-    sound electric_guitar_Ab3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab3.ogg, } }
-
-    sound electric_guitar_Ab4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab4.ogg, } }
-
-    sound electric_guitar_Ab5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Ab5.ogg, } }
-
-    sound electric_guitar_An0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An0.ogg, } }
-
-    sound electric_guitar_An1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An1.ogg, } }
-
-    sound electric_guitar_An2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An2.ogg, } }
-
-    sound electric_guitar_An3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An3.ogg, } }
-
-    sound electric_guitar_An4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An4.ogg, } }
-
-    sound electric_guitar_An5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/An5.ogg, } }
-
-    sound electric_guitar_Bb0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb0.ogg, } }
-
-    sound electric_guitar_Bb1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb1.ogg, } }
-
-    sound electric_guitar_Bb2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb2.ogg, } }
-
-    sound electric_guitar_Bb3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb3.ogg, } }
-
-    sound electric_guitar_Bb4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb4.ogg, } }
-
-    sound electric_guitar_Bb5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bb5.ogg, } }
-
-    sound electric_guitar_Bn0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn0.ogg, } }
-
-    sound electric_guitar_Bn1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn1.ogg, } }
-
-    sound electric_guitar_Bn2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn2.ogg, } }
-
-    sound electric_guitar_Bn3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn3.ogg, } }
-
-    sound electric_guitar_Bn4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn4.ogg, } }
-
-    sound electric_guitar_Bn5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Bn5.ogg, } }
-
-    sound electric_guitar_Cb0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb0.ogg, } }
-
-    sound electric_guitar_Cb1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb1.ogg, } }
-
-    sound electric_guitar_Cb2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb2.ogg, } }
-
-    sound electric_guitar_Cb3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb3.ogg, } }
-
-    sound electric_guitar_Cb4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb4.ogg, } }
-
-    sound electric_guitar_Cb5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cb5.ogg, } }
-
-    sound electric_guitar_Cn0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn0.ogg, } }
-
-    sound electric_guitar_Cn1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn1.ogg, } }
-
-    sound electric_guitar_Cn2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn2.ogg, } }
-
-    sound electric_guitar_Cn3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn3.ogg, } }
-
-    sound electric_guitar_Cn4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn4.ogg, } }
-
-    sound electric_guitar_Cn5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn5.ogg, } }
-
-    sound electric_guitar_Cn6 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Cn6.ogg, } }
-
-    sound electric_guitar_Db0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db0.ogg, } }
-
-    sound electric_guitar_Db1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db1.ogg, } }
-
-    sound electric_guitar_Db2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db2.ogg, } }
-
-    sound electric_guitar_Db3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db3.ogg, } }
-
-    sound electric_guitar_Db4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db4.ogg, } }
-
-    sound electric_guitar_Db5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Db5.ogg, } }
-
-    sound electric_guitar_Dn0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn0.ogg, } }
-
-    sound electric_guitar_Dn1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn1.ogg, } }
-
-    sound electric_guitar_Dn2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn2.ogg, } }
-
-    sound electric_guitar_Dn3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn3.ogg, } }
-
-    sound electric_guitar_Dn4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn4.ogg, } }
-
-    sound electric_guitar_Dn5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Dn5.ogg, } }
-
-    sound electric_guitar_Eb0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb0.ogg, } }
-
-    sound electric_guitar_Eb1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb1.ogg, } }
-
-    sound electric_guitar_Eb2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb2.ogg, } }
-
-    sound electric_guitar_Eb3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb3.ogg, } }
-
-    sound electric_guitar_Eb4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb4.ogg, } }
-
-    sound electric_guitar_Eb5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Eb5.ogg, } }
-
-    sound electric_guitar_En0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En0.ogg, } }
-
-    sound electric_guitar_En1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En1.ogg, } }
-
-    sound electric_guitar_En2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En2.ogg, } }
-
-    sound electric_guitar_En3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En3.ogg, } }
-
-    sound electric_guitar_En4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En4.ogg, } }
-
-    sound electric_guitar_En5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/En5.ogg, } }
-
-    sound electric_guitar_Fb0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb0.ogg, } }
-
-    sound electric_guitar_Fb1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb1.ogg, } }
-
-    sound electric_guitar_Fb2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb2.ogg, } }
-
-    sound electric_guitar_Fb3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb3.ogg, } }
-
-    sound electric_guitar_Fb4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb4.ogg, } }
-
-    sound electric_guitar_Fb5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fb5.ogg, } }
-
-    sound electric_guitar_Fn0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn0.ogg, } }
-
-    sound electric_guitar_Fn1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn1.ogg, } }
-
-    sound electric_guitar_Fn2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn2.ogg, } }
-
-    sound electric_guitar_Fn3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn3.ogg, } }
-
-    sound electric_guitar_Fn4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn4.ogg, } }
-
-    sound electric_guitar_Fn5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Fn5.ogg, } }
-
-    sound electric_guitar_Gb0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb0.ogg, } }
-
-    sound electric_guitar_Gb1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb1.ogg, } }
-
-    sound electric_guitar_Gb2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb2.ogg, } }
-
-    sound electric_guitar_Gb3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb3.ogg, } }
-
-    sound electric_guitar_Gb4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb4.ogg, } }
-
-    sound electric_guitar_Gb5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gb5.ogg, } }
-
-    sound electric_guitar_Gn0 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn0.ogg, } }
-
-    sound electric_guitar_Gn1 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn1.ogg, } }
-
-    sound electric_guitar_Gn2 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn2.ogg, } }
-
-    sound electric_guitar_Gn3 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn3.ogg, } }
-
-    sound electric_guitar_Gn4 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn4.ogg, } }
-
-    sound electric_guitar_Gn5 {
-        category = BardInstrument_electric_guitar, is3D = true,
-        clip { file = media/sound/instruments/electric_guitar/Gn5.ogg, } }
+    sound electric_guitarClean_Ab0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab0.ogg, } }
+
+    sound electric_guitarClean_Ab1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab1.ogg, } }
+
+    sound electric_guitarClean_Ab2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab2.ogg, } }
+
+    sound electric_guitarClean_Ab3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab3.ogg, } }
+
+    sound electric_guitarClean_Ab4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab4.ogg, } }
+
+    sound electric_guitarClean_Ab5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Ab5.ogg, } }
+
+    sound electric_guitarClean_An0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An0.ogg, } }
+
+    sound electric_guitarClean_An1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An1.ogg, } }
+
+    sound electric_guitarClean_An2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An2.ogg, } }
+
+    sound electric_guitarClean_An3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An3.ogg, } }
+
+    sound electric_guitarClean_An4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An4.ogg, } }
+
+    sound electric_guitarClean_An5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/An5.ogg, } }
+
+    sound electric_guitarClean_Bb0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb0.ogg, } }
+
+    sound electric_guitarClean_Bb1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb1.ogg, } }
+
+    sound electric_guitarClean_Bb2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb2.ogg, } }
+
+    sound electric_guitarClean_Bb3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb3.ogg, } }
+
+    sound electric_guitarClean_Bb4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb4.ogg, } }
+
+    sound electric_guitarClean_Bb5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bb5.ogg, } }
+
+    sound electric_guitarClean_Bn0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn0.ogg, } }
+
+    sound electric_guitarClean_Bn1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn1.ogg, } }
+
+    sound electric_guitarClean_Bn2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn2.ogg, } }
+
+    sound electric_guitarClean_Bn3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn3.ogg, } }
+
+    sound electric_guitarClean_Bn4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn4.ogg, } }
+
+    sound electric_guitarClean_Bn5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Bn5.ogg, } }
+
+    sound electric_guitarClean_Cb0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb0.ogg, } }
+
+    sound electric_guitarClean_Cb1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb1.ogg, } }
+
+    sound electric_guitarClean_Cb2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb2.ogg, } }
+
+    sound electric_guitarClean_Cb3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb3.ogg, } }
+
+    sound electric_guitarClean_Cb4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb4.ogg, } }
+
+    sound electric_guitarClean_Cb5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cb5.ogg, } }
+
+    sound electric_guitarClean_Cn0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn0.ogg, } }
+
+    sound electric_guitarClean_Cn1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn1.ogg, } }
+
+    sound electric_guitarClean_Cn2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn2.ogg, } }
+
+    sound electric_guitarClean_Cn3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn3.ogg, } }
+
+    sound electric_guitarClean_Cn4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn4.ogg, } }
+
+    sound electric_guitarClean_Cn5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn5.ogg, } }
+
+    sound electric_guitarClean_Cn6 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Cn6.ogg, } }
+
+    sound electric_guitarClean_Db0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db0.ogg, } }
+
+    sound electric_guitarClean_Db1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db1.ogg, } }
+
+    sound electric_guitarClean_Db2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db2.ogg, } }
+
+    sound electric_guitarClean_Db3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db3.ogg, } }
+
+    sound electric_guitarClean_Db4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db4.ogg, } }
+
+    sound electric_guitarClean_Db5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Db5.ogg, } }
+
+    sound electric_guitarClean_Dn0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn0.ogg, } }
+
+    sound electric_guitarClean_Dn1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn1.ogg, } }
+
+    sound electric_guitarClean_Dn2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn2.ogg, } }
+
+    sound electric_guitarClean_Dn3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn3.ogg, } }
+
+    sound electric_guitarClean_Dn4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn4.ogg, } }
+
+    sound electric_guitarClean_Dn5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Dn5.ogg, } }
+
+    sound electric_guitarClean_Eb0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb0.ogg, } }
+
+    sound electric_guitarClean_Eb1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb1.ogg, } }
+
+    sound electric_guitarClean_Eb2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb2.ogg, } }
+
+    sound electric_guitarClean_Eb3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb3.ogg, } }
+
+    sound electric_guitarClean_Eb4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb4.ogg, } }
+
+    sound electric_guitarClean_Eb5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Eb5.ogg, } }
+
+    sound electric_guitarClean_En0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En0.ogg, } }
+
+    sound electric_guitarClean_En1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En1.ogg, } }
+
+    sound electric_guitarClean_En2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En2.ogg, } }
+
+    sound electric_guitarClean_En3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En3.ogg, } }
+
+    sound electric_guitarClean_En4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En4.ogg, } }
+
+    sound electric_guitarClean_En5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/En5.ogg, } }
+
+    sound electric_guitarClean_Fb0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb0.ogg, } }
+
+    sound electric_guitarClean_Fb1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb1.ogg, } }
+
+    sound electric_guitarClean_Fb2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb2.ogg, } }
+
+    sound electric_guitarClean_Fb3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb3.ogg, } }
+
+    sound electric_guitarClean_Fb4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb4.ogg, } }
+
+    sound electric_guitarClean_Fb5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fb5.ogg, } }
+
+    sound electric_guitarClean_Fn0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn0.ogg, } }
+
+    sound electric_guitarClean_Fn1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn1.ogg, } }
+
+    sound electric_guitarClean_Fn2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn2.ogg, } }
+
+    sound electric_guitarClean_Fn3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn3.ogg, } }
+
+    sound electric_guitarClean_Fn4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn4.ogg, } }
+
+    sound electric_guitarClean_Fn5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Fn5.ogg, } }
+
+    sound electric_guitarClean_Gb0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb0.ogg, } }
+
+    sound electric_guitarClean_Gb1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb1.ogg, } }
+
+    sound electric_guitarClean_Gb2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb2.ogg, } }
+
+    sound electric_guitarClean_Gb3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb3.ogg, } }
+
+    sound electric_guitarClean_Gb4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb4.ogg, } }
+
+    sound electric_guitarClean_Gb5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gb5.ogg, } }
+
+    sound electric_guitarClean_Gn0 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn0.ogg, } }
+
+    sound electric_guitarClean_Gn1 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn1.ogg, } }
+
+    sound electric_guitarClean_Gn2 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn2.ogg, } }
+
+    sound electric_guitarClean_Gn3 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn3.ogg, } }
+
+    sound electric_guitarClean_Gn4 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn4.ogg, } }
+
+    sound electric_guitarClean_Gn5 {
+        category = BardInstrument_electric_guitarClean, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarClean/Gn5.ogg, } }
+
+    sound electric_guitarDistortion_Ab0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab0.ogg, } }
+
+    sound electric_guitarDistortion_Ab1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab1.ogg, } }
+
+    sound electric_guitarDistortion_Ab2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab2.ogg, } }
+
+    sound electric_guitarDistortion_Ab3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab3.ogg, } }
+
+    sound electric_guitarDistortion_Ab4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab4.ogg, } }
+
+    sound electric_guitarDistortion_Ab5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Ab5.ogg, } }
+
+    sound electric_guitarDistortion_An0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An0.ogg, } }
+
+    sound electric_guitarDistortion_An1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An1.ogg, } }
+
+    sound electric_guitarDistortion_An2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An2.ogg, } }
+
+    sound electric_guitarDistortion_An3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An3.ogg, } }
+
+    sound electric_guitarDistortion_An4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An4.ogg, } }
+
+    sound electric_guitarDistortion_An5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/An5.ogg, } }
+
+    sound electric_guitarDistortion_Bb0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb0.ogg, } }
+
+    sound electric_guitarDistortion_Bb1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb1.ogg, } }
+
+    sound electric_guitarDistortion_Bb2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb2.ogg, } }
+
+    sound electric_guitarDistortion_Bb3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb3.ogg, } }
+
+    sound electric_guitarDistortion_Bb4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb4.ogg, } }
+
+    sound electric_guitarDistortion_Bb5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bb5.ogg, } }
+
+    sound electric_guitarDistortion_Bn0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn0.ogg, } }
+
+    sound electric_guitarDistortion_Bn1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn1.ogg, } }
+
+    sound electric_guitarDistortion_Bn2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn2.ogg, } }
+
+    sound electric_guitarDistortion_Bn3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn3.ogg, } }
+
+    sound electric_guitarDistortion_Bn4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn4.ogg, } }
+
+    sound electric_guitarDistortion_Bn5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Bn5.ogg, } }
+
+    sound electric_guitarDistortion_Cb0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb0.ogg, } }
+
+    sound electric_guitarDistortion_Cb1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb1.ogg, } }
+
+    sound electric_guitarDistortion_Cb2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb2.ogg, } }
+
+    sound electric_guitarDistortion_Cb3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb3.ogg, } }
+
+    sound electric_guitarDistortion_Cb4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb4.ogg, } }
+
+    sound electric_guitarDistortion_Cb5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cb5.ogg, } }
+
+    sound electric_guitarDistortion_Cn0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn0.ogg, } }
+
+    sound electric_guitarDistortion_Cn1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn1.ogg, } }
+
+    sound electric_guitarDistortion_Cn2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn2.ogg, } }
+
+    sound electric_guitarDistortion_Cn3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn3.ogg, } }
+
+    sound electric_guitarDistortion_Cn4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn4.ogg, } }
+
+    sound electric_guitarDistortion_Cn5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn5.ogg, } }
+
+    sound electric_guitarDistortion_Cn6 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Cn6.ogg, } }
+
+    sound electric_guitarDistortion_Db0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db0.ogg, } }
+
+    sound electric_guitarDistortion_Db1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db1.ogg, } }
+
+    sound electric_guitarDistortion_Db2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db2.ogg, } }
+
+    sound electric_guitarDistortion_Db3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db3.ogg, } }
+
+    sound electric_guitarDistortion_Db4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db4.ogg, } }
+
+    sound electric_guitarDistortion_Db5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db5.ogg, } }
+
+    sound electric_guitarDistortion_Db6 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Db6.ogg, } }
+
+    sound electric_guitarDistortion_Dn0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn0.ogg, } }
+
+    sound electric_guitarDistortion_Dn1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn1.ogg, } }
+
+    sound electric_guitarDistortion_Dn2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn2.ogg, } }
+
+    sound electric_guitarDistortion_Dn3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn3.ogg, } }
+
+    sound electric_guitarDistortion_Dn4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn4.ogg, } }
+
+    sound electric_guitarDistortion_Dn5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Dn5.ogg, } }
+
+    sound electric_guitarDistortion_Eb0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb0.ogg, } }
+
+    sound electric_guitarDistortion_Eb1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb1.ogg, } }
+
+    sound electric_guitarDistortion_Eb2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb2.ogg, } }
+
+    sound electric_guitarDistortion_Eb3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb3.ogg, } }
+
+    sound electric_guitarDistortion_Eb4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb4.ogg, } }
+
+    sound electric_guitarDistortion_Eb5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Eb5.ogg, } }
+
+    sound electric_guitarDistortion_En0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En0.ogg, } }
+
+    sound electric_guitarDistortion_En1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En1.ogg, } }
+
+    sound electric_guitarDistortion_En2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En2.ogg, } }
+
+    sound electric_guitarDistortion_En3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En3.ogg, } }
+
+    sound electric_guitarDistortion_En4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En4.ogg, } }
+
+    sound electric_guitarDistortion_En5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/En5.ogg, } }
+
+    sound electric_guitarDistortion_Fb0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb0.ogg, } }
+
+    sound electric_guitarDistortion_Fb1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb1.ogg, } }
+
+    sound electric_guitarDistortion_Fb2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb2.ogg, } }
+
+    sound electric_guitarDistortion_Fb3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb3.ogg, } }
+
+    sound electric_guitarDistortion_Fb4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb4.ogg, } }
+
+    sound electric_guitarDistortion_Fb5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fb5.ogg, } }
+
+    sound electric_guitarDistortion_Fn0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn0.ogg, } }
+
+    sound electric_guitarDistortion_Fn1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn1.ogg, } }
+
+    sound electric_guitarDistortion_Fn2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn2.ogg, } }
+
+    sound electric_guitarDistortion_Fn3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn3.ogg, } }
+
+    sound electric_guitarDistortion_Fn4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn4.ogg, } }
+
+    sound electric_guitarDistortion_Fn5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Fn5.ogg, } }
+
+    sound electric_guitarDistortion_Gb0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb0.ogg, } }
+
+    sound electric_guitarDistortion_Gb1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb1.ogg, } }
+
+    sound electric_guitarDistortion_Gb2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb2.ogg, } }
+
+    sound electric_guitarDistortion_Gb3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb3.ogg, } }
+
+    sound electric_guitarDistortion_Gb4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb4.ogg, } }
+
+    sound electric_guitarDistortion_Gb5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gb5.ogg, } }
+
+    sound electric_guitarDistortion_Gn0 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn0.ogg, } }
+
+    sound electric_guitarDistortion_Gn1 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn1.ogg, } }
+
+    sound electric_guitarDistortion_Gn2 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn2.ogg, } }
+
+    sound electric_guitarDistortion_Gn3 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn3.ogg, } }
+
+    sound electric_guitarDistortion_Gn4 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn4.ogg, } }
+
+    sound electric_guitarDistortion_Gn5 {
+        category = BardInstrument_electric_guitarDistortion, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarDistortion/Gn5.ogg, } }
+
+    sound electric_guitarHarmonics_Ab0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab0.ogg, } }
+
+    sound electric_guitarHarmonics_Ab1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab1.ogg, } }
+
+    sound electric_guitarHarmonics_Ab2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab2.ogg, } }
+
+    sound electric_guitarHarmonics_Ab3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab3.ogg, } }
+
+    sound electric_guitarHarmonics_Ab4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab4.ogg, } }
+
+    sound electric_guitarHarmonics_Ab5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab5.ogg, } }
+
+    sound electric_guitarHarmonics_Ab6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab6.ogg, } }
+
+    sound electric_guitarHarmonics_Ab7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab7.ogg, } }
+
+    sound electric_guitarHarmonics_Ab8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Ab8.ogg, } }
+
+    sound electric_guitarHarmonics_An0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An0.ogg, } }
+
+    sound electric_guitarHarmonics_An1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An1.ogg, } }
+
+    sound electric_guitarHarmonics_An2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An2.ogg, } }
+
+    sound electric_guitarHarmonics_An3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An3.ogg, } }
+
+    sound electric_guitarHarmonics_An4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An4.ogg, } }
+
+    sound electric_guitarHarmonics_An5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An5.ogg, } }
+
+    sound electric_guitarHarmonics_An6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An6.ogg, } }
+
+    sound electric_guitarHarmonics_An7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An7.ogg, } }
+
+    sound electric_guitarHarmonics_An8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/An8.ogg, } }
+
+    sound electric_guitarHarmonics_Bb0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb0.ogg, } }
+
+    sound electric_guitarHarmonics_Bb1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb1.ogg, } }
+
+    sound electric_guitarHarmonics_Bb2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb2.ogg, } }
+
+    sound electric_guitarHarmonics_Bb3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb3.ogg, } }
+
+    sound electric_guitarHarmonics_Bb4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb4.ogg, } }
+
+    sound electric_guitarHarmonics_Bb5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb5.ogg, } }
+
+    sound electric_guitarHarmonics_Bb6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb6.ogg, } }
+
+    sound electric_guitarHarmonics_Bb7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb7.ogg, } }
+
+    sound electric_guitarHarmonics_Bb8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bb8.ogg, } }
+
+    sound electric_guitarHarmonics_Bn0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn0.ogg, } }
+
+    sound electric_guitarHarmonics_Bn1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn1.ogg, } }
+
+    sound electric_guitarHarmonics_Bn2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn2.ogg, } }
+
+    sound electric_guitarHarmonics_Bn3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn3.ogg, } }
+
+    sound electric_guitarHarmonics_Bn4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn4.ogg, } }
+
+    sound electric_guitarHarmonics_Bn5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn5.ogg, } }
+
+    sound electric_guitarHarmonics_Bn6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn6.ogg, } }
+
+    sound electric_guitarHarmonics_Bn7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn7.ogg, } }
+
+    sound electric_guitarHarmonics_Bn8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Bn8.ogg, } }
+
+    sound electric_guitarHarmonics_Cb0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb0.ogg, } }
+
+    sound electric_guitarHarmonics_Cb1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb1.ogg, } }
+
+    sound electric_guitarHarmonics_Cb2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb2.ogg, } }
+
+    sound electric_guitarHarmonics_Cb3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb3.ogg, } }
+
+    sound electric_guitarHarmonics_Cb4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb4.ogg, } }
+
+    sound electric_guitarHarmonics_Cb5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb5.ogg, } }
+
+    sound electric_guitarHarmonics_Cb6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb6.ogg, } }
+
+    sound electric_guitarHarmonics_Cb7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb7.ogg, } }
+
+    sound electric_guitarHarmonics_Cb8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cb8.ogg, } }
+
+    sound electric_guitarHarmonics_Cn0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn0.ogg, } }
+
+    sound electric_guitarHarmonics_Cn1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn1.ogg, } }
+
+    sound electric_guitarHarmonics_Cn2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn2.ogg, } }
+
+    sound electric_guitarHarmonics_Cn3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn3.ogg, } }
+
+    sound electric_guitarHarmonics_Cn4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn4.ogg, } }
+
+    sound electric_guitarHarmonics_Cn5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn5.ogg, } }
+
+    sound electric_guitarHarmonics_Cn6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn6.ogg, } }
+
+    sound electric_guitarHarmonics_Cn7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn7.ogg, } }
+
+    sound electric_guitarHarmonics_Cn8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn8.ogg, } }
+
+    sound electric_guitarHarmonics_Cn9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Cn9.ogg, } }
+
+    sound electric_guitarHarmonics_Db0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db0.ogg, } }
+
+    sound electric_guitarHarmonics_Db1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db1.ogg, } }
+
+    sound electric_guitarHarmonics_Db2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db2.ogg, } }
+
+    sound electric_guitarHarmonics_Db3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db3.ogg, } }
+
+    sound electric_guitarHarmonics_Db4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db4.ogg, } }
+
+    sound electric_guitarHarmonics_Db5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db5.ogg, } }
+
+    sound electric_guitarHarmonics_Db6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db6.ogg, } }
+
+    sound electric_guitarHarmonics_Db7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db7.ogg, } }
+
+    sound electric_guitarHarmonics_Db8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db8.ogg, } }
+
+    sound electric_guitarHarmonics_Db9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Db9.ogg, } }
+
+    sound electric_guitarHarmonics_Dn0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn0.ogg, } }
+
+    sound electric_guitarHarmonics_Dn1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn1.ogg, } }
+
+    sound electric_guitarHarmonics_Dn2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn2.ogg, } }
+
+    sound electric_guitarHarmonics_Dn3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn3.ogg, } }
+
+    sound electric_guitarHarmonics_Dn4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn4.ogg, } }
+
+    sound electric_guitarHarmonics_Dn5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn5.ogg, } }
+
+    sound electric_guitarHarmonics_Dn6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn6.ogg, } }
+
+    sound electric_guitarHarmonics_Dn7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn7.ogg, } }
+
+    sound electric_guitarHarmonics_Dn8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn8.ogg, } }
+
+    sound electric_guitarHarmonics_Dn9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Dn9.ogg, } }
+
+    sound electric_guitarHarmonics_Eb0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb0.ogg, } }
+
+    sound electric_guitarHarmonics_Eb1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb1.ogg, } }
+
+    sound electric_guitarHarmonics_Eb2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb2.ogg, } }
+
+    sound electric_guitarHarmonics_Eb3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb3.ogg, } }
+
+    sound electric_guitarHarmonics_Eb4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb4.ogg, } }
+
+    sound electric_guitarHarmonics_Eb5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb5.ogg, } }
+
+    sound electric_guitarHarmonics_Eb6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb6.ogg, } }
+
+    sound electric_guitarHarmonics_Eb7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb7.ogg, } }
+
+    sound electric_guitarHarmonics_Eb8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb8.ogg, } }
+
+    sound electric_guitarHarmonics_Eb9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Eb9.ogg, } }
+
+    sound electric_guitarHarmonics_En0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En0.ogg, } }
+
+    sound electric_guitarHarmonics_En1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En1.ogg, } }
+
+    sound electric_guitarHarmonics_En2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En2.ogg, } }
+
+    sound electric_guitarHarmonics_En3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En3.ogg, } }
+
+    sound electric_guitarHarmonics_En4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En4.ogg, } }
+
+    sound electric_guitarHarmonics_En5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En5.ogg, } }
+
+    sound electric_guitarHarmonics_En6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En6.ogg, } }
+
+    sound electric_guitarHarmonics_En7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En7.ogg, } }
+
+    sound electric_guitarHarmonics_En8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En8.ogg, } }
+
+    sound electric_guitarHarmonics_En9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/En9.ogg, } }
+
+    sound electric_guitarHarmonics_Fb0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb0.ogg, } }
+
+    sound electric_guitarHarmonics_Fb1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb1.ogg, } }
+
+    sound electric_guitarHarmonics_Fb2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb2.ogg, } }
+
+    sound electric_guitarHarmonics_Fb3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb3.ogg, } }
+
+    sound electric_guitarHarmonics_Fb4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb4.ogg, } }
+
+    sound electric_guitarHarmonics_Fb5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb5.ogg, } }
+
+    sound electric_guitarHarmonics_Fb6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb6.ogg, } }
+
+    sound electric_guitarHarmonics_Fb7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb7.ogg, } }
+
+    sound electric_guitarHarmonics_Fb8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb8.ogg, } }
+
+    sound electric_guitarHarmonics_Fb9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fb9.ogg, } }
+
+    sound electric_guitarHarmonics_Fn0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn0.ogg, } }
+
+    sound electric_guitarHarmonics_Fn1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn1.ogg, } }
+
+    sound electric_guitarHarmonics_Fn2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn2.ogg, } }
+
+    sound electric_guitarHarmonics_Fn3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn3.ogg, } }
+
+    sound electric_guitarHarmonics_Fn4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn4.ogg, } }
+
+    sound electric_guitarHarmonics_Fn5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn5.ogg, } }
+
+    sound electric_guitarHarmonics_Fn6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn6.ogg, } }
+
+    sound electric_guitarHarmonics_Fn7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn7.ogg, } }
+
+    sound electric_guitarHarmonics_Fn8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn8.ogg, } }
+
+    sound electric_guitarHarmonics_Fn9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Fn9.ogg, } }
+
+    sound electric_guitarHarmonics_Gb0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb0.ogg, } }
+
+    sound electric_guitarHarmonics_Gb1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb1.ogg, } }
+
+    sound electric_guitarHarmonics_Gb2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb2.ogg, } }
+
+    sound electric_guitarHarmonics_Gb3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb3.ogg, } }
+
+    sound electric_guitarHarmonics_Gb4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb4.ogg, } }
+
+    sound electric_guitarHarmonics_Gb5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb5.ogg, } }
+
+    sound electric_guitarHarmonics_Gb6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb6.ogg, } }
+
+    sound electric_guitarHarmonics_Gb7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb7.ogg, } }
+
+    sound electric_guitarHarmonics_Gb8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb8.ogg, } }
+
+    sound electric_guitarHarmonics_Gb9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gb9.ogg, } }
+
+    sound electric_guitarHarmonics_Gn0 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn0.ogg, } }
+
+    sound electric_guitarHarmonics_Gn1 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn1.ogg, } }
+
+    sound electric_guitarHarmonics_Gn2 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn2.ogg, } }
+
+    sound electric_guitarHarmonics_Gn3 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn3.ogg, } }
+
+    sound electric_guitarHarmonics_Gn4 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn4.ogg, } }
+
+    sound electric_guitarHarmonics_Gn5 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn5.ogg, } }
+
+    sound electric_guitarHarmonics_Gn6 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn6.ogg, } }
+
+    sound electric_guitarHarmonics_Gn7 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn7.ogg, } }
+
+    sound electric_guitarHarmonics_Gn8 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn8.ogg, } }
+
+    sound electric_guitarHarmonics_Gn9 {
+        category = BardInstrument_electric_guitarHarmonics, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarHarmonics/Gn9.ogg, } }
+
+    sound electric_guitarMuted_Ab0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab0.ogg, } }
+
+    sound electric_guitarMuted_Ab1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab1.ogg, } }
+
+    sound electric_guitarMuted_Ab2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab2.ogg, } }
+
+    sound electric_guitarMuted_Ab3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab3.ogg, } }
+
+    sound electric_guitarMuted_Ab4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab4.ogg, } }
+
+    sound electric_guitarMuted_Ab5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab5.ogg, } }
+
+    sound electric_guitarMuted_Ab6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab6.ogg, } }
+
+    sound electric_guitarMuted_Ab7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Ab7.ogg, } }
+
+    sound electric_guitarMuted_An0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An0.ogg, } }
+
+    sound electric_guitarMuted_An1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An1.ogg, } }
+
+    sound electric_guitarMuted_An2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An2.ogg, } }
+
+    sound electric_guitarMuted_An3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An3.ogg, } }
+
+    sound electric_guitarMuted_An4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An4.ogg, } }
+
+    sound electric_guitarMuted_An5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An5.ogg, } }
+
+    sound electric_guitarMuted_An6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An6.ogg, } }
+
+    sound electric_guitarMuted_An7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/An7.ogg, } }
+
+    sound electric_guitarMuted_Bb0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb0.ogg, } }
+
+    sound electric_guitarMuted_Bb1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb1.ogg, } }
+
+    sound electric_guitarMuted_Bb2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb2.ogg, } }
+
+    sound electric_guitarMuted_Bb3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb3.ogg, } }
+
+    sound electric_guitarMuted_Bb4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb4.ogg, } }
+
+    sound electric_guitarMuted_Bb5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb5.ogg, } }
+
+    sound electric_guitarMuted_Bb6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb6.ogg, } }
+
+    sound electric_guitarMuted_Bb7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bb7.ogg, } }
+
+    sound electric_guitarMuted_Bn0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn0.ogg, } }
+
+    sound electric_guitarMuted_Bn1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn1.ogg, } }
+
+    sound electric_guitarMuted_Bn2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn2.ogg, } }
+
+    sound electric_guitarMuted_Bn3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn3.ogg, } }
+
+    sound electric_guitarMuted_Bn4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn4.ogg, } }
+
+    sound electric_guitarMuted_Bn5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn5.ogg, } }
+
+    sound electric_guitarMuted_Bn6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn6.ogg, } }
+
+    sound electric_guitarMuted_Bn7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Bn7.ogg, } }
+
+    sound electric_guitarMuted_Cb0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb0.ogg, } }
+
+    sound electric_guitarMuted_Cb1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb1.ogg, } }
+
+    sound electric_guitarMuted_Cb2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb2.ogg, } }
+
+    sound electric_guitarMuted_Cb3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb3.ogg, } }
+
+    sound electric_guitarMuted_Cb4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb4.ogg, } }
+
+    sound electric_guitarMuted_Cb5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb5.ogg, } }
+
+    sound electric_guitarMuted_Cb6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb6.ogg, } }
+
+    sound electric_guitarMuted_Cb7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cb7.ogg, } }
+
+    sound electric_guitarMuted_Cn0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn0.ogg, } }
+
+    sound electric_guitarMuted_Cn1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn1.ogg, } }
+
+    sound electric_guitarMuted_Cn2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn2.ogg, } }
+
+    sound electric_guitarMuted_Cn3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn3.ogg, } }
+
+    sound electric_guitarMuted_Cn4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn4.ogg, } }
+
+    sound electric_guitarMuted_Cn5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn5.ogg, } }
+
+    sound electric_guitarMuted_Cn6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn6.ogg, } }
+
+    sound electric_guitarMuted_Cn7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn7.ogg, } }
+
+    sound electric_guitarMuted_Cn8 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Cn8.ogg, } }
+
+    sound electric_guitarMuted_Db0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db0.ogg, } }
+
+    sound electric_guitarMuted_Db1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db1.ogg, } }
+
+    sound electric_guitarMuted_Db2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db2.ogg, } }
+
+    sound electric_guitarMuted_Db3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db3.ogg, } }
+
+    sound electric_guitarMuted_Db4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db4.ogg, } }
+
+    sound electric_guitarMuted_Db5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db5.ogg, } }
+
+    sound electric_guitarMuted_Db6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db6.ogg, } }
+
+    sound electric_guitarMuted_Db7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Db7.ogg, } }
+
+    sound electric_guitarMuted_Dn0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn0.ogg, } }
+
+    sound electric_guitarMuted_Dn1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn1.ogg, } }
+
+    sound electric_guitarMuted_Dn2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn2.ogg, } }
+
+    sound electric_guitarMuted_Dn3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn3.ogg, } }
+
+    sound electric_guitarMuted_Dn4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn4.ogg, } }
+
+    sound electric_guitarMuted_Dn5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn5.ogg, } }
+
+    sound electric_guitarMuted_Dn6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn6.ogg, } }
+
+    sound electric_guitarMuted_Dn7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Dn7.ogg, } }
+
+    sound electric_guitarMuted_Eb0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb0.ogg, } }
+
+    sound electric_guitarMuted_Eb1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb1.ogg, } }
+
+    sound electric_guitarMuted_Eb2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb2.ogg, } }
+
+    sound electric_guitarMuted_Eb3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb3.ogg, } }
+
+    sound electric_guitarMuted_Eb4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb4.ogg, } }
+
+    sound electric_guitarMuted_Eb5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb5.ogg, } }
+
+    sound electric_guitarMuted_Eb6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb6.ogg, } }
+
+    sound electric_guitarMuted_Eb7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Eb7.ogg, } }
+
+    sound electric_guitarMuted_En0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En0.ogg, } }
+
+    sound electric_guitarMuted_En1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En1.ogg, } }
+
+    sound electric_guitarMuted_En2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En2.ogg, } }
+
+    sound electric_guitarMuted_En3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En3.ogg, } }
+
+    sound electric_guitarMuted_En4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En4.ogg, } }
+
+    sound electric_guitarMuted_En5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En5.ogg, } }
+
+    sound electric_guitarMuted_En6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En6.ogg, } }
+
+    sound electric_guitarMuted_En7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/En7.ogg, } }
+
+    sound electric_guitarMuted_Fb0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb0.ogg, } }
+
+    sound electric_guitarMuted_Fb1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb1.ogg, } }
+
+    sound electric_guitarMuted_Fb2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb2.ogg, } }
+
+    sound electric_guitarMuted_Fb3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb3.ogg, } }
+
+    sound electric_guitarMuted_Fb4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb4.ogg, } }
+
+    sound electric_guitarMuted_Fb5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb5.ogg, } }
+
+    sound electric_guitarMuted_Fb6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb6.ogg, } }
+
+    sound electric_guitarMuted_Fb7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fb7.ogg, } }
+
+    sound electric_guitarMuted_Fn0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn0.ogg, } }
+
+    sound electric_guitarMuted_Fn1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn1.ogg, } }
+
+    sound electric_guitarMuted_Fn2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn2.ogg, } }
+
+    sound electric_guitarMuted_Fn3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn3.ogg, } }
+
+    sound electric_guitarMuted_Fn4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn4.ogg, } }
+
+    sound electric_guitarMuted_Fn5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn5.ogg, } }
+
+    sound electric_guitarMuted_Fn6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn6.ogg, } }
+
+    sound electric_guitarMuted_Fn7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Fn7.ogg, } }
+
+    sound electric_guitarMuted_Gb0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb0.ogg, } }
+
+    sound electric_guitarMuted_Gb1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb1.ogg, } }
+
+    sound electric_guitarMuted_Gb2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb2.ogg, } }
+
+    sound electric_guitarMuted_Gb3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb3.ogg, } }
+
+    sound electric_guitarMuted_Gb4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb4.ogg, } }
+
+    sound electric_guitarMuted_Gb5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb5.ogg, } }
+
+    sound electric_guitarMuted_Gb6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb6.ogg, } }
+
+    sound electric_guitarMuted_Gb7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gb7.ogg, } }
+
+    sound electric_guitarMuted_Gn0 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn0.ogg, } }
+
+    sound electric_guitarMuted_Gn1 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn1.ogg, } }
+
+    sound electric_guitarMuted_Gn2 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn2.ogg, } }
+
+    sound electric_guitarMuted_Gn3 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn3.ogg, } }
+
+    sound electric_guitarMuted_Gn4 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn4.ogg, } }
+
+    sound electric_guitarMuted_Gn5 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn5.ogg, } }
+
+    sound electric_guitarMuted_Gn6 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn6.ogg, } }
+
+    sound electric_guitarMuted_Gn7 {
+        category = BardInstrument_electric_guitarMuted, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarMuted/Gn7.ogg, } }
+
+    sound electric_guitarOverdrive_Ab0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab0.ogg, } }
+
+    sound electric_guitarOverdrive_Ab1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab1.ogg, } }
+
+    sound electric_guitarOverdrive_Ab2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab2.ogg, } }
+
+    sound electric_guitarOverdrive_Ab3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab3.ogg, } }
+
+    sound electric_guitarOverdrive_Ab4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab4.ogg, } }
+
+    sound electric_guitarOverdrive_Ab5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab5.ogg, } }
+
+    sound electric_guitarOverdrive_Ab6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab6.ogg, } }
+
+    sound electric_guitarOverdrive_Ab7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Ab7.ogg, } }
+
+    sound electric_guitarOverdrive_An0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An0.ogg, } }
+
+    sound electric_guitarOverdrive_An1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An1.ogg, } }
+
+    sound electric_guitarOverdrive_An2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An2.ogg, } }
+
+    sound electric_guitarOverdrive_An3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An3.ogg, } }
+
+    sound electric_guitarOverdrive_An4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An4.ogg, } }
+
+    sound electric_guitarOverdrive_An5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An5.ogg, } }
+
+    sound electric_guitarOverdrive_An6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An6.ogg, } }
+
+    sound electric_guitarOverdrive_An7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/An7.ogg, } }
+
+    sound electric_guitarOverdrive_Bb0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb0.ogg, } }
+
+    sound electric_guitarOverdrive_Bb1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb1.ogg, } }
+
+    sound electric_guitarOverdrive_Bb2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb2.ogg, } }
+
+    sound electric_guitarOverdrive_Bb3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb3.ogg, } }
+
+    sound electric_guitarOverdrive_Bb4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb4.ogg, } }
+
+    sound electric_guitarOverdrive_Bb5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb5.ogg, } }
+
+    sound electric_guitarOverdrive_Bb6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb6.ogg, } }
+
+    sound electric_guitarOverdrive_Bb7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bb7.ogg, } }
+
+    sound electric_guitarOverdrive_Bn0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn0.ogg, } }
+
+    sound electric_guitarOverdrive_Bn1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn1.ogg, } }
+
+    sound electric_guitarOverdrive_Bn2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn2.ogg, } }
+
+    sound electric_guitarOverdrive_Bn3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn3.ogg, } }
+
+    sound electric_guitarOverdrive_Bn4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn4.ogg, } }
+
+    sound electric_guitarOverdrive_Bn5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn5.ogg, } }
+
+    sound electric_guitarOverdrive_Bn6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn6.ogg, } }
+
+    sound electric_guitarOverdrive_Bn7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Bn7.ogg, } }
+
+    sound electric_guitarOverdrive_Cb0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb0.ogg, } }
+
+    sound electric_guitarOverdrive_Cb1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb1.ogg, } }
+
+    sound electric_guitarOverdrive_Cb2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb2.ogg, } }
+
+    sound electric_guitarOverdrive_Cb3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb3.ogg, } }
+
+    sound electric_guitarOverdrive_Cb4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb4.ogg, } }
+
+    sound electric_guitarOverdrive_Cb5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb5.ogg, } }
+
+    sound electric_guitarOverdrive_Cb6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb6.ogg, } }
+
+    sound electric_guitarOverdrive_Cb7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cb7.ogg, } }
+
+    sound electric_guitarOverdrive_Cn0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn0.ogg, } }
+
+    sound electric_guitarOverdrive_Cn1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn1.ogg, } }
+
+    sound electric_guitarOverdrive_Cn2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn2.ogg, } }
+
+    sound electric_guitarOverdrive_Cn3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn3.ogg, } }
+
+    sound electric_guitarOverdrive_Cn4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn4.ogg, } }
+
+    sound electric_guitarOverdrive_Cn5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn5.ogg, } }
+
+    sound electric_guitarOverdrive_Cn6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn6.ogg, } }
+
+    sound electric_guitarOverdrive_Cn7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn7.ogg, } }
+
+    sound electric_guitarOverdrive_Cn8 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Cn8.ogg, } }
+
+    sound electric_guitarOverdrive_Db0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db0.ogg, } }
+
+    sound electric_guitarOverdrive_Db1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db1.ogg, } }
+
+    sound electric_guitarOverdrive_Db2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db2.ogg, } }
+
+    sound electric_guitarOverdrive_Db3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db3.ogg, } }
+
+    sound electric_guitarOverdrive_Db4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db4.ogg, } }
+
+    sound electric_guitarOverdrive_Db5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db5.ogg, } }
+
+    sound electric_guitarOverdrive_Db6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db6.ogg, } }
+
+    sound electric_guitarOverdrive_Db7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Db7.ogg, } }
+
+    sound electric_guitarOverdrive_Dn0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn0.ogg, } }
+
+    sound electric_guitarOverdrive_Dn1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn1.ogg, } }
+
+    sound electric_guitarOverdrive_Dn2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn2.ogg, } }
+
+    sound electric_guitarOverdrive_Dn3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn3.ogg, } }
+
+    sound electric_guitarOverdrive_Dn4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn4.ogg, } }
+
+    sound electric_guitarOverdrive_Dn5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn5.ogg, } }
+
+    sound electric_guitarOverdrive_Dn6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn6.ogg, } }
+
+    sound electric_guitarOverdrive_Dn7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Dn7.ogg, } }
+
+    sound electric_guitarOverdrive_Eb0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb0.ogg, } }
+
+    sound electric_guitarOverdrive_Eb1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb1.ogg, } }
+
+    sound electric_guitarOverdrive_Eb2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb2.ogg, } }
+
+    sound electric_guitarOverdrive_Eb3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb3.ogg, } }
+
+    sound electric_guitarOverdrive_Eb4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb4.ogg, } }
+
+    sound electric_guitarOverdrive_Eb5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb5.ogg, } }
+
+    sound electric_guitarOverdrive_Eb6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb6.ogg, } }
+
+    sound electric_guitarOverdrive_Eb7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Eb7.ogg, } }
+
+    sound electric_guitarOverdrive_En0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En0.ogg, } }
+
+    sound electric_guitarOverdrive_En1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En1.ogg, } }
+
+    sound electric_guitarOverdrive_En2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En2.ogg, } }
+
+    sound electric_guitarOverdrive_En3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En3.ogg, } }
+
+    sound electric_guitarOverdrive_En4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En4.ogg, } }
+
+    sound electric_guitarOverdrive_En5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En5.ogg, } }
+
+    sound electric_guitarOverdrive_En6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En6.ogg, } }
+
+    sound electric_guitarOverdrive_En7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/En7.ogg, } }
+
+    sound electric_guitarOverdrive_Fb0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb0.ogg, } }
+
+    sound electric_guitarOverdrive_Fb1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb1.ogg, } }
+
+    sound electric_guitarOverdrive_Fb2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb2.ogg, } }
+
+    sound electric_guitarOverdrive_Fb3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb3.ogg, } }
+
+    sound electric_guitarOverdrive_Fb4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb4.ogg, } }
+
+    sound electric_guitarOverdrive_Fb5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb5.ogg, } }
+
+    sound electric_guitarOverdrive_Fb6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb6.ogg, } }
+
+    sound electric_guitarOverdrive_Fb7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fb7.ogg, } }
+
+    sound electric_guitarOverdrive_Fn0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn0.ogg, } }
+
+    sound electric_guitarOverdrive_Fn1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn1.ogg, } }
+
+    sound electric_guitarOverdrive_Fn2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn2.ogg, } }
+
+    sound electric_guitarOverdrive_Fn3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn3.ogg, } }
+
+    sound electric_guitarOverdrive_Fn4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn4.ogg, } }
+
+    sound electric_guitarOverdrive_Fn5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn5.ogg, } }
+
+    sound electric_guitarOverdrive_Fn6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn6.ogg, } }
+
+    sound electric_guitarOverdrive_Fn7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Fn7.ogg, } }
+
+    sound electric_guitarOverdrive_Gb0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb0.ogg, } }
+
+    sound electric_guitarOverdrive_Gb1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb1.ogg, } }
+
+    sound electric_guitarOverdrive_Gb2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb2.ogg, } }
+
+    sound electric_guitarOverdrive_Gb3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb3.ogg, } }
+
+    sound electric_guitarOverdrive_Gb4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb4.ogg, } }
+
+    sound electric_guitarOverdrive_Gb5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb5.ogg, } }
+
+    sound electric_guitarOverdrive_Gb6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb6.ogg, } }
+
+    sound electric_guitarOverdrive_Gb7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gb7.ogg, } }
+
+    sound electric_guitarOverdrive_Gn0 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn0.ogg, } }
+
+    sound electric_guitarOverdrive_Gn1 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn1.ogg, } }
+
+    sound electric_guitarOverdrive_Gn2 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn2.ogg, } }
+
+    sound electric_guitarOverdrive_Gn3 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn3.ogg, } }
+
+    sound electric_guitarOverdrive_Gn4 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn4.ogg, } }
+
+    sound electric_guitarOverdrive_Gn5 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn5.ogg, } }
+
+    sound electric_guitarOverdrive_Gn6 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn6.ogg, } }
+
+    sound electric_guitarOverdrive_Gn7 {
+        category = BardInstrument_electric_guitarOverdrive, is3D = true,
+        clip { file = media/sound/instruments/electric_guitarOverdrive/Gn7.ogg, } }
 
     sound flute_Ab0 {
         category = BardInstrument_flute, is3D = true,
