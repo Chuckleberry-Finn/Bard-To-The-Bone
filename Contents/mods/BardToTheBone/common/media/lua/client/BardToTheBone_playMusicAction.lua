@@ -29,10 +29,8 @@ function BardToTheBonePlayMusic:start()
             local style = self.style or instrumentData.styles[1]
             Bard.players[id].instrumentID = Bard.players[id].instrumentID .. style
         end
-
-        if self.heldItem then
-            self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
-        end
+        
+        self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
 
         if instrumentData.anim then
             self:setActionAnim("BttB_"..instrumentData.anim)

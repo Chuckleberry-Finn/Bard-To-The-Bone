@@ -662,10 +662,14 @@ Bard.instrumentMapObjectData = {
     ---["Snare Drum"] = { soundDir = "", anim = ""},
 
     --recreational_01_12,13  8,9
-    ["Piano"] = { soundDir = "piano", sprites = {"recreational_01_12","recreational_01_13","recreational_01_8","recreational_01_9"} },
+    ["Piano"] = { soundDir = "piano", anim = "Piano",
+                  sprites = { "recreational_01_12", "recreational_01_13", "recreational_01_8", "recreational_01_9", }
+    },
 
     --recreational_01_40,41  48,49
-    ["Grand Piano"] = { soundDir = "grandPiano", sprites = {"recreational_01_40","recreational_01_41","recreational_01_48","recreational_01_49"}},
+    ["Grand Piano"] = { soundDir = "grandPiano", anim = "Piano",
+                        sprites = { "recreational_01_40", "recreational_01_41", "recreational_01_48", "recreational_01_49", }
+    },
 }
 
 Bard.populatedFromMapObjectData = false
