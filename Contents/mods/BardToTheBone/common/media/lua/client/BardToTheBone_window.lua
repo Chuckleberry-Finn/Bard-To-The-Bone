@@ -267,7 +267,11 @@ function BardUIWindow:onStyle()
     local playerNum = self.character:getPlayerNum()
     self.contextMenu = ISContextMenu.get(playerNum,self:getX()+self.styleButton:getX()+self.styleButton:getWidth(), self:getY()+self.styleButton:getY())
     self.contextMenu.player = playerNum
-    for _,style in pairs(self.styles) do self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style) end
+    for _,style in pairs(self.styles) do
+        ---@type ISContextMenu
+        local option = self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style)
+        if style == self.style then option.notAvailable = true end
+    end
 end
 
 
@@ -310,7 +314,10 @@ function BardUIWindow:new(character, instrument)
     end
 
     local data = Bard.getInstrumentData(instrument)
-    if data and data.styles then o.styles = data.styles end
+    if data and data.styles then
+        o.styles = data.styles
+        o.style = data.styles[1]
+    end
 
     BardUIWindow.instance = o
 
