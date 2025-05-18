@@ -735,7 +735,7 @@ function Bard.getInstrumentData(instrument)
         data = Bard.instrumentData[instrument:getFullType()]
     end
 
-    if data.validCheck then if not Bard.validChecks[data.validCheck](instrument) then return end end
+    if data and data.validCheck then if not Bard.validChecks[data.validCheck](instrument) then return end end
 
     return data
 end
