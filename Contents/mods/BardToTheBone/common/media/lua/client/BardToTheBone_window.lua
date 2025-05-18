@@ -255,21 +255,19 @@ function BardUIWindow:onPlay()
 end
 
 
-function BardUIWindow:setStyle(style) self.style = style end
+function BardUIWindow:setStyle(style)
+    self.style = style
+
+    local id = self.character:getUsername()
+    if Bard.players[id] then Bard.players[id].style = style end
+end
 
 
 function BardUIWindow:onStyle()
     local playerNum = self.character:getPlayerNum()
-
     self.contextMenu = ISContextMenu.get(playerNum,self:getX()+self.styleButton:getX()+self.styleButton:getWidth(), self:getY()+self.styleButton:getY())
-    --self.contextMenu:initialise()
-    --self.contextMenu:addToUIManager()
-    --self.contextMenu:bringToTop()
     self.contextMenu.player = playerNum
-
-    for _,style in pairs(self.styles) do
-        self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style)
-    end
+    for _,style in pairs(self.styles) do self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style) end
 end
 
 

@@ -555,7 +555,7 @@ function Bard.playLoadedSongs(player)
     if not bard then return end
 
     local music = bard.music
-    local instrumentID = bard.instrumentID
+    local instrumentID = bard.instrumentID .. (bard.style or "")
 
     -- Initialize start and elapsed tracking if not already
     bard.startTime = bard.startTime or getTimestampMs()
