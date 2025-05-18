@@ -685,9 +685,15 @@ function Bard.populateMapObjectData()
 end
 
 
+Bard.validChecks = {}
+function Bard.validChecks.bottleIsEmpty(item)
+    local fluid = item:getFluidContainer()
+    return fluid and fluid:isEmpty()
+end
+
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { soundDir = "bottle", anim = "Bottle"},
+    ["GlassBottle"] = { soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
 }
 
 Bard.populatedFromTagData = false
@@ -715,17 +721,23 @@ function Bard.getInstrumentData(instrument)
     Bard.populateMapObjectData()
     if not instrument then return end
 
+    local data
+
     if instanceof(instrument, "IsoObject") then
         local properties = instrument:getProperties()
         local name = properties and properties:Is("CustomName") and properties:Val("CustomName")
         if name then
-            return Bard.instrumentData[name]
+            data = Bard.instrumentData[name]
         end
     end
 
     if instanceof(instrument, "InventoryItem") then
-        return Bard.instrumentData[instrument:getFullType()]
+        data = Bard.instrumentData[instrument:getFullType()]
     end
+
+    if data.validCheck then if not Bard.validChecks[data.validCheck](instrument) then return end end
+
+    return data
 end
 
 
