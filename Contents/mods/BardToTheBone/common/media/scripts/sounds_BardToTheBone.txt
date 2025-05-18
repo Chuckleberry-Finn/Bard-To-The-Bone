@@ -4156,545 +4156,4053 @@ module BardToTheBone {
         category = BardInstrument_harmonica, is3D = true,
         clip { file = media/sound/instruments/harmonica/Gn7.ogg, } }
 
-    sound keytar_Ab0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab0.ogg, } }
-
-    sound keytar_Ab1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab1.ogg, } }
-
-    sound keytar_Ab2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab2.ogg, } }
-
-    sound keytar_Ab3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab3.ogg, } }
-
-    sound keytar_Ab4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab4.ogg, } }
-
-    sound keytar_Ab5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab5.ogg, } }
-
-    sound keytar_Ab6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab6.ogg, } }
-
-    sound keytar_Ab7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab7.ogg, } }
-
-    sound keytar_Ab8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Ab8.ogg, } }
-
-    sound keytar_An0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An0.ogg, } }
-
-    sound keytar_An1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An1.ogg, } }
-
-    sound keytar_An2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An2.ogg, } }
-
-    sound keytar_An3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An3.ogg, } }
-
-    sound keytar_An4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An4.ogg, } }
-
-    sound keytar_An5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An5.ogg, } }
-
-    sound keytar_An6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An6.ogg, } }
-
-    sound keytar_An7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An7.ogg, } }
-
-    sound keytar_An8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/An8.ogg, } }
-
-    sound keytar_Bb0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb0.ogg, } }
-
-    sound keytar_Bb1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb1.ogg, } }
-
-    sound keytar_Bb2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb2.ogg, } }
-
-    sound keytar_Bb3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb3.ogg, } }
-
-    sound keytar_Bb4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb4.ogg, } }
-
-    sound keytar_Bb5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb5.ogg, } }
-
-    sound keytar_Bb6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb6.ogg, } }
-
-    sound keytar_Bb7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb7.ogg, } }
-
-    sound keytar_Bb8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bb8.ogg, } }
-
-    sound keytar_Bn0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn0.ogg, } }
-
-    sound keytar_Bn1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn1.ogg, } }
-
-    sound keytar_Bn2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn2.ogg, } }
-
-    sound keytar_Bn3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn3.ogg, } }
-
-    sound keytar_Bn4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn4.ogg, } }
-
-    sound keytar_Bn5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn5.ogg, } }
-
-    sound keytar_Bn6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn6.ogg, } }
-
-    sound keytar_Bn7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn7.ogg, } }
-
-    sound keytar_Bn8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Bn8.ogg, } }
-
-    sound keytar_Cb0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb0.ogg, } }
-
-    sound keytar_Cb1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb1.ogg, } }
-
-    sound keytar_Cb2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb2.ogg, } }
-
-    sound keytar_Cb3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb3.ogg, } }
-
-    sound keytar_Cb4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb4.ogg, } }
-
-    sound keytar_Cb5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb5.ogg, } }
-
-    sound keytar_Cb6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb6.ogg, } }
-
-    sound keytar_Cb7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb7.ogg, } }
-
-    sound keytar_Cb8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cb8.ogg, } }
-
-    sound keytar_Cn0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn0.ogg, } }
-
-    sound keytar_Cn1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn1.ogg, } }
-
-    sound keytar_Cn2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn2.ogg, } }
-
-    sound keytar_Cn3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn3.ogg, } }
-
-    sound keytar_Cn4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn4.ogg, } }
-
-    sound keytar_Cn5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn5.ogg, } }
-
-    sound keytar_Cn6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn6.ogg, } }
-
-    sound keytar_Cn7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn7.ogg, } }
-
-    sound keytar_Cn8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn8.ogg, } }
-
-    sound keytar_Cn9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Cn9.ogg, } }
-
-    sound keytar_Db0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db0.ogg, } }
-
-    sound keytar_Db1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db1.ogg, } }
-
-    sound keytar_Db2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db2.ogg, } }
-
-    sound keytar_Db3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db3.ogg, } }
-
-    sound keytar_Db4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db4.ogg, } }
-
-    sound keytar_Db5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db5.ogg, } }
-
-    sound keytar_Db6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db6.ogg, } }
-
-    sound keytar_Db7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db7.ogg, } }
-
-    sound keytar_Db8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db8.ogg, } }
-
-    sound keytar_Db9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Db9.ogg, } }
-
-    sound keytar_Dn0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn0.ogg, } }
-
-    sound keytar_Dn1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn1.ogg, } }
-
-    sound keytar_Dn2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn2.ogg, } }
-
-    sound keytar_Dn3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn3.ogg, } }
-
-    sound keytar_Dn4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn4.ogg, } }
-
-    sound keytar_Dn5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn5.ogg, } }
-
-    sound keytar_Dn6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn6.ogg, } }
-
-    sound keytar_Dn7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn7.ogg, } }
-
-    sound keytar_Dn8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn8.ogg, } }
-
-    sound keytar_Dn9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Dn9.ogg, } }
-
-    sound keytar_Eb0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb0.ogg, } }
-
-    sound keytar_Eb1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb1.ogg, } }
-
-    sound keytar_Eb2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb2.ogg, } }
-
-    sound keytar_Eb3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb3.ogg, } }
-
-    sound keytar_Eb4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb4.ogg, } }
-
-    sound keytar_Eb5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb5.ogg, } }
-
-    sound keytar_Eb6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb6.ogg, } }
-
-    sound keytar_Eb7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb7.ogg, } }
-
-    sound keytar_Eb8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb8.ogg, } }
-
-    sound keytar_Eb9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Eb9.ogg, } }
-
-    sound keytar_En0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En0.ogg, } }
-
-    sound keytar_En1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En1.ogg, } }
-
-    sound keytar_En2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En2.ogg, } }
-
-    sound keytar_En3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En3.ogg, } }
-
-    sound keytar_En4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En4.ogg, } }
-
-    sound keytar_En5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En5.ogg, } }
-
-    sound keytar_En6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En6.ogg, } }
-
-    sound keytar_En7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En7.ogg, } }
-
-    sound keytar_En8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En8.ogg, } }
-
-    sound keytar_En9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/En9.ogg, } }
-
-    sound keytar_Fb0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb0.ogg, } }
-
-    sound keytar_Fb1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb1.ogg, } }
-
-    sound keytar_Fb2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb2.ogg, } }
-
-    sound keytar_Fb3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb3.ogg, } }
-
-    sound keytar_Fb4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb4.ogg, } }
-
-    sound keytar_Fb5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb5.ogg, } }
-
-    sound keytar_Fb6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb6.ogg, } }
-
-    sound keytar_Fb7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb7.ogg, } }
-
-    sound keytar_Fb8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb8.ogg, } }
-
-    sound keytar_Fb9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fb9.ogg, } }
-
-    sound keytar_Fn0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn0.ogg, } }
-
-    sound keytar_Fn1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn1.ogg, } }
-
-    sound keytar_Fn2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn2.ogg, } }
-
-    sound keytar_Fn3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn3.ogg, } }
-
-    sound keytar_Fn4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn4.ogg, } }
-
-    sound keytar_Fn5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn5.ogg, } }
-
-    sound keytar_Fn6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn6.ogg, } }
-
-    sound keytar_Fn7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn7.ogg, } }
-
-    sound keytar_Fn8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn8.ogg, } }
-
-    sound keytar_Fn9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Fn9.ogg, } }
-
-    sound keytar_Gb0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb0.ogg, } }
-
-    sound keytar_Gb1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb1.ogg, } }
-
-    sound keytar_Gb2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb2.ogg, } }
-
-    sound keytar_Gb3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb3.ogg, } }
-
-    sound keytar_Gb4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb4.ogg, } }
-
-    sound keytar_Gb5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb5.ogg, } }
-
-    sound keytar_Gb6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb6.ogg, } }
-
-    sound keytar_Gb7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb7.ogg, } }
-
-    sound keytar_Gb8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb8.ogg, } }
-
-    sound keytar_Gb9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gb9.ogg, } }
-
-    sound keytar_Gn0 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn0.ogg, } }
-
-    sound keytar_Gn1 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn1.ogg, } }
-
-    sound keytar_Gn2 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn2.ogg, } }
-
-    sound keytar_Gn3 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn3.ogg, } }
-
-    sound keytar_Gn4 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn4.ogg, } }
-
-    sound keytar_Gn5 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn5.ogg, } }
-
-    sound keytar_Gn6 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn6.ogg, } }
-
-    sound keytar_Gn7 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn7.ogg, } }
-
-    sound keytar_Gn8 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn8.ogg, } }
-
-    sound keytar_Gn9 {
-        category = BardInstrument_keytar, is3D = true,
-        clip { file = media/sound/instruments/keytar/Gn9.ogg, } }
+    sound keytarBrass_Ab0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab0.ogg, } }
+
+    sound keytarBrass_Ab1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab1.ogg, } }
+
+    sound keytarBrass_Ab2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab2.ogg, } }
+
+    sound keytarBrass_Ab3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab3.ogg, } }
+
+    sound keytarBrass_Ab4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab4.ogg, } }
+
+    sound keytarBrass_Ab5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab5.ogg, } }
+
+    sound keytarBrass_Ab6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab6.ogg, } }
+
+    sound keytarBrass_Ab7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Ab7.ogg, } }
+
+    sound keytarBrass_An0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An0.ogg, } }
+
+    sound keytarBrass_An1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An1.ogg, } }
+
+    sound keytarBrass_An2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An2.ogg, } }
+
+    sound keytarBrass_An3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An3.ogg, } }
+
+    sound keytarBrass_An4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An4.ogg, } }
+
+    sound keytarBrass_An5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An5.ogg, } }
+
+    sound keytarBrass_An6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An6.ogg, } }
+
+    sound keytarBrass_An7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/An7.ogg, } }
+
+    sound keytarBrass_Bb0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb0.ogg, } }
+
+    sound keytarBrass_Bb1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb1.ogg, } }
+
+    sound keytarBrass_Bb2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb2.ogg, } }
+
+    sound keytarBrass_Bb3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb3.ogg, } }
+
+    sound keytarBrass_Bb4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb4.ogg, } }
+
+    sound keytarBrass_Bb5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb5.ogg, } }
+
+    sound keytarBrass_Bb6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb6.ogg, } }
+
+    sound keytarBrass_Bb7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bb7.ogg, } }
+
+    sound keytarBrass_Bn0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn0.ogg, } }
+
+    sound keytarBrass_Bn1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn1.ogg, } }
+
+    sound keytarBrass_Bn2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn2.ogg, } }
+
+    sound keytarBrass_Bn3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn3.ogg, } }
+
+    sound keytarBrass_Bn4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn4.ogg, } }
+
+    sound keytarBrass_Bn5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn5.ogg, } }
+
+    sound keytarBrass_Bn6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn6.ogg, } }
+
+    sound keytarBrass_Bn7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Bn7.ogg, } }
+
+    sound keytarBrass_Cb0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb0.ogg, } }
+
+    sound keytarBrass_Cb1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb1.ogg, } }
+
+    sound keytarBrass_Cb2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb2.ogg, } }
+
+    sound keytarBrass_Cb3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb3.ogg, } }
+
+    sound keytarBrass_Cb4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb4.ogg, } }
+
+    sound keytarBrass_Cb5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb5.ogg, } }
+
+    sound keytarBrass_Cb6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb6.ogg, } }
+
+    sound keytarBrass_Cb7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cb7.ogg, } }
+
+    sound keytarBrass_Cn0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn0.ogg, } }
+
+    sound keytarBrass_Cn1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn1.ogg, } }
+
+    sound keytarBrass_Cn2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn2.ogg, } }
+
+    sound keytarBrass_Cn3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn3.ogg, } }
+
+    sound keytarBrass_Cn4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn4.ogg, } }
+
+    sound keytarBrass_Cn5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn5.ogg, } }
+
+    sound keytarBrass_Cn6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn6.ogg, } }
+
+    sound keytarBrass_Cn7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn7.ogg, } }
+
+    sound keytarBrass_Cn8 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Cn8.ogg, } }
+
+    sound keytarBrass_Db0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db0.ogg, } }
+
+    sound keytarBrass_Db1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db1.ogg, } }
+
+    sound keytarBrass_Db2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db2.ogg, } }
+
+    sound keytarBrass_Db3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db3.ogg, } }
+
+    sound keytarBrass_Db4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db4.ogg, } }
+
+    sound keytarBrass_Db5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db5.ogg, } }
+
+    sound keytarBrass_Db6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db6.ogg, } }
+
+    sound keytarBrass_Db7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Db7.ogg, } }
+
+    sound keytarBrass_Dn0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn0.ogg, } }
+
+    sound keytarBrass_Dn1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn1.ogg, } }
+
+    sound keytarBrass_Dn2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn2.ogg, } }
+
+    sound keytarBrass_Dn3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn3.ogg, } }
+
+    sound keytarBrass_Dn4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn4.ogg, } }
+
+    sound keytarBrass_Dn5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn5.ogg, } }
+
+    sound keytarBrass_Dn6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn6.ogg, } }
+
+    sound keytarBrass_Dn7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Dn7.ogg, } }
+
+    sound keytarBrass_Eb0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb0.ogg, } }
+
+    sound keytarBrass_Eb1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb1.ogg, } }
+
+    sound keytarBrass_Eb2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb2.ogg, } }
+
+    sound keytarBrass_Eb3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb3.ogg, } }
+
+    sound keytarBrass_Eb4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb4.ogg, } }
+
+    sound keytarBrass_Eb5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb5.ogg, } }
+
+    sound keytarBrass_Eb6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb6.ogg, } }
+
+    sound keytarBrass_Eb7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Eb7.ogg, } }
+
+    sound keytarBrass_En0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En0.ogg, } }
+
+    sound keytarBrass_En1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En1.ogg, } }
+
+    sound keytarBrass_En2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En2.ogg, } }
+
+    sound keytarBrass_En3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En3.ogg, } }
+
+    sound keytarBrass_En4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En4.ogg, } }
+
+    sound keytarBrass_En5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En5.ogg, } }
+
+    sound keytarBrass_En6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En6.ogg, } }
+
+    sound keytarBrass_En7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/En7.ogg, } }
+
+    sound keytarBrass_Fb0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb0.ogg, } }
+
+    sound keytarBrass_Fb1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb1.ogg, } }
+
+    sound keytarBrass_Fb2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb2.ogg, } }
+
+    sound keytarBrass_Fb3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb3.ogg, } }
+
+    sound keytarBrass_Fb4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb4.ogg, } }
+
+    sound keytarBrass_Fb5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb5.ogg, } }
+
+    sound keytarBrass_Fb6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb6.ogg, } }
+
+    sound keytarBrass_Fb7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fb7.ogg, } }
+
+    sound keytarBrass_Fn0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn0.ogg, } }
+
+    sound keytarBrass_Fn1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn1.ogg, } }
+
+    sound keytarBrass_Fn2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn2.ogg, } }
+
+    sound keytarBrass_Fn3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn3.ogg, } }
+
+    sound keytarBrass_Fn4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn4.ogg, } }
+
+    sound keytarBrass_Fn5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn5.ogg, } }
+
+    sound keytarBrass_Fn6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn6.ogg, } }
+
+    sound keytarBrass_Fn7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Fn7.ogg, } }
+
+    sound keytarBrass_Gb0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb0.ogg, } }
+
+    sound keytarBrass_Gb1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb1.ogg, } }
+
+    sound keytarBrass_Gb2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb2.ogg, } }
+
+    sound keytarBrass_Gb3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb3.ogg, } }
+
+    sound keytarBrass_Gb4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb4.ogg, } }
+
+    sound keytarBrass_Gb5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb5.ogg, } }
+
+    sound keytarBrass_Gb6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb6.ogg, } }
+
+    sound keytarBrass_Gb7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gb7.ogg, } }
+
+    sound keytarBrass_Gn0 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn0.ogg, } }
+
+    sound keytarBrass_Gn1 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn1.ogg, } }
+
+    sound keytarBrass_Gn2 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn2.ogg, } }
+
+    sound keytarBrass_Gn3 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn3.ogg, } }
+
+    sound keytarBrass_Gn4 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn4.ogg, } }
+
+    sound keytarBrass_Gn5 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn5.ogg, } }
+
+    sound keytarBrass_Gn6 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn6.ogg, } }
+
+    sound keytarBrass_Gn7 {
+        category = BardInstrument_keytarBrass, is3D = true,
+        clip { file = media/sound/instruments/keytarBrass/Gn7.ogg, } }
+
+    sound keytarCalliope_Ab0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab0.ogg, } }
+
+    sound keytarCalliope_Ab1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab1.ogg, } }
+
+    sound keytarCalliope_Ab2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab2.ogg, } }
+
+    sound keytarCalliope_Ab3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab3.ogg, } }
+
+    sound keytarCalliope_Ab4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab4.ogg, } }
+
+    sound keytarCalliope_Ab5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab5.ogg, } }
+
+    sound keytarCalliope_Ab6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab6.ogg, } }
+
+    sound keytarCalliope_Ab7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab7.ogg, } }
+
+    sound keytarCalliope_Ab8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Ab8.ogg, } }
+
+    sound keytarCalliope_An0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An0.ogg, } }
+
+    sound keytarCalliope_An1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An1.ogg, } }
+
+    sound keytarCalliope_An2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An2.ogg, } }
+
+    sound keytarCalliope_An3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An3.ogg, } }
+
+    sound keytarCalliope_An4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An4.ogg, } }
+
+    sound keytarCalliope_An5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An5.ogg, } }
+
+    sound keytarCalliope_An6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An6.ogg, } }
+
+    sound keytarCalliope_An7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An7.ogg, } }
+
+    sound keytarCalliope_An8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/An8.ogg, } }
+
+    sound keytarCalliope_Bb0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb0.ogg, } }
+
+    sound keytarCalliope_Bb1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb1.ogg, } }
+
+    sound keytarCalliope_Bb2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb2.ogg, } }
+
+    sound keytarCalliope_Bb3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb3.ogg, } }
+
+    sound keytarCalliope_Bb4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb4.ogg, } }
+
+    sound keytarCalliope_Bb5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb5.ogg, } }
+
+    sound keytarCalliope_Bb6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb6.ogg, } }
+
+    sound keytarCalliope_Bb7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb7.ogg, } }
+
+    sound keytarCalliope_Bb8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bb8.ogg, } }
+
+    sound keytarCalliope_Bn0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn0.ogg, } }
+
+    sound keytarCalliope_Bn1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn1.ogg, } }
+
+    sound keytarCalliope_Bn2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn2.ogg, } }
+
+    sound keytarCalliope_Bn3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn3.ogg, } }
+
+    sound keytarCalliope_Bn4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn4.ogg, } }
+
+    sound keytarCalliope_Bn5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn5.ogg, } }
+
+    sound keytarCalliope_Bn6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn6.ogg, } }
+
+    sound keytarCalliope_Bn7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn7.ogg, } }
+
+    sound keytarCalliope_Bn8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Bn8.ogg, } }
+
+    sound keytarCalliope_Cb0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb0.ogg, } }
+
+    sound keytarCalliope_Cb1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb1.ogg, } }
+
+    sound keytarCalliope_Cb2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb2.ogg, } }
+
+    sound keytarCalliope_Cb3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb3.ogg, } }
+
+    sound keytarCalliope_Cb4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb4.ogg, } }
+
+    sound keytarCalliope_Cb5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb5.ogg, } }
+
+    sound keytarCalliope_Cb6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb6.ogg, } }
+
+    sound keytarCalliope_Cb7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb7.ogg, } }
+
+    sound keytarCalliope_Cb8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cb8.ogg, } }
+
+    sound keytarCalliope_Cn0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn0.ogg, } }
+
+    sound keytarCalliope_Cn1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn1.ogg, } }
+
+    sound keytarCalliope_Cn2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn2.ogg, } }
+
+    sound keytarCalliope_Cn3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn3.ogg, } }
+
+    sound keytarCalliope_Cn4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn4.ogg, } }
+
+    sound keytarCalliope_Cn5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn5.ogg, } }
+
+    sound keytarCalliope_Cn6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn6.ogg, } }
+
+    sound keytarCalliope_Cn7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn7.ogg, } }
+
+    sound keytarCalliope_Cn8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn8.ogg, } }
+
+    sound keytarCalliope_Cn9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Cn9.ogg, } }
+
+    sound keytarCalliope_Db0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db0.ogg, } }
+
+    sound keytarCalliope_Db1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db1.ogg, } }
+
+    sound keytarCalliope_Db2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db2.ogg, } }
+
+    sound keytarCalliope_Db3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db3.ogg, } }
+
+    sound keytarCalliope_Db4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db4.ogg, } }
+
+    sound keytarCalliope_Db5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db5.ogg, } }
+
+    sound keytarCalliope_Db6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db6.ogg, } }
+
+    sound keytarCalliope_Db7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db7.ogg, } }
+
+    sound keytarCalliope_Db8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db8.ogg, } }
+
+    sound keytarCalliope_Db9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Db9.ogg, } }
+
+    sound keytarCalliope_Dn0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn0.ogg, } }
+
+    sound keytarCalliope_Dn1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn1.ogg, } }
+
+    sound keytarCalliope_Dn2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn2.ogg, } }
+
+    sound keytarCalliope_Dn3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn3.ogg, } }
+
+    sound keytarCalliope_Dn4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn4.ogg, } }
+
+    sound keytarCalliope_Dn5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn5.ogg, } }
+
+    sound keytarCalliope_Dn6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn6.ogg, } }
+
+    sound keytarCalliope_Dn7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn7.ogg, } }
+
+    sound keytarCalliope_Dn8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn8.ogg, } }
+
+    sound keytarCalliope_Dn9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Dn9.ogg, } }
+
+    sound keytarCalliope_Eb0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb0.ogg, } }
+
+    sound keytarCalliope_Eb1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb1.ogg, } }
+
+    sound keytarCalliope_Eb2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb2.ogg, } }
+
+    sound keytarCalliope_Eb3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb3.ogg, } }
+
+    sound keytarCalliope_Eb4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb4.ogg, } }
+
+    sound keytarCalliope_Eb5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb5.ogg, } }
+
+    sound keytarCalliope_Eb6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb6.ogg, } }
+
+    sound keytarCalliope_Eb7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb7.ogg, } }
+
+    sound keytarCalliope_Eb8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb8.ogg, } }
+
+    sound keytarCalliope_Eb9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Eb9.ogg, } }
+
+    sound keytarCalliope_En0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En0.ogg, } }
+
+    sound keytarCalliope_En1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En1.ogg, } }
+
+    sound keytarCalliope_En2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En2.ogg, } }
+
+    sound keytarCalliope_En3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En3.ogg, } }
+
+    sound keytarCalliope_En4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En4.ogg, } }
+
+    sound keytarCalliope_En5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En5.ogg, } }
+
+    sound keytarCalliope_En6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En6.ogg, } }
+
+    sound keytarCalliope_En7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En7.ogg, } }
+
+    sound keytarCalliope_En8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En8.ogg, } }
+
+    sound keytarCalliope_En9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/En9.ogg, } }
+
+    sound keytarCalliope_Fb0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb0.ogg, } }
+
+    sound keytarCalliope_Fb1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb1.ogg, } }
+
+    sound keytarCalliope_Fb2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb2.ogg, } }
+
+    sound keytarCalliope_Fb3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb3.ogg, } }
+
+    sound keytarCalliope_Fb4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb4.ogg, } }
+
+    sound keytarCalliope_Fb5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb5.ogg, } }
+
+    sound keytarCalliope_Fb6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb6.ogg, } }
+
+    sound keytarCalliope_Fb7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb7.ogg, } }
+
+    sound keytarCalliope_Fb8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb8.ogg, } }
+
+    sound keytarCalliope_Fb9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fb9.ogg, } }
+
+    sound keytarCalliope_Fn0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn0.ogg, } }
+
+    sound keytarCalliope_Fn1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn1.ogg, } }
+
+    sound keytarCalliope_Fn2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn2.ogg, } }
+
+    sound keytarCalliope_Fn3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn3.ogg, } }
+
+    sound keytarCalliope_Fn4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn4.ogg, } }
+
+    sound keytarCalliope_Fn5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn5.ogg, } }
+
+    sound keytarCalliope_Fn6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn6.ogg, } }
+
+    sound keytarCalliope_Fn7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn7.ogg, } }
+
+    sound keytarCalliope_Fn8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn8.ogg, } }
+
+    sound keytarCalliope_Fn9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Fn9.ogg, } }
+
+    sound keytarCalliope_Gb0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb0.ogg, } }
+
+    sound keytarCalliope_Gb1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb1.ogg, } }
+
+    sound keytarCalliope_Gb2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb2.ogg, } }
+
+    sound keytarCalliope_Gb3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb3.ogg, } }
+
+    sound keytarCalliope_Gb4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb4.ogg, } }
+
+    sound keytarCalliope_Gb5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb5.ogg, } }
+
+    sound keytarCalliope_Gb6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb6.ogg, } }
+
+    sound keytarCalliope_Gb7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb7.ogg, } }
+
+    sound keytarCalliope_Gb8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb8.ogg, } }
+
+    sound keytarCalliope_Gb9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gb9.ogg, } }
+
+    sound keytarCalliope_Gn0 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn0.ogg, } }
+
+    sound keytarCalliope_Gn1 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn1.ogg, } }
+
+    sound keytarCalliope_Gn2 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn2.ogg, } }
+
+    sound keytarCalliope_Gn3 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn3.ogg, } }
+
+    sound keytarCalliope_Gn4 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn4.ogg, } }
+
+    sound keytarCalliope_Gn5 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn5.ogg, } }
+
+    sound keytarCalliope_Gn6 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn6.ogg, } }
+
+    sound keytarCalliope_Gn7 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn7.ogg, } }
+
+    sound keytarCalliope_Gn8 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn8.ogg, } }
+
+    sound keytarCalliope_Gn9 {
+        category = BardInstrument_keytarCalliope, is3D = true,
+        clip { file = media/sound/instruments/keytarCalliope/Gn9.ogg, } }
+
+    sound keytarCharang_Ab0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab0.ogg, } }
+
+    sound keytarCharang_Ab1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab1.ogg, } }
+
+    sound keytarCharang_Ab2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab2.ogg, } }
+
+    sound keytarCharang_Ab3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab3.ogg, } }
+
+    sound keytarCharang_Ab4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab4.ogg, } }
+
+    sound keytarCharang_Ab5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab5.ogg, } }
+
+    sound keytarCharang_Ab6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab6.ogg, } }
+
+    sound keytarCharang_Ab7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab7.ogg, } }
+
+    sound keytarCharang_Ab8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Ab8.ogg, } }
+
+    sound keytarCharang_An0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An0.ogg, } }
+
+    sound keytarCharang_An1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An1.ogg, } }
+
+    sound keytarCharang_An2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An2.ogg, } }
+
+    sound keytarCharang_An3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An3.ogg, } }
+
+    sound keytarCharang_An4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An4.ogg, } }
+
+    sound keytarCharang_An5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An5.ogg, } }
+
+    sound keytarCharang_An6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An6.ogg, } }
+
+    sound keytarCharang_An7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An7.ogg, } }
+
+    sound keytarCharang_An8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/An8.ogg, } }
+
+    sound keytarCharang_Bb0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb0.ogg, } }
+
+    sound keytarCharang_Bb1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb1.ogg, } }
+
+    sound keytarCharang_Bb2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb2.ogg, } }
+
+    sound keytarCharang_Bb3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb3.ogg, } }
+
+    sound keytarCharang_Bb4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb4.ogg, } }
+
+    sound keytarCharang_Bb5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb5.ogg, } }
+
+    sound keytarCharang_Bb6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb6.ogg, } }
+
+    sound keytarCharang_Bb7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb7.ogg, } }
+
+    sound keytarCharang_Bb8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bb8.ogg, } }
+
+    sound keytarCharang_Bn0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn0.ogg, } }
+
+    sound keytarCharang_Bn1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn1.ogg, } }
+
+    sound keytarCharang_Bn2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn2.ogg, } }
+
+    sound keytarCharang_Bn3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn3.ogg, } }
+
+    sound keytarCharang_Bn4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn4.ogg, } }
+
+    sound keytarCharang_Bn5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn5.ogg, } }
+
+    sound keytarCharang_Bn6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn6.ogg, } }
+
+    sound keytarCharang_Bn7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn7.ogg, } }
+
+    sound keytarCharang_Bn8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Bn8.ogg, } }
+
+    sound keytarCharang_Cb0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb0.ogg, } }
+
+    sound keytarCharang_Cb1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb1.ogg, } }
+
+    sound keytarCharang_Cb2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb2.ogg, } }
+
+    sound keytarCharang_Cb3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb3.ogg, } }
+
+    sound keytarCharang_Cb4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb4.ogg, } }
+
+    sound keytarCharang_Cb5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb5.ogg, } }
+
+    sound keytarCharang_Cb6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb6.ogg, } }
+
+    sound keytarCharang_Cb7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb7.ogg, } }
+
+    sound keytarCharang_Cb8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cb8.ogg, } }
+
+    sound keytarCharang_Cn0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn0.ogg, } }
+
+    sound keytarCharang_Cn1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn1.ogg, } }
+
+    sound keytarCharang_Cn2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn2.ogg, } }
+
+    sound keytarCharang_Cn3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn3.ogg, } }
+
+    sound keytarCharang_Cn4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn4.ogg, } }
+
+    sound keytarCharang_Cn5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn5.ogg, } }
+
+    sound keytarCharang_Cn6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn6.ogg, } }
+
+    sound keytarCharang_Cn7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn7.ogg, } }
+
+    sound keytarCharang_Cn8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn8.ogg, } }
+
+    sound keytarCharang_Cn9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Cn9.ogg, } }
+
+    sound keytarCharang_Db0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db0.ogg, } }
+
+    sound keytarCharang_Db1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db1.ogg, } }
+
+    sound keytarCharang_Db2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db2.ogg, } }
+
+    sound keytarCharang_Db3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db3.ogg, } }
+
+    sound keytarCharang_Db4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db4.ogg, } }
+
+    sound keytarCharang_Db5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db5.ogg, } }
+
+    sound keytarCharang_Db6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db6.ogg, } }
+
+    sound keytarCharang_Db7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db7.ogg, } }
+
+    sound keytarCharang_Db8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db8.ogg, } }
+
+    sound keytarCharang_Db9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Db9.ogg, } }
+
+    sound keytarCharang_Dn0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn0.ogg, } }
+
+    sound keytarCharang_Dn1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn1.ogg, } }
+
+    sound keytarCharang_Dn2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn2.ogg, } }
+
+    sound keytarCharang_Dn3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn3.ogg, } }
+
+    sound keytarCharang_Dn4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn4.ogg, } }
+
+    sound keytarCharang_Dn5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn5.ogg, } }
+
+    sound keytarCharang_Dn6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn6.ogg, } }
+
+    sound keytarCharang_Dn7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn7.ogg, } }
+
+    sound keytarCharang_Dn8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn8.ogg, } }
+
+    sound keytarCharang_Dn9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Dn9.ogg, } }
+
+    sound keytarCharang_Eb0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb0.ogg, } }
+
+    sound keytarCharang_Eb1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb1.ogg, } }
+
+    sound keytarCharang_Eb2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb2.ogg, } }
+
+    sound keytarCharang_Eb3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb3.ogg, } }
+
+    sound keytarCharang_Eb4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb4.ogg, } }
+
+    sound keytarCharang_Eb5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb5.ogg, } }
+
+    sound keytarCharang_Eb6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb6.ogg, } }
+
+    sound keytarCharang_Eb7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb7.ogg, } }
+
+    sound keytarCharang_Eb8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb8.ogg, } }
+
+    sound keytarCharang_Eb9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Eb9.ogg, } }
+
+    sound keytarCharang_En0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En0.ogg, } }
+
+    sound keytarCharang_En1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En1.ogg, } }
+
+    sound keytarCharang_En2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En2.ogg, } }
+
+    sound keytarCharang_En3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En3.ogg, } }
+
+    sound keytarCharang_En4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En4.ogg, } }
+
+    sound keytarCharang_En5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En5.ogg, } }
+
+    sound keytarCharang_En6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En6.ogg, } }
+
+    sound keytarCharang_En7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En7.ogg, } }
+
+    sound keytarCharang_En8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En8.ogg, } }
+
+    sound keytarCharang_En9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/En9.ogg, } }
+
+    sound keytarCharang_Fb0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb0.ogg, } }
+
+    sound keytarCharang_Fb1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb1.ogg, } }
+
+    sound keytarCharang_Fb2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb2.ogg, } }
+
+    sound keytarCharang_Fb3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb3.ogg, } }
+
+    sound keytarCharang_Fb4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb4.ogg, } }
+
+    sound keytarCharang_Fb5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb5.ogg, } }
+
+    sound keytarCharang_Fb6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb6.ogg, } }
+
+    sound keytarCharang_Fb7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb7.ogg, } }
+
+    sound keytarCharang_Fb8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb8.ogg, } }
+
+    sound keytarCharang_Fb9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fb9.ogg, } }
+
+    sound keytarCharang_Fn0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn0.ogg, } }
+
+    sound keytarCharang_Fn1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn1.ogg, } }
+
+    sound keytarCharang_Fn2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn2.ogg, } }
+
+    sound keytarCharang_Fn3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn3.ogg, } }
+
+    sound keytarCharang_Fn4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn4.ogg, } }
+
+    sound keytarCharang_Fn5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn5.ogg, } }
+
+    sound keytarCharang_Fn6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn6.ogg, } }
+
+    sound keytarCharang_Fn7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn7.ogg, } }
+
+    sound keytarCharang_Fn8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn8.ogg, } }
+
+    sound keytarCharang_Fn9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Fn9.ogg, } }
+
+    sound keytarCharang_Gb0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb0.ogg, } }
+
+    sound keytarCharang_Gb1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb1.ogg, } }
+
+    sound keytarCharang_Gb2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb2.ogg, } }
+
+    sound keytarCharang_Gb3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb3.ogg, } }
+
+    sound keytarCharang_Gb4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb4.ogg, } }
+
+    sound keytarCharang_Gb5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb5.ogg, } }
+
+    sound keytarCharang_Gb6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb6.ogg, } }
+
+    sound keytarCharang_Gb7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb7.ogg, } }
+
+    sound keytarCharang_Gb8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb8.ogg, } }
+
+    sound keytarCharang_Gb9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gb9.ogg, } }
+
+    sound keytarCharang_Gn0 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn0.ogg, } }
+
+    sound keytarCharang_Gn1 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn1.ogg, } }
+
+    sound keytarCharang_Gn2 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn2.ogg, } }
+
+    sound keytarCharang_Gn3 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn3.ogg, } }
+
+    sound keytarCharang_Gn4 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn4.ogg, } }
+
+    sound keytarCharang_Gn5 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn5.ogg, } }
+
+    sound keytarCharang_Gn6 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn6.ogg, } }
+
+    sound keytarCharang_Gn7 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn7.ogg, } }
+
+    sound keytarCharang_Gn8 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn8.ogg, } }
+
+    sound keytarCharang_Gn9 {
+        category = BardInstrument_keytarCharang, is3D = true,
+        clip { file = media/sound/instruments/keytarCharang/Gn9.ogg, } }
+
+    sound keytarChiff_Ab0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab0.ogg, } }
+
+    sound keytarChiff_Ab1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab1.ogg, } }
+
+    sound keytarChiff_Ab2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab2.ogg, } }
+
+    sound keytarChiff_Ab3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab3.ogg, } }
+
+    sound keytarChiff_Ab4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab4.ogg, } }
+
+    sound keytarChiff_Ab5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab5.ogg, } }
+
+    sound keytarChiff_Ab6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab6.ogg, } }
+
+    sound keytarChiff_Ab7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab7.ogg, } }
+
+    sound keytarChiff_Ab8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Ab8.ogg, } }
+
+    sound keytarChiff_An0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An0.ogg, } }
+
+    sound keytarChiff_An1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An1.ogg, } }
+
+    sound keytarChiff_An2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An2.ogg, } }
+
+    sound keytarChiff_An3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An3.ogg, } }
+
+    sound keytarChiff_An4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An4.ogg, } }
+
+    sound keytarChiff_An5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An5.ogg, } }
+
+    sound keytarChiff_An6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An6.ogg, } }
+
+    sound keytarChiff_An7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An7.ogg, } }
+
+    sound keytarChiff_An8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/An8.ogg, } }
+
+    sound keytarChiff_Bb0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb0.ogg, } }
+
+    sound keytarChiff_Bb1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb1.ogg, } }
+
+    sound keytarChiff_Bb2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb2.ogg, } }
+
+    sound keytarChiff_Bb3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb3.ogg, } }
+
+    sound keytarChiff_Bb4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb4.ogg, } }
+
+    sound keytarChiff_Bb5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb5.ogg, } }
+
+    sound keytarChiff_Bb6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb6.ogg, } }
+
+    sound keytarChiff_Bb7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bb7.ogg, } }
+
+    sound keytarChiff_Bn0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn0.ogg, } }
+
+    sound keytarChiff_Bn1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn1.ogg, } }
+
+    sound keytarChiff_Bn2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn2.ogg, } }
+
+    sound keytarChiff_Bn3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn3.ogg, } }
+
+    sound keytarChiff_Bn4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn4.ogg, } }
+
+    sound keytarChiff_Bn5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn5.ogg, } }
+
+    sound keytarChiff_Bn6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn6.ogg, } }
+
+    sound keytarChiff_Bn7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn7.ogg, } }
+
+    sound keytarChiff_Bn8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Bn8.ogg, } }
+
+    sound keytarChiff_Cb0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb0.ogg, } }
+
+    sound keytarChiff_Cb1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb1.ogg, } }
+
+    sound keytarChiff_Cb2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb2.ogg, } }
+
+    sound keytarChiff_Cb3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb3.ogg, } }
+
+    sound keytarChiff_Cb4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb4.ogg, } }
+
+    sound keytarChiff_Cb5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb5.ogg, } }
+
+    sound keytarChiff_Cb6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb6.ogg, } }
+
+    sound keytarChiff_Cb7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb7.ogg, } }
+
+    sound keytarChiff_Cb8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cb8.ogg, } }
+
+    sound keytarChiff_Cn0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn0.ogg, } }
+
+    sound keytarChiff_Cn1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn1.ogg, } }
+
+    sound keytarChiff_Cn2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn2.ogg, } }
+
+    sound keytarChiff_Cn3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn3.ogg, } }
+
+    sound keytarChiff_Cn4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn4.ogg, } }
+
+    sound keytarChiff_Cn5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn5.ogg, } }
+
+    sound keytarChiff_Cn6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn6.ogg, } }
+
+    sound keytarChiff_Cn7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn7.ogg, } }
+
+    sound keytarChiff_Cn8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn8.ogg, } }
+
+    sound keytarChiff_Cn9 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Cn9.ogg, } }
+
+    sound keytarChiff_Db0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db0.ogg, } }
+
+    sound keytarChiff_Db1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db1.ogg, } }
+
+    sound keytarChiff_Db2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db2.ogg, } }
+
+    sound keytarChiff_Db3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db3.ogg, } }
+
+    sound keytarChiff_Db4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db4.ogg, } }
+
+    sound keytarChiff_Db5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db5.ogg, } }
+
+    sound keytarChiff_Db6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db6.ogg, } }
+
+    sound keytarChiff_Db7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db7.ogg, } }
+
+    sound keytarChiff_Db8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Db8.ogg, } }
+
+    sound keytarChiff_Dn0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn0.ogg, } }
+
+    sound keytarChiff_Dn1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn1.ogg, } }
+
+    sound keytarChiff_Dn2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn2.ogg, } }
+
+    sound keytarChiff_Dn3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn3.ogg, } }
+
+    sound keytarChiff_Dn4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn4.ogg, } }
+
+    sound keytarChiff_Dn5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn5.ogg, } }
+
+    sound keytarChiff_Dn6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn6.ogg, } }
+
+    sound keytarChiff_Dn7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn7.ogg, } }
+
+    sound keytarChiff_Dn8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Dn8.ogg, } }
+
+    sound keytarChiff_Eb0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb0.ogg, } }
+
+    sound keytarChiff_Eb1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb1.ogg, } }
+
+    sound keytarChiff_Eb2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb2.ogg, } }
+
+    sound keytarChiff_Eb3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb3.ogg, } }
+
+    sound keytarChiff_Eb4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb4.ogg, } }
+
+    sound keytarChiff_Eb5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb5.ogg, } }
+
+    sound keytarChiff_Eb6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb6.ogg, } }
+
+    sound keytarChiff_Eb7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb7.ogg, } }
+
+    sound keytarChiff_Eb8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb8.ogg, } }
+
+    sound keytarChiff_Eb9 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Eb9.ogg, } }
+
+    sound keytarChiff_En0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En0.ogg, } }
+
+    sound keytarChiff_En1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En1.ogg, } }
+
+    sound keytarChiff_En2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En2.ogg, } }
+
+    sound keytarChiff_En3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En3.ogg, } }
+
+    sound keytarChiff_En4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En4.ogg, } }
+
+    sound keytarChiff_En5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En5.ogg, } }
+
+    sound keytarChiff_En6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En6.ogg, } }
+
+    sound keytarChiff_En7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En7.ogg, } }
+
+    sound keytarChiff_En8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/En8.ogg, } }
+
+    sound keytarChiff_Fb0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb0.ogg, } }
+
+    sound keytarChiff_Fb1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb1.ogg, } }
+
+    sound keytarChiff_Fb2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb2.ogg, } }
+
+    sound keytarChiff_Fb3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb3.ogg, } }
+
+    sound keytarChiff_Fb4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb4.ogg, } }
+
+    sound keytarChiff_Fb5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb5.ogg, } }
+
+    sound keytarChiff_Fb6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb6.ogg, } }
+
+    sound keytarChiff_Fb7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb7.ogg, } }
+
+    sound keytarChiff_Fb8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fb8.ogg, } }
+
+    sound keytarChiff_Fn0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn0.ogg, } }
+
+    sound keytarChiff_Fn1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn1.ogg, } }
+
+    sound keytarChiff_Fn2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn2.ogg, } }
+
+    sound keytarChiff_Fn3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn3.ogg, } }
+
+    sound keytarChiff_Fn4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn4.ogg, } }
+
+    sound keytarChiff_Fn5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn5.ogg, } }
+
+    sound keytarChiff_Fn6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn6.ogg, } }
+
+    sound keytarChiff_Fn7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn7.ogg, } }
+
+    sound keytarChiff_Fn8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Fn8.ogg, } }
+
+    sound keytarChiff_Gb0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb0.ogg, } }
+
+    sound keytarChiff_Gb1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb1.ogg, } }
+
+    sound keytarChiff_Gb2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb2.ogg, } }
+
+    sound keytarChiff_Gb3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb3.ogg, } }
+
+    sound keytarChiff_Gb4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb4.ogg, } }
+
+    sound keytarChiff_Gb5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb5.ogg, } }
+
+    sound keytarChiff_Gb6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb6.ogg, } }
+
+    sound keytarChiff_Gb7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb7.ogg, } }
+
+    sound keytarChiff_Gb8 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb8.ogg, } }
+
+    sound keytarChiff_Gb9 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gb9.ogg, } }
+
+    sound keytarChiff_Gn0 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn0.ogg, } }
+
+    sound keytarChiff_Gn1 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn1.ogg, } }
+
+    sound keytarChiff_Gn2 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn2.ogg, } }
+
+    sound keytarChiff_Gn3 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn3.ogg, } }
+
+    sound keytarChiff_Gn4 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn4.ogg, } }
+
+    sound keytarChiff_Gn5 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn5.ogg, } }
+
+    sound keytarChiff_Gn6 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn6.ogg, } }
+
+    sound keytarChiff_Gn7 {
+        category = BardInstrument_keytarChiff, is3D = true,
+        clip { file = media/sound/instruments/keytarChiff/Gn7.ogg, } }
+
+    sound keytarFifths_Ab0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab0.ogg, } }
+
+    sound keytarFifths_Ab1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab1.ogg, } }
+
+    sound keytarFifths_Ab2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab2.ogg, } }
+
+    sound keytarFifths_Ab3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab3.ogg, } }
+
+    sound keytarFifths_Ab4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab4.ogg, } }
+
+    sound keytarFifths_Ab5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab5.ogg, } }
+
+    sound keytarFifths_Ab6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab6.ogg, } }
+
+    sound keytarFifths_Ab7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab7.ogg, } }
+
+    sound keytarFifths_Ab8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Ab8.ogg, } }
+
+    sound keytarFifths_An0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An0.ogg, } }
+
+    sound keytarFifths_An1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An1.ogg, } }
+
+    sound keytarFifths_An2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An2.ogg, } }
+
+    sound keytarFifths_An3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An3.ogg, } }
+
+    sound keytarFifths_An4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An4.ogg, } }
+
+    sound keytarFifths_An5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An5.ogg, } }
+
+    sound keytarFifths_An6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An6.ogg, } }
+
+    sound keytarFifths_An7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An7.ogg, } }
+
+    sound keytarFifths_An8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/An8.ogg, } }
+
+    sound keytarFifths_Bb0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb0.ogg, } }
+
+    sound keytarFifths_Bb1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb1.ogg, } }
+
+    sound keytarFifths_Bb2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb2.ogg, } }
+
+    sound keytarFifths_Bb3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb3.ogg, } }
+
+    sound keytarFifths_Bb4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb4.ogg, } }
+
+    sound keytarFifths_Bb5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb5.ogg, } }
+
+    sound keytarFifths_Bb6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb6.ogg, } }
+
+    sound keytarFifths_Bb7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb7.ogg, } }
+
+    sound keytarFifths_Bb8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bb8.ogg, } }
+
+    sound keytarFifths_Bn0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn0.ogg, } }
+
+    sound keytarFifths_Bn1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn1.ogg, } }
+
+    sound keytarFifths_Bn2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn2.ogg, } }
+
+    sound keytarFifths_Bn3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn3.ogg, } }
+
+    sound keytarFifths_Bn4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn4.ogg, } }
+
+    sound keytarFifths_Bn5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn5.ogg, } }
+
+    sound keytarFifths_Bn6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn6.ogg, } }
+
+    sound keytarFifths_Bn7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn7.ogg, } }
+
+    sound keytarFifths_Bn8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Bn8.ogg, } }
+
+    sound keytarFifths_Cb0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb0.ogg, } }
+
+    sound keytarFifths_Cb1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb1.ogg, } }
+
+    sound keytarFifths_Cb2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb2.ogg, } }
+
+    sound keytarFifths_Cb3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb3.ogg, } }
+
+    sound keytarFifths_Cb4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb4.ogg, } }
+
+    sound keytarFifths_Cb5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb5.ogg, } }
+
+    sound keytarFifths_Cb6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb6.ogg, } }
+
+    sound keytarFifths_Cb7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb7.ogg, } }
+
+    sound keytarFifths_Cb8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cb8.ogg, } }
+
+    sound keytarFifths_Cn0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn0.ogg, } }
+
+    sound keytarFifths_Cn1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn1.ogg, } }
+
+    sound keytarFifths_Cn2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn2.ogg, } }
+
+    sound keytarFifths_Cn3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn3.ogg, } }
+
+    sound keytarFifths_Cn4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn4.ogg, } }
+
+    sound keytarFifths_Cn5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn5.ogg, } }
+
+    sound keytarFifths_Cn6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn6.ogg, } }
+
+    sound keytarFifths_Cn7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn7.ogg, } }
+
+    sound keytarFifths_Cn8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Cn8.ogg, } }
+
+    sound keytarFifths_Db0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db0.ogg, } }
+
+    sound keytarFifths_Db1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db1.ogg, } }
+
+    sound keytarFifths_Db2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db2.ogg, } }
+
+    sound keytarFifths_Db3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db3.ogg, } }
+
+    sound keytarFifths_Db4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db4.ogg, } }
+
+    sound keytarFifths_Db5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db5.ogg, } }
+
+    sound keytarFifths_Db6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db6.ogg, } }
+
+    sound keytarFifths_Db7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db7.ogg, } }
+
+    sound keytarFifths_Db8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Db8.ogg, } }
+
+    sound keytarFifths_Dn0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn0.ogg, } }
+
+    sound keytarFifths_Dn1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn1.ogg, } }
+
+    sound keytarFifths_Dn2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn2.ogg, } }
+
+    sound keytarFifths_Dn3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn3.ogg, } }
+
+    sound keytarFifths_Dn4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn4.ogg, } }
+
+    sound keytarFifths_Dn5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn5.ogg, } }
+
+    sound keytarFifths_Dn6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn6.ogg, } }
+
+    sound keytarFifths_Dn7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn7.ogg, } }
+
+    sound keytarFifths_Dn8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn8.ogg, } }
+
+    sound keytarFifths_Dn9 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Dn9.ogg, } }
+
+    sound keytarFifths_Eb0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb0.ogg, } }
+
+    sound keytarFifths_Eb1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb1.ogg, } }
+
+    sound keytarFifths_Eb2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb2.ogg, } }
+
+    sound keytarFifths_Eb3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb3.ogg, } }
+
+    sound keytarFifths_Eb4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb4.ogg, } }
+
+    sound keytarFifths_Eb5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb5.ogg, } }
+
+    sound keytarFifths_Eb6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb6.ogg, } }
+
+    sound keytarFifths_Eb7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb7.ogg, } }
+
+    sound keytarFifths_Eb8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Eb8.ogg, } }
+
+    sound keytarFifths_En0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En0.ogg, } }
+
+    sound keytarFifths_En1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En1.ogg, } }
+
+    sound keytarFifths_En2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En2.ogg, } }
+
+    sound keytarFifths_En3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En3.ogg, } }
+
+    sound keytarFifths_En4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En4.ogg, } }
+
+    sound keytarFifths_En5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En5.ogg, } }
+
+    sound keytarFifths_En6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En6.ogg, } }
+
+    sound keytarFifths_En7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En7.ogg, } }
+
+    sound keytarFifths_En8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/En8.ogg, } }
+
+    sound keytarFifths_Fb0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb0.ogg, } }
+
+    sound keytarFifths_Fb1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb1.ogg, } }
+
+    sound keytarFifths_Fb2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb2.ogg, } }
+
+    sound keytarFifths_Fb3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb3.ogg, } }
+
+    sound keytarFifths_Fb4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb4.ogg, } }
+
+    sound keytarFifths_Fb5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb5.ogg, } }
+
+    sound keytarFifths_Fb6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb6.ogg, } }
+
+    sound keytarFifths_Fb7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb7.ogg, } }
+
+    sound keytarFifths_Fb8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fb8.ogg, } }
+
+    sound keytarFifths_Fn0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn0.ogg, } }
+
+    sound keytarFifths_Fn1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn1.ogg, } }
+
+    sound keytarFifths_Fn2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn2.ogg, } }
+
+    sound keytarFifths_Fn3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn3.ogg, } }
+
+    sound keytarFifths_Fn4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn4.ogg, } }
+
+    sound keytarFifths_Fn5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn5.ogg, } }
+
+    sound keytarFifths_Fn6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn6.ogg, } }
+
+    sound keytarFifths_Fn7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn7.ogg, } }
+
+    sound keytarFifths_Fn8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Fn8.ogg, } }
+
+    sound keytarFifths_Gb0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb0.ogg, } }
+
+    sound keytarFifths_Gb1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb1.ogg, } }
+
+    sound keytarFifths_Gb2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb2.ogg, } }
+
+    sound keytarFifths_Gb3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb3.ogg, } }
+
+    sound keytarFifths_Gb4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb4.ogg, } }
+
+    sound keytarFifths_Gb5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb5.ogg, } }
+
+    sound keytarFifths_Gb6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb6.ogg, } }
+
+    sound keytarFifths_Gb7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb7.ogg, } }
+
+    sound keytarFifths_Gb8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gb8.ogg, } }
+
+    sound keytarFifths_Gn0 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn0.ogg, } }
+
+    sound keytarFifths_Gn1 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn1.ogg, } }
+
+    sound keytarFifths_Gn2 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn2.ogg, } }
+
+    sound keytarFifths_Gn3 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn3.ogg, } }
+
+    sound keytarFifths_Gn4 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn4.ogg, } }
+
+    sound keytarFifths_Gn5 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn5.ogg, } }
+
+    sound keytarFifths_Gn6 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn6.ogg, } }
+
+    sound keytarFifths_Gn7 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn7.ogg, } }
+
+    sound keytarFifths_Gn8 {
+        category = BardInstrument_keytarFifths, is3D = true,
+        clip { file = media/sound/instruments/keytarFifths/Gn8.ogg, } }
+
+    sound keytarSawtooth_Ab0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab0.ogg, } }
+
+    sound keytarSawtooth_Ab1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab1.ogg, } }
+
+    sound keytarSawtooth_Ab2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab2.ogg, } }
+
+    sound keytarSawtooth_Ab3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab3.ogg, } }
+
+    sound keytarSawtooth_Ab4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab4.ogg, } }
+
+    sound keytarSawtooth_Ab5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab5.ogg, } }
+
+    sound keytarSawtooth_Ab6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab6.ogg, } }
+
+    sound keytarSawtooth_Ab7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Ab7.ogg, } }
+
+    sound keytarSawtooth_An0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An0.ogg, } }
+
+    sound keytarSawtooth_An1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An1.ogg, } }
+
+    sound keytarSawtooth_An2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An2.ogg, } }
+
+    sound keytarSawtooth_An3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An3.ogg, } }
+
+    sound keytarSawtooth_An4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An4.ogg, } }
+
+    sound keytarSawtooth_An5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An5.ogg, } }
+
+    sound keytarSawtooth_An6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An6.ogg, } }
+
+    sound keytarSawtooth_An7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/An7.ogg, } }
+
+    sound keytarSawtooth_Bb0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb0.ogg, } }
+
+    sound keytarSawtooth_Bb1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb1.ogg, } }
+
+    sound keytarSawtooth_Bb2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb2.ogg, } }
+
+    sound keytarSawtooth_Bb3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb3.ogg, } }
+
+    sound keytarSawtooth_Bb4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb4.ogg, } }
+
+    sound keytarSawtooth_Bb5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb5.ogg, } }
+
+    sound keytarSawtooth_Bb6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb6.ogg, } }
+
+    sound keytarSawtooth_Bb7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bb7.ogg, } }
+
+    sound keytarSawtooth_Bn0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn0.ogg, } }
+
+    sound keytarSawtooth_Bn1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn1.ogg, } }
+
+    sound keytarSawtooth_Bn2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn2.ogg, } }
+
+    sound keytarSawtooth_Bn3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn3.ogg, } }
+
+    sound keytarSawtooth_Bn4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn4.ogg, } }
+
+    sound keytarSawtooth_Bn5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn5.ogg, } }
+
+    sound keytarSawtooth_Bn6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn6.ogg, } }
+
+    sound keytarSawtooth_Bn7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Bn7.ogg, } }
+
+    sound keytarSawtooth_Cb0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb0.ogg, } }
+
+    sound keytarSawtooth_Cb1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb1.ogg, } }
+
+    sound keytarSawtooth_Cb2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb2.ogg, } }
+
+    sound keytarSawtooth_Cb3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb3.ogg, } }
+
+    sound keytarSawtooth_Cb4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb4.ogg, } }
+
+    sound keytarSawtooth_Cb5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb5.ogg, } }
+
+    sound keytarSawtooth_Cb6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb6.ogg, } }
+
+    sound keytarSawtooth_Cb7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cb7.ogg, } }
+
+    sound keytarSawtooth_Cn0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn0.ogg, } }
+
+    sound keytarSawtooth_Cn1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn1.ogg, } }
+
+    sound keytarSawtooth_Cn2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn2.ogg, } }
+
+    sound keytarSawtooth_Cn3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn3.ogg, } }
+
+    sound keytarSawtooth_Cn4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn4.ogg, } }
+
+    sound keytarSawtooth_Cn5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn5.ogg, } }
+
+    sound keytarSawtooth_Cn6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn6.ogg, } }
+
+    sound keytarSawtooth_Cn7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn7.ogg, } }
+
+    sound keytarSawtooth_Cn8 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Cn8.ogg, } }
+
+    sound keytarSawtooth_Db0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db0.ogg, } }
+
+    sound keytarSawtooth_Db1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db1.ogg, } }
+
+    sound keytarSawtooth_Db2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db2.ogg, } }
+
+    sound keytarSawtooth_Db3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db3.ogg, } }
+
+    sound keytarSawtooth_Db4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db4.ogg, } }
+
+    sound keytarSawtooth_Db5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db5.ogg, } }
+
+    sound keytarSawtooth_Db6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db6.ogg, } }
+
+    sound keytarSawtooth_Db7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Db7.ogg, } }
+
+    sound keytarSawtooth_Dn0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn0.ogg, } }
+
+    sound keytarSawtooth_Dn1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn1.ogg, } }
+
+    sound keytarSawtooth_Dn2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn2.ogg, } }
+
+    sound keytarSawtooth_Dn3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn3.ogg, } }
+
+    sound keytarSawtooth_Dn4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn4.ogg, } }
+
+    sound keytarSawtooth_Dn5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn5.ogg, } }
+
+    sound keytarSawtooth_Dn6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn6.ogg, } }
+
+    sound keytarSawtooth_Dn7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Dn7.ogg, } }
+
+    sound keytarSawtooth_Eb0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb0.ogg, } }
+
+    sound keytarSawtooth_Eb1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb1.ogg, } }
+
+    sound keytarSawtooth_Eb2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb2.ogg, } }
+
+    sound keytarSawtooth_Eb3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb3.ogg, } }
+
+    sound keytarSawtooth_Eb4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb4.ogg, } }
+
+    sound keytarSawtooth_Eb5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb5.ogg, } }
+
+    sound keytarSawtooth_Eb6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb6.ogg, } }
+
+    sound keytarSawtooth_Eb7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Eb7.ogg, } }
+
+    sound keytarSawtooth_En0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En0.ogg, } }
+
+    sound keytarSawtooth_En1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En1.ogg, } }
+
+    sound keytarSawtooth_En2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En2.ogg, } }
+
+    sound keytarSawtooth_En3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En3.ogg, } }
+
+    sound keytarSawtooth_En4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En4.ogg, } }
+
+    sound keytarSawtooth_En5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En5.ogg, } }
+
+    sound keytarSawtooth_En6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En6.ogg, } }
+
+    sound keytarSawtooth_En7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/En7.ogg, } }
+
+    sound keytarSawtooth_Fb0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb0.ogg, } }
+
+    sound keytarSawtooth_Fb1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb1.ogg, } }
+
+    sound keytarSawtooth_Fb2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb2.ogg, } }
+
+    sound keytarSawtooth_Fb3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb3.ogg, } }
+
+    sound keytarSawtooth_Fb4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb4.ogg, } }
+
+    sound keytarSawtooth_Fb5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb5.ogg, } }
+
+    sound keytarSawtooth_Fb6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb6.ogg, } }
+
+    sound keytarSawtooth_Fb7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fb7.ogg, } }
+
+    sound keytarSawtooth_Fn0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn0.ogg, } }
+
+    sound keytarSawtooth_Fn1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn1.ogg, } }
+
+    sound keytarSawtooth_Fn2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn2.ogg, } }
+
+    sound keytarSawtooth_Fn3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn3.ogg, } }
+
+    sound keytarSawtooth_Fn4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn4.ogg, } }
+
+    sound keytarSawtooth_Fn5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn5.ogg, } }
+
+    sound keytarSawtooth_Fn6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn6.ogg, } }
+
+    sound keytarSawtooth_Fn7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Fn7.ogg, } }
+
+    sound keytarSawtooth_Gb0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb0.ogg, } }
+
+    sound keytarSawtooth_Gb1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb1.ogg, } }
+
+    sound keytarSawtooth_Gb2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb2.ogg, } }
+
+    sound keytarSawtooth_Gb3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb3.ogg, } }
+
+    sound keytarSawtooth_Gb4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb4.ogg, } }
+
+    sound keytarSawtooth_Gb5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb5.ogg, } }
+
+    sound keytarSawtooth_Gb6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb6.ogg, } }
+
+    sound keytarSawtooth_Gb7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gb7.ogg, } }
+
+    sound keytarSawtooth_Gn0 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn0.ogg, } }
+
+    sound keytarSawtooth_Gn1 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn1.ogg, } }
+
+    sound keytarSawtooth_Gn2 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn2.ogg, } }
+
+    sound keytarSawtooth_Gn3 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn3.ogg, } }
+
+    sound keytarSawtooth_Gn4 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn4.ogg, } }
+
+    sound keytarSawtooth_Gn5 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn5.ogg, } }
+
+    sound keytarSawtooth_Gn6 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn6.ogg, } }
+
+    sound keytarSawtooth_Gn7 {
+        category = BardInstrument_keytarSawtooth, is3D = true,
+        clip { file = media/sound/instruments/keytarSawtooth/Gn7.ogg, } }
+
+    sound keytarSquare_Ab0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab0.ogg, } }
+
+    sound keytarSquare_Ab1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab1.ogg, } }
+
+    sound keytarSquare_Ab2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab2.ogg, } }
+
+    sound keytarSquare_Ab3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab3.ogg, } }
+
+    sound keytarSquare_Ab4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab4.ogg, } }
+
+    sound keytarSquare_Ab5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab5.ogg, } }
+
+    sound keytarSquare_Ab6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab6.ogg, } }
+
+    sound keytarSquare_Ab7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab7.ogg, } }
+
+    sound keytarSquare_Ab8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Ab8.ogg, } }
+
+    sound keytarSquare_An0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An0.ogg, } }
+
+    sound keytarSquare_An1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An1.ogg, } }
+
+    sound keytarSquare_An2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An2.ogg, } }
+
+    sound keytarSquare_An3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An3.ogg, } }
+
+    sound keytarSquare_An4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An4.ogg, } }
+
+    sound keytarSquare_An5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An5.ogg, } }
+
+    sound keytarSquare_An6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An6.ogg, } }
+
+    sound keytarSquare_An7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An7.ogg, } }
+
+    sound keytarSquare_An8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/An8.ogg, } }
+
+    sound keytarSquare_Bb0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb0.ogg, } }
+
+    sound keytarSquare_Bb1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb1.ogg, } }
+
+    sound keytarSquare_Bb2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb2.ogg, } }
+
+    sound keytarSquare_Bb3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb3.ogg, } }
+
+    sound keytarSquare_Bb4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb4.ogg, } }
+
+    sound keytarSquare_Bb5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb5.ogg, } }
+
+    sound keytarSquare_Bb6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb6.ogg, } }
+
+    sound keytarSquare_Bb7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb7.ogg, } }
+
+    sound keytarSquare_Bb8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bb8.ogg, } }
+
+    sound keytarSquare_Bn0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn0.ogg, } }
+
+    sound keytarSquare_Bn1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn1.ogg, } }
+
+    sound keytarSquare_Bn2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn2.ogg, } }
+
+    sound keytarSquare_Bn3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn3.ogg, } }
+
+    sound keytarSquare_Bn4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn4.ogg, } }
+
+    sound keytarSquare_Bn5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn5.ogg, } }
+
+    sound keytarSquare_Bn6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn6.ogg, } }
+
+    sound keytarSquare_Bn7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn7.ogg, } }
+
+    sound keytarSquare_Bn8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Bn8.ogg, } }
+
+    sound keytarSquare_Cb0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb0.ogg, } }
+
+    sound keytarSquare_Cb1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb1.ogg, } }
+
+    sound keytarSquare_Cb2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb2.ogg, } }
+
+    sound keytarSquare_Cb3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb3.ogg, } }
+
+    sound keytarSquare_Cb4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb4.ogg, } }
+
+    sound keytarSquare_Cb5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb5.ogg, } }
+
+    sound keytarSquare_Cb6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb6.ogg, } }
+
+    sound keytarSquare_Cb7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb7.ogg, } }
+
+    sound keytarSquare_Cb8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cb8.ogg, } }
+
+    sound keytarSquare_Cn0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn0.ogg, } }
+
+    sound keytarSquare_Cn1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn1.ogg, } }
+
+    sound keytarSquare_Cn2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn2.ogg, } }
+
+    sound keytarSquare_Cn3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn3.ogg, } }
+
+    sound keytarSquare_Cn4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn4.ogg, } }
+
+    sound keytarSquare_Cn5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn5.ogg, } }
+
+    sound keytarSquare_Cn6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn6.ogg, } }
+
+    sound keytarSquare_Cn7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn7.ogg, } }
+
+    sound keytarSquare_Cn8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn8.ogg, } }
+
+    sound keytarSquare_Cn9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Cn9.ogg, } }
+
+    sound keytarSquare_Db0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db0.ogg, } }
+
+    sound keytarSquare_Db1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db1.ogg, } }
+
+    sound keytarSquare_Db2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db2.ogg, } }
+
+    sound keytarSquare_Db3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db3.ogg, } }
+
+    sound keytarSquare_Db4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db4.ogg, } }
+
+    sound keytarSquare_Db5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db5.ogg, } }
+
+    sound keytarSquare_Db6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db6.ogg, } }
+
+    sound keytarSquare_Db7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db7.ogg, } }
+
+    sound keytarSquare_Db8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db8.ogg, } }
+
+    sound keytarSquare_Db9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Db9.ogg, } }
+
+    sound keytarSquare_Dn0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn0.ogg, } }
+
+    sound keytarSquare_Dn1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn1.ogg, } }
+
+    sound keytarSquare_Dn2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn2.ogg, } }
+
+    sound keytarSquare_Dn3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn3.ogg, } }
+
+    sound keytarSquare_Dn4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn4.ogg, } }
+
+    sound keytarSquare_Dn5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn5.ogg, } }
+
+    sound keytarSquare_Dn6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn6.ogg, } }
+
+    sound keytarSquare_Dn7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn7.ogg, } }
+
+    sound keytarSquare_Dn8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn8.ogg, } }
+
+    sound keytarSquare_Dn9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Dn9.ogg, } }
+
+    sound keytarSquare_Eb0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb0.ogg, } }
+
+    sound keytarSquare_Eb1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb1.ogg, } }
+
+    sound keytarSquare_Eb2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb2.ogg, } }
+
+    sound keytarSquare_Eb3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb3.ogg, } }
+
+    sound keytarSquare_Eb4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb4.ogg, } }
+
+    sound keytarSquare_Eb5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb5.ogg, } }
+
+    sound keytarSquare_Eb6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb6.ogg, } }
+
+    sound keytarSquare_Eb7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb7.ogg, } }
+
+    sound keytarSquare_Eb8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb8.ogg, } }
+
+    sound keytarSquare_Eb9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Eb9.ogg, } }
+
+    sound keytarSquare_En0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En0.ogg, } }
+
+    sound keytarSquare_En1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En1.ogg, } }
+
+    sound keytarSquare_En2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En2.ogg, } }
+
+    sound keytarSquare_En3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En3.ogg, } }
+
+    sound keytarSquare_En4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En4.ogg, } }
+
+    sound keytarSquare_En5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En5.ogg, } }
+
+    sound keytarSquare_En6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En6.ogg, } }
+
+    sound keytarSquare_En7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En7.ogg, } }
+
+    sound keytarSquare_En8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En8.ogg, } }
+
+    sound keytarSquare_En9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/En9.ogg, } }
+
+    sound keytarSquare_Fb0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb0.ogg, } }
+
+    sound keytarSquare_Fb1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb1.ogg, } }
+
+    sound keytarSquare_Fb2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb2.ogg, } }
+
+    sound keytarSquare_Fb3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb3.ogg, } }
+
+    sound keytarSquare_Fb4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb4.ogg, } }
+
+    sound keytarSquare_Fb5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb5.ogg, } }
+
+    sound keytarSquare_Fb6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb6.ogg, } }
+
+    sound keytarSquare_Fb7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb7.ogg, } }
+
+    sound keytarSquare_Fb8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb8.ogg, } }
+
+    sound keytarSquare_Fb9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fb9.ogg, } }
+
+    sound keytarSquare_Fn0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn0.ogg, } }
+
+    sound keytarSquare_Fn1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn1.ogg, } }
+
+    sound keytarSquare_Fn2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn2.ogg, } }
+
+    sound keytarSquare_Fn3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn3.ogg, } }
+
+    sound keytarSquare_Fn4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn4.ogg, } }
+
+    sound keytarSquare_Fn5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn5.ogg, } }
+
+    sound keytarSquare_Fn6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn6.ogg, } }
+
+    sound keytarSquare_Fn7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn7.ogg, } }
+
+    sound keytarSquare_Fn8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn8.ogg, } }
+
+    sound keytarSquare_Fn9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Fn9.ogg, } }
+
+    sound keytarSquare_Gb0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb0.ogg, } }
+
+    sound keytarSquare_Gb1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb1.ogg, } }
+
+    sound keytarSquare_Gb2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb2.ogg, } }
+
+    sound keytarSquare_Gb3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb3.ogg, } }
+
+    sound keytarSquare_Gb4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb4.ogg, } }
+
+    sound keytarSquare_Gb5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb5.ogg, } }
+
+    sound keytarSquare_Gb6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb6.ogg, } }
+
+    sound keytarSquare_Gb7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb7.ogg, } }
+
+    sound keytarSquare_Gb8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb8.ogg, } }
+
+    sound keytarSquare_Gb9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gb9.ogg, } }
+
+    sound keytarSquare_Gn0 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn0.ogg, } }
+
+    sound keytarSquare_Gn1 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn1.ogg, } }
+
+    sound keytarSquare_Gn2 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn2.ogg, } }
+
+    sound keytarSquare_Gn3 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn3.ogg, } }
+
+    sound keytarSquare_Gn4 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn4.ogg, } }
+
+    sound keytarSquare_Gn5 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn5.ogg, } }
+
+    sound keytarSquare_Gn6 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn6.ogg, } }
+
+    sound keytarSquare_Gn7 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn7.ogg, } }
+
+    sound keytarSquare_Gn8 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn8.ogg, } }
+
+    sound keytarSquare_Gn9 {
+        category = BardInstrument_keytarSquare, is3D = true,
+        clip { file = media/sound/instruments/keytarSquare/Gn9.ogg, } }
+
+    sound keytarVoice_Ab0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab0.ogg, } }
+
+    sound keytarVoice_Ab1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab1.ogg, } }
+
+    sound keytarVoice_Ab2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab2.ogg, } }
+
+    sound keytarVoice_Ab3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab3.ogg, } }
+
+    sound keytarVoice_Ab4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab4.ogg, } }
+
+    sound keytarVoice_Ab5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab5.ogg, } }
+
+    sound keytarVoice_Ab6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab6.ogg, } }
+
+    sound keytarVoice_Ab7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab7.ogg, } }
+
+    sound keytarVoice_Ab8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Ab8.ogg, } }
+
+    sound keytarVoice_An0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An0.ogg, } }
+
+    sound keytarVoice_An1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An1.ogg, } }
+
+    sound keytarVoice_An2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An2.ogg, } }
+
+    sound keytarVoice_An3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An3.ogg, } }
+
+    sound keytarVoice_An4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An4.ogg, } }
+
+    sound keytarVoice_An5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An5.ogg, } }
+
+    sound keytarVoice_An6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An6.ogg, } }
+
+    sound keytarVoice_An7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An7.ogg, } }
+
+    sound keytarVoice_An8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/An8.ogg, } }
+
+    sound keytarVoice_Bb0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb0.ogg, } }
+
+    sound keytarVoice_Bb1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb1.ogg, } }
+
+    sound keytarVoice_Bb2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb2.ogg, } }
+
+    sound keytarVoice_Bb3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb3.ogg, } }
+
+    sound keytarVoice_Bb4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb4.ogg, } }
+
+    sound keytarVoice_Bb5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb5.ogg, } }
+
+    sound keytarVoice_Bb6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb6.ogg, } }
+
+    sound keytarVoice_Bb7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb7.ogg, } }
+
+    sound keytarVoice_Bb8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bb8.ogg, } }
+
+    sound keytarVoice_Bn0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn0.ogg, } }
+
+    sound keytarVoice_Bn1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn1.ogg, } }
+
+    sound keytarVoice_Bn2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn2.ogg, } }
+
+    sound keytarVoice_Bn3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn3.ogg, } }
+
+    sound keytarVoice_Bn4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn4.ogg, } }
+
+    sound keytarVoice_Bn5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn5.ogg, } }
+
+    sound keytarVoice_Bn6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn6.ogg, } }
+
+    sound keytarVoice_Bn7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn7.ogg, } }
+
+    sound keytarVoice_Bn8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Bn8.ogg, } }
+
+    sound keytarVoice_Cb0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb0.ogg, } }
+
+    sound keytarVoice_Cb1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb1.ogg, } }
+
+    sound keytarVoice_Cb2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb2.ogg, } }
+
+    sound keytarVoice_Cb3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb3.ogg, } }
+
+    sound keytarVoice_Cb4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb4.ogg, } }
+
+    sound keytarVoice_Cb5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb5.ogg, } }
+
+    sound keytarVoice_Cb6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb6.ogg, } }
+
+    sound keytarVoice_Cb7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb7.ogg, } }
+
+    sound keytarVoice_Cb8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cb8.ogg, } }
+
+    sound keytarVoice_Cn0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn0.ogg, } }
+
+    sound keytarVoice_Cn1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn1.ogg, } }
+
+    sound keytarVoice_Cn2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn2.ogg, } }
+
+    sound keytarVoice_Cn3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn3.ogg, } }
+
+    sound keytarVoice_Cn4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn4.ogg, } }
+
+    sound keytarVoice_Cn5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn5.ogg, } }
+
+    sound keytarVoice_Cn6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn6.ogg, } }
+
+    sound keytarVoice_Cn7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn7.ogg, } }
+
+    sound keytarVoice_Cn8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn8.ogg, } }
+
+    sound keytarVoice_Cn9 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Cn9.ogg, } }
+
+    sound keytarVoice_Db0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db0.ogg, } }
+
+    sound keytarVoice_Db1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db1.ogg, } }
+
+    sound keytarVoice_Db2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db2.ogg, } }
+
+    sound keytarVoice_Db3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db3.ogg, } }
+
+    sound keytarVoice_Db4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db4.ogg, } }
+
+    sound keytarVoice_Db5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db5.ogg, } }
+
+    sound keytarVoice_Db6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db6.ogg, } }
+
+    sound keytarVoice_Db7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db7.ogg, } }
+
+    sound keytarVoice_Db8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Db8.ogg, } }
+
+    sound keytarVoice_Dn0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn0.ogg, } }
+
+    sound keytarVoice_Dn1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn1.ogg, } }
+
+    sound keytarVoice_Dn2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn2.ogg, } }
+
+    sound keytarVoice_Dn3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn3.ogg, } }
+
+    sound keytarVoice_Dn4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn4.ogg, } }
+
+    sound keytarVoice_Dn5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn5.ogg, } }
+
+    sound keytarVoice_Dn6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn6.ogg, } }
+
+    sound keytarVoice_Dn7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn7.ogg, } }
+
+    sound keytarVoice_Dn8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Dn8.ogg, } }
+
+    sound keytarVoice_Eb0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb0.ogg, } }
+
+    sound keytarVoice_Eb1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb1.ogg, } }
+
+    sound keytarVoice_Eb2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb2.ogg, } }
+
+    sound keytarVoice_Eb3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb3.ogg, } }
+
+    sound keytarVoice_Eb4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb4.ogg, } }
+
+    sound keytarVoice_Eb5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb5.ogg, } }
+
+    sound keytarVoice_Eb6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb6.ogg, } }
+
+    sound keytarVoice_Eb7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb7.ogg, } }
+
+    sound keytarVoice_Eb8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Eb8.ogg, } }
+
+    sound keytarVoice_En0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En0.ogg, } }
+
+    sound keytarVoice_En1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En1.ogg, } }
+
+    sound keytarVoice_En2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En2.ogg, } }
+
+    sound keytarVoice_En3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En3.ogg, } }
+
+    sound keytarVoice_En4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En4.ogg, } }
+
+    sound keytarVoice_En5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En5.ogg, } }
+
+    sound keytarVoice_En6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En6.ogg, } }
+
+    sound keytarVoice_En7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En7.ogg, } }
+
+    sound keytarVoice_En8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/En8.ogg, } }
+
+    sound keytarVoice_Fb0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb0.ogg, } }
+
+    sound keytarVoice_Fb1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb1.ogg, } }
+
+    sound keytarVoice_Fb2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb2.ogg, } }
+
+    sound keytarVoice_Fb3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb3.ogg, } }
+
+    sound keytarVoice_Fb4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb4.ogg, } }
+
+    sound keytarVoice_Fb5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb5.ogg, } }
+
+    sound keytarVoice_Fb6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb6.ogg, } }
+
+    sound keytarVoice_Fb7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb7.ogg, } }
+
+    sound keytarVoice_Fb8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fb8.ogg, } }
+
+    sound keytarVoice_Fn0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn0.ogg, } }
+
+    sound keytarVoice_Fn1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn1.ogg, } }
+
+    sound keytarVoice_Fn2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn2.ogg, } }
+
+    sound keytarVoice_Fn3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn3.ogg, } }
+
+    sound keytarVoice_Fn4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn4.ogg, } }
+
+    sound keytarVoice_Fn5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn5.ogg, } }
+
+    sound keytarVoice_Fn6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn6.ogg, } }
+
+    sound keytarVoice_Fn7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn7.ogg, } }
+
+    sound keytarVoice_Fn8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Fn8.ogg, } }
+
+    sound keytarVoice_Gb0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb0.ogg, } }
+
+    sound keytarVoice_Gb1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb1.ogg, } }
+
+    sound keytarVoice_Gb2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb2.ogg, } }
+
+    sound keytarVoice_Gb3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb3.ogg, } }
+
+    sound keytarVoice_Gb4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb4.ogg, } }
+
+    sound keytarVoice_Gb5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb5.ogg, } }
+
+    sound keytarVoice_Gb6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb6.ogg, } }
+
+    sound keytarVoice_Gb7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb7.ogg, } }
+
+    sound keytarVoice_Gb8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gb8.ogg, } }
+
+    sound keytarVoice_Gn0 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn0.ogg, } }
+
+    sound keytarVoice_Gn1 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn1.ogg, } }
+
+    sound keytarVoice_Gn2 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn2.ogg, } }
+
+    sound keytarVoice_Gn3 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn3.ogg, } }
+
+    sound keytarVoice_Gn4 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn4.ogg, } }
+
+    sound keytarVoice_Gn5 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn5.ogg, } }
+
+    sound keytarVoice_Gn6 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn6.ogg, } }
+
+    sound keytarVoice_Gn7 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn7.ogg, } }
+
+    sound keytarVoice_Gn8 {
+        category = BardInstrument_keytarVoice, is3D = true,
+        clip { file = media/sound/instruments/keytarVoice/Gn8.ogg, } }
 
     sound piano_Ab0 {
         category = BardInstrument_piano, is3D = true,

@@ -5,6 +5,7 @@ require "ISUI/ISTickBox"
 require "ISUI/ISScrollingListBox"
 
 local defaultSongs = require "BardToTheBone_defaultSongs"
+local Bard = require "BardToTheBone_main"
 
 BardUIWindow = ISCollapsableWindow:derive("BardUIWindow")
 
@@ -60,10 +61,18 @@ function BardUIWindow:initialise()
     self:addChild(self.closeButton)
     --]]
 
-    self.playButton = ISButton:new(self.width - 110 , buttonY, 100, 25, "Play", self, BardUIWindow.onPlay)
+    local styles = self.styles~=nil
+
+    self.playButton = ISButton:new(self.width-125 , buttonY, 90+(styles and 0 or 25), 25, "Play", self, BardUIWindow.onPlay)
     self.playButton:initialise()
     self.playButton:instantiate()
     self:addChild(self.playButton)
+
+    self.styleButton = ISButton:new(self.width-36 , buttonY, 25, 25, "*", self, BardUIWindow.onStyle)
+    self.styleButton:initialise()
+    self.styleButton:instantiate()
+    self:addChild(self.styleButton)
+    self.styleButton:setVisible(styles)
 
     local resizeOffset = self.resizable and self:resizeWidgetHeight() or 0
     local songListHeight = self.height - self.abcEntry.height - self.saveButton.height - 40 - self:titleBarHeight() - resizeOffset
@@ -234,7 +243,25 @@ function BardUIWindow:onPlay()
     local notes = self.abcEntry:getText()
     if (not notes) then return end
 
-    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes))
+    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style))
+end
+
+
+function BardUIWindow:setStyle(style) self.style = style end
+
+
+function BardUIWindow:onStyle()
+    local playerNum = self.character:getPlayerNum()
+
+    self.contextMenu = ISContextMenu.get(playerNum,self:getX()+self.styleButton:getX()+self.styleButton:getWidth(), self:getY()+self.styleButton:getY())
+    --self.contextMenu:initialise()
+    --self.contextMenu:addToUIManager()
+    --self.contextMenu:bringToTop()
+    self.contextMenu.player = playerNum
+
+    for _,style in pairs(self.styles) do
+        self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style)
+    end
 end
 
 
@@ -275,6 +302,9 @@ function BardUIWindow:new(character, instrument)
     if not o.isItem then
         o.character:faceThisObject(instrument)
     end
+
+    local data = Bard.getInstrumentData(instrument)
+    if data and data.styles then o.styles = data.styles end
 
     BardUIWindow.instance = o
 

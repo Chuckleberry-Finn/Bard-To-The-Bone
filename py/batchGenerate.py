@@ -4,6 +4,15 @@ import os
 
 # You can also import from a .py file if preferred
 instruments = [
+    {"program": 81, "folder": "keytarSquare"},
+    {"program": 82, "folder": "keytarSawtooth"},
+    {"program": 83, "folder": "keytarCalliope"},
+    {"program": 84, "folder": "keytarChiff"},
+    {"program": 85, "folder": "keytarCharang"},
+    {"program": 86, "folder": "keytarVoice"},
+    {"program": 87, "folder": "keytarFifths"},
+    {"program": 88, "folder": "keytarBrass"},
+    '''
     {"program": 22, "folder": "accordion"},
     {"program": 106, "folder": "banjo"},
     # "bikehorn" has no midi
@@ -21,6 +30,7 @@ instruments = [
     {"program": 56, "folder": "trumpet"},
     {"program": 41, "folder": "violin"},
     {"program": 14, "folder": "xylophone"},
+    '''
 ]
 
 script = os.path.join(os.path.dirname(__file__), "generateOgg.py")
