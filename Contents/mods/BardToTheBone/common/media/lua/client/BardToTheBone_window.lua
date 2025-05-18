@@ -240,6 +240,14 @@ end
 
 
 function BardUIWindow:onPlay()
+
+    local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
+    local currentAction = actionQueue.queue[1]
+    if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
+        currentAction.action:forceStop()
+        return
+    end
+
     local notes = self.abcEntry:getText()
     if (not notes) then return end
 
