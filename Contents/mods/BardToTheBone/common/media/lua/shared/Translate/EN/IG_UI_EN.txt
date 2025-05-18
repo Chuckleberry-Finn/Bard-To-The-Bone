@@ -1,4 +1,5 @@
 IGUI_EN = {
-    IGUI_BardToTheBone_Info = "The Bard to the Bone music system utilizes ABC notation.",
+    IGUI_BardToTheBone_Info = "The Bard to the Bone music system utilizes ABC notation.<br>For more details and song examples, visit the read-me located on this project's GitHub.,
+
     IGUI_BardToTheBone_Play = "Play",
 }
