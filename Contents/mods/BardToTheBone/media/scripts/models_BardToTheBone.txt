@@ -1,0 +1,55 @@
+module Base
+{
+	model Violin_Bow
+	{
+		mesh = violinBow,
+		texture = violinbow,
+		scale = 0.05,
+
+		attachment Bip01_Prop1
+		{
+			offset = 0.0020 0.0499 0.0000,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+
+		attachment Bip01_Prop2
+		{
+			offset = 0.1138 0.0504 0.0000,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+	}
+	model Xylophone_Ground
+    {
+        mesh = xylophone_ground,
+        texture = xylophone,
+        scale = 0.0015,
+        attachment world { offset = 0.0000 0.0000 0.0000, rotate = 0.0000 0.0000 0.0000, }
+    }
+	model Xylophone
+    {
+        mesh = xylophone,
+        texture = xylophone,
+        scale = 0.0015,
+
+        attachment Bip01_Prop1 { offset = 0.0 0.0 0.0, rotate = 0.0 0.0 0.0, }
+        attachment Bip01_Prop2 { offset = 0.0 0.0 0.0, rotate = 0.0 0.0 0.0, }
+    }
+	model Xylophone_Mallet
+	{
+		mesh = xylophone_mallet,
+		texture = xylophone,
+		scale = 0.0015,
+
+		attachment Bip01_Prop1
+		{
+			offset = 0.0000 0.0000 0.0000,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+
+		attachment Bip01_Prop2
+		{
+			offset = 0.0000 0.0000 0.0000,
+			rotate = 0.0000 0.0000 0.0000,
+		}
+	}
+}

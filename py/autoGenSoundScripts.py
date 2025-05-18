@@ -10,7 +10,7 @@ sound_dir = os.path.join("..","Contents", "mods", "BardToTheBone", "common", "me
 # Paths to output the generated sound.script file
 output_paths = [
     os.path.join("..","Contents", "mods", "BardToTheBone", "common", "media", "scripts", "sounds_BardToTheBone.txt"),
-    # os.path.join("..","Contents", "mods", "BardToTheBone", "media", "scripts", "sounds_BardToTheBone.txt"),
+    os.path.join("..","Contents", "mods", "BardToTheBone", "media", "scripts", "sounds_BardToTheBone.txt"),
 ]
 
 module_name = "BardToTheBone"
