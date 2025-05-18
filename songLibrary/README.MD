@@ -11,7 +11,7 @@ This guide outlines the most commonly used fields in [ABC notation](https://abcn
 
 | Field | Description |
 |-------|-------------|
-| `X:`  | **Reference number** (Required, unique per tune in a file) |
+| `X:`  | **Reference number** |
 | `T:`  | **Title** (Can appear multiple times for subtitles) |
 | `M:`  | **Meter / Time signature** (e.g., `4/4`, `6/8`, `C` for common time) |
 | `K:`  | **Key signature** (e.g., `C`, `Dmaj`, `Amin`, `Gdor`) |
@@ -19,8 +19,8 @@ This guide outlines the most commonly used fields in [ABC notation](https://abcn
 
 **While not required, the Q header can change the speed/tempo of a song.**
 
-| `Q:` | Tempo, e.g. `Q:1/4=120` or `Q:Moderato` |
-|------|-----------------------------------------|
+| `Q:` | Tempo, e.g. `120` or for tempo-to-note: `Q:1/4=120` |
+|------|-----------------------------------------------------|
 
 <details>
 <summary><strong>Commonly Used Fields</strong></summary>
