@@ -4,7 +4,20 @@ local Bard = require "BardToTheBone_main"
 
 local bardContext = {}
 
-function bardContext.triggerTimedAction(character, instrument, square)
+---To get specific positions, I know there's a walktoF but I don't feel like dealing with vectors
+bardContext.nonSquareLocation = {x=0,y=0,z=0}
+function bardContext.nonSquareLocation:getX() return self.x end
+function bardContext.nonSquareLocation:getY() return self.y end
+function bardContext.nonSquareLocation:getZ() return self.z end
+
+function bardContext.nonSquareLocation:set(square, xOffset, yOffset)
+    bardContext.nonSquareLocation.x = square:getX()+xOffset
+    bardContext.nonSquareLocation.y = square:getY()+yOffset
+    bardContext.nonSquareLocation.z = square:getZ()
+end
+
+
+function bardContext.triggerTimedAction(character, instrument, square, dir)
 
     if instanceof(instrument, "InventoryItem") then
         if luautils.haveToBeTransfered(character, instrument) then
@@ -24,8 +37,11 @@ function bardContext.triggerTimedAction(character, instrument, square)
         end
     end
 
-    if square and ( square:DistToProper(character) > 1.4 ) then
-        local walkTo = ISWalkToTimedAction:new(character, square)
+    if square and ( square:DistToProper(character) > 1.51 ) then
+        local xOffset = dir and dir == IsoDirections.E and 1.5 or 0
+        local yOffset = dir and dir == IsoDirections.S and 1.5 or 0
+        bardContext.nonSquareLocation:set(square, xOffset, yOffset)
+        local walkTo = ISWalkToTimedAction:new(character, bardContext.nonSquareLocation)
         walkTo:setOnComplete(BardUIWindow.open, character, instrument)
         ISTimedActionQueue.add(walkTo)
         return
@@ -81,8 +97,8 @@ function bardContext.addWorldContext(playerID, context, worldObjects, test)
                     local sprite = object:getSpriteName()
                     if (not sprites) or sprites[sprite] then
                         local dir = object:getFacing()
-                        local sq = square:getAdjacentSquare(dir)
-                        local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object, sq)
+                        local sq = square
+                        local play = context:addOptionOnTop(getText("IGUI_BardToTheBone_Play"), playerObj, bardContext.triggerTimedAction, object, sq, dir)
                         return true
                     end
                 end
