@@ -1,11 +1,12 @@
 version=1
+id=3484029638
 title=Bard to the Bone
-description=
 description=[h2]Bard-To-The-Bone is a Project Zomboid mod that lets players perform music using ABC notation, with support for all vanilla instruments and custom ones.[/h2]
 description=
 description=[url=https://ko-fi.com/chuckleberryfinn][img]https://raw.githubusercontent.com/ChuckTheSheep/chuckImages/main/kofi.png[/img][/url][url=https://discord.gg/SReMnbV4V7][img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner3.png[/img][/url]
 description=
-description=[h3][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone]Github (Read-Me & Issue Reporting) | [url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/tree/main/songLibrary#readme]Song Library[/url][/h3]
+description=[h1][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone]Github (For Read-Me & Issue Reporting)[/url][/h1]
+description=[h1][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/tree/main/songLibrary#readme]Song Library[/url][/h1]
 description=
 description=[img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/noModPacks.png[/img]
 description=[img]https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/bugHunt.png[/img]
@@ -16,4 +17,5 @@ description=Share the link in a comment below if it is urgent.
 description=
 description=
 description=[h3]Copyright 2025 Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account named Chuckleberry Finn.[/h3]
-
+tags=Build 41;Build 42
+visibility=public
