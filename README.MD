@@ -1,4 +1,4 @@
-##[Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3484029638)
+## [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3484029638)
 ![image](./images/githubBanner.png)
 <br>
 
