@@ -1,7 +1,7 @@
 ![image](./images/githubBanner.png)
 <br>
 
-#### [**Bard-To-The-Bone**](https://steamcommunity.com/sharedfiles/filedetails/?id=3484029638) is a Project Zomboid mod that lets players perform music using ABC notation, with support for all vanilla instruments and custom ones.
+#### [**Bard-To-The-Bone**](https://steamcommunity.com/sharedfiles/filedetails/?id=3484029638) is a Project Zomboid mod that lets players perform music using ABC notation, with support for all vanilla instruments and custom ones. Click here to visit the [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3484029638).
 
 [![PZ Modding Community](https://raw.githubusercontent.com/Chuckleberry-Finn/chuckImages/main/PZmodCommBanner2.png)](https://discord.gg/SReMnbV4V7)
 
