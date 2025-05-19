@@ -4,7 +4,11 @@ link2 = Workshop = https://steamcommunity.com/id/Chuckleberry_Finn/myworkshopfil
 link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone,
 [ ------ ]
 
-[ 5/25 ]
+[ 5/18/25 - Release ]
 Welcome to BARD TO THE BONE!
 Zomboid's ABC notation music system!
+[ ------ ]
+
+[ 5/18/25 - Hotfix ]
+Added Xylophones to the distribution.
 [ ------ ]
