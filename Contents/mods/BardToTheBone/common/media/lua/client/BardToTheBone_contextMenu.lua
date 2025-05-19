@@ -30,8 +30,7 @@ function bardContext.triggerTimedAction(character, instrument, square, dir)
             local equip = ISEquipWeaponAction:new(character, instrument, 50, true)
             ISTimedActionQueue.add(equip)
 
-            local wait = ISWaitWhileGettingUp:new(character, square)
-            wait:setOnComplete(BardUIWindow.open, character, instrument)
+            local wait = ISQueueActionsAction:new(character, BardUIWindow.open, instrument)
             ISTimedActionQueue.add(wait)
             return
         end

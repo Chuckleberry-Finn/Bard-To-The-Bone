@@ -519,7 +519,8 @@ function Bard.noteToSound(note, instrumentID)
 
     -- Direct match
     local sound = Bard.getSoundName(note)
-    if sound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
+
+    if sound and instrumentID and fileExists("common/media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
         return sound
     end
 
@@ -537,7 +538,7 @@ function Bard.noteToSound(note, instrumentID)
         if midi >= 0 and midi <= 127 then
             newNote = Bard.midiToNote(midi, note.base)
             local altSound = Bard.getSoundName(newNote)
-            if altSound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. altSound .. ".ogg") then
+            if altSound and instrumentID and fileExists("common/media/sound/instruments/" .. instrumentID .. "/" .. altSound .. ".ogg") then
                 return altSound
             end
         end
