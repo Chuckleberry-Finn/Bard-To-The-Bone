@@ -22,34 +22,43 @@ end
 function BardUIWindow:initialise()
     ISCollapsableWindow.initialise(self)
 
-    self.abcEntry = ISTextEntryBox:new("", 10, self:titleBarHeight() + 10, self.width - 20, 300)
+    self.abcEntry = ISTextEntryBox:new("", self.padding, self:titleBarHeight() + self.padding, self.width - (self.padding*2), (self.height * 0.47))
     self.abcEntry:initialise()
     self.abcEntry:instantiate()
     self.abcEntry.onTextChange = BardUIWindow.onTextChange
     self.abcEntry:setMultipleLine(true)
     self.abcEntry:setMaxLines(999999)
     self.abcEntry.javaObject:setMaxTextLength(-1)
-    --self.abcEntry.javaObject:setWrapLines(true)
+    self.abcEntry.javaObject:setWrapLines(true)
     self:addChild(self.abcEntry)
 
-    local buttonY = self.abcEntry.y + self.abcEntry.height + 10
+    local buttonY = self.abcEntry.y + self.abcEntry.height + self.padding
 
-    self.saveButton = ISButton:new(10, buttonY, 60, 25, "Save", self, BardUIWindow.onSave)
+    local buttonHeight = self.height * 0.04
+    local buttonWidth = self.width * 0.15
+
+    self.saveButton = ISButton:new(self.padding, buttonY, buttonWidth, buttonHeight, "Save", self, BardUIWindow.onSave)
     self.saveButton:initialise()
     self.saveButton:instantiate()
     self:addChild(self.saveButton)
 
-    self.loadButton = ISButton:new(75, buttonY, 60, 25, "Load All", self, BardUIWindow.onLoadAllButton)
+    local buttonOffset = (self.padding/2)+self.padding+buttonWidth
+
+    self.loadButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, "Load All", self, BardUIWindow.onLoadAllButton)
     self.loadButton:initialise()
     self.loadButton:instantiate()
     self:addChild(self.loadButton)
 
-    self.newButton = ISButton:new(140, buttonY, 60, 25, "New", self, BardUIWindow.onNewButton)
+    buttonOffset = buttonOffset + buttonWidth + (self.padding/2)
+
+    self.newButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, "New", self, BardUIWindow.onNewButton)
     self.newButton:initialise()
     self.newButton:instantiate()
     self:addChild(self.newButton)
 
-    self.removeButton = ISButton:new(205, buttonY, 60, 25, "Remove", self, BardUIWindow.onRemoveButton)
+    buttonOffset = buttonOffset + buttonWidth + (self.padding/2)
+
+    self.removeButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, "Remove", self, BardUIWindow.onRemoveButton)
     self.removeButton:initialise()
     self.removeButton:instantiate()
     self:addChild(self.removeButton)
@@ -63,23 +72,28 @@ function BardUIWindow:initialise()
 
     local styles = self.styles~=nil
 
-    self.playButton = ISButton:new(self.width-125 , buttonY, 90+(styles and 0 or 25), 25, "Play", self, BardUIWindow.onPlay)
+    local playWidth = (self.width*0.225)+(styles and 0 or buttonHeight)
+
+    self.playButton = ISButton:new(self.width * 0.6875 , buttonY, playWidth, buttonHeight, "Play", self, BardUIWindow.onPlay)
     self.playButton:initialise()
     self.playButton:instantiate()
     self:addChild(self.playButton)
 
-    self.styleButton = ISButton:new(self.width-36 , buttonY, 25, 25, "*", self, BardUIWindow.onStyle)
+    self.styleButton = ISButton:new(self.width * 0.91 , buttonY, buttonHeight, buttonHeight, "*", self, BardUIWindow.onStyle)
     self.styleButton:initialise()
     self.styleButton:instantiate()
     self:addChild(self.styleButton)
     self.styleButton:setVisible(styles)
 
     local resizeOffset = self.resizable and self:resizeWidgetHeight() or 0
-    local songListHeight = self.height - self.abcEntry.height - self.saveButton.height - 40 - self:titleBarHeight() - resizeOffset
-    self.songList = ISScrollingListBox:new(10, self.saveButton.y + self.saveButton.height + 10, self.width - 20, songListHeight)
+    local songListHeight = self.height - self.abcEntry.height - self.saveButton.height - (self.padding * 4) - self:titleBarHeight() - resizeOffset
+    self.songList = ISScrollingListBox:new(self.padding, self.saveButton.y + self.saveButton.height + self.padding, self.width - (self.padding * 2), songListHeight)
     self.songList:initialise()
     self.songList:instantiate()
-    self.songList.itemheight = 22
+
+    local itemHeight = getTextManager():getFontHeight(UIFont.AutoNormSmall)+2
+    
+    self.songList.itemheight = itemHeight
     self.songList.doDrawItem = BardUIWindow.doDrawSong
     self.songList.onMouseDown = BardUIWindow.onSongClick
     self:addChild(self.songList)
@@ -215,7 +229,7 @@ end
 function BardUIWindow:doDrawSong(y, item, alt)
     local r, g, b, a = 1, 1, 1, 0.9
     self:drawRect(2, y+2, self:getWidth()-4, self.itemheight-2, ((self.selected == item.index) and 0.4) or 0.2, r, g, b)
-    self:drawText(item.text, 10, y+2, r, g, b, a, UIFont.Small)
+    self:drawText(item.text, self.parent.padding, y+2, r, g, b, a, UIFont.AutoNormSmall)
     return y + item.height
 end
 
@@ -296,7 +310,11 @@ function BardUIWindow:new(character, instrument)
 
     if BardUIWindow.instance then BardUIWindow.instance:close() end
 
-    local o = ISCollapsableWindow:new(200, 200, 400, 640)
+    --- w:400, h:640
+    local x, y = getCore():getScreenWidth()*0.1, getCore():getScreenHeight()*0.2
+    local width, height = getCore():getScreenWidth()*0.2, getCore():getScreenHeight()*0.6
+
+    local o = ISCollapsableWindow:new(x, y, width, height)
     setmetatable(o, self)
     self.__index = self
     o:setResizable(false)
@@ -304,6 +322,8 @@ function BardUIWindow:new(character, instrument)
     o.character = character
     o.instrument = instrument
     o.unsavedChanges = false
+
+    o.padding = width * 0.025
 
     o.isItem = instanceof(instrument, "InventoryItem")
 
