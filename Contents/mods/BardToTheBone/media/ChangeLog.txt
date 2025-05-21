@@ -9,11 +9,6 @@ Welcome to BARD TO THE BONE!
 Zomboid's ABC notation music system!
 [ ------ ]
 
-[ 5/18/25 - Hotfix ]
-Added Xylophones to the distribution.
-[ ------ ]
-
-
 [ 5/21/25 ]
-- B41: back-compat for electric bass and guitars.
+- B41 back compat for electric bass and guitars.
 [ ------ ]

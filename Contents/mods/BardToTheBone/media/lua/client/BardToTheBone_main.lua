@@ -639,10 +639,14 @@ end
 -- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
     ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
-    ["Base.GuitarElectric"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricRed"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBlue"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBlack"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBassRed"] = { soundDir = "electric_bass", anim = "strumming" },
+    ["Base.GuitarElectricBassBlue"] = { soundDir = "electric_bass", anim = "strumming" },
+    ["Base.GuitarElectricBassBlack"] = { soundDir = "electric_bass", anim = "strumming" },
     ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
     ["Base.Keytar"] = { soundDir = "keytar", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
-    ["Base.GuitarElectricBass"] = { soundDir = "electric_bass", anim = "strumming" },
     ["Base.Harmonica"] = { soundDir = "harmonica", anim = "Harmonica" },
     ["Base.Saxophone"] = { soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
     ["Base.Violin"] = { soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
