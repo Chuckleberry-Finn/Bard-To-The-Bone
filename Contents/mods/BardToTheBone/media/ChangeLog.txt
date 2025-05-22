@@ -16,3 +16,8 @@ Zomboid's ABC notation music system!
 [ 5/21/25 - 2 ]
 Improved UI scaling with different resolutions.
 [ ------ ]
+
+[ 5/22/25 ]
+- Removed incorrect distribution location.
+- Improved distribution logic.
+[ ------ ]

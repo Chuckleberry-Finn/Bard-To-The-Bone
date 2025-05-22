@@ -13,11 +13,14 @@ Zomboid's ABC notation music system!
 Added Xylophones to the distribution.
 [ ------ ]
 
-
 [ 5/21/25 ]
 - B41: back-compat for electric bass and guitars.
 [ ------ ]
 
 [ 5/21/25 - 2 ]
 Improved UI scaling with different resolutions.
+[ ------ ]
+
+[ 5/22/25 ]
+- Improved distribution logic.
 [ ------ ]

@@ -13,7 +13,6 @@ bardDistributions.instruments = {
             "DaycareDesk",
             "DaycareShelves",
             "Gifts",
-            "GiftStoreToys",
             "GigamartToys",
             "CrateInstruments",
             "BandPracticeInstruments",
@@ -27,8 +26,10 @@ bardDistributions.instruments = {
 function bardDistributions.addToDistributions()
     for instrument,data in pairs(bardDistributions.instruments) do
         for _,contID in pairs(data.containers) do
-            table.insert(ProceduralDistributions.list[contID].items, instrument)
-            table.insert(ProceduralDistributions.list[contID].items, data.chance)
+            if ProceduralDistributions.list[contID] then
+                table.insert(ProceduralDistributions.list[contID].items, instrument)
+                table.insert(ProceduralDistributions.list[contID].items, data.chance)
+            end
         end
     end
 end
