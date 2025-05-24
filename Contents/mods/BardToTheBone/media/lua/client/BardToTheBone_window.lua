@@ -85,9 +85,16 @@ function BardUIWindow:initialise()
     self:addChild(self.styleButton)
     self.styleButton:setVisible(styles)
 
+    local sliderY = self.playButton.y + self.saveButton.height + self.padding
+    self.volumeSlider = ISSliderPanel:new(self.padding, sliderY, self.width - (self.padding * 2), buttonHeight/2, self, BardUIWindow.setVolume)
+    self.volumeSlider:initialise()
+    self.volumeSlider:instantiate()
+    self:addChild(self.volumeSlider)
+    self.volumeSlider:setCurrentValue(75)
+
     local resizeOffset = self.resizable and self:resizeWidgetHeight() or 0
-    local songListHeight = self.height - self.abcEntry.height - self.saveButton.height - (self.padding * 4) - self:titleBarHeight() - resizeOffset
-    self.songList = ISScrollingListBox:new(self.padding, self.saveButton.y + self.saveButton.height + self.padding, self.width - (self.padding * 2), songListHeight)
+    local songListHeight = self.height - self.volumeSlider.y - self.volumeSlider.height - self.padding - self:titleBarHeight() - resizeOffset
+    self.songList = ISScrollingListBox:new(self.padding, self.volumeSlider.y + self.volumeSlider.height + self.padding, self.width - (self.padding * 2), songListHeight)
     self.songList:initialise()
     self.songList:instantiate()
 
@@ -265,7 +272,15 @@ function BardUIWindow:onPlay()
     local notes = self.abcEntry:getText()
     if (not notes) then return end
 
-    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style))
+    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style, self.volume))
+end
+
+
+function BardUIWindow:setVolume(volume)
+    self.volume = volume
+
+    local id = self.character:getUsername()
+    if Bard.players[id] then Bard.players[id].volume = volume end
 end
 
 

@@ -24,3 +24,7 @@ Improved UI scaling with different resolutions.
 [ 5/22/25 ]
 - Improved distribution logic.
 [ ------ ]
+
+[ 5/23/25 ]
+- Added volume control.
+[ ------ ]

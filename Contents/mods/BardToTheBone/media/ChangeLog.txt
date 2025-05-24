@@ -21,3 +21,7 @@ Improved UI scaling with different resolutions.
 - Removed incorrect distribution location.
 - Improved distribution logic.
 [ ------ ]
+
+[ 5/23/25 ]
+- Added volume control.
+[ ------ ]

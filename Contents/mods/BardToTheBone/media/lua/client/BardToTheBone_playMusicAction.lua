@@ -18,6 +18,7 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id] = nil
     Bard.players[id] = {}
     Bard.players[id].music = self.music
+    Bard.players[id].volume = self.volume
     Bard.players[id].duration = self.maxTime
     local instrumentData = Bard.getInstrumentData(self.item)
     Bard.players[id].instrumentID = instrumentData.soundDir
@@ -64,7 +65,7 @@ function BardToTheBonePlayMusic:update() end
 
 
 ---@param character IsoGameCharacter
-function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style) --time, recipe, container, containers)
+function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, volume) --time, recipe, container, containers)
     if not instrument or not character or not abcNotation then return end
     local o = ISBaseTimedAction.new(self, character)
     o.character = character
@@ -74,6 +75,7 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style) -
 
     o.heldItem = instanceof(instrument, "InventoryItem")
     o.style = style
+    o.volume = volume
 
     local music, duration = Bard.startPlayback(character, abcNotation)
     o.music = music
