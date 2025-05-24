@@ -29,7 +29,7 @@ function BardUIWindow:initialise()
     self.abcEntry:setMultipleLine(true)
     self.abcEntry:setMaxLines(999999)
     self.abcEntry.javaObject:setMaxTextLength(-1)
-    self.abcEntry.javaObject:setWrapLines(true)
+    --self.abcEntry.javaObject:setWrapLines(true)
     self:addChild(self.abcEntry)
 
     local buttonY = self.abcEntry.y + self.abcEntry.height + self.padding
