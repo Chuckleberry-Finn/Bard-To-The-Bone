@@ -50,7 +50,7 @@ for inst in instruments:
     program = str(inst["program"])
     outdir = inst["folder"]
 
-    print(f"\n=== Generating instrument: {outdir} (Program {program}) ===\n")
+    print(f"=== Generating instrument: {outdir} (Program {program}) ===")
 
     result = subprocess.run([
         sys.executable, script,
@@ -59,6 +59,6 @@ for inst in instruments:
     ])
 
     if result.returncode != 0:
-        print(f"Failed to generate {outdir}")
+        print(f"Failed to generate {outdir}\n")
     else:
-        print(f"Finished generating {outdir}")
+        print(f"Finished generating {outdir}\n")

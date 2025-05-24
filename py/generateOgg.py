@@ -86,10 +86,10 @@ def convert_midi_file(midi_path):
     wav_path = base.with_suffix('.wav').as_posix()
     ogg_path = base.with_suffix('.ogg').as_posix()
     midi_path = Path(midi_path).as_posix()
+    name = os.path.basename(base)
 
     if not os.path.exists(midi_path):
-        print(f"MIDI file missing: {midi_path}")
-        return
+        return name, "missing"
 
     try:
         subprocess.run([
@@ -103,46 +103,39 @@ def convert_midi_file(midi_path):
         max_duration_sec = 3
         y = y[:int(sr * max_duration_sec)]
 
-        # Apply fast fade-in to smooth harsh transient (~25 ms)
-        fade_in_duration = int(sr * 0.005)  # 5 ms
-        fade_in = np.linspace(0, 1, fade_in_duration)
-        y[:fade_in_duration] *= fade_in
+        fade_in_duration = int(sr * 0.005)
+        y[:fade_in_duration] *= np.linspace(0, 1, fade_in_duration)
 
         meter = pyln.Meter(sr)
         loudness = meter.integrated_loudness(y)
 
-        # Check for silence or invalid loudness
         if not np.isfinite(loudness) or np.max(np.abs(y)) < 0.01:
-            print(f"Skipping normalization for {os.path.basename(midi_path)} (silent or invalid)")
             os.remove(wav_path)
             os.remove(midi_path)
-            return
+            return name, "silent"
 
-        target_peak_dbfs = -48.0
-        target_peak_linear = 10 ** (target_peak_dbfs / 20.0)  # ≈ 0.00398
+        y = pyln.normalize.loudness(y, loudness, -48.0)
 
         peak = np.max(np.abs(y))
-        if peak > 0:
-            y *= target_peak_linear / peak
-        else:
+        if peak <= 0:
             print(f"Skipping {os.path.basename(midi_path)}: silent audio.")
-            return
+            return name, "silent"
 
         sf.write(ogg_path, y, sr)
 
         os.remove(wav_path)
         os.remove(midi_path)
 
-    except Exception as e:
-        print(f"Failed to convert {os.path.basename(midi_path)}: {e}")
+        return name, "ok"
+
+    except Exception:
+        return name, "error"
 
 
 # --- MAIN EXECUTION ---
 midi_paths = []
 
 # 1. Generate all MIDI files first
-print(f"Generating MIDI files asynchronously...")
-
 tasks = []
 midi_paths = []
 
@@ -161,16 +154,35 @@ with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
             midi_paths.append(path)
 
 print(f"MIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
-# input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there are issues.")
 
-# 2. Pause briefly to let file system settle
-print(f"Pausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
-time.sleep(5)
+print(f"Pausing briefly before MIDI to OGG conversion...")
+time.sleep(2)
 
-# 3. Convert all MIDI files to .ogg
-print("Beginning batch conversion to OGG...")
-for i, midi_path in enumerate(midi_paths, 1):
-    print(f"[{i}/{len(midi_paths)}] {os.path.basename(midi_path)} converted.")
-    convert_midi_file(midi_path)
+max_line_length = len(args.outdir)*4
+progress_line = ""
 
-print(f"\nDone. {len(midi_paths)} OGG files generated in: {args.outdir}")
+with ThreadPoolExecutor(max_workers=8) as executor:
+    futures = {executor.submit(convert_midi_file, path): path for path in midi_paths}
+
+    for future in as_completed(futures):
+        name, status = future.result()
+
+        if status == "silent":
+            color = "\033[90m"  # gray
+        elif status == "ok":
+            color = "\033[0m"   # default
+        else:
+            color = "\033[91m"  # red
+
+        word = f"{color}{name}\033[0m "
+
+        if len(progress_line) + len(name) + 1 > max_line_length:
+            print(progress_line)
+            progress_line = word
+        else:
+            progress_line += word
+
+if progress_line.strip():
+    print(progress_line)
+
+print(f"[ Done ] {len(midi_paths)} OGG files generated in: {args.outdir}")
