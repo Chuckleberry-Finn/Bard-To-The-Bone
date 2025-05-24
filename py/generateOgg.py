@@ -114,7 +114,7 @@ def convert_midi_file(midi_path):
             os.remove(midi_path)
             return name, "silent"
 
-        y = pyln.normalize.loudness(y, loudness, -48.0)
+        y = pyln.normalize.loudness(y, loudness, -38.0)
 
         peak = np.max(np.abs(y))
         if peak <= 0:
@@ -156,7 +156,7 @@ with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
 print(f"MIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
 
 print(f"Pausing briefly before MIDI to OGG conversion...")
-time.sleep(2)
+time.sleep(1)
 
 max_line_length = len(args.outdir)*4
 progress_line = ""
