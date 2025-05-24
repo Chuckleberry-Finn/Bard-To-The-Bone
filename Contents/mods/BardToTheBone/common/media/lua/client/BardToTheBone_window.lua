@@ -90,7 +90,7 @@ function BardUIWindow:initialise()
     self.volumeSlider:initialise()
     self.volumeSlider:instantiate()
     self:addChild(self.volumeSlider)
-    self.volumeSlider:setCurrentValue(75)
+    self.volumeSlider:setCurrentValue(self.volume)
 
     local resizeOffset = self.resizable and self:resizeWidgetHeight() or 0
     local songListHeight = self.height - self.volumeSlider.y - self.volumeSlider.height - self.padding - self:titleBarHeight() - resizeOffset
