@@ -349,7 +349,7 @@ function BardUIWindow:new(character, instrument)
         o.character:faceThisObject(instrument)
     end
 
-    o.volume = 75
+    o.volume = 100
 
     local data = Bard.getInstrumentData(instrument)
     if data and data.styles then
