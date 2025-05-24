@@ -45,7 +45,7 @@ os.makedirs(args.outdir, exist_ok=True)
 fluidsynth_path = os.path.join(script_dir, "fluidSynth", "bin", "fluidsynth.exe")
 soundfont_path = os.path.join(script_dir, "fluidSynth", "FluidR3_GM.sf2")
 
-# --- Setup ---
+
 os.makedirs(args.outdir, exist_ok=True)
 
 def generate_midi(note_name, octave, midi_note, program, outdir):
@@ -132,10 +132,7 @@ def convert_midi_file(midi_path):
         return name, "error"
 
 
-# --- MAIN EXECUTION ---
 midi_paths = []
-
-# 1. Generate all MIDI files first
 tasks = []
 midi_paths = []
 
