@@ -33,8 +33,8 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=113, help='Program change number (0–127)')
-parser.add_argument('--outdir', type=str, default='xylophone', help='Output directory for OGG files')
+parser.add_argument('--program', type=int, default=41, help='Program change number (0–127)')
+parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
 args = parser.parse_args()
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -118,12 +118,15 @@ def convert_midi_file(midi_path):
             os.remove(midi_path)
             return
 
-        y = pyln.normalize.loudness(y, loudness, -24.0)  # perceptual loudness target
+        target_peak_dbfs = -48.0
+        target_peak_linear = 10 ** (target_peak_dbfs / 20.0)  # ≈ 0.00398
 
-        # Peak limit: -1 dBFS ≈ 0.89
         peak = np.max(np.abs(y))
-        if peak > 0.89:
-            y *= 0.89 / peak  # scale down to ensure no hard clipping
+        if peak > 0:
+            y *= target_peak_linear / peak
+        else:
+            print(f"Skipping {os.path.basename(midi_path)}: silent audio.")
+            return
 
         sf.write(ogg_path, y, sr)
 
@@ -131,14 +134,14 @@ def convert_midi_file(midi_path):
         os.remove(midi_path)
 
     except Exception as e:
-        print(f"Failed to convert {midi_path}: {e}")
+        print(f"Failed to convert {os.path.basename(midi_path)}: {e}")
 
 
 # --- MAIN EXECUTION ---
 midi_paths = []
 
 # 1. Generate all MIDI files first
-print(f"\nGenerating MIDI files asynchronously...")
+print(f"Generating MIDI files asynchronously...")
 
 tasks = []
 midi_paths = []
@@ -157,15 +160,15 @@ with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust workers as needed
         if path:
             midi_paths.append(path)
 
-print(f"\nMIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
+print(f"MIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
 # input("\nPAUSED: Press Enter to continue...\nNote: You can rerun the command after confirming the folder was created in-case there are issues.")
 
 # 2. Pause briefly to let file system settle
-print(f"\nPausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
+print(f"Pausing briefly before conversion ({len(midi_paths)} MIDI files written)...")
 time.sleep(5)
 
 # 3. Convert all MIDI files to .ogg
-print("\nBeginning batch conversion to OGG...")
+print("Beginning batch conversion to OGG...")
 for i, midi_path in enumerate(midi_paths, 1):
     print(f"[{i}/{len(midi_paths)}] {os.path.basename(midi_path)} converted.")
     convert_midi_file(midi_path)

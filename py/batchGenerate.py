@@ -4,11 +4,26 @@ import os
 
 # You can also import from a .py file if preferred
 instruments = [
+
+
+    {"program": 22, "folder": "accordion"},
+    {"program": 106, "folder": "banjo"},
+    # "bikehorn" has no midi
+    {"program": 77, "folder": "bottle"},
+    {"program": 34, "folder": "electric_bass"},
+
+    {"program": 28, "folder": "electric_guitarClean"},
     {"program": 29, "folder": "electric_guitarMuted"},
     {"program": 30, "folder": "electric_guitarOverdrive"},
     {"program": 31, "folder": "electric_guitarDistortion"},
     {"program": 32, "folder": "electric_guitarHarmonics"},
-    '''
+
+    {"program": 74, "folder": "flute"},
+    {"program": 10, "folder": "glockenspiel"},
+    {"program": 1, "folder": "grandPiano"},
+    {"program": 25, "folder": "guitar"},
+    {"program": 23, "folder": "harmonica"},
+
     {"program": 81, "folder": "keytarSquare"},
     {"program": 82, "folder": "keytarSawtooth"},
     {"program": 83, "folder": "keytarCalliope"},
@@ -17,27 +32,16 @@ instruments = [
     {"program": 86, "folder": "keytarVoice"},
     {"program": 87, "folder": "keytarFifths"},
     {"program": 88, "folder": "keytarBrass"},
-    '''
-    
-    '''
-    {"program": 22, "folder": "accordion"},
-    {"program": 106, "folder": "banjo"},
-    # "bikehorn" has no midi
-    {"program": 34, "folder": "electric_bass"},
-    {"program": 28, "folder": "electric_guitar"},
-    {"program": 74, "folder": "flute"},
-    {"program": 10, "folder": "glockenspiel"},
-    {"program": 25, "folder": "guitar"},
-    {"program": 23, "folder": "harmonica"},
-    {"program": 85, "folder": "keytar"},
+
     {"program": 2, "folder": "piano"},
     {"program": 75, "folder": "recorder"},
     {"program": 67, "folder": "saxophone"},
     {"program": 58, "folder": "trombone"},
     {"program": 56, "folder": "trumpet"},
     {"program": 41, "folder": "violin"},
+    {"program": 79, "folder": "whistle"},
     {"program": 14, "folder": "xylophone"},
-    '''
+
 ]
 
 script = os.path.join(os.path.dirname(__file__), "generateOgg.py")
