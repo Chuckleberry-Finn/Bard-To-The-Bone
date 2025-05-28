@@ -32,3 +32,7 @@ Improved UI scaling with different resolutions.
 [ 5/24/25 ]
 - Regenerated sounds with a relative volume closer to vanilla sounds.
 [ ------ ]
+
+[ 5/27/25 ]
+- Rewrote the playback to handle note duration better (improves short/long notes).
+[ ------ ]
