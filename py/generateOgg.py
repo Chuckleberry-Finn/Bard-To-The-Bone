@@ -117,7 +117,7 @@ def convert_midi_file(midi_path):
             os.remove(midi_path)
             return name, "silent"
 
-        y = pyln.normalize.loudness(y, loudness, -33.0)
+        y = pyln.normalize.loudness(y, loudness, -36.0)
 
         peak = np.max(np.abs(y))
         if peak <= 0:
