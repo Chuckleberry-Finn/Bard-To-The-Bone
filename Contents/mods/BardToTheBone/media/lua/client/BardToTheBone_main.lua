@@ -94,25 +94,27 @@ function Bard.parseNoteToken(token, defaultTicks, key)
 
     -- This is a chord
     if token:match("^%b[]$") then
-        local inner = token:sub(2, -2) -- Remove [ and ]
+        local inner = token:sub(2, -2)
         local notes = {}
 
-        -- Separate multiple notes inside chord
-        for noteToken in inner:gmatch("[^%s]+") do
-            local duration = noteToken:match("%d*/?%d*") or ""
+        for accidental, base, octaveMod, duration in inner:gmatch("([_=^]*)([A-Ga-g])([',]*)(%d*/?%d*)") do
+            local octave = base:match("%l") and 5 or 4
+            for char in octaveMod:gmatch("[',]") do
+                octave = octave + (char == "'" and 1 or -1)
+            end
+
+            local fullBase = accidental .. base:upper()
             local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
 
-            for accidental, base, octaveMod in noteToken:gmatch("([_=^]*)([A-Ga-g])([',]*)") do
-                local octave = 4
-                if base:match("%l") then octave = 5 end
-                for char in octaveMod:gmatch("[',]") do
-                    octave = octave + (char == "'" and 1 or -1)
-                end
-                local fullBase = accidental .. base:upper()
-                local note = { rest = false, base = fullBase, octave = octave, ticks = ticks }
-                Bard.applyKeyAccidental(note, key)
-                table.insert(notes, note)
-            end
+            local note = {
+                rest = false,
+                base = fullBase,
+                octave = octave,
+                ticks = ticks
+            }
+
+            Bard.applyKeyAccidental(note, key)
+            table.insert(notes, note)
         end
 
         return notes
@@ -126,20 +128,28 @@ function Bard.parseNoteToken(token, defaultTicks, key)
     else
         -- Not a chord/rest/grace
         local notes = {}
-        local duration = token:match("%d*/?%d*") or ""
-        local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
 
-        for accidental, base, octaveMod in token:gmatch("([_=^]*)([A-Ga-g])([',]*)") do
-            local octave = 4
-            if base:match("%l") then octave = 5 end
+        for accidental, base, octaveMod, duration in token:gmatch("([_=^]*)([A-Ga-g])([',]*)(%d*/?%d*)") do
+            local octave = base:match("%l") and 5 or 4
             for char in octaveMod:gmatch("[',]") do
                 octave = octave + (char == "'" and 1 or -1)
             end
+
             local fullBase = accidental .. base:upper()
-            local note = { rest = false, base = fullBase, octave = octave, ticks = ticks }
+
+            local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
+
+            local note = {
+                rest = false,
+                base = fullBase,
+                octave = octave,
+                ticks = ticks
+            }
+
             Bard.applyKeyAccidental(note, key)
             table.insert(notes, note)
         end
+
         return notes
     end
 end
@@ -411,12 +421,30 @@ function Bard.parseABC(abc)
 
                             if isChord and #parsedNotes > 1 then
                                 for i, note in ipairs(parsedNotes) do
+                                    local noteOffset = timeOffsetMs + ((i - 1) * chordStaggerMs)
+                                    note.timeOffset = noteOffset
+                                    note.durationMs = Bard.convertMusicTicksToMilliseconds(
+                                            note.ticks,
+                                            voices[currentVoice].bpm or 120,
+                                            voices[currentVoice].baseNoteLength or "1/8",
+                                            voices[currentVoice].tempoNoteLength or "1/4"
+                                    )
                                     table.insert(voices[currentVoice].events, {
                                         timeOffset = timeOffsetMs + ((i - 1) * chordStaggerMs),
                                         notes = { note }
                                     })
                                 end
                             else
+                                for _, note in ipairs(parsedNotes) do
+                                    note.timeOffset = timeOffsetMs
+                                    note.durationMs = Bard.convertMusicTicksToMilliseconds(
+                                            note.ticks,
+                                            voices[currentVoice].bpm or 120,
+                                            voices[currentVoice].baseNoteLength or "1/8",
+                                            voices[currentVoice].tempoNoteLength or "1/4"
+                                    )
+                                end
+
                                 table.insert(voices[currentVoice].events, {
                                     timeOffset = timeOffsetMs,
                                     notes = parsedNotes
@@ -457,6 +485,14 @@ function Bard.completeAction(player)
         currentAction.action:forceStop()
     end
     local id = player:getUsername()
+
+    local bard = Bard.players[id]
+    if bard then
+        for n, note in ipairs(bard.playingNotes) do
+            local noteID = note.id
+            player:getEmitter():stopSound(noteID)
+        end
+    end
 
     Bard.players[id] = nil
 end
@@ -556,6 +592,8 @@ function Bard.playLoadedSongs(player)
     if not bard then return end
 
     local music = bard.music
+    local instrumentData = Bard.instrumentData[bard.instrumentID]
+    local decay = instrumentData and instrumentData.decay or 200
     local instrumentID = bard.instrumentID .. (bard.style or "")
 
     -- Initialize start and elapsed tracking if not already
@@ -597,7 +635,13 @@ function Bard.playLoadedSongs(player)
                         if instrumentID then
                             local soundID = player:getEmitter():playSound(instrumentSound)
                             player:getEmitter():setVolume(soundID, bard.volume/100)
-                            table.insert(bard.playingNotes, soundID)
+
+                            table.insert(bard.playingNotes, {
+                                id = soundID,
+                                started = bard.elapsedTime,
+                                duration = note.durationMs
+                            })
+
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
                     end
@@ -611,21 +655,41 @@ function Bard.playLoadedSongs(player)
         end
     end
 
-    ---These keeps total notes that are active capped to 50, stops the oldest note per tick
+    ---This keeps total notes that are active capped, stops the oldest note per tick
+    --- as well as cuts notes off after their intended length + handles per instrument decay
+    --decay is stored above, prior to instrumentID being set
     local playingNotes = {}
-    for n,soundID in ipairs(bard.playingNotes) do
-        if player:getEmitter():isPlaying(soundID) then
-            if #bard.playingNotes > 40 and n == 1 then
-                player:getEmitter():stopSound(soundID)
+    for n, note in ipairs(bard.playingNotes) do
+        local noteID = note.id
+        if player:getEmitter():isPlaying(noteID) then
+            local timeSinceStart = bard.elapsedTime - note.started
+
+            if timeSinceStart >= note.duration + decay then
+                player:getEmitter():stopSound(noteID)
+            elseif #bard.playingNotes > 40 and n == 1 then
+                player:getEmitter():stopSound(noteID)
             else
-                table.insert(playingNotes, soundID)
+                if timeSinceStart >= note.duration then
+                    -- In decay phase
+                    local fadeProgress = (timeSinceStart - note.duration) / decay
+                    local fadeVolume = bard.volume / 100 * (1 - fadeProgress)
+                    fadeVolume = math.max(0, math.min(1, fadeVolume))
+                    player:getEmitter():setVolume(noteID, fadeVolume)
+                else
+                    -- Still sustaining at full volume
+                    player:getEmitter():setVolume(noteID, bard.volume / 100)
+                end
+
+                table.insert(playingNotes, note)
             end
         end
     end
+
     bard.playingNotes = playingNotes
 
-    if allDone then Bard.completeAction(player) end
+    if allDone and (#playingNotes <= 0) then Bard.completeAction(player) end
 end
+
 
 Bard.instrumentSpecials = {}
 
@@ -635,28 +699,29 @@ function Bard.instrumentSpecials.sexySax(player)
     end
 end
 
+
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
-    ["Base.Banjo"] = { soundDir = "banjo", anim = "strumming" },
-    ["Base.GuitarElectricRed"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
-    ["Base.GuitarElectricBlue"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
-    ["Base.GuitarElectricBlack"] = { soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
-    ["Base.GuitarElectricBassRed"] = { soundDir = "electric_bass", anim = "strumming" },
-    ["Base.GuitarElectricBassBlue"] = { soundDir = "electric_bass", anim = "strumming" },
-    ["Base.GuitarElectricBassBlack"] = { soundDir = "electric_bass", anim = "strumming" },
-    ["Base.GuitarAcoustic"] = { soundDir = "guitar", anim = "strumming" },
-    ["Base.Keytar"] = { soundDir = "keytar", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
-    ["Base.Harmonica"] = { soundDir = "harmonica", anim = "Harmonica" },
-    ["Base.Saxophone"] = { soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
-    ["Base.Violin"] = { soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
-    ["Base.Xylophone"] = { soundDir = "xylophone", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
-    ["Base.Flute"] = { soundDir = "flute", anim = "Flute" },
-    ["Base.Rubberducky"] = { soundDir = "bikehorn", anim = "Rubberducky", },
-    ["Base.Trumpet"] = { soundDir = "trumpet", anim = "Trumpet" },
-    ["Base.Whistle"] = { soundDir = "whistle", anim = "Whistle"},
-    ["Base.Whistle_Bone"] = { soundDir = "whistle", anim = "Whistle"},
+    ["Base.Banjo"] = { decay = 300, soundDir = "banjo", anim = "strumming" },
+    ["Base.GuitarElectricRed"] = { decay = 800, soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBlue"] = { decay = 800, soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBlack"] = { decay = 800, soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
+    ["Base.GuitarElectricBassRed"] = { decay = 900, soundDir = "electric_bass", anim = "strumming" },
+    ["Base.GuitarElectricBassBlue"] = { decay = 900, soundDir = "electric_bass", anim = "strumming" },
+    ["Base.GuitarElectricBassBlack"] = { decay = 900, soundDir = "electric_bass", anim = "strumming" },
+    ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", anim = "strumming" },
+    ["Base.Keytar"] = { decay = 700, soundDir = "keytar", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
+    ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", anim = "Harmonica" },
+    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
+    ["Base.Violin"] = { decay = 100, soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
+    ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
+    ["Base.Flute"] = { decay = 300, soundDir = "flute", anim = "Flute" },
+    ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", anim = "Rubberducky", },
+    ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", anim = "Trumpet" },
+    ["Base.Whistle"] = { decay = 200, soundDir = "whistle", anim = "Whistle"},
+    ["Base.Whistle_Bone"] = { decay = 200, soundDir = "whistle", anim = "Whistle"},
 }
 
 
@@ -668,15 +733,16 @@ Bard.instrumentMapObjectData = {
     ---["Snare Drum"] = { soundDir = "", anim = ""},
 
     --recreational_01_12,13  8,9
-    ["Piano"] = { soundDir = "piano", anim = "Piano",
+    ["Piano"] = { decay = 500, soundDir = "piano", anim = "Piano",
                   sprites = { "recreational_01_12", "recreational_01_13", "recreational_01_8", "recreational_01_9", }
     },
 
     --recreational_01_40,41  48,49
-    ["Grand Piano"] = { soundDir = "grandPiano", anim = "Piano",
+    ["Grand Piano"] = { decay = 800, soundDir = "grandPiano", anim = "Piano",
                         sprites = { "recreational_01_40", "recreational_01_41", "recreational_01_48", "recreational_01_49", }
     },
 }
+
 
 Bard.populatedFromMapObjectData = false
 function Bard.populateMapObjectData()
@@ -703,7 +769,7 @@ end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
+    ["GlassBottle"] = { decay = 350, soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
 }
 
 Bard.populatedFromTagData = false

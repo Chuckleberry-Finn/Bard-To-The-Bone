@@ -57,7 +57,7 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
 
     track.append(Message('program_change', program=program, time=0))
     track.append(Message('note_on', note=midi_note, velocity=90, time=0))
-    track.append(Message('note_off', note=midi_note, velocity=64, time=960))
+    track.append(Message('note_off', note=midi_note, velocity=64, time=7680))
 
     midi_path = Path(outdir) / f"{note_name}{octave}.mid"
     mid.save(midi_path)
@@ -100,11 +100,14 @@ def convert_midi_file(midi_path):
         ], check=True, timeout=10, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
-        max_duration_sec = 3
+        max_duration_sec = 7
         y = y[:int(sr * max_duration_sec)]
 
         fade_in_duration = int(sr * 0.005)
         y[:fade_in_duration] *= np.linspace(0, 1, fade_in_duration)
+
+        fade_out_duration = int(sr * 0.5)
+        y[-fade_out_duration:] *= np.linspace(1, 0, fade_out_duration)
 
         meter = pyln.Meter(sr)
         loudness = meter.integrated_loudness(y)
@@ -114,7 +117,7 @@ def convert_midi_file(midi_path):
             os.remove(midi_path)
             return name, "silent"
 
-        y = pyln.normalize.loudness(y, loudness, -38.0)
+        y = pyln.normalize.loudness(y, loudness, -33.0)
 
         peak = np.max(np.abs(y))
         if peak <= 0:
