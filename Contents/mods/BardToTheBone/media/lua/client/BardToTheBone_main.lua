@@ -443,6 +443,7 @@ function Bard.parseABC(abc)
                                             voices[currentVoice].baseNoteLength or "1/8",
                                             voices[currentVoice].tempoNoteLength or "1/4"
                                     )
+
                                 end
 
                                 table.insert(voices[currentVoice].events, {
