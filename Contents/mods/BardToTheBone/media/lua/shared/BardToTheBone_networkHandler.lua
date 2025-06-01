@@ -18,12 +18,18 @@ function bardNetworkHandler.sendUpdate(player)
 end
 
 
+--- There is an IsoUtils function by this same name added in B42
+function bardNetworkHandler.DistanceTo(x1, y1, z1, x2, y2, z2)
+    return math.sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)
+end
+
+
 function bardNetworkHandler.receiveUpdate(data)--x, y, z
 
     local x, y, z = data[1], data[2], data[3]
     local listener = getPlayer()
     local lx, ly, lz = listener:getX(), listener:getY(), listener:getZ()
-    local dist = IsoUtils.DistanceTo(x, y, z, lx, ly, lz)
+    local dist = bardNetworkHandler.DistanceTo(x, y, z, lx, ly, lz)
 
     if dist <= 30 then
         local bodyDamage = listener:getBodyDamage()

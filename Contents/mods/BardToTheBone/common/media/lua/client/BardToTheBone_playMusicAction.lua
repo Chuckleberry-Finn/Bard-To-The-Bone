@@ -62,8 +62,15 @@ function BardToTheBonePlayMusic:stop()
     ISBaseTimedAction.stop(self)
 end
 
+
 function BardToTheBonePlayMusic:update()
-    if netWorkHandler then netWorkHandler.sendUpdate(self.character) end
+    if netWorkHandler then
+        self.ticks = self.ticks+1
+        if self.ticks > 10 then
+            self.ticks = 0
+            netWorkHandler.sendUpdate(self.character)
+        end
+    end
 end
 
 
@@ -75,6 +82,8 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
     o.item = instrument
     o.stopOnWalk = false
     o.stopOnRun = true
+
+    o.ticks = 0
 
     o.heldItem = instanceof(instrument, "InventoryItem")
     o.style = style

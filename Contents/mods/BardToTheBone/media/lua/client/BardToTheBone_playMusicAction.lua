@@ -1,6 +1,7 @@
 require "TimedActions/ISBaseTimedAction"
 
 local Bard = require "BardToTheBone_main"
+local netWorkHandler = require "BardToTheBone_networkHandler"
 
 ---@class BardToTheBonePlayMusic : ISBaseTimedAction
 BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
@@ -61,7 +62,15 @@ function BardToTheBonePlayMusic:stop()
     ISBaseTimedAction.stop(self)
 end
 
-function BardToTheBonePlayMusic:update() end
+function BardToTheBonePlayMusic:update()
+    if netWorkHandler then
+        self.ticks = self.ticks+1
+        if self.ticks > 10 then
+            self.ticks = 0
+            netWorkHandler.sendUpdate(self.character)
+        end
+    end
+end
 
 
 ---@param character IsoGameCharacter
@@ -73,9 +82,13 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
     o.stopOnWalk = false
     o.stopOnRun = true
 
+    o.ticks = 0
+
     o.heldItem = instanceof(instrument, "InventoryItem")
     o.style = style
     o.volume = volume
+
+    o.caloriesModifier = 2.5
 
     local music, duration = Bard.startPlayback(character, abcNotation)
     o.music = music

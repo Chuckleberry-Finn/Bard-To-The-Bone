@@ -33,3 +33,9 @@ Improved UI scaling with different resolutions.
 [ 5/27/25 ]
 - Rewrote the playback to handle note duration better (improves short/long notes).
 [ ------ ]
+
+[ 6/1/25 ]
+- Playing instruments lowers boredom and unhappiness.
+- Playing instruments has a higher calorie burn.
+- Added a new song to the library.
+[ ------ ]
