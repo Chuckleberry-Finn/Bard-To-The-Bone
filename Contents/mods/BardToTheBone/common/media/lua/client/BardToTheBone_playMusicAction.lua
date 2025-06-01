@@ -1,6 +1,7 @@
 require "TimedActions/ISBaseTimedAction"
 
 local Bard = require "BardToTheBone_main"
+local netWorkHandler = require "BardToTheBone_networkHandler"
 
 ---@class BardToTheBonePlayMusic : ISBaseTimedAction
 BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
@@ -61,7 +62,9 @@ function BardToTheBonePlayMusic:stop()
     ISBaseTimedAction.stop(self)
 end
 
-function BardToTheBonePlayMusic:update() end
+function BardToTheBonePlayMusic:update()
+    if netWorkHandler then netWorkHandler.sendUpdate(self.character) end
+end
 
 
 ---@param character IsoGameCharacter
