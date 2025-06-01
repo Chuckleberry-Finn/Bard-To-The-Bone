@@ -80,6 +80,8 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
     o.style = style
     o.volume = volume
 
+    o.caloriesModifier = 2.5
+
     local music, duration = Bard.startPlayback(character, abcNotation)
     o.music = music
     o.maxTime = duration or 1
