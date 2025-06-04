@@ -36,6 +36,9 @@
 **[Online ABC Player and Editor](https://abc.rectanglered.com/)**<br>
 <sup>An online interface for playing and editing ABC notations.</sup>
 
+**[freemidi.org](https://freemidi.org/)
+<sup>A collection of MIDIs you can use an ABC converter on.</sup>
+
 **[Online MIDI to ABC Tool](https://michaeleskin.com/tools/midi2abc/midi2abc.html)**<br>
 <sup>Convert MIDIs of songs to ABC for use in the game.</sup>
 
