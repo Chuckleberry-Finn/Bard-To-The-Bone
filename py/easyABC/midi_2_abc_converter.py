@@ -102,8 +102,8 @@ drop_frame.dnd_bind("<<Drop>>", on_drop)
 button_frame = tk.Frame(root, bg="#2e2e2e")
 button_frame.pack(pady=10)
 
-ttk.Button(button_frame, text="Select File(s)", command=select_items).pack(side="left", padx=5)
-ttk.Button(button_frame, text="Open Output Folder", command=open_folder).pack(side="left", padx=5)
+ttk.Button(button_frame, text=" Select File(s) ", command=select_items).pack(side="left", padx=5)
+ttk.Button(button_frame, text=" Open Output Folder ", command=open_folder).pack(side="left", padx=5)
 
 # Log box
 log_box = tk.Text(root, height=10, bg="#1e1e1e", fg="lightgray", insertbackground="white", state="disabled")
