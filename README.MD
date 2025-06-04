@@ -47,6 +47,10 @@
 
 **[abcnotation.com](https://abcnotation.com/)**<br>
 <sup>A great website that features all things ABC-notation, includes: thousands of public-domain songs, links to various related programs and information.</sup>
+
+**[onlinesequencer](https://onlinesequencer.net/)**<br>
+<sup>Online MIDI sequencer/player for creating ones own songs, also hosts user generated content.</sup>
+
 <br><br>
 
 
