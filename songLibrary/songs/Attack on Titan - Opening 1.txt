@@ -1,0 +1,112 @@
+X:1
+Q:1/4=169
+L:1/16
+M:4/4
+K:C clef=G2
+V:1
+T:Attack on Titan - Opening 1
+[^C^c]z[^C^c]z[E^Ce]z[^D^d]z2z[B,B]z2z[^C^c]z|z2[^C^c]z[E^Ce]z[^DB,^d]z2z[B,B][^c^C][^d^D][eE][^f^F][^G^g]|[^g^c^C^g'^c']z2z[e^G^CEe'^g]z[^f^c^D^f'^c']zB,z[^dB^d'b]zB,z[e^ce'^c']z|^Cz[^c^G^c'^g]z[^CE]z[^dB^D^d'b]zB,z[B^Fb^f]zB,z2z|
+[^g'^c'^g^c^C]z2z[e'^ge]z[^f'^c'^f^c]z2z[^d'b^d]z2z[e'^c'e^c]z|z2[^d'b^d]z2z[^c'^g^c]z2z[b^f]^c'^d'e'^f'^g'|[beb'e']z2z[gg'b]z[aea'e']z2z[^fd^f'd']z2z[geg'e']z|z2[ee'b]z2z[^fd^f'd']z2z[dd'a]z4z|
+[b'e'be]z2z[g'bg]z[a'e'ae]z2z[^f'd'^fd]z2z[g'e'ge]z|z2[^f'd'^fd]z2z[e'beB]z2z[d'daA]z4z|z16|[^d^D]z2z[BB,]z[^c^C]z2z[^A^A,]z2z[BB,]z|
+z2[^G^G,]z2z[^A^A,]z2z[^F^F,]z4z|[^d^D]z2z[BB,]z[^c^C]z2z[^A^A,]z2z[BB,]z|z2[^A^A,]z2z[^G,^G]z2z[^F^F,]z4z|[^d^D]z2z[BB,]z[^c^C]z2z[^A^A,]z2z[BB,]z|
+z2[^G^G,]z2z[^A^A,]z2z[^F^F,]z4z|[^d^D]z2z[BB,]z[^c^C]z2z[^A^A,]z2z[BB,]z|z2[^A^A,]z2z[^G,^G]z2z[^F^F,]z[^G^g][Aa][Bb][^c^c']|[^d^d'^G]z2z[Bb^G]z[^c^c'^G]z2z[^A^a^F]z2z[Bb^G]z|
+z2[^G^g]z2z[^A^a^F]z2z[^F^f^D]z4z|[^d^d'^G]z2z[Bb^G]z[^c^c'^G]z2z[^A^a^F]z2z[Bb^G]z|z2[^A^a^F]z2z[^G^gE]z2z[^F^f^D]z4z|[^d^d'^G]z2z[Bb^G]z[^c^c'^G]z^g'z[^A^a^F]z2z[Bb^G]z|
+^f'z[^G^g^D]z2z[^A^a^F]z^c'z[^F^f^C]z4z|[^d^d'^G]z2z[Bb^G]z[^c^c'^G]z^g'z[^A^a^F]z2z[Bb^G]z|^f'z[^A^a^F]z2z[^G^gE]z^d'z[^DG^d]z4z|^Gz4z^Gz^Gz2z^AzBz|
+^Az^GzGzGz4zGzGz|^Gz2z^Dz^Gz^Az2z^Fz^Az|Bz2z^FzBzcz4z[^c^C]z|z2[^C^cE]z[^C^cE]z[^C^cE]z[A,AE]z2z[^C^c^G]z^Fz|
+[B,B^D]z[B,B]z[B,B]z[^G,^G]z2z[B,B^G,]z2z[^C^c]z|z2[^C^cE]z[^C^cE]z[^C^cE]z[A,AE]z2z[^C^c]z2z|[^C^c]z4z[Cc]z[Cc]z4^G,A,B,|[^C^c^g']z[^C^c]z[E^Ce]z[^DB,^d]z2z[B,B]z^f'z[^C^c]z|
+^g'z[^C^c]z[E^Ce]z[^DB,^d]z^f'z[B,B]ze'z[B,B]z|[^C^c^d']^c'[^C^c]z[E^Ce^c']z[^DB,^d^d']z2z[B,B^c']z^d'z[^C^c^c']z|z2[B,Bb]z2z[^G^g]z2z[B,Bb]z2zB,z|[^C^c^g']z[^C^c]z[E^Ce]z[^DB,^d]z2z[B,B]z^f'z[^C^c]z|
+^g'z[^C^cb'b]z[E^Ce]z[^DB,^da']z2z[B,B^g']z2z[B,B]z|[^C^c^g']z[^C^c]z[E^Ce]z[^DB,^d]z2z[B,Bb]z[^C^c^c']z[^d^DB,^d']z|z2[^g'^g^G,^G][^g^G,][^g'^G,][^g^G,][^g'^G,][^g^G,][^f^F^f'A,][^fB,][^f'^C][^f^D][^f'E][^f^F]^GA|[^C^c^c']z[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z2z[^C^c^c']z|
+z2[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z2z[B,Bb]z|[^C^c^c']z[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z2z[^C^c^c']z|z2[B,Bb]z2z[^G^g]z2z[B,Bb]z2z[B,Bb]z|[^C^c^c']z[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z2z[^C^c^c']z|
+z2[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z2z[B,Bb]z|[^C^c^c']z[^C^c^c']z[E^Cee']z[^DB,^d^d']z2z[B,Bb]z[^C^c^c'^g']z^g'z|[^g^c^c'^g']z2z[ee'^g]z[^f^c^f'^c']z2z[^d^d'b]z2z[e^ce'^c']z|z2[^c^c'^g]z2z[^d^d'b]z2z[b^f]z4z|
+[^g'^c'^g^c]z2z[e'^ge]z[^f'^c'^f^c]z2z[^d'b^d]z2z[e'^c'e^c]z|z2[^d'b^d]z2z[^c'^g^c]z2z[b^f]^c'^d'e'^f'^g'|[beb'e']z2z[gg'b]z[aea'e']z2z[^fd^f'd']z2z[geg'e']z|z2[ee'b]z2z[^fd^f'd']z2z[dd'a]z4z|
+[b'e'be]z2z[g'bg]z[a'e'ae]z2z[^f'd'^fd]z2z[g'e'ge]z|z2[^f'd'^fd]z2z[e'be]z2z[d'da]z4z|[beb'e']z2z[gg'b]z[aea'e']z2z[^fd^f'd']z2z[geg'e']z|z2[ee'b]z2z[^fd^f'd']z2z[dd'a]z4z|
+[b'e'be]z2z[g'bg]z[a'e'ae]z2z[^f'd'^fd]z2z[g'e'ge]z|z2[^f'd'^fd]z2z[e'be]z2z[d'da]^d'e'^f'^g'a'|[c'ff']z2z[^g^g'c']z[^af^a'f']z2z[g^dg'^d']z2z[^gf^g'f']z|z2[ff'c']z2z[g^dg'^d']z2z[^d^d'^a]z4z|
+[f'c'f]z2z[^g'c'^g]z[^a'f'^af]z2z[g'^d'g^d]z[^g'f'^gf]z2z|z2zE/2B/2e/2g/2b/2e'/2[e'eb'B,,,E,,,B,bBE]z8z|z4z2z
+L:1/16
+M:4/4
+K:C clef=F4
+V:2
+%%MIDI program 24
+[^C,,^C,,,^C,^G,,^G,,,]z^C,z2zB,,z2zB,,z2z^C,z|z2^C,z4z2zB,,,z2zB,,,z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2zB,,,z2z|
+A,,,z2zA,,,z2zA,,,z2zA,,,z2z|A,,,z2zA,,,z2zA,,,z2zB,,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2zD,,z2z|
+C,,z2zC,,z2zC,,z2zC,,z2z|C,,z2zC,,z2zC,,z2zC,,z2z|z16|^G,,z2z^G,,z2z^G,,z2z^G,,z2z|
+^G,,z2z^G,,z2z^G,,z2z^F,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2z^F,,z2z|^G,,z2z^G,,z2z^G,,z2z^G,,z2z|
+^G,,z2z^G,,z2z^G,,z2z^F,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2z^F,,z2z|^G,,z2z^G,,z2z^G,,z2z^G,,z2z|
+^G,,z2z^G,,z2z^G,,z2z^F,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2z^F,,z2z|^G,,z2z^G,,z2z^G,,z2z^G,,z2z|
+^G,,z2z^G,,z2z^G,,z2z[^F,,^F,,]z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2z^D,,z^D,,z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|
+^D,,z2z^D,,z2z^D,,z2z^D,,z2z|^C,,,z4z2z^D,,,z4z2z|E,,,z4z2z^F,,,z4z^C,,,z|z2A,,,z2zA,,,z2zA,,,z2zA,,,z|
+z2^G,,,z2z^G,,,z2z^G,,,z2z^G,,,z|z2A,,,z2zA,,,z2zA,,,z4z|z4z2C,,zC,,z4z2z|[^C,,^C,,,^G,,,]z2z^C,,z2z^C,,z2z^C,,z2z|
+^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|
+^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|z2^G,,,z4z^F,,,z4z2z|[^C,,^C,,,^G,,,]z2z^C,,z2z^C,,z2z^C,,z2z|
+^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|
+^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2z^C,,z2z|^C,,z2z^C,,z2z^C,,z2zB,,,z2z|
+A,,,z2zA,,,z2zA,,,z2zA,,,z2z|A,,,z2zA,,,z2zA,,,z2zB,,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2zD,,z2z|
+C,,z2zC,,z2zC,,z2zC,,z2z|C,,z2zC,,z2zC,,z2zD,,z2z|E,,z2zE,,z2zE,,z2zE,,z2z|E,,z2zE,,z2zE,,z2zD,,z2z|
+C,,z2zC,,z2zC,,z2zC,,z2z|C,,z2zC,,z2zC,,z2zD,,z2z|F,,z2zF,,z2zF,,z2zF,,z2z|F,,z2zF,,z2zF,,z2z^D,,z2z|
+^C,,z2z^C,,z2z^C,,z2z^C,,z2z|z4z2E,,z8z|z4z2z
+L:1/16
+M:4/4
+K:C clef=F4
+V:3
+%%MIDI program 42
+[^G,E,]zE,z[E,^G,]z[^D,B,^F,]z2z[^F,^D,]z2z[^G,E,]z|z2[E,^G,]z[E,^G,]z[^D,^F,]z2z[B,,^F,^D,^D,,^F,,]z2zB,,z|z2^C,z2z^C,z2z^C,z2z^C,z|z2^C,z2z^C,z2z^C,z2zB,,z|
+z2A,,z[^G^CE]z[A,,^DB,]z2z[BA,,B,]z2z[A,,^CE]z|z2[BA,,B,^D]z2z[^GA,,A,^C]z2z[B^FA,,B,^F,]z2zB,,z|EzE,z[BEG]z[E,^F]zDzE,zDzE,z|Ez[E,B]z[EG]z[E,^F]zDz[E,A]zDzD,z|
+EzC,z[BEG]z[C,^FD]z2z[C,D]z2z[C,EG]z|z2[C,D^F]z2z[C,CE]z2z[C,DA,]z2zC,z|[E,,E,]z[A,,A,]z[D,D]z[G,G]z[^D,^D]z[^G,,^G,]z[F,F]z[G,,G,]z|z2^D,z2z^D,z2z^D,z2z^D,z|
+z2^D,z2z^D,z2z^D,z2z^C,z|z2B,,z2zB,,z2zB,,z2zB,,z|z2B,,z2zB,,z2zB,,z2z^C,z|z2^D,z2z^D,z2z^D,z2z^D,z|
+z2^D,z2z^D,z2z^D,z2z^C,z|z2B,,z2zB,,z2zB,,z2zB,,z|z2B,,z2zB,,z2zB,,z2z^C,z|^D,z^D,zB,z[^D,^C]z2z[^D,^A,]z2z[^D,B,]z|
+z2[^D,^G,]z2z[^D,^A,]z2z[^D,^F,]z2z^C,z|^DzB,,zB,z[B,,^C]z2z[B,,^A,]z2z[B,,B,]z|z2[^A,B,,]z2z[^G,B,,]z2z[^F,B,,]z2z^C,z|^Dz^D,zB,z[^D,^C]z2z[^D,^A,]z2z[^D,B,]z|
+z2[^D,^G,]z2z[^D,^A,]z2z[^D,^F,]z2z^C,z|^DzB,,zB,z[B,,^C]z2z[B,,^A,]z2z[B,,B,]z|z2[^A,B,,]z2z[^G,B,,]z2z[^A,,^D,G,]z4z|[^C,^G,]z2z^C,z^G,z[^C,^G,]z2z[^A,^C]zB,z|
+^A,z^G,z[G,^D,^D]z[G,^D]z^D,z2z[^D,G,]zG,z|[^G,^G,,^D,^D,,]z2z^D,z^G,z[^A,^A,,F,F,,]z2z^F,z^A,z|[B,,B,^F,^F,,]z2z^F,zB,z[C,CG,G,,]z4z[^C,^G,^G,,]z|z2E,z[E,E,,]zE,z[E,A,,E,,]z2z[^C,E,,]z^F,z|
+[^D,^D,,]zB,,z[^F,^F,,^D,,]z[^G,,^D,]z^D,,zB,,z[C,^D,,]z^C,z|E,,zE,z[E,E,,]zE,z[E,A,,E,,]z2z[^C,E,,]z2z|[^C,E,,]z4z[C,^D,,]z[C,^D,,]^C,^D,E,^F,z2z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|
+z2[^C,E,^G,]z[E,^G,]z[^D,^F,]z2z[B,,^F,^D,]z2z[^F,^D,B,,]z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|z2[B,,^F,^D,]z2z[^G,E,^C,^G,,]z2z[B,,^F,^D,]z2z[B,,^F,^D,]z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|
+z2[^C,E,^G,]z[E,^G,]z[^D,^F,]z2z[B,,^F,^D,]z2z[^F,^D,B,,]z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z[^C,^G,E,]z[^F,^D,]z|z2^G,,z4z[^F,^F,,]^F,^F,^F,^F,^F,^F,^F,|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|
+z2[^C,E,^G,]z[E,^G,]z[^D,^F,]z2z[B,,^F,^D,]z2z[^F,^D,B,,]z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|z2[B,,^F,^D,]z2z[^G,E,^C,^G,,]z2z[B,,^F,^D,]z2z[^F,B,,^D,]z|[^G,^C,E,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z2z[^C,^G,E,]z|
+z2[^C,E,^G,]z[E,^G,]z[^D,^F,]z2z[B,,^F,^D,]z2z[^F,^D,B,,]z|[^G,^C,E,^G,,]z[^C,E,]z[E,^G,]z[^D,^F,B,,]z2z[B,,^F,^D,]z[^C,^G,E,]z2z|^Cz^C,z[^G^CE]z[^C,^D]zB,z[B^C,]zB,z^C,z|^Cz[^G^C,]z[^CE]z[B^C,^D]zB,z[B^F^C,]zB,zB,,z|
+^CzA,,z[^G^CE]z[A,,^DB,]z2z[BA,,B,]z2z[A,,^CE]z|z2[BA,,B,^D]z2z[^GA,,A,^C]z2z[B^FA,,B,^F,]z2zB,,z|EzE,z[BEG]z[E,^F]zDzE,zDzE,z|Ez[E,B]z[EG]z[E,^F]zDz[E,A]zDzD,z|
+EzC,z[BEG]z[C,^FD]z2z[C,D]z2z[C,EG]z|z2[C,D^F]z2z[C,BCE]z2z[C,ADA,]z2zD,z|EzE,z[BEG]z[E,^F]zDzE,zDzE,z|Ez[E,B]z[EG]z[E,^F]zDz[E,A]zDzD,z|
+EzC,z[BEG]z[C,^FD]z2z[C,D]z2z[C,EG]z|z2[C,D^F]z2z[C,BCE]z2z[C,ADA,]z2zD,z|FzF,z[cF^G]z[F,G]z^DzF,z^DzF,z|Fz[F,c]z[F^G]z[F,G]z^Dz[F,^A]z^Dz^D,z|
+[FF,^G,]z^C,z[cF^G]z[^C,G^DF,^G,]z2z[^C,^D]z[F^GF,^G,]z2z|z4z2[E,B,,]z8z|z4z2z
+L:1/16
+M:4/4
+K:C clef=F4
+V:4
+%%MIDI program 32
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|E,,,zA,,,zD,,zG,,z^D,,z^G,,,zF,,zG,,,z|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|^G,,,z4z2z^A,,,z4z2z|B,,,z4z2zC,,z4z^C,,z|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+z16|z16|z16|z16|
+[F,,,^G,,,]z4z[F,,,^G,,,]z4z[F,,,^G,,,]z2z|z16|z4z2z
+L:1/16
+M:4/4
+K:C clef=F4
+V:5
+%%MIDI program 0
+E,,z8z4z2z|z16|[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,z[E,,^C,]z2z|
+[^C,B,,,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,zE,,E,,E,,E,,|[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,z[E,,^C,]z2z|
+[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,z[^C,B,,,]z^A,,z[E,,^C,]z^A,,z|B,,,B,,,B,,,B,,,B,,,B,,,B,,,B,,,E,,E,,E,,E,,E,,E,,E,,E,,|[B,,,^C,]z2zB,,,z2zB,,,z2zB,,,zE,,E,,|
+[E,,B,,,]z2zB,,,z2zB,,,z2zB,,,z2z|B,,,z2zB,,,z2zB,,,z2zB,,,zE,,E,,|[E,,B,,,]z2zB,,,z2zB,,,z2zB,,,z2z|B,,,z2zB,,,z2zB,,,z2zB,,,zE,,E,,|
+[E,,B,,,]z2zB,,,z2zB,,,z2zB,,,z2z|B,,,z2zB,,,z2zB,,,z2zB,,,zE,,E,,|[E,,B,,,]z2zB,,,z2zB,,,z2z[B,,,^C,]z2z|[^C,B,,,]^F,,^F,,^F,,[^F,,B,,,]^F,,^F,,^F,,[^F,,B,,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,|
+[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^A,,^F,,[B,,,^F,,]^F,,^A,,^F,,|[^F,,B,,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,|[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^A,,^F,,[B,,,^F,,]^F,,^A,,^F,,|[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,|
+[B,,,^F,,]^F,,^F,,^F,,[^F,,B,,,]^F,,^F,,^F,,[^F,,B,,,]^F,,^A,,^F,,[^F,,B,,,]^F,,^A,,^F,,|[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,[B,,,^F,,]^F,,^F,,^F,,|[E,,B,,,^C,]B,,,B,,,B,,,[E,,B,,,^C,]B,,,B,,,B,,,[E,,B,,,^C,]B,,,B,,,B,,,[E,,^C,]A,,G,,F,,|[B,,,^C,]z^A,,z^A,,z^A,,z[^A,,E,,]z^A,,z^A,,z^A,,z|
+[B,,,^A,,]z^A,,z[B,,,^A,,]z^A,,z[E,,^A,,]z^A,,z[B,,,^C,]z[B,,,^C,]z|[B,,,^C,]z^A,,z[E,,^C,]z[E,,^C,]z[E,,^C,]z^A,,z[B,,,^C,]z[B,,,^C,]z|[B,,,^C,]z^A,,z[E,,^C,]z[E,,^C,]z[E,,^C,]z4z[B,,,^C,]z|z2^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|
+B,,,z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|[^C,E,,]z^A,,z[E,,^C,]z^A,,z[^C,E,,]z^A,,z[E,,^C,]E,,E,,E,,|[B,,,F,^C,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|
+[B,,,F,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|[B,,,^C,F,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|[F,B,,,]z2z[F,E,,]z2z[F,B,,,^C,]z2z[F,E,,^C,]z2z|[^C,B,,,F,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|
+[B,,,^C,F,]z2z[F,E,,]z2z[F,B,,,]z2z[F,E,,]z2z|[^C,F,B,,,]z2z[F,E,,]z2z[F,B,,,]z2z[E,,F,]z2z|[^C,E,,]z2z[E,,^C,]z2z[E,,^C,]z2z[E,,^C,]E,,E,,E,,|[^C,F,B,,,]z2z[F,E,,]z2z[F,B,,,]z2z[F,E,,]z2z|
+[B,,,F,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|[B,,,F,^C,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|[B,,,F,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,^C,]z2z|[^C,F,B,,,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|
+[B,,,F,^C,]z2z[E,,F,]z2z[B,,,F,]z2z[E,,F,]z2z|E,,z8z4z2z|[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,z[E,,^C,]z2z|
+[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,z[E,,^C,]z2z|[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|B,,,z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|
+[B,,,^C,]z^A,,zE,,z^A,,zB,,,z^A,,zE,,z^A,,z|[B,,,^C,]z^A,,zE,,z^A,,z[E,,B,,,]z^A,,z[E,,^C,]z2z|[B,,,E,,^C,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,|[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[E,,B,,,^C,]B,,,B,,,B,,,|
+[^C,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,|[E,,^A,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,[^A,,E,,B,,,]B,,,B,,,B,,,|[B,,,E,,^C,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,|[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[E,,B,,,^A,,]B,,,B,,,B,,,[B,,,E,,^A,,]B,,,B,,,B,,,|
+[E,,^C,]z2zB,,,z[E,,^C,]z2zB,,,z[E,,^C,]zF,,F,,|G,,G,,A,,A,,B,,B,,[E,,^C,^G,,]^G,,^G,,^G,,^G,,^G,,^G,,^G,,^G,,^G,,|^G,,^G,,^G,,^G,,^G,,^G,,^G,,
