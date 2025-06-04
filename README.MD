@@ -42,6 +42,9 @@
 **[Online MIDI to ABC Tool](https://michaeleskin.com/tools/midi2abc/midi2abc.html)**<br>
 <sup>Convert MIDIs of songs to ABC for use in the game.</sup>
 
+**[easyABC converter](https://github.com/jwdj/EasyABC)**<br>
+<sup>Great program for local conversions, **note: by default it produces songs in multiple voices/performers** which requires splitting the tracks up manually.</sup>
+
 **[abcnotation.com](https://abcnotation.com/)**<br>
 <sup>A great website that features all things ABC-notation, includes: thousands of public-domain songs, links to various related programs and information.</sup>
 <br><br>
