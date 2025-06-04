@@ -69,7 +69,7 @@ def on_drop(event):
 # === TkinterDnD GUI ===
 root = TkinterDnD.Tk()
 root.title("MIDI to ABC Converter")
-root.geometry("640x420")
+root.geometry("640x460")
 root.configure(bg="#2e2e2e")
 
 style = ttk.Style()
@@ -85,12 +85,13 @@ drop_frame.pack(fill="x", padx=20, pady=10)
 drop_frame.drop_target_register(DND_FILES)
 drop_frame.dnd_bind("<<Drop>>", on_drop)
 
-# File selection buttons
-ttk.Button(root, text="Select Files", command=select_files).pack(pady=5)
-ttk.Button(root, text="Select Folder", command=select_folder).pack(pady=5)
+# Button container (horizontal)
+button_frame = tk.Frame(root, bg="#2e2e2e")
+button_frame.pack(pady=10)
 
-# Output folder button
-ttk.Button(root, text="Open Output Folder", command=open_folder).pack(pady=5)
+ttk.Button(button_frame, text="Select Files", command=select_files).pack(side="left", padx=5)
+ttk.Button(button_frame, text="Select Folder", command=select_folder).pack(side="left", padx=5)
+ttk.Button(button_frame, text="Open Output Folder", command=open_folder).pack(side="left", padx=5)
 
 # Log box
 log_box = tk.Text(root, height=10, bg="#1e1e1e", fg="lightgray", insertbackground="white")
