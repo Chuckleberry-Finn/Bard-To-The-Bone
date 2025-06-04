@@ -82,7 +82,7 @@ def on_drop(event):
 # === TkinterDnD GUI ===
 root = TkinterDnD.Tk()
 root.title("MIDI to ABC Converter")
-root.geometry("640x460")
+root.geometry("340x480")
 root.configure(bg="#2e2e2e")
 
 style = ttk.Style()
