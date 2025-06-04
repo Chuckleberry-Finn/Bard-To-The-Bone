@@ -51,14 +51,12 @@ def convert_midi_files(files):
 def open_folder():
     webbrowser.open(str(output_dir.resolve()))
 
-def select_folder():
-    folder = filedialog.askdirectory()
-    if folder:
-        midi_files = list(Path(folder).glob('*.mid')) + list(Path(folder).glob('*.midi'))
-        convert_midi_files([str(f) for f in midi_files])
-
-def select_files():
+def select_items():
     files = filedialog.askopenfilenames(filetypes=[("MIDI files", "*.mid *.midi")])
+    if not files:
+        folder = filedialog.askdirectory()
+        if folder:
+            files = list(Path(folder).glob('*.mid')) + list(Path(folder).glob('*.midi'))
     if files:
         convert_midi_files(files)
 
@@ -85,12 +83,11 @@ drop_frame.pack(fill="x", padx=20, pady=10)
 drop_frame.drop_target_register(DND_FILES)
 drop_frame.dnd_bind("<<Drop>>", on_drop)
 
-# Button container (horizontal)
+# Button container
 button_frame = tk.Frame(root, bg="#2e2e2e")
 button_frame.pack(pady=10)
 
-ttk.Button(button_frame, text="Select Files", command=select_files).pack(side="left", padx=5)
-ttk.Button(button_frame, text="Select Folder", command=select_folder).pack(side="left", padx=5)
+ttk.Button(button_frame, text="Select Files or Folder", command=select_items).pack(side="left", padx=5)
 ttk.Button(button_frame, text="Open Output Folder", command=open_folder).pack(side="left", padx=5)
 
 # Log box
