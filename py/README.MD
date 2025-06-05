@@ -1,5 +1,10 @@
 ## Bard to the Bone Python Scripts
 
+### `Midi2ABC.exe` and `easyABC_modified/`
+MIDI to ABC converter (executable), supports selecting file(s) and drag and drop.
+*All files are generated in folder alongside the exe.*
+<br><br>
+
 ### `fixSongLibrary.py`
 Optional. Renames the files with in `songLibrary\songs` to match their T: (title) line.
 <br><br>
