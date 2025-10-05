@@ -11,12 +11,14 @@ local base_notes = {"C", "D", "E", "F", "G", "A", "B"}
 for _, note in ipairs(base_notes) do
     Bard.natural_map[note] = note .. "n"
     Bard.accidental_map["=" .. note] = note .. "n"
-    if note ~= "E" and note ~= "B" then
+    if note == "E" then
+        Bard.accidental_map["^" .. note] = "Fn"
+    elseif note == "B" then
+        Bard.accidental_map["^" .. note] = "Cn"
+    else
         Bard.accidental_map["^" .. note] = base_notes[(Bard.table_indexof(base_notes, note) % 7) + 1] .. "b"
     end
-    if note ~= "C" and note ~= "F" then
-        Bard.accidental_map["_" .. note] = base_notes[((Bard.table_indexof(base_notes, note) - 2) % 7) + 1] .. "n"
-    end
+    Bard.accidental_map["_" .. note] = note .. "b"
 end
 
 Bard.key_accidentals = {
@@ -75,52 +77,34 @@ end
 function Bard.parseNoteToken(token, defaultTicks, key)
 
     -- Handle grace notes like gA, g^C'
-    if token:match("^gr:") then
-        local durationTicks = 20
+    local chordBody, chordDur = token:match("^(%b[])(%d*/?%d*)$")
+    if chordBody then
+        local inner = chordBody:sub(2, -2)
         local notes = {}
-        for accidental, base, octaveMod in token:sub(4):gmatch("([_=^]*)([A-Ga-g])([',]*)") do
-            local octave = 4
-            if base:match("%l") then octave = 5 end
-            for char in octaveMod:gmatch("[',]") do
-                octave = octave + (char == "'" and 1 or -1)
-            end
-            local fullBase = accidental .. base:upper()
-            local note = { rest = false, base = fullBase, octave = octave, ticks = durationTicks }
-            Bard.applyKeyAccidental(note, key)
-            table.insert(notes, note)
-        end
-        return notes
-    end
-
-    -- This is a chord
-    if token:match("^%b[]$") then
-        local inner = token:sub(2, -2)
-        local notes = {}
-
         for accidental, base, octaveMod, duration in inner:gmatch("([_=^]*)([A-Ga-g])([',]*)(%d*/?%d*)") do
             local octave = base:match("%l") and 5 or 4
             for char in octaveMod:gmatch("[',]") do
                 octave = octave + (char == "'" and 1 or -1)
             end
-
             local fullBase = accidental .. base:upper()
-            local ticks = Bard.getTicksFromLength(duration ~= "" and duration or "1")
-
+            local durToUse = (duration ~= "" and duration) or (chordDur ~= "" and chordDur) or "1"
+            local ticks = Bard.getTicksFromLength(durToUse)
             local note = {
                 rest = false,
                 base = fullBase,
                 octave = octave,
-                ticks = ticks
+                ticks = ticks,
+                explicitAccidental = (accidental ~= nil and accidental ~= "")
             }
-
             Bard.applyKeyAccidental(note, key)
             table.insert(notes, note)
         end
 
         return notes
+    end
 
         -- this is a rest
-    elseif token:match("^z") then
+    if token:match("^z") then
         local duration = token:match("^z(%d*/?%d*)") or "1"
         local ticks = Bard.getTicksFromLength(duration)
         return { { rest = true, ticks = ticks } }
@@ -143,7 +127,8 @@ function Bard.parseNoteToken(token, defaultTicks, key)
                 rest = false,
                 base = fullBase,
                 octave = octave,
-                ticks = ticks
+                ticks = ticks,
+                explicitAccidental = (accidental ~= nil and accidental ~= "")
             }
 
             Bard.applyKeyAccidental(note, key)
@@ -267,6 +252,7 @@ function Bard.parseABC(abc)
         key = "C",
         baseNoteLength = "1/8",
         defaultTicks = Bard.getTicksFromLength("1/8"),
+        tempoNoteLength = "1/4",
     }
 
     local currentTicks = {}
@@ -281,30 +267,46 @@ function Bard.parseABC(abc)
     local tupletNotesRemaining = 0
     local tupletMultiplier = 1.0
 
-    local brokenRhythm = nil -- ">" or "<"
-    local lastParsedNoteEvent = nil -- Track previous note for broken rhythm adjustments
+    local brokenRhythm = nil
+    local lastParsedNoteEvent = nil
+
+    local curBPM = voices[currentVoice].bpm
+    local curKey = voices[currentVoice].key
+    local curBase = voices[currentVoice].baseNoteLength
+    local curTempo = voices[currentVoice].tempoNoteLength
+
+    local accMemory = {}
+    local function resetMeasureMemory(v) accMemory[v] = {} end
+    local function setAccidental(mem, v, octave, letter, seq)
+        mem[v] = mem[v] or {}; mem[v][octave] = mem[v][octave] or {}; mem[v][octave][letter] = seq
+    end
+    local function getAccidental(mem, v, octave, letter)
+        return mem[v] and mem[v][octave] and mem[v][octave][letter] or nil
+    end
+    resetMeasureMemory(currentVoice)
 
     for line in abc:gmatch("[^\r\n]+") do
-
         local header, value = line:match("^(%a):%s*(.+)$")
 
         if header == "T" or header == "X" or header == "%" then
-            -- Ignore
 
         elseif header == "V" then
             currentVoice = value
+            accMemory[currentVoice] = accMemory[currentVoice] or {}
             voices[currentVoice] = voices[currentVoice] or {
                 events = {},
-                bpm = 180,
-                key = "C",
-                baseNoteLength = "1/8",
-                defaultTicks = Bard.getTicksFromLength("1/8"),
+                bpm = curBPM,
+                key = curKey,
+                baseNoteLength = curBase,
+                defaultTicks = Bard.getTicksFromLength(curBase),
+                tempoNoteLength = curTempo,
             }
             currentTicks[currentVoice] = currentTicks[currentVoice] or 0
 
         elseif header == "K" then
             voices[currentVoice].key = value
 
+            curKey = value
         elseif header == "Q" then
             local noteLength, bpm = value:match("(%d+%s*/%s*%d+)%s*=%s*(%d+)")
             if bpm then
@@ -316,14 +318,18 @@ function Bard.parseABC(abc)
 
             if noteLength then
                 voices[currentVoice].tempoNoteLength = noteLength
+                curTempo = noteLength
             else
                 voices[currentVoice].tempoNoteLength = "1/4" -- Assume 1/4 note if not specified
+                curTempo = "1/4"
             end
 
+            curBPM = bpm
         elseif header == "L" then
             voices[currentVoice].baseNoteLength = value
             voices[currentVoice].defaultTicks = Bard.getTicksFromLength(value)
 
+            curBase = value
         elseif header == "M" then
             voices[currentVoice].meter = value -- Currently unused for timing
 
@@ -353,8 +359,8 @@ function Bard.parseABC(abc)
                     repeatBuffer = {}
 
                 elseif token:match("^|+$") or token:match("^|%]+$") then
-                    --ignore
-
+                    resetMeasureMemory(currentVoice)
+                    
                 elseif token:match("^%[1$") or token:match("^%[2$") or token:match("^%[3$") then
                     currentEnding = tonumber(token:sub(2))
                     skipEnding = (currentEnding ~= 1)
@@ -377,9 +383,21 @@ function Bard.parseABC(abc)
                             table.insert(repeatBuffer, token)
                         end
 
-                        local isChord = token:match("^%b[]$") ~= nil
+                        local isChord = token:match("^%b[]") ~= nil
                         local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
                         if #parsedNotes > 0 then
+                            for _, n in ipairs(parsedNotes) do
+                                if not n.rest then
+                                    local accSeq = n.base:match("^[_=^]+")
+                                    local letter = n.base:sub(-1)
+                                    if n.explicitAccidental and accSeq then
+                                        setAccidental(accMemory, currentVoice, n.octave, letter, accSeq)
+                                    else
+                                        local memAcc = getAccidental(accMemory, currentVoice, n.octave, letter)
+                                        if memAcc then n.base = memAcc .. letter end
+                                    end
+                                end
+                            end
 
                             local elapsedMs = Bard.convertMusicTicksToMilliseconds(
                                     currentTicks[currentVoice],
