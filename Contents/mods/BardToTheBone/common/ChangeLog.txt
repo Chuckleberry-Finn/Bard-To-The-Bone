@@ -42,3 +42,12 @@ Improved UI scaling with different resolutions.
 - Playing instruments has a higher calorie burn.
 - Added a new song to the library.
 [ ------ ]
+
+[ 10/24/25 ]
+- Fixed flat/sharp mapping to align with sound files (Db3.ogg, Cn4.ogg, etc.).
+- Added per-voice, per-measure accidental memory for proper ABC interpretation.
+- Voices now inherit tempo, key, and note length defaults.
+- Enabled [ceg]2 chord duration notation.
+- Adjusted accidental persistence logic for accuracy and stability.
+- Minor timing and playback consistency improvements.
+[ ------ ]
