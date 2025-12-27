@@ -19,5 +19,5 @@ description=Share the link in a comment below if it is urgent.
 description=
 description=
 description=[h3]Copyright 2025 Chuckleberry Finn. This item is not authorized for posting on Steam, except under the Steam account named Chuckleberry Finn.[/h3]
-tags=Build 41;Build 42;Misc;Silly/Fun
+tags=Build 41;Build 42;Misc;Multiplayer;Silly/Fun
 visibility=public
