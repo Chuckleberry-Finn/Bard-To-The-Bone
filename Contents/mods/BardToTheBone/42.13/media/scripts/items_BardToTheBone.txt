@@ -1,0 +1,15 @@
+module Base
+{
+	item Xylophone
+	{
+		DisplayCategory = Instrument,
+		ItemType = base:normal,
+		Weight = 0.15,
+		Icon = Xylophone,
+		StaticModel = Xylophone_Ground,
+		WorldStaticModel = Xylophone_Ground,
+		Tags = base:hasmetal,
+		MetalValue = 10.0,
+
+	}
+}

@@ -51,3 +51,8 @@ Improved UI scaling with different resolutions.
 - Adjusted accidental persistence logic for accuracy and stability.
 - Minor timing and playback consistency improvements.
 [ ------ ]
+
+[ 12/27/25 ]
+- Added B42.13 Support utilizing new item script API, item tag API, and various other API changes/tweaks.
+- As part of B42.13 Support, added new translation file (in common).
+[ ------ ]
