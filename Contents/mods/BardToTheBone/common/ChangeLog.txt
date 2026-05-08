@@ -56,3 +56,8 @@ Improved UI scaling with different resolutions.
 - Added B42.13 Support utilizing new item script API, item tag API, and various other API changes/tweaks.
 - As part of B42.13 Support, added new translation file (in common).
 [ ------ ]
+
+[ 5/8/26 ]
+- Reworked the parser and playback systems to better handle midi-to-abc files.
+- Updated minimum version to B42.16+
+[ ------ ]
