@@ -26,10 +26,10 @@ function bardNetworkHandler.receiveUpdate(data)--x, y, z
     local dist = IsoUtils.DistanceTo(x, y, z, lx, ly, lz)
 
     if dist <= 30 then
-        local bodyDamage = listener:getBodyDamage()
         --listener:getStats():setAnger(listener:getStats():getAnger()+0.1)
-        bodyDamage:setBoredomLevel(math.max(0,bodyDamage:getBoredomLevel()-0.5))
-        bodyDamage:setUnhappynessLevel(math.max(0,bodyDamage:getUnhappynessLevel()-0.5))
+        local stats = listener:getStats()
+        stats:set(CharacterStat.BOREDOM, stats:get(CharacterStat.BOREDOM) - 0.5 )
+        stats:set(CharacterStat.UNHAPPINESS, stats:get(CharacterStat.UNHAPPINESS) - 0.5 )
     end
 end
 

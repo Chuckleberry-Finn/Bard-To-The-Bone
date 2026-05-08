@@ -783,7 +783,7 @@ end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    ["GlassBottle"] = { decay = 350, soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
+    [ItemTag.GLASS_BOTTLE] = { decay = 350, soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
 }
 
 Bard.populatedFromTagData = false
@@ -805,7 +805,7 @@ function Bard.populateTagData()
 end
 
 
----@param instrument InventoryItem
+---@param instrument InventoryItem|IsoObject
 function Bard.getInstrumentData(instrument)
     Bard.populateTagData()
     Bard.populateMapObjectData()
@@ -814,8 +814,9 @@ function Bard.getInstrumentData(instrument)
     local data
 
     if instanceof(instrument, "IsoObject") then
+
         local properties = instrument:getProperties()
-        local name = properties and properties:Is("CustomName") and properties:Val("CustomName")
+        local name = properties and properties:has("CustomName") and properties:get("CustomName")
         if name then
             data = Bard.instrumentData[name]
         end
