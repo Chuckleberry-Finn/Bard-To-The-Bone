@@ -212,8 +212,8 @@ function Bard.preprocessABC(abc)
             end
         end)
 
-        --preprocess grace notes
-        line = line:gsub("{([_=^]?[A-Ga-g][',]*)}", "gr:%1")
+        --remove grace notes
+        line = line:gsub("{[^}]*}", "")
 
         -- Remove decorations
         line = line:gsub("!.-!", "")
@@ -264,6 +264,9 @@ function Bard.parseABC(abc)
     local inRepeat = false
     local currentEnding = nil
     local skipEnding = false
+    local repeatPass = 1
+    local insideVoltaEnding = false
+    local fromStartBuffer = {}
     local tupletNotesRemaining = 0
     local tupletMultiplier = 1.0
 
@@ -350,26 +353,36 @@ function Bard.parseABC(abc)
                     recordingRepeat = true
                     repeatBuffer = {}
                     inRepeat = true
+                    repeatPass = 1
+                    insideVoltaEnding = false
 
                 elseif token == ":|" then
                     recordingRepeat = false
-                    for i = #repeatBuffer, 1, -1 do
-                        table.insert(allTokens, tokenIndex + 1, repeatBuffer[i])
+                    repeatPass = repeatPass + 1
+                    skipEnding = false
+                    insideVoltaEnding = false
+                    local bufToUse = (#repeatBuffer > 0) and repeatBuffer or fromStartBuffer
+                    for i = #bufToUse, 1, -1 do
+                        table.insert(allTokens, tokenIndex + 1, bufToUse[i])
                     end
                     repeatBuffer = {}
 
                 elseif token:match("^|+$") or token:match("^|%]+$") then
                     resetMeasureMemory(currentVoice)
+                    skipEnding = false
+                    insideVoltaEnding = false
                     
                 elseif token:match("^%[1$") or token:match("^%[2$") or token:match("^%[3$") then
                     currentEnding = tonumber(token:sub(2))
-                    skipEnding = (currentEnding ~= 1)
+                    skipEnding = (currentEnding ~= repeatPass)
+                    insideVoltaEnding = true
 
                 elseif token:match("^%(%d") then
                     local n = tonumber(token:match("^%((%d)"))
                     if n and n > 0 then
                         tupletNotesRemaining = n
-                        tupletMultiplier = (n == 3) and (2/3) or (1.0)
+                        local tupletRatios = { [2]=3/2, [3]=2/3, [4]=3/4, [5]=4/5, [6]=2/3, [7]=4/7, [9]=2/3 }
+                        tupletMultiplier = tupletRatios[n] or 1.0
                     end
 
                 else
@@ -379,9 +392,10 @@ function Bard.parseABC(abc)
                     end
 
                     if not skipEnding and token ~= "" then
-                        if recordingRepeat then
+                        if recordingRepeat and not insideVoltaEnding then
                             table.insert(repeatBuffer, token)
                         end
+                        table.insert(fromStartBuffer, token)
 
                         local isChord = token:match("^%b[]") ~= nil
                         local parsedNotes = Bard.parseNoteToken(token, voices[currentVoice].defaultTicks, voices[currentVoice].key)
@@ -399,16 +413,6 @@ function Bard.parseABC(abc)
                                 end
                             end
 
-                            local elapsedMs = Bard.convertMusicTicksToMilliseconds(
-                                    currentTicks[currentVoice],
-                                    voices[currentVoice].bpm or 120,
-                                    voices[currentVoice].baseNoteLength or "1/8",
-                                    voices[currentVoice].tempoNoteLength or "1/4"
-                            )
-
-                            local timeOffsetMs = math.floor(elapsedMs)
-
-                            -- Apply tuplet scaling if active
                             for _, note in ipairs(parsedNotes) do
                                 if tupletNotesRemaining > 0 then
                                     note.ticks = math.max(1, math.floor(note.ticks * tupletMultiplier))
@@ -419,21 +423,38 @@ function Bard.parseABC(abc)
                                 end
                             end
 
-                            -- Apply broken rhythm adjustments
                             if brokenRhythm and lastParsedNoteEvent then
                                 local prevEvent = lastParsedNoteEvent
-                                local currentEvent = parsedNotes[1]
+                                local origPrevTicks = prevEvent.ticks
 
                                 if brokenRhythm == ">" then
                                     prevEvent.ticks = math.floor(prevEvent.ticks * 3 / 2)
-                                    currentEvent.ticks = math.floor(currentEvent.ticks * 1 / 2)
+                                    parsedNotes[1].ticks = math.floor(parsedNotes[1].ticks * 1 / 2)
                                 elseif brokenRhythm == "<" then
                                     prevEvent.ticks = math.floor(prevEvent.ticks * 1 / 2)
-                                    currentEvent.ticks = math.floor(currentEvent.ticks * 3 / 2)
+                                    parsedNotes[1].ticks = math.floor(parsedNotes[1].ticks * 3 / 2)
                                 end
 
-                                brokenRhythm = nil -- Clear after applying
+                                prevEvent.durationMs = Bard.convertMusicTicksToMilliseconds(
+                                    prevEvent.ticks,
+                                    voices[currentVoice].bpm or 120,
+                                    voices[currentVoice].baseNoteLength or "1/8",
+                                    voices[currentVoice].tempoNoteLength or "1/4"
+                                )
+
+                                currentTicks[currentVoice] = currentTicks[currentVoice] + (prevEvent.ticks - origPrevTicks)
+
+                                brokenRhythm = nil
                             end
+
+                            local elapsedMs = Bard.convertMusicTicksToMilliseconds(
+                                    currentTicks[currentVoice],
+                                    voices[currentVoice].bpm or 120,
+                                    voices[currentVoice].baseNoteLength or "1/8",
+                                    voices[currentVoice].tempoNoteLength or "1/4"
+                            )
+
+                            local timeOffsetMs = math.floor(elapsedMs)
 
                             local chordStaggerMs = 4
 
@@ -498,19 +519,21 @@ end
 
 
 function Bard.completeAction(player)
+    local id = player:getUsername()
+    if Bard.players[id] == false then return end    -- guard against re-entry
+
+    local bard = Bard.players[id]
+    if bard and bard.playingNotes then
+        for _, note in ipairs(bard.playingNotes) do
+            player:getEmitter():stopSound(note.id)
+        end
+    end
+    Bard.players[id] = false
+
     local actionQueue = ISTimedActionQueue.getTimedActionQueue(player)
     local currentAction = actionQueue.queue[1]
     if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
         currentAction.action:forceStop()
-    end
-    local id = player:getUsername()
-
-    local bard = Bard.players[id]
-    if bard then
-        for n, note in ipairs(bard.playingNotes) do
-            local noteID = note.id
-            player:getEmitter():stopSound(noteID)
-        end
     end
 
     Bard.players[id] = nil
@@ -570,21 +593,29 @@ function Bard.getSoundName(n)
 end
 
 
+Bard.soundCache = {}
 function Bard.noteToSound(note, instrumentID)
     if note.rest then return nil end
-
-    -- Direct match
     local sound = Bard.getSoundName(note)
+    local cacheKey = (instrumentID or "") .. "_" .. (sound or "?")
+    if Bard.soundCache[cacheKey] ~= nil then return Bard.soundCache[cacheKey] or nil end
 
     if sound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
+        Bard.soundCache[cacheKey] = sound
         return sound
     end
 
     -- Search nearby notes (±12 semitones)
     local semitoneOffsets = {}
+    local isFlat = sound ~= nil and sound:sub(2, 2) == "b"
     for i = 1, 12 do
-        table.insert(semitoneOffsets, i)
-        table.insert(semitoneOffsets, -i)
+        if isFlat then
+            table.insert(semitoneOffsets, -i)
+            table.insert(semitoneOffsets, i)
+        else
+            table.insert(semitoneOffsets, i)
+            table.insert(semitoneOffsets, -i)
+        end
     end
 
     for _, offset in ipairs(semitoneOffsets) do
@@ -595,11 +626,13 @@ function Bard.noteToSound(note, instrumentID)
             newNote = Bard.midiToNote(midi, note.base)
             local altSound = Bard.getSoundName(newNote)
             if altSound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. altSound .. ".ogg") then
+                Bard.soundCache[cacheKey] = altSound
                 return altSound
             end
         end
     end
 
+    Bard.soundCache[cacheKey] = false
     return nil
 end
 
@@ -612,8 +645,7 @@ function Bard.playLoadedSongs(player)
     if not bard then return end
 
     local music = bard.music
-    local instrumentData = Bard.instrumentData[bard.instrumentID]
-    local decay = instrumentData and instrumentData.decay or 200
+    local decay = bard.decay or 200
     local instrumentID = bard.instrumentID .. (bard.style or "")
 
     -- Initialize start and elapsed tracking if not already

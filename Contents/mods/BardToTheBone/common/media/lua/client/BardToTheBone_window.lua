@@ -116,6 +116,9 @@ end
 function BardUIWindow:close()
     self:setVisible(false)
     self:removeFromUIManager()
+    if BardUIWindow.instance == self then
+        BardUIWindow.instance = nil
+    end
 end
 
 
@@ -221,6 +224,7 @@ end
 function BardUIWindow:onRemoveButton()
     if not self.songList.selected then return end
     self.songList:removeItemByIndex(self.songList.selected)
+    self.abcEntry:setText("")
     self:loadSongAtIndex(self.songList.selected)
     self:setSaveButtonStatus(true)
 end

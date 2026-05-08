@@ -16,35 +16,38 @@ end
 function BardToTheBonePlayMusic:start()
     --self:setOverrideHandModels(self.item, nil)
     local id = self.character:getUsername()
-    Bard.players[id] = nil
     Bard.players[id] = {}
     Bard.players[id].music = self.music
     Bard.players[id].volume = self.volume
     Bard.players[id].duration = self.maxTime
+
     local instrumentData = Bard.getInstrumentData(self.item)
+    if not instrumentData then
+        Bard.players[id] = nil
+        ISTimedActionQueue.getTimedActionQueue(self.character):resetQueue()
+        return
+    end
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
+    Bard.players[id].decay = instrumentData.decay
 
-    if instrumentData then
+    if instrumentData.styles then
+        local style = self.style or instrumentData.styles[1]
+        Bard.players[id].style = style
+    end
 
-        if instrumentData.styles then
-            local style = self.style or instrumentData.styles[1]
-            Bard.players[id].style = style
-        end
+    self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
 
-        self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
+    if instrumentData.anim then
+        self:setActionAnim("BttB_"..instrumentData.anim)
+        local defaultVoiceId = Bard.next(Bard.players[id].music)
+        local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
+        self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
+    end
 
-        if instrumentData.anim then
-            self:setActionAnim("BttB_"..instrumentData.anim)
-            local defaultVoiceId = Bard.next(Bard.players[id].music)
-            local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
-            self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
-        end
-
-        self.character:clearVariable("BttB_Special")
-        if instrumentData.special then
-            Bard.instrumentSpecials[instrumentData.special](self.character)
-        end
+    self.character:clearVariable("BttB_Special")
+    if instrumentData.special then
+        Bard.instrumentSpecials[instrumentData.special](self.character)
     end
 end
 
@@ -62,14 +65,11 @@ function BardToTheBonePlayMusic:stop()
     ISBaseTimedAction.stop(self)
 end
 
-
 function BardToTheBonePlayMusic:update()
-    if netWorkHandler then
-        self.ticks = self.ticks+1
-        if self.ticks > 10 then
-            self.ticks = 0
-            netWorkHandler.sendUpdate(self.character)
-        end
+    self.ticks = self.ticks+1
+    if self.ticks > 10 then
+        self.ticks = 0
+        netWorkHandler.sendUpdate(self.character)
     end
 end
 
