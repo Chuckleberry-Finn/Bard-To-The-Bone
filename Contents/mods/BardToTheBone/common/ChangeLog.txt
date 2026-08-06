@@ -65,3 +65,8 @@ Improved UI scaling with different resolutions.
 [ 6/5/26 ]
 - Fixed 'error' regarding failed requires (could have been ignored safely but showed up as an error causing reports/concerns)
 [ ------ ]
+
+[ 8/6/26 ]
+- Tweaked playback for (hopefully) better MIDItoABC files.
+- Increased volume of notes by 33%. (B42 made them sound quieter?)
+[ ------ ]
