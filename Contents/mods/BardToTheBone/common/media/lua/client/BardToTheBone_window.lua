@@ -76,7 +76,7 @@ function BardUIWindow:initialise()
     self.playRowBaseX = self.width * 0.6875
     self.playRowBaseWidth = (self.width*0.225)+(styles and 0 or buttonHeight)
     self.playRowButtonHeight = buttonHeight
-    self.playRowGap = self.padding/2
+    self.buttonOverlap = self.width * 0.0025
 
     self.voiceButton = ISButton:new(self.playRowBaseX, buttonY, buttonHeight, buttonHeight, "v", self, BardUIWindow.onVoice)
     self.voiceButton:initialise()
@@ -90,6 +90,11 @@ function BardUIWindow:initialise()
     self.playButton:initialise()
     self.playButton:instantiate()
     self:addChild(self.playButton)
+
+    self.playButtonDefaultColor = self.playButton.backgroundColor
+    self.playButtonDefaultColorMouseOver = self.playButton.backgroundColorMouseOver
+    self.playButtonStopColor = { r = 0.45, g = 0.05, b = 0.05, a = 1 }
+    self.playButtonStopColorMouseOver = { r = 0.6, g = 0.08, b = 0.08, a = 1 }
 
     self.styleButton = ISButton:new(self.width * 0.91 , buttonY, buttonHeight, buttonHeight, "*", self, BardUIWindow.onStyle)
     self.styleButton:initialise()
@@ -126,6 +131,7 @@ function BardUIWindow:initialise()
 
     self:onLoadAll()
     self:refreshVoiceButton()
+    self:refreshPlayButtonState()
 end
 
 
@@ -285,15 +291,25 @@ function BardUIWindow:onPlay()
 
     local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
     local currentAction = actionQueue.queue[1]
-    if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
+    local isBardAction = currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action
+
+    if isBardAction then
+        local sameInstrument = (currentAction.action.item == self.instrument)
         currentAction.action:forceStop()
-        return
+        if sameInstrument then
+            self:refreshPlayButtonState()
+            return
+        end
     end
 
     local notes = self.abcEntry:getText()
-    if (not notes) then return end
+    if (not notes) then
+        self:refreshPlayButtonState()
+        return
+    end
 
     ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style, self.volume, self.voice))
+    self:refreshPlayButtonState()
 end
 
 
@@ -348,10 +364,26 @@ function BardUIWindow:onVoice()
 end
 
 
+function BardUIWindow:layoutPlayRow()
+    local styles = self.styles ~= nil
+    local hasVoices = #self.voices > 1
+
+    local baseWidth = (self.width * 0.225) + (styles and 0 or self.playRowButtonHeight)
+    local voiceOffset = hasVoices and (self.playRowButtonHeight - self.buttonOverlap) or 0
+
+    self.voiceButton:setVisible(hasVoices)
+    self.voiceButton:setX(self.playRowBaseX)
+
+    self.playButton:setX(self.playRowBaseX + voiceOffset)
+    self.playButton:setWidth(baseWidth - voiceOffset)
+
+    self.styleButton:setVisible(styles)
+end
+
+
 function BardUIWindow:refreshVoiceButton()
     local text = self.abcEntry and self.abcEntry:getText() or ""
     self.voices = Bard.getVoiceOrder(text)
-    local hasVoices = #self.voices > 1
 
     -- Drop the selection if it no longer exists in the (possibly edited) tune
     if self.voice and self.voice ~= "All" then
@@ -362,13 +394,7 @@ function BardUIWindow:refreshVoiceButton()
         if not stillValid then self.voice = nil end
     end
 
-    local offset = hasVoices and (self.playRowButtonHeight + self.playRowGap) or 0
-
-    self.voiceButton:setVisible(hasVoices)
-    self.voiceButton:setX(self.playRowBaseX)
-
-    self.playButton:setX(self.playRowBaseX + offset)
-    self.playButton:setWidth(self.playRowBaseWidth - offset)
+    self:layoutPlayRow()
 
     local id = self.character:getUsername()
     if Bard.players[id] then Bard.players[id].selectedVoice = self.voice end
@@ -381,15 +407,84 @@ function BardUIWindow:update()
     if (self.isItem and (self.character:getPrimaryHandItem() ~= self.instrument))
             or (not self.isItem and (self.instrument:getSquare():DistToProper(self.character) > 1.5)) then
         BardUIWindow.instance:close()
+        return
+    end
+
+    self:refreshPlayButtonState()
+end
+
+
+function BardUIWindow:refreshPlayButtonState()
+    local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
+    local currentAction = actionQueue.queue[1]
+    local isBardAction = currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action
+    local isPlayingThis = isBardAction and (currentAction.action.item == self.instrument)
+
+    if isPlayingThis then
+        self.playButton.title = "Stop"
+        self.playButton.backgroundColor = self.playButtonStopColor
+        self.playButton.backgroundColorMouseOver = self.playButtonStopColorMouseOver
+    else
+        self.playButton.title = "Play"
+        self.playButton.backgroundColor = self.playButtonDefaultColor
+        self.playButton.backgroundColorMouseOver = self.playButtonDefaultColorMouseOver
     end
 end
 
 
 function BardUIWindow.open(character, instrument)
+    if BardUIWindow.instance then
+        local wasPlaying = BardUIWindow.instance:isPerformingAnyInstrument()
+        BardUIWindow.instance:switchInstrument(character, instrument)
+        if wasPlaying then
+            BardUIWindow.instance:onPlay()
+        end
+        return BardUIWindow.instance
+    end
+
     local ui = BardUIWindow:new(character, instrument)
     ui:initialise()
     ui:addToUIManager()
     return ui
+end
+
+
+function BardUIWindow:isPerformingAnyInstrument()
+    local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
+    local currentAction = actionQueue.queue[1]
+    return (currentAction ~= nil) and (currentAction.Type == "BardToTheBonePlayMusic") and (currentAction.action ~= nil)
+end
+
+
+---@param character IsoGameCharacter
+---@param instrument InventoryItem|IsoObject
+function BardUIWindow:switchInstrument(character, instrument)
+    self.character = character
+    self.instrument = instrument
+    self.isItem = instanceof(instrument, "InventoryItem")
+    self.title = "Bard to the Bone - " .. (self.isItem and instrument:getDisplayName() or instrument:getTileName())
+
+    if not self.isItem then
+        self.character:faceThisObject(instrument)
+    end
+
+    local data = Bard.getInstrumentData(instrument)
+    if data and data.styles then
+        self.styles = data.styles
+        self.style = data.styles[1]
+    else
+        self.styles = nil
+        self.style = nil
+    end
+
+    self:layoutPlayRow()
+
+    local id = self.character:getUsername()
+    if Bard.players[id] then
+        Bard.players[id].selectedVoice = self.voice
+    end
+
+    self:refreshPlayButtonState()
 end
 
 
