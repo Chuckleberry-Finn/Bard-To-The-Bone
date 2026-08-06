@@ -21,14 +21,78 @@ for _, note in ipairs(base_notes) do
     Bard.accidental_map["_" .. note] = note .. "b"
 end
 
-Bard.key_accidentals = {
-    ["C"] = {}, ["Cmaj"] = {},
-    ["G"] = {F = "^"}, ["D"] = {F = "^", C = "^"}, ["A"] = {F = "^", C = "^", G = "^"},
-    ["E"] = {F = "^", C = "^", G = "^", D = "^"}, ["B"] = {F = "^", C = "^", G = "^", D = "^", A = "^"},
-    ["F"] = {B = "_"}, ["Bb"] = {B = "_", E = "_"}, ["Eb"] = {B = "_", E = "_", A = "_"},
-    ["Ab"] = {B = "_", E = "_", A = "_", D = "_"},
-    ["Em"] = {F = "^"}, ["Am"] = {}, ["Dm"] = {B = "_"}, ["Gm"] = {B = "_", E = "_"}, ["Cm"] = {B = "_", E = "_", A = "_"}
+
+local sharpOrder = {"F","C","G","D","A","E","B"}
+local flatOrder  = {"B","E","A","D","G","C","F"}
+local letterFifths = { C = 0, D = 2, E = 4, F = -1, G = 1, A = 3, B = 5 }
+local modeFifthsOffset = {
+    ion = 0, maj = 0,
+    dor = -2,
+    phr = -4,
+    lyd = 1,
+    mix = -1,
+    aeo = -3, min = -3, m = -3,
+    loc = -5,
 }
+
+
+local function buildAccidentalsFromFifths(n)
+    if n > 7 then n = 7 elseif n < -7 then n = -7 end
+    local acc = {}
+    if n > 0 then
+        for i = 1, n do acc[sharpOrder[i]] = "^" end
+    elseif n < 0 then
+        for i = 1, -n do acc[flatOrder[i]] = "_" end
+    end
+    return acc
+end
+
+
+Bard.keyAccidentalCache = {}
+
+---modifiers, e.g. "C clef=F4" or "D exp ^c") into an accidental map.
+---@param rawKey string
+function Bard.getKeyAccidentals(rawKey)
+    rawKey = rawKey or "C"
+
+    local keyToken = rawKey:match("^%s*(%S*)") or "C"
+    if keyToken == "" then keyToken = "C" end
+
+    local cached = Bard.keyAccidentalCache[keyToken]
+    if cached then return cached end
+
+    local result
+    if keyToken:lower() == "none" or keyToken:lower() == "hp" or keyToken:lower() == "hp" then
+        result = {}
+    else
+        local letter, accidental, mode = keyToken:match("^([A-Ga-g])([#b]?)(.*)$")
+        if not letter then
+            result = {}
+        else
+            letter = letter:upper()
+            local accCount = 0
+            if accidental == "#" then accCount = 1
+            elseif accidental == "b" then accCount = -1 end
+
+            local fifths = letterFifths[letter] + 7 * accCount
+
+            local offset = 0
+            mode = (mode or ""):lower()
+            if mode == "m" then
+                offset = modeFifthsOffset.m
+            elseif mode ~= "" then
+                offset = modeFifthsOffset[mode:sub(1, 3)] or 0
+            end
+
+            result = buildAccidentalsFromFifths(fifths + offset)
+        end
+    end
+
+    Bard.keyAccidentalCache[keyToken] = result
+    return result
+end
+
+Bard.key_accidentals = setmetatable({}, { __index = function(_, k) return Bard.getKeyAccidentals(k) end })
 
 function Bard.getTicksFromLength(length)
     local baseTicks = 120
@@ -66,7 +130,7 @@ function Bard.applyKeyAccidental(note, key)
     local base = note.base:sub(-1)
     local acc = note.base:sub(1, 1)
     if acc ~= "^" and acc ~= "_" and acc ~= "=" then
-        local implied = Bard.key_accidentals[key or "C"]
+        local implied = Bard.getKeyAccidentals(key)
         if implied and implied[base] then
             note.base = implied[base] .. base
         end
@@ -153,23 +217,17 @@ function Bard.preprocessABC(abc)
         abc = abc:gsub("M:%s*C|%s*", "M:2/2")
         abc = abc:gsub("M:%s*C%s*", "M:4/4")
     end
-    -- Derive default L: based on M: if missing
     if not abc:find("L:") then
-        local meter = abc:match("M:(%d+)%s*/%s*(%d+)")
-        if meter then
-            local top, bottom = meter:match("(%d+)%s*/%s*(%d+)")
-            top = tonumber(top)
-            bottom = tonumber(bottom)
-
-            if bottom == 2 and (top == 2 or top == 3) then
-                -- M:2/2 or M:3/2 → Cut time → L:1/4
-                abc = "L:1/4\n" .. abc
+        local top, bottom = abc:match("M:(%d+)%s*/%s*(%d+)")
+        if top and bottom then
+            top, bottom = tonumber(top), tonumber(bottom)
+            if (top / bottom) < 0.75 then
+                abc = "L:1/16\n" .. abc
             else
-                -- Otherwise, L:1/8
                 abc = "L:1/8\n" .. abc
             end
         else
-            -- No readable M: found, fallback
+            -- No readable M: found, fallback per spec
             abc = "L:1/8\n" .. abc
         end
     end
@@ -192,15 +250,34 @@ function Bard.preprocessABC(abc)
     local cleaned = {}
 
     for _, line in ipairs(lines) do
-        -- Light cleanup
-        line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") -- Remove decorations but keep notes
+        local isHeaderLine = line:match("^%a:") ~= nil
+
+        line = line:gsub('"[^"]*"', "")
+
+        if not isHeaderLine then
+            line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") -- Remove decorations but keep notes
+        end
         line = line:gsub("(%b[])%s*", "%1 ")   -- Add space after [chords]
-        if not line:match("^%a:") then
+        if not isHeaderLine then
             line = line:gsub("([_=^]?[A-Ga-g][',]*%d*/?%d*)%s*", "%1 ") -- Add space after single notes
         end
         line = line:gsub("(z%d*/?%d*)%s*", "%1 ") -- Add space after rests
         line = line:gsub("%%[^\n]*", "")   -- Remove comments
-        line = line:gsub("%b()", "")        -- Remove slurs
+
+        local tupletPlaceholders = {}
+        line = line:gsub("%(%d[:%d]*", function(m)
+            table.insert(tupletPlaceholders, m)
+            return "\1" .. #tupletPlaceholders .. "\1"
+        end)
+
+        line = line:gsub("[()]", "")
+
+        -- Restore protected tuplet markers
+        if #tupletPlaceholders > 0 then
+            line = line:gsub("\1(%d+)\1", function(idx)
+                return tupletPlaceholders[tonumber(idx)]
+            end)
+        end
 
         -- Remove ALL spaces inside true chords (skip [V:], [|] cases)
         line = line:gsub("%[(.-)%]", function(inner)
@@ -365,6 +442,18 @@ function Bard.parseABC(abc)
                     for i = #bufToUse, 1, -1 do
                         table.insert(allTokens, tokenIndex + 1, bufToUse[i])
                     end
+                    repeatBuffer = {}
+
+                elseif token == ":|:" then
+                    recordingRepeat = false
+                    repeatPass = repeatPass + 1
+                    skipEnding = false
+                    insideVoltaEnding = false
+                    local bufToUse = (#repeatBuffer > 0) and repeatBuffer or fromStartBuffer
+                    for i = #bufToUse, 1, -1 do
+                        table.insert(allTokens, tokenIndex + 1, bufToUse[i])
+                    end
+                    table.insert(allTokens, tokenIndex + 1 + #bufToUse, "|:")
                     repeatBuffer = {}
 
                 elseif token:match("^|+$") or token:match("^|%]+$") then
