@@ -69,4 +69,7 @@ Improved UI scaling with different resolutions.
 [ 8/6/26 ]
 - Tweaked playback for (hopefully) better MIDItoABC files.
 - Increased volume of notes by 33%. (B42 made them sound quieter?)
+- Added multi-instrument (voice) support for tracks with specified instruments.
+  This means people can select which instrument they're playing from the song.
+- Added support for the Drum kit. :)
 [ ------ ]

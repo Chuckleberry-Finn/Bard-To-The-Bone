@@ -1892,6 +1892,34 @@ module BardToTheBone {
         category = BardInstrument_bottle, is3D = true,
         clip { file = media/sound/instruments/bottle/Gn9.ogg, } }
 
+    sound drumkit_AcousticSnare {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/AcousticSnare.ogg, } }
+
+    sound drumkit_BassDrum1 {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/BassDrum1.ogg, } }
+
+    sound drumkit_CrashCymbal1 {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/CrashCymbal1.ogg, } }
+
+    sound drumkit_HiMidTom {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/HiMidTom.ogg, } }
+
+    sound drumkit_LowFloorTom {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/LowFloorTom.ogg, } }
+
+    sound drumkit_LowMidTom {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/LowMidTom.ogg, } }
+
+    sound drumkit_RideCymbal1 {
+        category = BardInstrument_drumkit, is3D = true,
+        clip { file = media/sound/instruments/drumkit/RideCymbal1.ogg, } }
+
     sound electric_bass_Ab0 {
         category = BardInstrument_electric_bass, is3D = true,
         clip { file = media/sound/instruments/electric_bass/Ab0.ogg, } }

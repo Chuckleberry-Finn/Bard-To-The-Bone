@@ -50,6 +50,7 @@ end
 
 Bard.keyAccidentalCache = {}
 
+---Resolves a raw K: field value (which may include trailing clef/other
 ---modifiers, e.g. "C clef=F4" or "D exp ^c") into an accidental map.
 ---@param rawKey string
 function Bard.getKeyAccidentals(rawKey)
@@ -92,6 +93,7 @@ function Bard.getKeyAccidentals(rawKey)
     return result
 end
 
+-- Kept for backwards compatibility with anything referencing the old table name directly; now backed by the algorithmic resolver above.
 Bard.key_accidentals = setmetatable({}, { __index = function(_, k) return Bard.getKeyAccidentals(k) end })
 
 function Bard.getTicksFromLength(length)
@@ -217,6 +219,10 @@ function Bard.preprocessABC(abc)
         abc = abc:gsub("M:%s*C|%s*", "M:2/2")
         abc = abc:gsub("M:%s*C%s*", "M:4/4")
     end
+    -- Derive default L: based on M:, per the ABC 2.1 spec:
+    -- if the meter ratio (top/bottom) is less than 0.75, default L is 1/16,
+    -- otherwise it's 1/8. (There is no special "cut time -> 1/4" rule; the
+    -- previous logic got 2/2, 3/2, 2/4, 3/8, 5/16, etc. wrong.)
     if not abc:find("L:") then
         local top, bottom = abc:match("M:(%d+)%s*/%s*(%d+)")
         if top and bottom then
@@ -252,7 +258,10 @@ function Bard.preprocessABC(abc)
     for _, line in ipairs(lines) do
         local isHeaderLine = line:match("^%a:") ~= nil
 
-        line = line:gsub('"[^"]*"', "")
+        -- Strip quoted chord-symbol / annotation text (e.g. "Cmaj7", "^Fine")
+        if not isHeaderLine then
+            line = line:gsub('"[^"]*"', "")
+        end
 
         if not isHeaderLine then
             line = line:gsub("([vu~.HLMOPTS])([_=^]?[A-Ga-g])", "%2") -- Remove decorations but keep notes
@@ -322,6 +331,7 @@ function Bard.parseABC(abc)
     abc = Bard.preprocessABC(abc)
 
     local voices = {}
+    local voiceOrder = {}
     local currentVoice = "default"
     voices[currentVoice] = {
         events = {},
@@ -330,7 +340,9 @@ function Bard.parseABC(abc)
         baseNoteLength = "1/8",
         defaultTicks = Bard.getTicksFromLength("1/8"),
         tempoNoteLength = "1/4",
+        name = "default",
     }
+    table.insert(voiceOrder, currentVoice)
 
     local currentTicks = {}
     currentTicks[currentVoice] = 0
@@ -371,16 +383,25 @@ function Bard.parseABC(abc)
         if header == "T" or header == "X" or header == "%" then
 
         elseif header == "V" then
-            currentVoice = value
+            local voiceId = value:match("^%s*(%S+)") or value
+            local displayName = value:match('name%s*=%s*"([^"]*)"')
+                    or value:match('nm%s*=%s*"([^"]*)"')
+                    or voiceId
+
+            currentVoice = voiceId
             accMemory[currentVoice] = accMemory[currentVoice] or {}
-            voices[currentVoice] = voices[currentVoice] or {
-                events = {},
-                bpm = curBPM,
-                key = curKey,
-                baseNoteLength = curBase,
-                defaultTicks = Bard.getTicksFromLength(curBase),
-                tempoNoteLength = curTempo,
-            }
+            if not voices[currentVoice] then
+                voices[currentVoice] = {
+                    events = {},
+                    bpm = curBPM,
+                    key = curKey,
+                    baseNoteLength = curBase,
+                    defaultTicks = Bard.getTicksFromLength(curBase),
+                    tempoNoteLength = curTempo,
+                    name = displayName,
+                }
+                table.insert(voiceOrder, currentVoice)
+            end
             currentTicks[currentVoice] = currentTicks[currentVoice] or 0
 
         elseif header == "K" then
@@ -603,7 +624,32 @@ function Bard.parseABC(abc)
         end
     end
 
-    return voices, totalTicks
+    return voices, totalTicks, voiceOrder
+end
+
+
+---Lightweight scan for voice IDs referenced by V: headers, without doing a
+---full parse. Used by the UI to decide whether to show the voice-picker
+---button as the player edits/loads a tune (cheap enough to call on every
+---text change, unlike Bard.parseABC).
+---@param abc string
+function Bard.getVoiceOrder(abc)
+    local seen = {}
+    local order = {}
+    for line in (abc or ""):gmatch("[^\r\n]+") do
+        local value = line:match("^V:%s*(.+)$")
+        if value then
+            local voiceId = value:match("^%s*(%S+)") or value
+            local displayName = value:match('name%s*=%s*"([^"]*)"')
+                    or value:match('nm%s*=%s*"([^"]*)"')
+                    or voiceId
+            if not seen[voiceId] then
+                seen[voiceId] = true
+                table.insert(order, { id = voiceId, name = displayName })
+            end
+        end
+    end
+    return order
 end
 
 
@@ -631,11 +677,13 @@ end
 
 function Bard.next(t) for k, _ in pairs(t) do return k end end
 
-function Bard.startPlayback(player, abc)
-    local music, totalTicks = Bard.parseABC(abc)
+function Bard.startPlayback(player, abc, requestedVoice)
+    local music, totalTicks, voiceOrder = Bard.parseABC(abc)
 
     local defaultVoiceName = "default"
-    if not music[defaultVoiceName] then
+    if requestedVoice and music[requestedVoice] then
+        defaultVoiceName = requestedVoice
+    elseif not music[defaultVoiceName] then
         defaultVoiceName = Bard.next(music)
     end
 
@@ -649,7 +697,7 @@ function Bard.startPlayback(player, abc)
 
     for _, voice in pairs(music) do voice.eventIndex = 1 end
 
-    return music, durationTicks --to convert ticks to milliseconds for playback deadline
+    return music, durationTicks, voiceOrder --to convert ticks to milliseconds for playback deadline
 end
 
 
@@ -682,9 +730,102 @@ function Bard.getSoundName(n)
 end
 
 
-Bard.soundCache = {}
-function Bard.noteToSound(note, instrumentID)
+Bard.drumKitPieces = {
+    [36] = "BassDrum1",     -- kick
+    [38] = "AcousticSnare", -- snare (short drum on its own stand)
+    [41] = "LowFloorTom",   -- floor tom (the tall standalone one)
+    [47] = "LowMidTom",     -- rack tom 1 (one of the pair on top of the kick)
+    [48] = "HiMidTom",      -- rack tom 2 (the other one of that pair)
+    [49] = "CrashCymbal1",
+    [51] = "RideCymbal1",
+}
+
+Bard.drumKitFallback = {
+    [35] = 36, -- Acoustic Bass Drum   -> kick
+    [37] = 38, -- Side Stick           -> snare
+    [39] = 38, -- Hand Clap            -> snare
+    [40] = 38, -- Electric Snare       -> snare
+    [42] = 51, -- Closed Hi-Hat        -> ride (no hi-hat in this kit)
+    [43] = 41, -- High Floor Tom       -> floor tom
+    [44] = 51, -- Pedal Hi-Hat         -> ride (no hi-hat in this kit)
+    [45] = 47, -- Low Tom              -> rack tom 1
+    [46] = 49, -- Open Hi-Hat          -> crash (sustained "wash", closer to crash than a tom)
+    [50] = 48, -- High Tom             -> rack tom 2
+    [52] = 49, -- Chinese Cymbal       -> crash
+    [53] = 51, -- Ride Bell            -> ride
+    [54] = 51, -- Tambourine           -> ride
+    [55] = 49, -- Splash Cymbal        -> crash
+    [56] = 51, -- Cowbell              -> ride (closest to a "bell" tone here)
+    [57] = 49, -- Crash Cymbal 2       -> crash
+    [58] = 47, -- Vibraslap            -> rack tom 1
+    [59] = 51, -- Ride Cymbal 2        -> ride
+    [60] = 48, -- Hi Bongo             -> rack tom 2
+    [61] = 47, -- Low Bongo            -> rack tom 1
+    [62] = 48, -- Mute Hi Conga        -> rack tom 2
+    [63] = 48, -- Open Hi Conga        -> rack tom 2
+    [64] = 47, -- Low Conga            -> rack tom 1
+    [65] = 48, -- High Timbale         -> rack tom 2
+    [66] = 41, -- Low Timbale          -> floor tom
+    [67] = 51, -- High Agogo           -> ride (bell-like)
+    [68] = 47, -- Low Agogo            -> rack tom 1
+    [69] = 51, -- Cabasa               -> ride
+    [70] = 51, -- Maracas              -> ride
+    [71] = 51, -- Short Whistle        -> ride
+    [72] = 51, -- Long Whistle         -> ride
+    [73] = 51, -- Short Guiro          -> ride
+    [74] = 51, -- Long Guiro           -> ride
+    [75] = 38, -- Claves               -> snare (rimshot-like click)
+    [76] = 48, -- Hi Wood Block        -> rack tom 2
+    [77] = 47, -- Low Wood Block       -> rack tom 1
+    [78] = 47, -- Mute Cuica           -> rack tom 1
+    [79] = 41, -- Open Cuica           -> floor tom
+    [80] = 51, -- Mute Triangle        -> ride (bright/metallic)
+    [81] = 51, -- Open Triangle        -> ride
+}
+
+---@param note table
+---@param octaveShift number|nil optional correction if a given ABC source's
+---       octave convention is off by whole octaves from this engine's C4=60
+---@param pieces table|nil defaults to Bard.drumKitPieces
+---@param fallback table|nil defaults to Bard.drumKitFallback
+function Bard.percussionSoundName(note, octaveShift, pieces, fallback)
     if note.rest then return nil end
+    pieces = pieces or Bard.drumKitPieces
+    fallback = fallback or Bard.drumKitFallback
+
+    local midi = Bard.noteToMidi(note) + ((octaveShift or 0) * 12)
+
+    local sound = pieces[midi]
+    if sound then return sound end
+
+    local fallbackMidi = fallback[midi]
+    return fallbackMidi and pieces[fallbackMidi]
+end
+
+
+Bard.soundCache = {}
+---@param isPercussion boolean|nil
+---@param octaveShift number|nil
+---@param percussionPieces table|nil per-instrument override of Bard.drumKitPieces
+---@param percussionFallback table|nil per-instrument override of Bard.drumKitFallback
+function Bard.noteToSound(note, instrumentID, isPercussion, octaveShift, percussionPieces, percussionFallback)
+    if note.rest then return nil end
+
+    if isPercussion then
+        local cacheKey = "PERC_" .. (instrumentID or "") .. "_" .. note.base .. tostring(note.octave)
+        if Bard.soundCache[cacheKey] ~= nil then return Bard.soundCache[cacheKey] or nil end
+
+        local sound = Bard.percussionSoundName(note, octaveShift, percussionPieces, percussionFallback)
+        
+        if sound and instrumentID and fileExists("media/sound/instruments/" .. instrumentID .. "/" .. sound .. ".ogg") then
+            Bard.soundCache[cacheKey] = sound
+            return sound
+        end
+
+        Bard.soundCache[cacheKey] = false
+        return nil
+    end
+
     local sound = Bard.getSoundName(note)
     local cacheKey = (instrumentID or "") .. "_" .. (sound or "?")
     if Bard.soundCache[cacheKey] ~= nil then return Bard.soundCache[cacheKey] or nil end
@@ -736,6 +877,11 @@ function Bard.playLoadedSongs(player)
     local music = bard.music
     local decay = bard.decay or 200
     local instrumentID = bard.instrumentID .. (bard.style or "")
+    local isPercussion = bard.isPercussion
+    local percussionOctaveShift = bard.percussionOctaveShift
+    local percussionPieces = bard.percussionPieces
+    local percussionFallback = bard.percussionFallback
+    local selectedVoice = bard.selectedVoice -- nil or "All" => play every voice (old behavior)
 
     -- Initialize start and elapsed tracking if not already
     bard.startTime = bard.startTime or getTimestampMs()
@@ -760,6 +906,9 @@ function Bard.playLoadedSongs(player)
     local allDone = true
 
     for voiceId, data in pairs(music) do
+        local isPlayed = (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
+
+        if isPlayed then
         data.eventIndex = data.eventIndex or 1
 
         while data.eventIndex <= #data.events do
@@ -769,7 +918,7 @@ function Bard.playLoadedSongs(player)
             local latencyBufferMs = 30
             if bard.elapsedTime + latencyBufferMs >= eventTime then
                 for _, note in ipairs(event.notes) do
-                    local sound = Bard.noteToSound(note, instrumentID)
+                    local sound = Bard.noteToSound(note, instrumentID, isPercussion, percussionOctaveShift, percussionPieces, percussionFallback)
                     if sound then
                         local instrumentSound = instrumentID and instrumentID .. "_" .. sound
                         ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
@@ -793,6 +942,7 @@ function Bard.playLoadedSongs(player)
                 allDone = false
                 break
             end
+        end
         end
     end
 
@@ -877,6 +1027,26 @@ Bard.instrumentMapObjectData = {
     ["Grand Piano"] = { decay = 800, soundDir = "grandPiano", anim = "Piano",
                         sprites = { "recreational_01_40", "recreational_01_41", "recreational_01_48", "recreational_01_49", }
     },
+
+
+    ["Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
+                      sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
+                                  "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
+    },
+
+    ["Kick Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
+                      sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
+                                  "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
+    },
+    ["Tom Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
+                     sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
+                                 "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
+    },
+    ["Snare Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
+                       sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
+                                   "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
+    },
+
 }
 
 Bard.populatedFromMapObjectData = false

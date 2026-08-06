@@ -17,6 +17,7 @@ end
 function BardUIWindow.onTextChange(box)
     if not box then return end
     box.parent:setSaveButtonStatus(true)
+    box.parent:refreshVoiceButton()
 end
 
 function BardUIWindow:initialise()
@@ -72,7 +73,18 @@ function BardUIWindow:initialise()
 
     local styles = self.styles~=nil
 
-    local playWidth = (self.width*0.225)+(styles and 0 or buttonHeight)
+    self.playRowBaseX = self.width * 0.6875
+    self.playRowBaseWidth = (self.width*0.225)+(styles and 0 or buttonHeight)
+    self.playRowButtonHeight = buttonHeight
+    self.playRowGap = self.padding/2
+
+    self.voiceButton = ISButton:new(self.playRowBaseX, buttonY, buttonHeight, buttonHeight, "v", self, BardUIWindow.onVoice)
+    self.voiceButton:initialise()
+    self.voiceButton:instantiate()
+    self:addChild(self.voiceButton)
+    self.voiceButton:setVisible(false)
+
+    local playWidth = self.playRowBaseWidth
 
     self.playButton = ISButton:new(self.width * 0.6875 , buttonY, playWidth, buttonHeight, "Play", self, BardUIWindow.onPlay)
     self.playButton:initialise()
@@ -84,6 +96,9 @@ function BardUIWindow:initialise()
     self.styleButton:instantiate()
     self:addChild(self.styleButton)
     self.styleButton:setVisible(styles)
+
+    self.voices = {}
+    self.voice = nil -- nil/"All" => play every voice (matches old, pre-voice-picker behavior)
 
     local sliderY = self.playButton.y + self.saveButton.height + self.padding
     self.volumeSlider = ISSliderPanel:new(self.padding, sliderY, self.width - (self.padding * 2), buttonHeight/2, self, BardUIWindow.setVolume)
@@ -110,6 +125,7 @@ function BardUIWindow:initialise()
     self:setInfo(getText("IGUI_BardToTheBone_Info"))
 
     self:onLoadAll()
+    self:refreshVoiceButton()
 end
 
 
@@ -254,6 +270,7 @@ function BardUIWindow:loadSongAtIndex(index)
     self.songList.selected = index
     self.abcEntry:setText(item.item)
     self.abcEntry:setYScroll(0)
+    self:refreshVoiceButton()
 end
 
 
@@ -276,7 +293,7 @@ function BardUIWindow:onPlay()
     local notes = self.abcEntry:getText()
     if (not notes) then return end
 
-    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style, self.volume))
+    ISTimedActionQueue.add(BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style, self.volume, self.voice))
 end
 
 
@@ -304,6 +321,57 @@ function BardUIWindow:onStyle()
         local option = self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style)
         if style == self.style then option.notAvailable = true end
     end
+end
+
+
+function BardUIWindow:setVoice(voice)
+    self.voice = voice
+
+    local id = self.character:getUsername()
+    if Bard.players[id] then Bard.players[id].selectedVoice = voice end
+end
+
+
+function BardUIWindow:onVoice()
+    local playerNum = self.character:getPlayerNum()
+    self.contextMenu = ISContextMenu.get(playerNum,self:getX()+self.voiceButton:getX()+self.voiceButton:getWidth(), self:getY()+self.voiceButton:getY())
+    self.contextMenu.player = playerNum
+
+    local allOption = self.contextMenu:addOption("All", self, BardUIWindow.setVoice, "All")
+    if (not self.voice) or self.voice == "All" then allOption.notAvailable = true end
+
+    for _, v in ipairs(self.voices) do
+        ---@type ISContextMenu
+        local option = self.contextMenu:addOption(v.name, self, BardUIWindow.setVoice, v.id)
+        if v.id == self.voice then option.notAvailable = true end
+    end
+end
+
+
+function BardUIWindow:refreshVoiceButton()
+    local text = self.abcEntry and self.abcEntry:getText() or ""
+    self.voices = Bard.getVoiceOrder(text)
+    local hasVoices = #self.voices > 1
+
+    -- Drop the selection if it no longer exists in the (possibly edited) tune
+    if self.voice and self.voice ~= "All" then
+        local stillValid = false
+        for _, v in ipairs(self.voices) do
+            if v.id == self.voice then stillValid = true; break end
+        end
+        if not stillValid then self.voice = nil end
+    end
+
+    local offset = hasVoices and (self.playRowButtonHeight + self.playRowGap) or 0
+
+    self.voiceButton:setVisible(hasVoices)
+    self.voiceButton:setX(self.playRowBaseX)
+
+    self.playButton:setX(self.playRowBaseX + offset)
+    self.playButton:setWidth(self.playRowBaseWidth - offset)
+
+    local id = self.character:getUsername()
+    if Bard.players[id] then Bard.players[id].selectedVoice = self.voice end
 end
 
 

@@ -30,6 +30,11 @@ function BardToTheBonePlayMusic:start()
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
     Bard.players[id].decay = instrumentData.decay
+    Bard.players[id].isPercussion = instrumentData.isPercussion
+    Bard.players[id].percussionOctaveShift = instrumentData.percussionOctaveShift
+    Bard.players[id].percussionPieces = instrumentData.percussionPieces
+    Bard.players[id].percussionFallback = instrumentData.percussionFallback
+    Bard.players[id].selectedVoice = self.voice
 
     if instrumentData.styles then
         local style = self.style or instrumentData.styles[1]
@@ -75,7 +80,7 @@ end
 
 
 ---@param character IsoGameCharacter
-function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, volume) --time, recipe, container, containers)
+function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, volume, voice) --time, recipe, container, containers)
     if not instrument or not character or not abcNotation then return end
     local o = ISBaseTimedAction.new(self, character)
     o.character = character
@@ -88,11 +93,13 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
     o.heldItem = instanceof(instrument, "InventoryItem")
     o.style = style
     o.volume = volume
+    o.voice = voice
 
     o.caloriesModifier = 2.5
 
-    local music, duration = Bard.startPlayback(character, abcNotation)
+    local music, duration, voiceOrder = Bard.startPlayback(character, abcNotation, voice)
     o.music = music
+    o.voiceOrder = voiceOrder
     o.maxTime = duration or 1
 
     return o
