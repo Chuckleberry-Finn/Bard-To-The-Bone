@@ -91,8 +91,10 @@ function BardUIWindow:initialise()
     self.playButton:instantiate()
     self:addChild(self.playButton)
 
-    self.playButtonDefaultColor = self.playButton.backgroundColor
-    self.playButtonDefaultColorMouseOver = self.playButton.backgroundColorMouseOver
+    self.playButtonDefaultColor = { r = self.playButton.backgroundColor.r, g = self.playButton.backgroundColor.g,
+                                     b = self.playButton.backgroundColor.b, a = self.playButton.backgroundColor.a }
+    self.playButtonDefaultColorMouseOver = { r = self.playButton.backgroundColorMouseOver.r, g = self.playButton.backgroundColorMouseOver.g,
+                                              b = self.playButton.backgroundColorMouseOver.b, a = self.playButton.backgroundColorMouseOver.a }
     self.playButtonStopColor = { r = 0.45, g = 0.05, b = 0.05, a = 1 }
     self.playButtonStopColorMouseOver = { r = 0.6, g = 0.08, b = 0.08, a = 1 }
 
@@ -294,8 +296,8 @@ function BardUIWindow:onPlay()
     local isBardAction = currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action
 
     if isBardAction then
-        local sameInstrument = (currentAction.action.item == self.instrument)
-        currentAction.action:forceStop()
+        local sameInstrument = (currentAction.item == self.instrument)
+        currentAction:forceStop()
         if sameInstrument then
             self:refreshPlayButtonState()
             return
@@ -418,27 +420,28 @@ function BardUIWindow:refreshPlayButtonState()
     local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
     local currentAction = actionQueue.queue[1]
     local isBardAction = currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action
-    local isPlayingThis = isBardAction and (currentAction.action.item == self.instrument)
+    local isPlayingThis = isBardAction and (currentAction.item == self.instrument)
 
-    if isPlayingThis then
-        self.playButton.title = "Stop"
-        self.playButton.backgroundColor = self.playButtonStopColor
-        self.playButton.backgroundColorMouseOver = self.playButtonStopColorMouseOver
-    else
-        self.playButton.title = "Play"
-        self.playButton.backgroundColor = self.playButtonDefaultColor
-        self.playButton.backgroundColorMouseOver = self.playButtonDefaultColorMouseOver
-    end
+    local target = isPlayingThis and self.playButtonStopColor or self.playButtonDefaultColor
+    local targetMouseOver = isPlayingThis and self.playButtonStopColorMouseOver or self.playButtonDefaultColorMouseOver
+
+    self.playButton.title = isPlayingThis and "Stop" or "Play"
+
+    self.playButton.backgroundColor.r = target.r
+    self.playButton.backgroundColor.g = target.g
+    self.playButton.backgroundColor.b = target.b
+    self.playButton.backgroundColor.a = target.a
+
+    self.playButton.backgroundColorMouseOver.r = targetMouseOver.r
+    self.playButton.backgroundColorMouseOver.g = targetMouseOver.g
+    self.playButton.backgroundColorMouseOver.b = targetMouseOver.b
+    self.playButton.backgroundColorMouseOver.a = targetMouseOver.a
 end
 
 
 function BardUIWindow.open(character, instrument)
     if BardUIWindow.instance then
-        local wasPlaying = BardUIWindow.instance:isPerformingAnyInstrument()
         BardUIWindow.instance:switchInstrument(character, instrument)
-        if wasPlaying then
-            BardUIWindow.instance:onPlay()
-        end
         return BardUIWindow.instance
     end
 
@@ -448,12 +451,6 @@ function BardUIWindow.open(character, instrument)
     return ui
 end
 
-
-function BardUIWindow:isPerformingAnyInstrument()
-    local actionQueue = ISTimedActionQueue.getTimedActionQueue(self.character)
-    local currentAction = actionQueue.queue[1]
-    return (currentAction ~= nil) and (currentAction.Type == "BardToTheBonePlayMusic") and (currentAction.action ~= nil)
-end
 
 
 ---@param character IsoGameCharacter

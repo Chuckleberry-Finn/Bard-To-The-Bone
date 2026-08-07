@@ -17,6 +17,7 @@ function BardToTheBonePlayMusic:start()
     --self:setOverrideHandModels(self.item, nil)
     local id = self.character:getUsername()
     Bard.players[id] = {}
+    Bard.players[id].action = self
     Bard.players[id].music = self.music
     Bard.players[id].volume = self.volume
     Bard.players[id].duration = self.maxTime
@@ -57,16 +58,16 @@ function BardToTheBonePlayMusic:start()
 end
 
 function BardToTheBonePlayMusic:perform()
-    Bard.completeAction(self.character)
+    Bard.completeAction(self.character, true)
     ISBaseTimedAction.perform(self)
 end
 
 function BardToTheBonePlayMusic:forceStop()
-    Bard.completeAction(self.character)
+    Bard.completeAction(self.character, true)
     ISBaseTimedAction.forceStop(self)
 end
 function BardToTheBonePlayMusic:stop()
-    Bard.completeAction(self.character)
+    Bard.completeAction(self.character, true)
     ISBaseTimedAction.stop(self)
 end
 

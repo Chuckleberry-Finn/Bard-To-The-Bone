@@ -328,6 +328,8 @@ end
 
 
 function Bard.parseABC(abc)
+    local percussionVoiceIds = Bard.getPercussionVoiceIds(abc)
+
     abc = Bard.preprocessABC(abc)
 
     local voices = {}
@@ -399,6 +401,7 @@ function Bard.parseABC(abc)
                     defaultTicks = Bard.getTicksFromLength(curBase),
                     tempoNoteLength = curTempo,
                     name = displayName,
+                    isPercussionVoice = percussionVoiceIds[currentVoice] or false,
                 }
                 table.insert(voiceOrder, currentVoice)
             end
@@ -628,6 +631,22 @@ function Bard.parseABC(abc)
 end
 
 
+function Bard.getPercussionVoiceIds(abc)
+    local flagged = {}
+    local currentVoice = "default"
+    for line in (abc or ""):gmatch("[^\r\n]+") do
+        local vValue = line:match("^V:%s*(.+)$")
+        if vValue then
+            currentVoice = vValue:match("^%s*(%S+)") or vValue
+            if currentVoice == "10" then flagged[currentVoice] = true end
+        elseif line:match("^%%%%MIDI%s+channel%s+10%s*$") then
+            flagged[currentVoice] = true
+        end
+    end
+    return flagged
+end
+
+
 ---Lightweight scan for voice IDs referenced by V: headers, without doing a
 ---full parse. Used by the UI to decide whether to show the voice-picker
 ---button as the player edits/loads a tune (cheap enough to call on every
@@ -653,7 +672,8 @@ function Bard.getVoiceOrder(abc)
 end
 
 
-function Bard.completeAction(player)
+---@param skipQueueStop boolean|nil pass true when called from BardToTheBonePlayMusic:perform()/
+function Bard.completeAction(player, skipQueueStop)
     local id = player:getUsername()
     if Bard.players[id] == false then return end    -- guard against re-entry
 
@@ -665,10 +685,12 @@ function Bard.completeAction(player)
     end
     Bard.players[id] = false
 
-    local actionQueue = ISTimedActionQueue.getTimedActionQueue(player)
-    local currentAction = actionQueue.queue[1]
-    if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
-        currentAction.action:forceStop()
+    if not skipQueueStop then
+        local actionQueue = ISTimedActionQueue.getTimedActionQueue(player)
+        local currentAction = actionQueue.queue[1]
+        if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
+            currentAction:forceStop()
+        end
     end
 
     Bard.players[id] = nil
@@ -908,6 +930,10 @@ function Bard.playLoadedSongs(player)
     for voiceId, data in pairs(music) do
         local isPlayed = (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
 
+        if data.isPercussionVoice and not isPercussion then
+            isPlayed = false
+        end
+
         if isPlayed then
         data.eventIndex = data.eventIndex or 1
 
@@ -1014,9 +1040,6 @@ Bard.instrumentData = {
 ---SIMILAR TO ABOVE, BUT WITH MAPOBJECTS' GROUPNAMES, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentMapObjectData = {
     --[""] = { soundDir = "", anim = ""},
-    ---["Kick Drum"] = { soundDir = "", anim = ""},
-    ---["Tom Drum"] = { soundDir = "", anim = ""},
-    ---["Snare Drum"] = { soundDir = "", anim = ""},
 
     --recreational_01_12,13  8,9
     ["Piano"] = { decay = 500, soundDir = "piano", anim = "Piano",
@@ -1030,23 +1053,9 @@ Bard.instrumentMapObjectData = {
 
 
     ["Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
-                      sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
-                                  "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
+                 sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
+                             "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
     },
-
-    ["Kick Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
-                      sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
-                                  "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
-    },
-    ["Tom Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
-                     sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
-                                 "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
-    },
-    ["Snare Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
-                       sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
-                                   "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
-    },
-
 }
 
 Bard.populatedFromMapObjectData = false

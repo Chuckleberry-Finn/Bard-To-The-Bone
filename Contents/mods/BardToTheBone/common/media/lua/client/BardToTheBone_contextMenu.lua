@@ -18,6 +18,11 @@ end
 
 
 function bardContext.triggerTimedAction(character, instrument, square, dir)
+    local actionQueue = ISTimedActionQueue.getTimedActionQueue(character)
+    local currentAction = actionQueue.queue[1]
+    if currentAction and (currentAction.Type == "BardToTheBonePlayMusic") and currentAction.action then
+        currentAction:forceStop()
+    end
 
     if instanceof(instrument, "InventoryItem") then
         if luautils.haveToBeTransfered(character, instrument) then
