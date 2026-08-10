@@ -21,6 +21,10 @@ import librosa
 import soundfile as sf
 from mido import Message, MidiFile, MidiTrack
 
+TARGET_LOUDNESS_LUFS = -23.0  # foreground/instrument level
+CEILING_DBFS = -1.0           # safety margin below full scale (0 dBFS)
+CEILING_LINEAR = 10 ** (CEILING_DBFS / 20)
+
 note_map = {
     'Cb': 11, 'Cn': 0,
     'Db': 1,  'Dn': 2,
@@ -117,12 +121,18 @@ def convert_midi_file(midi_path):
             os.remove(midi_path)
             return name, "silent"
 
-        y = pyln.normalize.loudness(y, loudness, -36.0)
+        y = pyln.normalize.loudness(y, loudness, TARGET_LOUDNESS_LUFS)
 
         peak = np.max(np.abs(y))
         if peak <= 0:
             print(f"Skipping {os.path.basename(midi_path)}: silent audio.")
             return name, "silent"
+
+        # Safeguard: loudness-normalizing to a louder target can push peaks
+        # past the safe ceiling (clipping). If that happens, scale the whole
+        # sample down just enough to sit under the ceiling instead.
+        if peak > CEILING_LINEAR:
+            y = y * (CEILING_LINEAR / peak)
 
         sf.write(ogg_path, y, sr)
 
