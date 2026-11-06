@@ -3,11 +3,20 @@ require "ISUI/ISTextEntryBox"
 require "ISUI/ISButton"
 require "ISUI/ISTickBox"
 require "ISUI/ISScrollingListBox"
+require "RadioCom/ISUIRadio/ISSliderPanel"
 
 local defaultSongs = require "BardToTheBone_defaultSongs"
+local songLibrary = require "BardToTheBone_songLibrary"
+local settings = require "BardToTheBone_settings"
 local Bard = require "BardToTheBone_main"
 
 BardUIWindow = ISCollapsableWindow:derive("BardUIWindow")
+
+BardUIWindow.sourceColors = {
+    saved = { r = 1, g = 1, b = 1 },
+    cache = { r = 0.7, g = 1, b = 0.7 },
+    mod = { r = 0.7, g = 0.8, b = 1 },
+}
 
 
 function BardUIWindow:createChildren()
@@ -18,6 +27,12 @@ function BardUIWindow.onTextChange(box)
     if not box then return end
     box.parent:setSaveButtonStatus(true)
     box.parent:refreshVoiceButton()
+end
+
+function BardUIWindow.onSearchChange(box)
+    if not box then return end
+    box.parent.searchText = box:getInternalText():lower()
+    box.parent:populateSongList()
 end
 
 function BardUIWindow:initialise()
@@ -114,9 +129,31 @@ function BardUIWindow:initialise()
     self:addChild(self.volumeSlider)
     self.volumeSlider:setCurrentValue(self.volume)
 
+    local searchY = self.volumeSlider.y + self.volumeSlider.height + self.padding
+    local hideModLabel = getText("IGUI_BardToTheBone_HideModSongs")
+    local hideModWidth = buttonHeight + 10 + getTextManager():MeasureStringX(UIFont.Small, hideModLabel)
+    local searchWidth = self.width - (self.padding * 3) - hideModWidth
+
+    self.searchText = ""
+    self.searchEntry = ISTextEntryBox:new("", self.padding, searchY, searchWidth, buttonHeight)
+    self.searchEntry:initialise()
+    self.searchEntry:instantiate()
+    self.searchEntry.onTextChange = BardUIWindow.onSearchChange
+    self.searchEntry:setPlaceholderText(getText("IGUI_FilterSearch"))
+    self.searchEntry:setClearButton(true)
+    self:addChild(self.searchEntry)
+
+    self.hideModTickBox = ISTickBox:new(self.searchEntry.x + searchWidth + self.padding, searchY, hideModWidth, buttonHeight, "", self, BardUIWindow.onHideModSongs)
+    self.hideModTickBox:initialise()
+    self.hideModTickBox:instantiate()
+    self:addChild(self.hideModTickBox)
+    self.hideModTickBox:addOption(hideModLabel)
+    self.hideModTickBox:setSelected(1, settings.get("hideModSongs"))
+
     local resizeOffset = self.resizable and self:resizeWidgetHeight() or 0
-    local songListHeight = self.height - self.volumeSlider.y - self.volumeSlider.height - self.padding - self:titleBarHeight() - resizeOffset
-    self.songList = ISScrollingListBox:new(self.padding, self.volumeSlider.y + self.volumeSlider.height + self.padding, self.width - (self.padding * 2), songListHeight)
+    local songListY = searchY + buttonHeight + self.padding
+    local songListHeight = self.height - songListY - self:titleBarHeight() - resizeOffset
+    self.songList = ISScrollingListBox:new(self.padding, songListY, self.width - (self.padding * 2), songListHeight)
     self.songList:initialise()
     self.songList:instantiate()
 
@@ -127,7 +164,9 @@ function BardUIWindow:initialise()
     self.songList.onMouseDown = BardUIWindow.onSongClick
     self:addChild(self.songList)
 
-    self.songs = {}
+    self.savedSongs = {}
+    self.librarySongs = {}
+    self.selectedSong = nil
 
     self:setInfo(getText("IGUI_BardToTheBone_Info"))
 
@@ -156,24 +195,26 @@ function BardUIWindow:onSave()
     if not title then notes = "T:[No Title]\n"..notes end
     if not index then notes = "X:1\n"..notes end
 
-    local song = self.songList.items[self.songList.selected]
-    if not song then
-        self.songList:addItem(title, notes)
+    local song = self.selectedSong
+    local savedIndex = song and (song.source == "saved") and Bard.table_indexof(self.savedSongs, song)
+    if savedIndex then
+        song.title = title
+        song.content = notes
     else
-        song.text = title
-        song.item = notes
+        table.insert(self.savedSongs, { title = title, content = notes, source = "saved" })
+        savedIndex = #self.savedSongs
     end
 
     local compiled = ""
-    for i,songData in ipairs(self.songList.items) do
-        compiled = compiled .. songData.item
+    for _,songData in ipairs(self.savedSongs) do
+        compiled = compiled .. songData.content:gsub("%s*$", "") .. "\n\n"
     end
 
     local writer = getFileWriter("BardToTheBone_Songs.txt", true, false)
     writer:write(compiled)
     writer:close()
 
-    self:onLoadAll(self.songList.selected)
+    self:onLoadAll(savedIndex)
     self:setSaveButtonStatus(false)
 end
 
@@ -204,11 +245,15 @@ end
 
 
 function BardUIWindow:onLoadAllButton() self:onLoadAll() end
-function BardUIWindow:onLoadAll(index)
+function BardUIWindow:onLoadAll(savedIndex)
     self.abcEntry:setText("")
-    local old_selected = index or self.songList.selected or 1
-    self.songList:clear()
 
+    local previous = self.selectedSong
+    if not savedIndex and previous and previous.source == "saved" then
+        savedIndex = Bard.table_indexof(self.savedSongs, previous)
+    end
+
+    self.savedSongs = {}
     local bigString = self:fetchSavedSongs()
     if bigString then
         local songs = {}
@@ -231,25 +276,93 @@ function BardUIWindow:onLoadAll(index)
         end
 
         for _, song in ipairs(songs) do
-            self.songList:addItem(song.title, song.content)
+            table.insert(self.savedSongs, { title = song.title, content = song.content, source = "saved" })
         end
     end
 
-    self:loadSongAtIndex(old_selected)
+    self.librarySongs = songLibrary.fetchSongs()
+
+    local selected = savedIndex and self.savedSongs[savedIndex]
+    if not selected and previous and previous.fileName then
+        for _,song in ipairs(self.librarySongs) do
+            if song.source == previous.source and song.fileName == previous.fileName then
+                selected = song
+                break
+            end
+        end
+    end
+
+    self.selectedSong = selected or self.savedSongs[1] or self.librarySongs[1]
+    self:populateSongList()
+    self:loadSong(self.selectedSong)
+end
+
+
+function BardUIWindow:isSongVisible(song)
+    if settings.get("hideModSongs") and song.source == "mod" then return false end
+    if self.searchText == nil or self.searchText == "" then return true end
+    local searchTitle = song.searchTitle or (song.title or ""):lower()
+    return searchTitle:find(self.searchText, 1, true) ~= nil
+end
+
+
+function BardUIWindow:populateSongList()
+    self.songList:clear()
+
+    for _,song in ipairs(self.savedSongs) do
+        if self:isSongVisible(song) then self.songList:addItem(song.title, song) end
+    end
+
+    for _,song in ipairs(self.librarySongs) do
+        if self:isSongVisible(song) then self.songList:addItem(song.title, song) end
+    end
+
+    self:selectSongInList()
+end
+
+
+function BardUIWindow:selectSongInList()
+    self.songList.selected = 0
+    if not self.selectedSong then return end
+
+    for i,item in ipairs(self.songList.items) do
+        if item.item == self.selectedSong then
+            self.songList.selected = i
+            self.songList:ensureVisible(i)
+            return
+        end
+    end
+end
+
+
+function BardUIWindow:onHideModSongs(index, selected)
+    settings.set("hideModSongs", selected == true)
+    self:populateSongList()
 end
 
 
 function BardUIWindow:onNewButton()
-    self.songList:addItem("New Song", "")
-    self:loadSongAtIndex(self.songList:size())
+    self.searchText = ""
+    self.searchEntry:setText("")
+
+    local song = { title = "New Song", content = "", source = "saved" }
+    table.insert(self.savedSongs, song)
+    self.selectedSong = song
+    self:populateSongList()
+    self:loadSong(song)
 end
 
 
 function BardUIWindow:onRemoveButton()
-    if not self.songList.selected then return end
-    self.songList:removeItemByIndex(self.songList.selected)
+    local song = self.selectedSong
+    local savedIndex = song and (song.source == "saved") and Bard.table_indexof(self.savedSongs, song)
+    if not savedIndex then return end
+
+    table.remove(self.savedSongs, savedIndex)
     self.abcEntry:setText("")
-    self:loadSongAtIndex(self.songList.selected)
+    self.selectedSong = self.savedSongs[savedIndex] or self.savedSongs[savedIndex-1]
+    self:populateSongList()
+    self:loadSong(self.selectedSong)
     self:setSaveButtonStatus(true)
 end
 
@@ -262,21 +375,31 @@ end
 
 
 function BardUIWindow:doDrawSong(y, item, alt)
-    local r, g, b, a = 1, 1, 1, 0.9
+    if (y + self:getYScroll() + self.itemheight < 0) or (y + self:getYScroll() >= self.height) then
+        return y + item.height
+    end
+
+    local color = BardUIWindow.sourceColors[item.item and item.item.source] or BardUIWindow.sourceColors.saved
+    local r, g, b, a = color.r, color.g, color.b, 0.9
     self:drawRect(2, y+2, self:getWidth()-4, self.itemheight-2, ((self.selected == item.index) and 0.4) or 0.2, r, g, b)
     self:drawText(item.text, self.parent.padding, y+2, r, g, b, a, UIFont.AutoNormSmall)
     return y + item.height
 end
 
 
-function BardUIWindow:loadSongAtIndex(index)
-    if not index then return end
+function BardUIWindow:getSongContent(song)
+    if not song then return "" end
+    if song.content then return song.content end
+    return songLibrary.readSong(song)
+end
 
-    local item = self.songList.items[index]
-    if not item then return end
 
-    self.songList.selected = index
-    self.abcEntry:setText(item.item)
+function BardUIWindow:loadSong(song)
+    if not song then return end
+
+    self.selectedSong = song
+    self:selectSongInList()
+    self.abcEntry:setText(self:getSongContent(song))
     self.abcEntry:setYScroll(0)
     self:refreshVoiceButton()
 end
@@ -284,8 +407,9 @@ end
 
 function BardUIWindow:onSongClick(x, y)
     local index = self:rowAt(x, y)
-    if not index then return end
-    self.parent:loadSongAtIndex(index)
+    local item = index and self.items[index]
+    if not item then return end
+    self.parent:loadSong(item.item)
 end
 
 
@@ -406,8 +530,9 @@ end
 function BardUIWindow:update()
     if not BardUIWindow.instance then return end
 
+    local square = (not self.isItem) and self.instrument:getSquare()
     if (self.isItem and (self.character:getPrimaryHandItem() ~= self.instrument))
-            or (not self.isItem and (self.instrument:getSquare():DistToProper(self.character) > 1.5)) then
+            or (not self.isItem and ((not square) or (square:DistToProper(self.character) > 1.5))) then
         BardUIWindow.instance:close()
         return
     end
