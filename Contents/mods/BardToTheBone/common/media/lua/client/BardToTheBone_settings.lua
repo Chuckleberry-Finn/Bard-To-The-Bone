@@ -3,6 +3,8 @@ local settings = {}
 settings.fileName = "BardToTheBone_Settings.txt"
 settings.values = {
     hideModSongs = false,
+    editorCollapsed = true,
+    importedSongsFile = false,
 }
 settings.loaded = false
 

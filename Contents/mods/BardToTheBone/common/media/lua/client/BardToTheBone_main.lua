@@ -1,7 +1,14 @@
+local netWorkHandler = require "BardToTheBone_networkHandler"
+
 local Bard = {}
 
 Bard.voices = {}
 Bard.players = {}
+Bard.remotePlayers = {}
+Bard.networkSequence = 0
+Bard.networkBatchMs = 200
+Bard.networkDelayMs = 150
+Bard.remoteIdleMs = 5000
 Bard.accidental_map = {}
 Bard.natural_map = {}
 
@@ -673,14 +680,21 @@ end
 
 
 ---@param skipQueueStop boolean|nil pass true when called from BardToTheBonePlayMusic:perform()/
-function Bard.completeAction(player, skipQueueStop)
+function Bard.completeAction(player, skipQueueStop, finished)
     local id = player:getUsername()
     if Bard.players[id] == false then return end    -- guard against re-entry
 
     local bard = Bard.players[id]
     if bard and bard.playingNotes then
         for _, note in ipairs(bard.playingNotes) do
-            player:getEmitter():stopSound(note.id)
+            player:getEmitter():stopSoundLocal(note.id)
+        end
+    end
+    if bard and isClient() then
+        if finished then
+            Bard.flushNetworkNotes(player, bard, bard.instrumentID .. (bard.style or ""), bard.decay or 200, true)
+        else
+            netWorkHandler.sendStop(player)
         end
     end
     Bard.players[id] = false
@@ -715,11 +729,11 @@ function Bard.startPlayback(player, abc, requestedVoice)
     local tempoNoteLength = defaultVoice.tempoNoteLength or "1/4"
 
     local totalMilliseconds  = Bard.convertMusicTicksToMilliseconds(totalTicks, bpm, baseNoteLength, tempoNoteLength)
-    local durationTicks = totalMilliseconds / (1000 / getAverageFPS())
+    local durationTicks = getGameTime():getMultiplierFromTimeDelta(totalMilliseconds / 1000)
 
     for _, voice in pairs(music) do voice.eventIndex = 1 end
 
-    return music, durationTicks, voiceOrder --to convert ticks to milliseconds for playback deadline
+    return music, durationTicks, voiceOrder, totalMilliseconds --to convert ticks to milliseconds for playback deadline
 end
 
 
@@ -946,17 +960,10 @@ function Bard.playLoadedSongs(player)
                 for _, note in ipairs(event.notes) do
                     local sound = Bard.noteToSound(note, instrumentID, isPercussion, percussionOctaveShift, percussionPieces, percussionFallback)
                     if sound then
-                        local instrumentSound = instrumentID and instrumentID .. "_" .. sound
-                        ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentSound, " (", event.timeOffset, ")")
+                        ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentID .. "_" .. sound, " (", event.timeOffset, ")")
                         if instrumentID then
-                            local soundID = player:getEmitter():playSound(instrumentSound)
-                            player:getEmitter():setVolume(soundID, bard.volume/100)
-
-                            table.insert(bard.playingNotes, {
-                                id = soundID,
-                                started = bard.elapsedTime,
-                                duration = note.durationMs
-                            })
+                            Bard.playNote(player, bard, instrumentID, sound, note.durationMs, bard.elapsedTime)
+                            if isClient() then Bard.queueNetworkNote(bard, sound, event.timeOffset, note.durationMs) end
 
                             addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10)
                         end
@@ -972,29 +979,56 @@ function Bard.playLoadedSongs(player)
         end
     end
 
-    ---This keeps total notes that are active capped, stops the oldest note per tick
-    --- as well as cuts notes off after their intended length + handles per instrument decay
-    --decay is stored above, prior to instrumentID being set
+    if isClient() then Bard.flushNetworkNotes(player, bard, instrumentID, decay) end
+
+    local playingNotes = Bard.updatePlayingNotes(player, bard, bard.elapsedTime)
+
+    if allDone and (#playingNotes <= 0) then Bard.completeAction(player, nil, true) end
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.playNote(player, state, instrumentID, sound, durationMs, started)
+    local emitter = player:getEmitter()
+    local soundID = emitter:playSoundImpl(instrumentID .. "_" .. sound, nil)
+    emitter:setVolume(soundID, state.volume/100)
+
+    table.insert(state.playingNotes, {
+        id = soundID,
+        started = started,
+        duration = durationMs
+    })
+end
+
+
+---This keeps total notes that are active capped, stops the oldest note per tick
+--- as well as cuts notes off after their intended length + handles per instrument decay
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.updatePlayingNotes(player, state, elapsed)
+    local emitter = player:getEmitter()
+    local decay = state.decay or 200
+    local volume = state.volume or 100
+
     local playingNotes = {}
-    for n, note in ipairs(bard.playingNotes) do
+    for n, note in ipairs(state.playingNotes) do
         local noteID = note.id
-        if player:getEmitter():isPlaying(noteID) then
-            local timeSinceStart = bard.elapsedTime - note.started
+        if emitter:isPlaying(noteID) then
+            local timeSinceStart = elapsed - note.started
 
             if timeSinceStart >= note.duration + decay then
-                player:getEmitter():stopSound(noteID)
-            elseif #bard.playingNotes > 40 and n == 1 then
-                player:getEmitter():stopSound(noteID)
+                emitter:stopSoundLocal(noteID)
+            elseif #state.playingNotes > 40 and n == 1 then
+                emitter:stopSoundLocal(noteID)
             else
                 if timeSinceStart >= note.duration then
                     -- In decay phase
                     local fadeProgress = (timeSinceStart - note.duration) / decay
-                    local fadeVolume = bard.volume / 100 * (1 - fadeProgress)
+                    local fadeVolume = volume / 100 * (1 - fadeProgress)
                     fadeVolume = math.max(0, math.min(1, fadeVolume))
-                    player:getEmitter():setVolume(noteID, fadeVolume)
+                    emitter:setVolume(noteID, fadeVolume)
                 else
                     -- Still sustaining at full volume
-                    player:getEmitter():setVolume(noteID, bard.volume / 100)
+                    emitter:setVolume(noteID, volume / 100)
                 end
 
                 table.insert(playingNotes, note)
@@ -1002,9 +1036,127 @@ function Bard.playLoadedSongs(player)
         end
     end
 
-    bard.playingNotes = playingNotes
+    state.playingNotes = playingNotes
+    return playingNotes
+end
 
-    if allDone and (#playingNotes <= 0) then Bard.completeAction(player) end
+
+function Bard.queueNetworkNote(bard, sound, timeOffset, durationMs)
+    local batch = bard.networkBatch
+    if not batch then
+        batch = { startedAt = bard.elapsedTime, n = {}, t = {}, d = {} }
+        bard.networkBatch = batch
+    end
+    table.insert(batch.n, sound)
+    table.insert(batch.t, math.floor(timeOffset))
+    table.insert(batch.d, math.floor(durationMs or 0))
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.flushNetworkNotes(player, bard, instrumentID, decay, force)
+    local batch = bard.networkBatch
+    if not batch then return end
+    if (not force) and ((bard.elapsedTime - batch.startedAt) < Bard.networkBatchMs) then return end
+    bard.networkBatch = nil
+
+    Bard.networkSequence = Bard.networkSequence + 1
+    bard.networkPerformance = bard.networkPerformance or Bard.networkSequence
+
+    netWorkHandler.sendNotes(player, {
+        s = Bard.networkSequence,
+        p = bard.networkPerformance,
+        i = instrumentID,
+        v = bard.volume,
+        dc = decay,
+        n = batch.n,
+        t = batch.t,
+        d = batch.d,
+    })
+end
+
+
+function Bard.receiveNotes(data)
+    if not data or not data.id or not data.n then return end
+    local performer = getPlayerByOnlineID(data.id)
+    if not performer or performer:isLocalPlayer() then return end
+
+    local now = getTimestampMs()
+    local state = Bard.remotePlayers[data.id]
+    if state and data.s <= state.sequence then return end
+
+    local firstOffset
+    for _, offset in ipairs(data.t) do
+        if not firstOffset or offset < firstOffset then firstOffset = offset end
+    end
+    firstOffset = firstOffset or 0
+
+    if not state then
+        state = { playingNotes = {}, queue = {} }
+        Bard.remotePlayers[data.id] = state
+    end
+
+    if state.performance ~= data.p then
+        state.performance = data.p
+        state.anchor = now + Bard.networkDelayMs - firstOffset
+    end
+
+    state.sequence = data.s
+    state.player = performer
+    state.instrumentID = data.i
+    state.volume = data.v
+    state.decay = data.dc
+    state.lastReceived = now
+
+    for k, sound in ipairs(data.n) do
+        table.insert(state.queue, { sound = sound, at = state.anchor + data.t[k], duration = data.d[k] })
+    end
+end
+
+
+function Bard.stopRemotePlayer(id)
+    local state = Bard.remotePlayers[id]
+    if not state then return end
+
+    if state.player then
+        for _, note in ipairs(state.playingNotes) do
+            state.player:getEmitter():stopSoundLocal(note.id)
+        end
+    end
+    Bard.remotePlayers[id] = nil
+end
+
+
+function Bard.receiveStop(data)
+    if not data or not data.id then return end
+    Bard.stopRemotePlayer(data.id)
+end
+
+
+function Bard.updateRemotePlayers()
+    local now = getTimestampMs()
+
+    for id, state in pairs(Bard.remotePlayers) do
+        local player = state.player
+        if (not player) or (getPlayerByOnlineID(id) ~= player) then
+            Bard.remotePlayers[id] = nil
+        else
+            local queue = {}
+            for _, note in ipairs(state.queue) do
+                if note.at <= now then
+                    Bard.playNote(player, state, state.instrumentID, note.sound, note.duration, now)
+                else
+                    table.insert(queue, note)
+                end
+            end
+            state.queue = queue
+
+            local playingNotes = Bard.updatePlayingNotes(player, state, now)
+            if (#queue <= 0) and (#playingNotes <= 0) and ((now - state.lastReceived) > Bard.remoteIdleMs) then
+                Bard.remotePlayers[id] = nil
+            end
+        end
+    end
 end
 
 

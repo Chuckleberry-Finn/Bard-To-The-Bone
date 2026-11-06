@@ -1,5 +1,16 @@
 {
     "IGUI_BardToTheBone_Info": "The Bard to the Bone music system utilizes ABC notation.<br>For more details and song examples, visit the read-me located on this project's GitHub.",
     "IGUI_BardToTheBone_Play": "Play",
-    "IGUI_BardToTheBone_HideModSongs": "Hide Mod Songs"
+    "IGUI_BardToTheBone_HideVanillaSongs": "Hide Vanilla Songs",
+    "IGUI_BardToTheBone_ReloadSongs": "Reload Songs",
+    "IGUI_BardToTheBone_Save": "Save",
+    "IGUI_BardToTheBone_Revert": "Revert",
+    "IGUI_BardToTheBone_New": "New",
+    "IGUI_BardToTheBone_Remove": "Remove",
+    "IGUI_BardToTheBone_Stop": "Stop",
+    "IGUI_BardToTheBone_AllVoices": "All",
+    "IGUI_BardToTheBone_NewSong": "New Song",
+    "IGUI_BardToTheBone_Options": "Options",
+    "IGUI_BardToTheBone_ToggleEditor": "Show/Hide Editor",
+    "IGUI_BardToTheBone_RemoveConfirm": "Remove \"%1\"?\\nIts file will be blanked."
 }

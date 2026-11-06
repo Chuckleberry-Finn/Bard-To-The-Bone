@@ -73,3 +73,21 @@ Improved UI scaling with different resolutions.
   This means people can select which instrument they're playing from the song.
 - Added support for the Drum kit. :)
 [ ------ ]
+
+[ 11/6/26 ]
+- The song library is now built into the mod and can be browsed from the in-game song list.
+- Added a search bar. The gear button next to it opens a "Hide Vanilla Songs" toggle and a "Reload Songs" button.
+- Your songs are now individual .txt files in Zomboid/Lua/BardToTheBoneSongLibrary/. Songs from BardToTheBone_Songs.txt are copied there once; the old file is left as a backup.
+- Editing a mod (blue) or dropped-in .abc (green) song makes your own (white) copy. Only your songs can be saved or removed; Save and Remove grey out otherwise.
+- Removing a song blanks its file (the game can not delete files). A new song with the same name reuses it.
+- The editor can be collapsed with the button at the start of the button row. It starts collapsed and remembers your choice.
+- "Load All" is now "Revert": it discards unsaved changes to the selected song (an unsaved copy goes back to its original).
+- Fixed songs being cut short when the game ran below ~48 FPS.
+- Fixed boredom/unhappiness reduction from nearby music not applying in multiplayer.
+- Multiplayer: other players now hear your volume setting and each note's fade-out.
+- Multiplayer: notes are now sent in small batches instead of one network message per note.
+- Hide Vanilla Songs is now remembered in Zomboid/Lua/BardToTheBone_Settings.txt.
+- Fixed the window briefly opening and closing when playing an instrument from a bag or the floor.
+- Removed unused accordion .mid files.
+- Song list, buttons and labels now follow vanilla UI styling and translations.
+[ ------ ]

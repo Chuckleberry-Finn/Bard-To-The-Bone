@@ -8,7 +8,8 @@ BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
 
 function BardToTheBonePlayMusic:isValid()
     local held = self.heldItem and (self.character:getPrimaryHandItem() == self.item)
-    local near = (not self.heldItem) and (self.item:getSquare():DistToProper(self.character) <= 1.5)
+    local square = (not self.heldItem) and self.item:getSquare()
+    local near = square and (square:DistToProper(self.character) <= 1.5)
     return (held or near)
 end
 
@@ -72,6 +73,12 @@ function BardToTheBonePlayMusic:stop()
 end
 
 function BardToTheBonePlayMusic:update()
+    local bard = Bard.players[self.character:getUsername()]
+    if bard and bard.elapsedTime and self.songDuration > 0 then
+        local progress = self.maxTime * (bard.elapsedTime / self.songDuration)
+        self:setCurrentTime(math.max(0, math.min(self.maxTime - 1, progress)))
+    end
+
     self.ticks = self.ticks+1
     if self.ticks > 10 then
         self.ticks = 0
@@ -98,9 +105,10 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
 
     o.caloriesModifier = 2.5
 
-    local music, duration, voiceOrder = Bard.startPlayback(character, abcNotation, voice)
+    local music, duration, voiceOrder, durationMs = Bard.startPlayback(character, abcNotation, voice)
     o.music = music
     o.voiceOrder = voiceOrder
+    o.songDuration = durationMs or 0
     o.maxTime = duration or 1
 
     return o
