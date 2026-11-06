@@ -27,7 +27,6 @@ function bardContext.triggerTimedAction(character, instrument, square, dir)
     if instanceof(instrument, "InventoryItem") then
         if luautils.haveToBeTransfered(character, instrument) then
             local transfer = ISInventoryTransferAction:new(character, instrument, instrument:getContainer(), character:getInventory())
-            transfer:setOnComplete(BardUIWindow.open, character, instrument)
             ISTimedActionQueue.add(transfer)
         end
 
