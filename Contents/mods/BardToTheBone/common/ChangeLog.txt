@@ -91,3 +91,13 @@ Improved UI scaling with different resolutions.
 - Removed unused accordion .mid files.
 - Song list, buttons and labels now follow vanilla UI styling and translations.
 [ ------ ]
+
+[ 11/8/26 ]
+- Tweaked song playback.
+-- Chord lengths are no longer ignored, and a chord now lasts as long as its first note (like abc2midi).
+-- Tied notes are held instead of played again. Long notes are no longer cut short.
+-- Fixed accidentals carrying past barlines, missing x and Z rests, tuplets dropping their first note, and +p+ style markings being played as notes.
+-- Tempo changes partway through a song no longer jump backwards.
+-- Files with several parts (X:1, X:2) play the parts together, and each part can be picked from the voice button.
+-- Silence before the first note is skipped.
+[ ------ ]

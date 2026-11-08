@@ -47,7 +47,7 @@ function BardToTheBonePlayMusic:start()
 
     if instrumentData.anim then
         self:setActionAnim("BttB_"..instrumentData.anim)
-        local defaultVoiceId = Bard.next(Bard.players[id].music)
+        local defaultVoiceId = (self.voiceOrder and self.voiceOrder[1]) or Bard.next(Bard.players[id].music)
         local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
         self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
     end
