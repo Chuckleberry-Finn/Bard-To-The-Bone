@@ -38,9 +38,15 @@ end
 
 
 function songLibrary.getTitle(content, fallback)
-    local title = content and (content.."\n"):match("T:%s*([^\r\n]-)%s*[\r\n]")
-    if title and title ~= "" then return title end
-    return fallback or "[No Title]"
+    local padded = content and ("\n"..content.."\n")
+    local title = padded and padded:match("[\r\n]T:%s*([^\r\n]-)%s*[\r\n]")
+    if not title or title == "" then return fallback or "[No Title]" end
+
+    local keyStart = padded:find("[\r\n]K:")
+    local header = keyStart and padded:sub(1, keyStart) or padded
+    local artist = header:match("[\r\n]C:%s*([^\r\n]-)%s*[\r\n]")
+    if artist and artist ~= "" then return artist .. " - " .. title end
+    return title
 end
 
 

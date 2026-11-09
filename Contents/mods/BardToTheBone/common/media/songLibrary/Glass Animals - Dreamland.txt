@@ -1,5 +1,6 @@
 X:1
-T:GlassAnimals - Dreamland
+T:Dreamland
+C:Glass Animals
 Q:1/4=110
 L:1/16
 M:4/4

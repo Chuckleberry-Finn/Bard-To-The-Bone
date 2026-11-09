@@ -93,6 +93,7 @@ Improved UI scaling with different resolutions.
 [ ------ ]
 
 [ 11/8/26 ]
+Part 1:
 - Tweaked song playback.
 -- Chord lengths are no longer ignored, and a chord now lasts as long as its first note (like abc2midi).
 -- Tied notes are held instead of played again. Long notes are no longer cut short.
@@ -100,4 +101,11 @@ Improved UI scaling with different resolutions.
 -- Tempo changes partway through a song no longer jump backwards.
 -- Files with several parts (X:1, X:2) play the parts together, and each part can be picked from the voice button.
 -- Silence before the first note is skipped.
+
+Part 2:
+- Song library cleaned up: every song is now named "Artist - Title (Part)", with matching T: and C: lines inside the file.
+-- Your own songs show their C: artist in the list too.
+- Removed 109 duplicate songs, keeping the most complete version of each.
+- Instrument parts of the same arrangement are combined into one song.
+-- The voice button can pick a part to play.
 [ ------ ]

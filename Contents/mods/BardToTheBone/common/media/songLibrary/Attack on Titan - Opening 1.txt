@@ -1,5 +1,6 @@
 X:1
-T:Attack on Titan - Opening 1
+T:Opening 1
+C:Attack on Titan
 M:3/4
 L:1/16
 K:G#m

@@ -1,5 +1,6 @@
 X:1
-T:Eye Of The Tiger (4:04)
+T:Eye of the Tiger
+C:Survivor
 Z:Transcribed by Branorin of Elendilmir
 %  Original file:survivors_eyeofthetiger.mid
 %  Transpose:0
