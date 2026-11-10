@@ -116,7 +116,62 @@ function songLibrary.makeFileName(title, currentFileName)
 end
 
 
+songLibrary.favouritesFile = "BardToTheBone_Favourites.txt"
+
+function songLibrary.getFavouriteKey(song)
+    if not song or not song.fileName or not song.source then return end
+    return song.source .. "|" .. song.fileName
+end
+
+
+function songLibrary.loadFavourites()
+    if songLibrary.favourites then return songLibrary.favourites end
+    local favourites = {}
+    local reader = getFileReader(songLibrary.favouritesFile, false)
+    if reader then
+        local line = reader:readLine()
+        while line ~= nil do
+            local key = line:match("^%s*(.-)%s*$")
+            if key and key ~= "" then favourites[key] = true end
+            line = reader:readLine()
+        end
+        reader:close()
+    end
+    songLibrary.favourites = favourites
+    return favourites
+end
+
+
+function songLibrary.saveFavourites()
+    local writer = getFileWriter(songLibrary.favouritesFile, true, false)
+    if not writer then return end
+    local keys = {}
+    for key, _ in pairs(songLibrary.loadFavourites()) do table.insert(keys, key) end
+    songLibrary.mergeSort(keys, function(a, b) return a < b end)
+    for _, key in ipairs(keys) do writer:write(key .. "\n") end
+    writer:close()
+end
+
+
+function songLibrary.isFavourite(song)
+    local key = songLibrary.getFavouriteKey(song)
+    return key ~= nil and songLibrary.loadFavourites()[key] == true
+end
+
+
+function songLibrary.setFavourite(song, value)
+    local key = songLibrary.getFavouriteKey(song)
+    if not key then return false end
+    local favourites = songLibrary.loadFavourites()
+    if (favourites[key] == true) == (value == true) then return true end
+    favourites[key] = value and true or nil
+    songLibrary.saveFavourites()
+    return true
+end
+
+
 function songLibrary.saveSong(song, content)
+    local favourite = songLibrary.isFavourite(song)
     local title = songLibrary.getTitle(content)
     local fileName = songLibrary.makeFileName(title, song.fileName)
 
@@ -129,10 +184,12 @@ function songLibrary.saveSong(song, content)
     songLibrary.localFiles[fileName] = true
     songLibrary.blankFiles[fileName] = nil
 
+    if favourite then songLibrary.setFavourite(song, false) end
     song.fileName = fileName
     song.content = content
     song.source = "local"
     songLibrary.setTitle(song, title)
+    if favourite then songLibrary.setFavourite(song, true) end
     return true
 end
 
@@ -170,14 +227,82 @@ function songLibrary.ensureCacheDirectory()
 end
 
 
+function songLibrary.mergeSort(list, lessThan)
+    local count = #list
+    if count < 2 then return list end
+    local source, target = list, {}
+    local width = 1
+    while width < count do
+        local left = 1
+        while left <= count do
+            local middle = math.min(left + width, count + 1)
+            local right = math.min(left + (width * 2), count + 1)
+            local i, j, k = left, middle, left
+            while i < middle and j < right do
+                if lessThan(source[j], source[i]) then
+                    target[k] = source[j]
+                    j = j + 1
+                else
+                    target[k] = source[i]
+                    i = i + 1
+                end
+                k = k + 1
+            end
+            while i < middle do
+                target[k] = source[i]
+                i = i + 1
+                k = k + 1
+            end
+            while j < right do
+                target[k] = source[j]
+                j = j + 1
+                k = k + 1
+            end
+            left = right
+        end
+        source, target = target, source
+        width = width * 2
+    end
+    if source ~= list then
+        for index = 1, count do list[index] = source[index] end
+    end
+    return list
+end
+
+
 function songLibrary.sortSongs(songs)
-    table.sort(songs, function(a, b) return a.searchTitle < b.searchTitle end)
-    return songs
+    return songLibrary.mergeSort(songs, function(a, b) return a.searchTitle < b.searchTitle end)
+end
+
+
+songLibrary.difficultyFile = "media/songDifficulty.txt"
+
+function songLibrary.loadDifficultyIndex()
+    if songLibrary.difficultyIndex then return songLibrary.difficultyIndex end
+
+    local index = {}
+    local reader = getModFileReader(songLibrary.modID, songLibrary.difficultyFile, false)
+    if reader then
+        local line = reader:readLine()
+        while line ~= nil do
+            local fileName, melodic, percussion = line:match("^(.-)\t(%-?%d+)\t(%-?%d+)")
+            if fileName then
+                melodic, percussion = tonumber(melodic), tonumber(percussion)
+                index[fileName] = { melodic = (melodic >= 0) and melodic or nil, percussion = (percussion >= 0) and percussion or nil }
+            end
+            line = reader:readLine()
+        end
+        reader:close()
+    end
+
+    songLibrary.difficultyIndex = index
+    return index
 end
 
 
 function songLibrary.collectModSongs()
     local songs = {}
+    local difficulties = songLibrary.loadDifficultyIndex()
     local files = listFilesInModDirectory(songLibrary.modID, songLibrary.modDirectory)
     if not files then return songs end
 
@@ -186,7 +311,7 @@ function songLibrary.collectModSongs()
         local fileName = files:get(i)
         if songLibrary.isSongFile(fileName) and not seen[fileName] then
             seen[fileName] = true
-            local song = { fileName = fileName, source = "mod" }
+            local song = { fileName = fileName, source = "mod", difficulty = difficulties[fileName] }
             songLibrary.setTitle(song, songLibrary.getDisplayName(fileName))
             table.insert(songs, song)
         end

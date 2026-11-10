@@ -15,13 +15,19 @@ def ensure_libs():
 
 ensure_libs()
 
+import warnings
 import pyloudnorm as pyln
+
+# The ceiling check below scales any over-full-scale note back down before writing.
+warnings.filterwarnings("ignore", message="Possible clipped samples in output.")
 import numpy as np
 import librosa
 import soundfile as sf
 from mido import Message, MidiFile, MidiTrack
 
-TARGET_LOUDNESS_LUFS = -23.0  # foreground/instrument level
+BASE_LOUDNESS_LUFS = -23.0  # foreground/instrument level
+VOLUME_BOOST_PERCENT = 33   # extra loudness on top of the base level
+TARGET_LOUDNESS_LUFS = BASE_LOUDNESS_LUFS + 20 * np.log10(1 + VOLUME_BOOST_PERCENT / 100)
 CEILING_DBFS = -1.0           # safety margin below full scale (0 dBFS)
 CEILING_LINEAR = 10 ** (CEILING_DBFS / 20)
 
@@ -117,7 +123,7 @@ def convert_midi_file(midi_path):
             "-ni", "-F", str(wav_path), "-r", "44100",
             soundfont_path,
             str(midi_path)
-        ], check=True, timeout=10, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        ], check=True, timeout=120, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
 

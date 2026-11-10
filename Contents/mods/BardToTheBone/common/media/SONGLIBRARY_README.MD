@@ -1,5 +1,5 @@
 ## Bard to the Bone Song Library
-**Collection of 900+ songs ready to be played in-game.**<br>
+**Collection of 780+ songs ready to be played in-game.**<br>
 These songs are bundled with the mod and show up in the in-game song list.<br>
 Your own songs are saved as `.txt` files in `Zomboid/Lua/BardToTheBoneSongLibrary/`. Dropped-in `.abc` files show up too (read-only; editing one saves a `.txt` copy).<br>
 *<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp) using [renameSongLibrary.py](./renameSongLibrary.py)</sup>*

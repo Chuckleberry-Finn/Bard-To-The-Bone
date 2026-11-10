@@ -5,6 +5,10 @@ settings.values = {
     hideModSongs = false,
     editorCollapsed = true,
     importedSongsFile = false,
+    favouritesOnly = false,
+    songSort = "",
+    songSortDescending = false,
+    instrumentVolume = 50,
 }
 settings.loaded = false
 

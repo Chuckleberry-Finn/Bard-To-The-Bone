@@ -17,30 +17,29 @@ end
 function BardToTheBonePlayMusic:start()
     --self:setOverrideHandModels(self.item, nil)
     local id = self.character:getUsername()
-    Bard.players[id] = {}
-    Bard.players[id].action = self
-    Bard.players[id].music = self.music
-    Bard.players[id].volume = self.volume
-    Bard.players[id].duration = self.maxTime
 
     local instrumentData = Bard.getInstrumentData(self.item)
     if not instrumentData then
         Bard.players[id] = nil
+        self.pausedBard = nil
         ISTimedActionQueue.getTimedActionQueue(self.character):resetQueue()
         return
     end
-    Bard.players[id].instrumentID = instrumentData.soundDir
-    Bard.players[id].startTime = getTimestampMs()
-    Bard.players[id].decay = instrumentData.decay
-    Bard.players[id].isPercussion = instrumentData.isPercussion
-    Bard.players[id].percussionOctaveShift = instrumentData.percussionOctaveShift
-    Bard.players[id].percussionPieces = instrumentData.percussionPieces
-    Bard.players[id].percussionFallback = instrumentData.percussionFallback
-    Bard.players[id].selectedVoice = self.voice
 
-    if instrumentData.styles then
-        local style = self.style or instrumentData.styles[1]
-        Bard.players[id].style = style
+    local resumed = self.pausedBard
+    if resumed then
+        self.pausedBard = nil
+        resumed.action = self
+        resumed.playingNotes = {}
+        resumed.delayedNotes = {}
+        resumed.networkBatch = nil
+        resumed.networkPerformance = nil
+        resumed.lastUpdateTime = getTimestampMs()
+        resumed.nextAmpCheck = nil
+        if resumed.bandStart then Bard.skipTo(resumed, Bard.serverNow() - resumed.bandStart) end
+        Bard.players[id] = resumed
+    else
+        self:startPlayback(id, instrumentData)
     end
 
     self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
@@ -58,24 +57,67 @@ function BardToTheBonePlayMusic:start()
     end
 end
 
+
+function BardToTheBonePlayMusic:startPlayback(id, instrumentData)
+    Bard.players[id] = {}
+    Bard.players[id].action = self
+    Bard.players[id].music = self.music
+    Bard.players[id].volume = self.volume
+    Bard.players[id].duration = self.maxTime
+    Bard.players[id].instrumentID = instrumentData.soundDir
+    Bard.players[id].startTime = getTimestampMs()
+    Bard.players[id].decay = instrumentData.decay
+    Bard.players[id].isPercussion = instrumentData.isPercussion
+    Bard.players[id].percussionOctaveShift = instrumentData.percussionOctaveShift
+    Bard.players[id].percussionPieces = instrumentData.percussionPieces
+    Bard.players[id].percussionFallback = instrumentData.percussionFallback
+    Bard.players[id].selectedVoice = self.voice
+    Bard.players[id].songKey = self.songKey
+    Bard.players[id].song = self.song
+    Bard.players[id].family = instrumentData.family
+    Bard.players[id].needsAmp = instrumentData.needsAmp
+    Bard.players[id].ampStyles = instrumentData.ampStyles
+    Bard.players[id].styles = instrumentData.styles
+
+    if isClient() and Bard.clock.offset then
+        local bandStart = Bard.findBand(self.songKey, self.songDuration)
+        Bard.players[id].bandStart = bandStart or Bard.serverNow()
+        Bard.players[id].joinedBand = bandStart ~= nil
+        Bard.skipTo(Bard.players[id], Bard.serverNow() - Bard.players[id].bandStart)
+    end
+    Bard.requestClock(self.character)
+
+    if instrumentData.styles then
+        local style = self.style or instrumentData.styles[1]
+        Bard.players[id].style = style
+    end
+end
+
+
+function BardToTheBonePlayMusic:endPlayback()
+    local paused = self.action and (self.character:getTimedActionToRetrigger() == self.action)
+    self.pausedBard = paused and Bard.players[self.character:getUsername()] or nil
+    Bard.completeAction(self.character, true, nil, paused)
+end
+
 function BardToTheBonePlayMusic:perform()
     Bard.completeAction(self.character, true)
     ISBaseTimedAction.perform(self)
 end
 
 function BardToTheBonePlayMusic:forceStop()
-    Bard.completeAction(self.character, true)
+    self:endPlayback()
     ISBaseTimedAction.forceStop(self)
 end
 function BardToTheBonePlayMusic:stop()
-    Bard.completeAction(self.character, true)
+    self:endPlayback()
     ISBaseTimedAction.stop(self)
 end
 
 function BardToTheBonePlayMusic:update()
     local bard = Bard.players[self.character:getUsername()]
     if bard and bard.elapsedTime and self.songDuration > 0 then
-        local progress = self.maxTime * (bard.elapsedTime / self.songDuration)
+        local progress = self.maxTime * ((bard.elapsedTime - (bard.timeShift or 0)) / self.songDuration)
         self:setCurrentTime(math.max(0, math.min(self.maxTime - 1, progress)))
     end
 
@@ -108,6 +150,7 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
     local music, duration, voiceOrder, durationMs = Bard.startPlayback(character, abcNotation, voice)
     o.music = music
     o.voiceOrder = voiceOrder
+    o.songKey = Bard.getSongKey(abcNotation)
     o.songDuration = durationMs or 0
     o.maxTime = duration or 1
 

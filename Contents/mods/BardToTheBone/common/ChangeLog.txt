@@ -95,7 +95,7 @@ Improved UI scaling with different resolutions.
 [ 11/8/26 ]
 Part 1:
 - Tweaked song playback.
--- Chord lengths are no longer ignored, and a chord now lasts as long as its first note (like abc2midi).
+-- Chord lengths are no longer ignored: the shortest note in a chord sets when the next note starts, and longer notes keep ringing.
 -- Tied notes are held instead of played again. Long notes are no longer cut short.
 -- Fixed accidentals carrying past barlines, missing x and Z rests, tuplets dropping their first note, and +p+ style markings being played as notes.
 -- Tempo changes partway through a song no longer jump backwards.
@@ -108,4 +108,47 @@ Part 2:
 - Removed 109 duplicate songs, keeping the most complete version of each.
 - Instrument parts of the same arrangement are combined into one song.
 -- The voice button can pick a part to play.
+[ ------ ]
+
+[ 11/9/26 ]
+- New Performance Skills: Strings, Keys, Winds and Percussion.
+ -- Playing an instrument earns XP in its family's skill.
+ -- Busier songs earn more: note density, pitch range, chords, accidentals and rhythm variety all count.
+ -- Replaying a song you know gives a small bonus (up to +20%)
+ -- Playing new instruments gives +25% for its first 15 minutes.
+
+- Each song gets a difficulty from 0 to 10 based on its notes.
+ -- Low skill means sloppy playing.
+ -- Mistakes shrink each level and stop at level 10.
+ -- The song list shows each song's difficulty for the instrument in your hands (drums are rated separately).
+ -- Long song titles are shortened with ... so the difficulty always fits.
+
+- New sandbox page Bard to the Bone:
+  - Attract Zombies (on by default).
+  - Performance Skills (on by default). Turn off for no XP, no mistakes and no difficulty ratings.
+  - XP Multiplier for Performance.
+
+- Opening a door (or climbing through a window or over a fence) while playing now pauses the song and resumes it afterwards, instead of going silent.
+[ ------ ]
+
+[ 11/10/26 ]
+- NEW: Electric guitars and basses can plug into a powered Guitar Amplifier
+  - The amp needs to be on a powered tile, and within 3 tiles.
+  - The amp allows for full volume, the Overdrive and Distortion styles.
+  - Unplugged guitars play quieter, and the amp styles show in red until you are next to one.
+- NEW: Favourite songs:
+  - Click the star at the start of a row.
+  - Favourites are listed first, and the gear menu has a Favourites Only toggle.
+- NEW: Band mode (multiplayer): playing the same song as someone nearby will sync your performances.
+- NEW: Mod Options: Mute Instruments toggle.
+- NEW: The song list has Song and Level column headers with sorting.
+- NEW: The gear menu has a Song Guide button.
+  - Opens the mod's GitHub page, with the song guide, MIDItoABC conversion tools.
+
+- TWEAK: UI tweaked to be more clear in purpose.
+  - The volume slider is labelled
+  - The "*" style button now shows the style's name.
+- TWEAK: Instrument volume starts at 50% and is remembered.
+
+- FIX: C-flat and B-sharp notes playing an octave off.
 [ ------ ]

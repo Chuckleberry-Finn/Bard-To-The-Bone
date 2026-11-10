@@ -1,0 +1,59 @@
+VERSION = 1,
+
+option BardToTheBone.AttractZombies
+{
+	type = boolean,
+	default = true,
+	page = BardToTheBone,
+	translation = BardToTheBone_AttractZombies,
+}
+
+option BardToTheBone.EnableSkills
+{
+	type = boolean,
+	default = true,
+	page = BardToTheBone,
+	translation = BardToTheBone_EnableSkills,
+}
+
+option BardToTheBone.XpMultiplier
+{
+	type = double,
+	min = 0.0,
+	max = 1000.0,
+	default = 1.0,
+	page = BardToTheBone,
+	translation = BardToTheBone_XpMultiplier,
+}
+
+option MultiplierConfig.BardStrings
+{
+	type = double,
+	min = 1.0,
+	max = 1.0,
+	default = 1.0,
+}
+
+option MultiplierConfig.BardKeys
+{
+	type = double,
+	min = 1.0,
+	max = 1.0,
+	default = 1.0,
+}
+
+option MultiplierConfig.BardWinds
+{
+	type = double,
+	min = 1.0,
+	max = 1.0,
+	default = 1.0,
+}
+
+option MultiplierConfig.BardPercussion
+{
+	type = double,
+	min = 1.0,
+	max = 1.0,
+	default = 1.0,
+}

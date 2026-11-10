@@ -1,6 +1,10 @@
 local bardNetworkHandler = {}
 
 bardNetworkHandler.relayRange = 60
+bardNetworkHandler.maxXpPerSecond = 2
+bardNetworkHandler.maxXpWindowMs = 10000
+bardNetworkHandler.xpTimes = {}
+bardNetworkHandler.familyPerks = { Strings = "BardStrings", Keys = "BardKeys", Winds = "BardWinds", Percussion = "BardPercussion" }
 
 ---@param player IsoPlayer|IsoGameCharacter
 function bardNetworkHandler.sendUpdate(player)
@@ -64,6 +68,67 @@ end
 function bardNetworkHandler.sendStop(player)
     if not player or not isClient() then return end
     sendClientCommand(player, "BardToTheBone", "stop", {})
+end
+
+
+function bardNetworkHandler.skillsEnabled()
+    local options = SandboxVars.BardToTheBone
+    return (not options) or (options.EnableSkills ~= false)
+end
+
+
+function bardNetworkHandler.getFamilyPerk(family)
+    local id = family and bardNetworkHandler.familyPerks[family]
+    return id and Perks[id]
+end
+
+
+function bardNetworkHandler.getXpMultiplier()
+    local options = SandboxVars.BardToTheBone
+    return options and options.XpMultiplier or 1
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function bardNetworkHandler.sendXp(player, amount, family)
+    local perk = bardNetworkHandler.getFamilyPerk(family)
+    if not player or not amount or amount <= 0 or not perk or not bardNetworkHandler.skillsEnabled() then return end
+    if isClient() then
+        sendClientCommand(player, "BardToTheBone", "xp", { a = amount, f = family })
+    else
+        addXp(player, perk, amount * bardNetworkHandler.getXpMultiplier())
+    end
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function bardNetworkHandler.receiveXp(player, data)
+    local amount = data and tonumber(data.a)
+    local perk = data and bardNetworkHandler.getFamilyPerk(data.f)
+    if not player or not amount or amount <= 0 or not perk or not bardNetworkHandler.skillsEnabled() then return end
+
+    local id = player:getOnlineID()
+    local now = getTimestampMs()
+    local last = bardNetworkHandler.xpTimes[id] or (now - bardNetworkHandler.maxXpWindowMs)
+    local window = math.min(now - last, bardNetworkHandler.maxXpWindowMs)
+    bardNetworkHandler.xpTimes[id] = now
+
+    local allowed = window / 1000 * bardNetworkHandler.maxXpPerSecond
+    if allowed > 0 then addXp(player, perk, math.min(amount, allowed) * bardNetworkHandler.getXpMultiplier()) end
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function bardNetworkHandler.sendClockRequest(player, localTime)
+    if not player or not isClient() then return end
+    sendClientCommand(player, "BardToTheBone", "clock", { t = localTime })
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function bardNetworkHandler.replyClock(player, data)
+    if not player or not data or not tonumber(data.t) then return end
+    sendServerCommand(player, "BardToTheBone", "clock", { t = tonumber(data.t), s = getTimestampMs() })
 end
 
 

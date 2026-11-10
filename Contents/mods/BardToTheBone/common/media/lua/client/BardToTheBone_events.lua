@@ -6,6 +6,7 @@ local function onServerCommand(_module, _command, _data)
     if _module ~= "BardToTheBone" then return end
     if _command == "notes" then Bard.receiveNotes(_data)
     elseif _command == "stop" then Bard.receiveStop(_data)
+    elseif _command == "clock" then Bard.receiveClock(_data)
     end
 end
 Events.OnServerCommand.Add(onServerCommand)

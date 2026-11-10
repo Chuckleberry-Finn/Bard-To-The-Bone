@@ -1,4 +1,5 @@
 local netWorkHandler = require "BardToTheBone_networkHandler"
+local modOptions = require "BardToTheBone_modOptions"
 
 local Bard = {}
 
@@ -9,6 +10,25 @@ Bard.networkSequence = 0
 Bard.networkBatchMs = 200
 Bard.networkDelayMs = 150
 Bard.remoteIdleMs = 5000
+Bard.minimumBareTempo = 20
+Bard.ampRange = 3
+Bard.ampCheckMs = 2000
+Bard.unpluggedVolume = 0.5
+Bard.ampNoiseRadius = 40
+Bard.ampNames = { ["Guitar Amplifier"] = true }
+Bard.ampSprites = { ["recreational_01_72"] = true }
+Bard.clock = { requested = 0 }
+Bard.clockRefreshMs = 60000
+Bard.bandDelayMs = 500
+Bard.bandJoinWindowMs = 3000
+Bard.xpPerMinute = 10
+Bard.xpSendMs = 5000
+Bard.xpActiveMs = 2000
+Bard.familiarPlayMs = 30000
+Bard.familiarBonus = 0.04
+Bard.familiarMaxPlays = 5
+Bard.newInstrumentMs = 900000
+Bard.newInstrumentBonus = 0.25
 Bard.accidental_map = {}
 Bard.natural_map = {}
 
@@ -558,6 +578,7 @@ function Bard.parseABC(abc)
                 bpm = tonumber(bpm)
             else
                 bpm = tonumber(value:match("%d+")) or 120
+                if bpm < Bard.minimumBareTempo then bpm = 120 end
             end
             voices[currentVoice].bpm = bpm
 
@@ -709,6 +730,11 @@ function Bard.parseABC(abc)
                         brokenRhythm = nil
 
                         local advanceTicks = parsedNotes[1].ticks or 0
+                        if isChord then
+                            for _, chordNote in ipairs(parsedNotes) do
+                                if chordNote.ticks and chordNote.ticks < advanceTicks then advanceTicks = chordNote.ticks end
+                            end
+                        end
 
                         local timeOffsetMs = math.floor(voiceTime[currentVoice])
                         local ties = pendingTies[currentVoice] or {}
@@ -855,11 +881,18 @@ end
 
 
 ---@param skipQueueStop boolean|nil pass true when called from BardToTheBonePlayMusic:perform()/
-function Bard.completeAction(player, skipQueueStop, finished)
+function Bard.completeAction(player, skipQueueStop, finished, paused)
     local id = player:getUsername()
     if Bard.players[id] == false then return end    -- guard against re-entry
 
     local bard = Bard.players[id]
+    if bard and bard.mistakes then
+        Bard.flushMusicXp(player, bard)
+        if bard.songKey and (not paused) and (finished or bard.activeMs >= Bard.familiarPlayMs) then
+            local data = Bard.getMusicData(player)
+            data.songs[bard.songKey] = (data.songs[bard.songKey] or 0) + 1
+        end
+    end
     if bard and bard.playingNotes then
         for _, note in ipairs(bard.playingNotes) do
             player:getEmitter():stopSoundLocal(note.id)
@@ -893,18 +926,22 @@ function Bard.startPlayback(player, abc, requestedVoice)
 
     local durationTicks = getGameTime():getMultiplierFromTimeDelta(totalMilliseconds / 1000)
 
-    for _, voice in pairs(music) do voice.eventIndex = 1 end
+    for _, voice in pairs(music) do
+        voice.eventIndex = 1
+        Bard.getVoiceStats(voice)
+    end
 
     return music, durationTicks, voiceOrder, totalMilliseconds --to convert ticks to milliseconds for playback deadline
 end
 
 
+Bard.midiBaseMap = {C=0, D=2, E=4, F=5, G=7, A=9, B=11}
+Bard.midiAccidentalOffset = {["^"] = 1, ["_"] = -1, ["="] = 0}
+
 function Bard.noteToMidi(note)
-    local baseMap = {C=0, D=2, E=4, F=5, G=7, A=9, B=11}
-    local accidentalOffset = {["^"] = 1, ["_"] = -1, ["="] = 0}
     local acc = note.base:sub(1, 1)
     local letter = note.base:sub(-1)
-    local pitch = baseMap[letter] + (accidentalOffset[acc] or 0)
+    local pitch = Bard.midiBaseMap[letter] + (Bard.midiAccidentalOffset[acc] or 0)
     return (note.octave + 1) * 12 + pitch
 end
 
@@ -921,10 +958,12 @@ function Bard.midiToNote(midi, fallbackBase)
 end
 
 
+Bard.pitchNames = { "Cn", "Db", "Dn", "Eb", "En", "Fn", "Gb", "Gn", "Ab", "An", "Bb", "Bn" }
+
 function Bard.getSoundName(n)
-    local mapped = Bard.accidental_map[n.base] or Bard.natural_map[n.base:sub(-1)]
-    if not mapped then return nil end
-    return mapped .. tostring(n.octave)
+    if not Bard.midiBaseMap[n.base:sub(-1)] then return nil end
+    local midi = Bard.noteToMidi(n)
+    return Bard.pitchNames[(midi % 12) + 1] .. tostring(math.floor(midi / 12) - 1)
 end
 
 
@@ -1074,12 +1113,10 @@ function Bard.playLoadedSongs(player)
 
     local music = bard.music
     local decay = bard.decay or 200
-    local instrumentID = bard.instrumentID .. (bard.style or "")
     local isPercussion = bard.isPercussion
     local percussionOctaveShift = bard.percussionOctaveShift
     local percussionPieces = bard.percussionPieces
     local percussionFallback = bard.percussionFallback
-    local selectedVoice = bard.selectedVoice -- nil or "All" => play every voice (old behavior)
 
     -- Initialize start and elapsed tracking if not already
     bard.startTime = bard.startTime or getTimestampMs()
@@ -1095,23 +1132,34 @@ function Bard.playLoadedSongs(player)
         return
     end
 
+    if not bard.mistakes then Bard.initPerformance(player, bard) end
+    if bard.selectedVoice ~= bard.mistakesVoice then Bard.updateMusicLevel(player, bard) end
+
     -- Advance elapsed time, scaled by speed
-    bard.elapsedTime = bard.elapsedTime + (now - bard.lastUpdateTime) * speedMultiplier
+    local delta = (now - bard.lastUpdateTime) * speedMultiplier
+    if bard.bandStart then
+        local songTime = Bard.serverNow() - bard.bandStart
+        delta = math.max(0, songTime - bard.elapsedTime)
+        bard.elapsedTime = songTime
+    else
+        bard.elapsedTime = bard.elapsedTime + delta
+    end
     bard.lastUpdateTime = now
+
+    if (not bard.nextAmpCheck) or bard.elapsedTime >= bard.nextAmpCheck then
+        bard.nextAmpCheck = bard.elapsedTime + Bard.ampCheckMs
+        bard.amplified = bard.needsAmp and Bard.findPoweredAmp(player) or false
+    end
+    local instrumentID = bard.instrumentID .. (Bard.getPlayableStyle(bard) or "")
 
     bard.playingNotes = bard.playingNotes or {}
 
     local allDone = true
     local madeSound = false
+    local mistakes = bard.mistakes
 
     for voiceId, data in pairs(music) do
-        local isPlayed = (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
-
-        if data.isPercussionVoice and not isPercussion then
-            isPlayed = false
-        end
-
-        if isPlayed then
+        if Bard.isVoicePlayed(bard, voiceId, data) then
         data.eventIndex = data.eventIndex or 1
 
         while data.eventIndex <= #data.events do
@@ -1119,16 +1167,23 @@ function Bard.playLoadedSongs(player)
             local eventTime = event.timeOffset
 
             local latencyBufferMs = 30
-            if bard.elapsedTime + latencyBufferMs >= eventTime then
+            if bard.elapsedTime - bard.timeShift + latencyBufferMs >= eventTime then
+                local slip = 0
+                if mistakes.slip > 0 and ZombRandFloat(0, 1) < mistakes.slip then slip = ZombRandFloat(0, mistakes.slipMs) end
+
                 for _, note in ipairs(event.notes) do
                     local sound = Bard.noteToSound(note, instrumentID, isPercussion, percussionOctaveShift, percussionPieces, percussionFallback)
-                    if sound then
-                        ---print("ElapsedTime: "..bard.elapsedTime.."  Play: ", instrumentID .. "_" .. sound, " (", event.timeOffset, ")")
-                        if instrumentID then
-                            Bard.playNote(player, bard, instrumentID, sound, note.durationMs, bard.elapsedTime)
-                            if isClient() then Bard.queueNetworkNote(bard, sound, event.timeOffset, note.durationMs) end
-                            madeSound = true
-                        end
+                    if sound and instrumentID then
+                        bard.lastNoteTime = bard.elapsedTime
+                        if Bard.performNote(player, bard, note, sound, instrumentID, eventTime, slip) then madeSound = true end
+                    end
+                end
+
+                if mistakes.hesitate > 0 and ZombRandFloat(0, 1) < mistakes.hesitate then
+                    if bard.bandStart then
+                        bard.stumbleUntil = bard.elapsedTime + ZombRandFloat(250, mistakes.hesitateMs)
+                    else
+                        bard.timeShift = bard.timeShift + ZombRandFloat(250, mistakes.hesitateMs)
                     end
                 end
 
@@ -1141,26 +1196,201 @@ function Bard.playLoadedSongs(player)
         end
     end
 
-    if madeSound then addSound(player, player:getX(), player:getY(), player:getZ(), 20, 10) end
+    if madeSound and SandboxVars.BardToTheBone.AttractZombies then
+        local radius = bard.amplified and Bard.ampNoiseRadius or 20
+        addSound(player, player:getX(), player:getY(), player:getZ(), radius, 10)
+    end
+
+    local waiting = Bard.playDelayedNotes(player, bard, instrumentID)
 
     if isClient() then Bard.flushNetworkNotes(player, bard, instrumentID, decay) end
 
+    Bard.updateMusicXp(player, bard, delta)
+
     local playingNotes = Bard.updatePlayingNotes(player, bard, bard.elapsedTime)
 
-    if allDone and (#playingNotes <= 0) then Bard.completeAction(player, nil, true) end
+    if allDone and (waiting <= 0) and (#playingNotes <= 0) then Bard.completeAction(player, nil, true) end
+end
+
+
+function Bard.isVoicePlayed(bard, voiceId, data)
+    if data.isPercussionVoice and not bard.isPercussion then return false end
+    local selectedVoice = bard.selectedVoice
+    return (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
 end
 
 
 ---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
-function Bard.playNote(player, state, instrumentID, sound, durationMs, started)
+function Bard.performNote(player, bard, note, sound, instrumentID, eventTime, slip)
+    local mistakes = bard.mistakes
+    local duration = note.durationMs
+    local gain = 1
+
+    if bard.stumbleUntil and bard.elapsedTime < bard.stumbleUntil then return false end
+
+    if mistakes.gain > 0 then
+        if ZombRandFloat(0, 1) < mistakes.miss then return false end
+        if ZombRandFloat(0, 1) < mistakes.wrong then
+            sound = Bard.getWrongSound(bard, note, instrumentID) or sound
+        end
+        if ZombRandFloat(0, 1) < mistakes.hold then duration = duration * ZombRandFloat(0.4, 1.6) end
+        gain = 1 - ZombRandFloat(0, mistakes.gain)
+    end
+
+    if bard.needsAmp and not bard.amplified then gain = gain * Bard.unpluggedVolume end
+
+    local localDelay = slip + (bard.bandStart and Bard.bandDelayMs or 0)
+    if localDelay > 0 then
+        table.insert(bard.delayedNotes, { at = bard.elapsedTime + localDelay, sound = sound, duration = duration, gain = gain })
+    else
+        Bard.playNote(player, bard, instrumentID, sound, duration, bard.elapsedTime, gain)
+    end
+
+    if isClient() then Bard.queueNetworkNote(bard, sound, eventTime + bard.timeShift + slip, duration, gain) end
+    return true
+end
+
+
+function Bard.getPlayableStyle(bard)
+    local style = bard.style
+    if style and bard.ampStyles and bard.ampStyles[style] and not bard.amplified then
+        return bard.styles and bard.styles[1] or style
+    end
+    return style
+end
+
+
+function Bard.isAmpObject(object)
+    if not object then return false end
+    local sprite = object:getSprite()
+    local spriteName = sprite and sprite:getName()
+    if spriteName and Bard.ampSprites[spriteName] then return true end
+    local properties = object:getProperties()
+    if not properties then return false end
+    local custom = properties:has("CustomName") and properties:get("CustomName")
+    if not custom then return false end
+    local group = properties:has("GroupName") and properties:get("GroupName")
+    local name = group and (group .. " " .. custom) or custom
+    return (Bard.ampNames[name] or Bard.ampNames[custom]) and true or false
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.findPoweredAmp(player)
+    local square = player:getSquare()
+    if not square then return false end
+    local cell = getCell()
+    local x, y, z = square:getX(), square:getY(), square:getZ()
+    for dx = -Bard.ampRange, Bard.ampRange do
+        for dy = -Bard.ampRange, Bard.ampRange do
+            local ampSquare = cell:getGridSquare(x + dx, y + dy, z)
+            if ampSquare and (ampSquare:haveElectricity() or ampSquare:hasGridPower()) then
+                local objects = ampSquare:getObjects()
+                for i = 0, objects:size() - 1 do
+                    if Bard.isAmpObject(objects:get(i)) then return true end
+                end
+            end
+        end
+    end
+    return false
+end
+
+
+function Bard.serverNow()
+    return getTimestampMs() + (Bard.clock.offset or 0)
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.requestClock(player, force)
+    if not isClient() or not player then return end
+    local now = getTimestampMs()
+    if (not force) and Bard.clock.offset and (now - (Bard.clock.at or 0)) < Bard.clockRefreshMs then return end
+    Bard.clock.requested = now
+    netWorkHandler.sendClockRequest(player, now)
+end
+
+
+function Bard.receiveClock(data)
+    if not data or not data.t or not data.s then return end
+    local now = getTimestampMs()
+    local rtt = now - data.t
+    if rtt < 0 then return end
+    local clock = Bard.clock
+    local stale = (now - (clock.at or 0)) >= Bard.clockRefreshMs
+    if (not clock.offset) or stale or rtt <= (clock.rtt or rtt) then
+        clock.offset = data.s + (rtt / 2) - now
+        clock.rtt = rtt
+        clock.at = now
+    end
+end
+
+
+function Bard.findBand(songKey, durationMs)
+    if not songKey or not Bard.clock.offset then return end
+    local now = getTimestampMs()
+    local serverNow = Bard.serverNow()
+    local best, bestReceived
+    for _, state in pairs(Bard.remotePlayers) do
+        if state.songKey == songKey and state.bandStart and state.lastReceived and (now - state.lastReceived) <= Bard.bandJoinWindowMs then
+            local position = serverNow - state.bandStart
+            if position >= 0 and ((not durationMs) or position < durationMs) then
+                if (not bestReceived) or state.lastReceived > bestReceived then
+                    best, bestReceived = state.bandStart, state.lastReceived
+                end
+            end
+        end
+    end
+    return best
+end
+
+
+function Bard.skipTo(bard, songTime)
+    for _, data in pairs(bard.music) do
+        data.eventIndex = data.eventIndex or 1
+        while data.eventIndex <= #data.events and data.events[data.eventIndex].timeOffset < songTime do
+            data.eventIndex = data.eventIndex + 1
+        end
+    end
+    bard.elapsedTime = songTime
+end
+
+
+function Bard.getWrongSound(bard, note, instrumentID)
+    local step = (ZombRand(10) < 7) and 1 or 2
+    if ZombRand(2) == 0 then step = -step end
+    local wrong = Bard.midiToNote(Bard.noteToMidi(note) + step)
+    return Bard.noteToSound(wrong, instrumentID, bard.isPercussion, bard.percussionOctaveShift, bard.percussionPieces, bard.percussionFallback)
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.playDelayedNotes(player, bard, instrumentID)
+    local waiting = {}
+    for _, note in ipairs(bard.delayedNotes) do
+        if note.at <= bard.elapsedTime then
+            Bard.playNote(player, bard, instrumentID, note.sound, note.duration, bard.elapsedTime, note.gain)
+        else
+            table.insert(waiting, note)
+        end
+    end
+    bard.delayedNotes = waiting
+    return #waiting
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter|IsoMovingObject
+function Bard.playNote(player, state, instrumentID, sound, durationMs, started, gain)
+    if modOptions.isMuted() then return end
     local emitter = player:getEmitter()
     local soundID = emitter:playSoundImpl(instrumentID .. "_" .. sound, nil)
-    emitter:setVolume(soundID, state.volume/100)
+    emitter:setVolume(soundID, state.volume/100 * (gain or 1))
 
     table.insert(state.playingNotes, {
         id = soundID,
         started = started,
-        duration = durationMs
+        duration = durationMs,
+        gain = gain or 1
     })
 end
 
@@ -1173,26 +1403,28 @@ function Bard.updatePlayingNotes(player, state, elapsed)
     local decay = state.decay or 200
     local volume = state.volume or 100
 
+    local muted = modOptions.isMuted()
     local playingNotes = {}
     for n, note in ipairs(state.playingNotes) do
         local noteID = note.id
         if emitter:isPlaying(noteID) then
             local timeSinceStart = elapsed - note.started
 
-            if timeSinceStart >= note.duration + decay then
+            if muted or timeSinceStart >= note.duration + decay then
                 emitter:stopSoundLocal(noteID)
             elseif #state.playingNotes > 40 and n == 1 then
                 emitter:stopSoundLocal(noteID)
             else
+                local noteVolume = volume / 100 * (note.gain or 1)
                 if timeSinceStart >= note.duration then
                     -- In decay phase
                     local fadeProgress = (timeSinceStart - note.duration) / decay
-                    local fadeVolume = volume / 100 * (1 - fadeProgress)
+                    local fadeVolume = noteVolume * (1 - fadeProgress)
                     fadeVolume = math.max(0, math.min(1, fadeVolume))
                     emitter:setVolume(noteID, fadeVolume)
                 else
                     -- Still sustaining at full volume
-                    emitter:setVolume(noteID, volume / 100)
+                    emitter:setVolume(noteID, noteVolume)
                 end
 
                 table.insert(playingNotes, note)
@@ -1205,15 +1437,16 @@ function Bard.updatePlayingNotes(player, state, elapsed)
 end
 
 
-function Bard.queueNetworkNote(bard, sound, timeOffset, durationMs)
+function Bard.queueNetworkNote(bard, sound, timeOffset, durationMs, gain)
     local batch = bard.networkBatch
     if not batch then
-        batch = { startedAt = bard.elapsedTime, n = {}, t = {}, d = {} }
+        batch = { startedAt = bard.elapsedTime, n = {}, t = {}, d = {}, g = {} }
         bard.networkBatch = batch
     end
     table.insert(batch.n, sound)
     table.insert(batch.t, math.floor(timeOffset))
     table.insert(batch.d, math.floor(durationMs or 0))
+    table.insert(batch.g, math.floor((gain or 1) * 100))
 end
 
 
@@ -1236,6 +1469,9 @@ function Bard.flushNetworkNotes(player, bard, instrumentID, decay, force)
         n = batch.n,
         t = batch.t,
         d = batch.d,
+        g = batch.g,
+        S = bard.bandStart,
+        k = bard.songKey,
     })
 end
 
@@ -1266,14 +1502,18 @@ function Bard.receiveNotes(data)
     end
 
     state.sequence = data.s
+    state.songKey = data.k
+    state.bandStart = data.S
     state.player = performer
     state.instrumentID = data.i
     state.volume = data.v
     state.decay = data.dc
     state.lastReceived = now
 
+    local base = state.anchor
+    if data.S and Bard.clock.offset then base = data.S + Bard.bandDelayMs - Bard.clock.offset end
     for k, sound in ipairs(data.n) do
-        table.insert(state.queue, { sound = sound, at = state.anchor + data.t[k], duration = data.d[k] })
+        table.insert(state.queue, { sound = sound, at = base + data.t[k], duration = data.d[k], gain = (data.g and data.g[k] or 100) / 100 })
     end
 end
 
@@ -1308,7 +1548,7 @@ function Bard.updateRemotePlayers()
             local queue = {}
             for _, note in ipairs(state.queue) do
                 if note.at <= now then
-                    Bard.playNote(player, state, state.instrumentID, note.sound, note.duration, now)
+                    Bard.playNote(player, state, state.instrumentID, note.sound, note.duration, now, note.gain)
                 else
                     table.insert(queue, note)
                 end
@@ -1324,6 +1564,208 @@ function Bard.updateRemotePlayers()
 end
 
 
+function Bard.getSongKey(abc)
+    local hash = 5381
+    for i = 1, #abc do
+        hash = (hash * 33 + abc:byte(i)) % 4294967296
+    end
+    return tostring(hash)
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.getMusicData(player)
+    local modData = player:getModData()
+    modData.BardToTheBone = modData.BardToTheBone or {}
+    local data = modData.BardToTheBone
+    data.songs = data.songs or {}
+    data.instruments = data.instruments or {}
+    return data
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.getMusicLevel(player, family)
+    local perk = netWorkHandler.getFamilyPerk(family)
+    if not perk or not netWorkHandler.skillsEnabled() then return 10 end
+    return player:getPerkLevel(perk)
+end
+
+
+function Bard.getMistakes(level, difficulty)
+    local s = math.min(1, math.max(0, (difficulty or 10) - level) / 10 + math.max(0, 10 - level) / 40)
+    return {
+        wrong = 0.12 * s * s,
+        miss = 0.05 * s * s,
+        hold = 0.15 * s,
+        gain = 0.4 * s,
+        slip = 0.3 * s,
+        slipMs = 40 + 140 * s,
+        hesitate = 0.004 * s * s,
+        hesitateMs = 250 + 600 * s,
+    }
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.updateMusicLevel(player, bard)
+    local level = Bard.getMusicLevel(player, bard.family)
+    if (level ~= bard.level) or (bard.selectedVoice ~= bard.mistakesVoice) then
+        bard.level = level
+        bard.mistakesVoice = bard.selectedVoice
+        bard.mistakes = Bard.getMistakes(level, Bard.getSongDifficulty(Bard.getComplexity(bard), bard.isPercussion))
+    end
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.initPerformance(player, bard)
+    bard.timeShift = bard.timeShift or 0
+    bard.delayedNotes = bard.delayedNotes or {}
+    bard.activeMs = bard.activeMs or 0
+    bard.countedMs = bard.countedMs or 0
+    bard.pendingXp = bard.pendingXp or 0
+    bard.lastXpSend = bard.lastXpSend or 0
+    Bard.updateMusicLevel(player, bard)
+    bard.xpBonus = Bard.getXpBonus(player, bard)
+end
+
+
+function Bard.getVoiceStats(data)
+    if data.stats then return data.stats end
+
+    local stats = { notes = 0, together = 0, accidentals = 0, changes = 0 }
+    local previous, previousLength
+    for _, event in ipairs(data.events) do
+        for _, note in ipairs(event.notes) do
+            if not note.rest then
+                stats.notes = stats.notes + 1
+                if previous and (event.timeOffset - previous) <= 20 then stats.together = stats.together + 1 end
+                previous = event.timeOffset
+                stats.first = stats.first or event.timeOffset
+                stats.last = event.timeOffset
+                local midi = Bard.noteToMidi(note)
+                stats.low = math.min(stats.low or midi, midi)
+                stats.high = math.max(stats.high or midi, midi)
+                if #note.base > 1 then stats.accidentals = stats.accidentals + 1 end
+                local length = note.durationMs or 0
+                if previousLength and math.abs(length - previousLength) > previousLength * 0.15 then stats.changes = stats.changes + 1 end
+                previousLength = length
+            end
+        end
+    end
+
+    data.stats = stats
+    return stats
+end
+
+
+function Bard.getComplexity(bard)
+    local key = bard.selectedVoice or "All"
+    bard.complexity = bard.complexity or {}
+    if bard.complexity[key] then return bard.complexity[key] end
+
+    local notes, together, accidentals, changes = 0, 0, 0, 0
+    local low, high, first, last
+
+    for voiceId, data in pairs(bard.music) do
+        if Bard.isVoicePlayed(bard, voiceId, data) then
+            local stats = Bard.getVoiceStats(data)
+            if stats.notes > 0 then
+                notes = notes + stats.notes
+                together = together + stats.together
+                accidentals = accidentals + stats.accidentals
+                changes = changes + stats.changes
+                low = math.min(low or stats.low, stats.low)
+                high = math.max(high or stats.high, stats.high)
+                first = math.min(first or stats.first, stats.first)
+                last = math.max(last or stats.last, stats.last)
+            end
+        end
+    end
+
+    if notes <= 0 then
+        bard.complexity[key] = 0
+        return 0
+    end
+
+    local seconds = math.max(1, (last - first) / 1000)
+    local density = math.min(3, 0.5 + (notes / seconds) / 6)
+    local range, accidentalShare = 0, 0
+    if not bard.isPercussion then
+        range = math.min(36, high - low) / 72
+        accidentalShare = (accidentals / notes) * 0.3
+    end
+    local polyphony = (together / notes) * 0.4
+    local rhythm = (changes / notes) * 0.5
+
+    local complexity = density * (1 + range + accidentalShare + polyphony + rhythm)
+    bard.complexity[key] = complexity
+    return complexity
+end
+
+
+Bard.difficultySpan = 5.8
+Bard.percussionDifficultySpan = 3.7
+
+function Bard.getSongDifficulty(complexity, isPercussion)
+    local span = isPercussion and Bard.percussionDifficultySpan or Bard.difficultySpan
+    return math.max(0, math.min(10, (complexity - 1) * 10 / span))
+end
+
+
+function Bard.scoreSong(abc)
+    local music = Bard.parseABC(abc)
+    local melodic = Bard.getComplexity({ music = music, isPercussion = false })
+    local percussion = Bard.getComplexity({ music = music, isPercussion = true })
+    return {
+        melodic = (melodic > 0) and math.floor(Bard.getSongDifficulty(melodic) + 0.5) or nil,
+        percussion = (percussion > 0) and math.floor(Bard.getSongDifficulty(percussion, true) + 0.5) or nil,
+    }
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.getXpBonus(player, bard)
+    local data = Bard.getMusicData(player)
+    local plays = math.min(bard.songKey and data.songs[bard.songKey] or 0, Bard.familiarMaxPlays)
+    local bonus = 1 + plays * Bard.familiarBonus
+    if (data.instruments[bard.instrumentID] or 0) < Bard.newInstrumentMs then bonus = bonus + Bard.newInstrumentBonus end
+    return bonus
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.updateMusicXp(player, bard, delta)
+    if bard.lastNoteTime and (bard.elapsedTime - bard.lastNoteTime) <= Bard.xpActiveMs then
+        bard.activeMs = bard.activeMs + delta
+        bard.pendingXp = bard.pendingXp + (delta / 60000) * Bard.xpPerMinute * Bard.getComplexity(bard) * bard.xpBonus
+    end
+    if (bard.elapsedTime - bard.lastXpSend) >= Bard.xpSendMs then Bard.flushMusicXp(player, bard) end
+end
+
+
+---@param player IsoPlayer|IsoGameCharacter
+function Bard.flushMusicXp(player, bard)
+    bard.lastXpSend = bard.elapsedTime or 0
+
+    local data = Bard.getMusicData(player)
+    local instrument = bard.instrumentID
+    if instrument then
+        data.instruments[instrument] = (data.instruments[instrument] or 0) + (bard.activeMs - bard.countedMs)
+    end
+    bard.countedMs = bard.activeMs
+
+    if bard.pendingXp > 0 then
+        netWorkHandler.sendXp(player, bard.pendingXp, bard.family)
+        bard.pendingXp = 0
+    end
+
+    Bard.updateMusicLevel(player, bard)
+    bard.xpBonus = Bard.getXpBonus(player, bard)
+end
+
+
 Bard.instrumentSpecials = {}
 
 function Bard.instrumentSpecials.sexySax(player)
@@ -1336,20 +1778,20 @@ end
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
-    ["Base.Banjo"] = { decay = 300, soundDir = "banjo", anim = "strumming" },
-    ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", anim = "strumming" },
-    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, },
-    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", anim = "strumming" },
-    ["Base.Keytar"] = { decay = 700, soundDir = "keytar", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
-    ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", anim = "Harmonica" },
-    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", anim = "SaxPlaying", special = "sexySax"},
-    ["Base.Violin"] = { decay = 100, soundDir = "violin", anim = "Violin", left = "Violin_Bow", right = "Violin" },
-    ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
-    ["Base.Flute"] = { decay = 300, soundDir = "flute", anim = "Flute" },
-    ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", anim = "Rubberducky", },
-    ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", anim = "Trumpet" },
-    ["Base.Whistle"] = { decay = 200, soundDir = "whistle", anim = "Whistle"},
-    ["Base.Whistle_Bone"] = { decay = 200, soundDir = "whistle", anim = "Whistle"},
+    ["Base.Banjo"] = { decay = 300, soundDir = "banjo", family = "Strings", anim = "strumming" },
+    ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", family = "Strings", anim = "strumming" },
+    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
+    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", needsAmp = true, },
+    ["Base.Keytar"] = { decay = 700, soundDir = "keytar", family = "Keys", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
+    ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", family = "Winds", anim = "Harmonica" },
+    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", special = "sexySax"},
+    ["Base.Violin"] = { decay = 100, soundDir = "violin", family = "Strings", anim = "Violin", left = "Violin_Bow", right = "Violin" },
+    ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", family = "Percussion", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
+    ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute" },
+    ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", family = "Winds", anim = "Rubberducky", },
+    ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", family = "Winds", anim = "Trumpet" },
+    ["Base.Whistle"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
+    ["Base.Whistle_Bone"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
 }
 
 
@@ -1358,17 +1800,17 @@ Bard.instrumentMapObjectData = {
     --[""] = { soundDir = "", anim = ""},
 
     --recreational_01_12,13  8,9
-    ["Piano"] = { decay = 500, soundDir = "piano", anim = "Piano",
+    ["Piano"] = { decay = 500, soundDir = "piano", family = "Keys", anim = "Piano",
                   sprites = { "recreational_01_12", "recreational_01_13", "recreational_01_8", "recreational_01_9", }
     },
 
     --recreational_01_40,41  48,49
-    ["Grand Piano"] = { decay = 800, soundDir = "grandPiano", anim = "Piano",
+    ["Grand Piano"] = { decay = 800, soundDir = "grandPiano", family = "Keys", anim = "Piano",
                         sprites = { "recreational_01_40", "recreational_01_41", "recreational_01_48", "recreational_01_49", }
     },
 
 
-    ["Drum"] = { decay = 120, soundDir = "drumkit", anim = "Xylophone", isPercussion = true,
+    ["Drum"] = { decay = 120, soundDir = "drumkit", family = "Percussion", anim = "Xylophone", isPercussion = true,
                  sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
                              "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
     },
@@ -1399,7 +1841,7 @@ end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
 Bard.instrumentTagData = {
-    [ItemTag.GLASS_BOTTLE] = { decay = 350, soundDir = "bottle", anim = "Bottle", validCheck = "bottleIsEmpty"},
+    [ItemTag.GLASS_BOTTLE] = { decay = 350, soundDir = "bottle", family = "Winds", anim = "Bottle", validCheck = "bottleIsEmpty"},
 }
 
 Bard.populatedFromTagData = false

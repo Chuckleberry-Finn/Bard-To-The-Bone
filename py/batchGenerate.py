@@ -37,7 +37,7 @@ instruments = [
     {"program": 75, "folder": "recorder"},
     {"program": 67, "folder": "saxophone"},
     {"program": 58, "folder": "trombone"},
-    {"program": 56, "folder": "trumpet"},
+    {"program": 57, "folder": "trumpet"},
     {"program": 41, "folder": "violin"},
     {"program": 79, "folder": "whistle"},
     {"program": 14, "folder": "xylophone"},

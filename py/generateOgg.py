@@ -15,13 +15,19 @@ def ensure_libs():
 
 ensure_libs()
 
+import warnings
 import pyloudnorm as pyln
+
+# The ceiling check below scales any over-full-scale note back down before writing.
+warnings.filterwarnings("ignore", message="Possible clipped samples in output.")
 import numpy as np
 import librosa
 import soundfile as sf
 from mido import Message, MidiFile, MidiTrack
 
-TARGET_LOUDNESS_LUFS = -23.0  # foreground/instrument level
+BASE_LOUDNESS_LUFS = -23.0  # foreground/instrument level
+VOLUME_BOOST_PERCENT = 33   # extra loudness on top of the base level
+TARGET_LOUDNESS_LUFS = BASE_LOUDNESS_LUFS + 20 * np.log10(1 + VOLUME_BOOST_PERCENT / 100)
 CEILING_DBFS = -1.0           # safety margin below full scale (0 dBFS)
 CEILING_LINEAR = 10 ** (CEILING_DBFS / 20)
 
@@ -37,9 +43,11 @@ note_map = {
 
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
-parser.add_argument('--program', type=int, default=41, help='Program change number (0–127)')
+parser.add_argument('--program', type=int, default=41, help='General MIDI instrument number (1-128), as listed on the Wikipedia page above')
 parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
 args = parser.parse_args()
+if not 1 <= args.program <= 128:
+    parser.error('--program must be a General MIDI instrument number from 1 to 128')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 args.outdir = os.path.join(script_dir, 'generated', args.outdir)
@@ -59,7 +67,7 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
     track = MidiTrack()
     mid.tracks.append(track)
 
-    track.append(Message('program_change', program=program, time=0))
+    track.append(Message('program_change', program=program - 1, time=0))
     track.append(Message('note_on', note=midi_note, velocity=90, time=0))
     track.append(Message('note_off', note=midi_note, velocity=64, time=7680))
 
@@ -101,7 +109,7 @@ def convert_midi_file(midi_path):
             "-ni", "-F", str(wav_path), "-r", "44100",
             soundfont_path,
             str(midi_path)
-        ], check=True, timeout=10, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        ], check=True, timeout=120, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
         max_duration_sec = 7

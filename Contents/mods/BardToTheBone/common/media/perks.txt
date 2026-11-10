@@ -1,0 +1,86 @@
+VERSION = 1,
+
+perk BardPerformance
+{
+	parent = None,
+	translation = BardPerformance,
+	passive = false,
+	xp1 = 50,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3000,
+	xp8 = 4000,
+	xp9 = 5000,
+	xp10 = 6000,
+}
+
+perk BardStrings
+{
+	parent = BardPerformance,
+	translation = BardStrings,
+	passive = false,
+	xp1 = 50,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3000,
+	xp8 = 4000,
+	xp9 = 5000,
+	xp10 = 6000,
+}
+
+perk BardKeys
+{
+	parent = BardPerformance,
+	translation = BardKeys,
+	passive = false,
+	xp1 = 50,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3000,
+	xp8 = 4000,
+	xp9 = 5000,
+	xp10 = 6000,
+}
+
+perk BardWinds
+{
+	parent = BardPerformance,
+	translation = BardWinds,
+	passive = false,
+	xp1 = 50,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3000,
+	xp8 = 4000,
+	xp9 = 5000,
+	xp10 = 6000,
+}
+
+perk BardPercussion
+{
+	parent = BardPerformance,
+	translation = BardPercussion,
+	passive = false,
+	xp1 = 50,
+	xp2 = 100,
+	xp3 = 200,
+	xp4 = 500,
+	xp5 = 1000,
+	xp6 = 2000,
+	xp7 = 3000,
+	xp8 = 4000,
+	xp9 = 5000,
+	xp10 = 6000,
+}

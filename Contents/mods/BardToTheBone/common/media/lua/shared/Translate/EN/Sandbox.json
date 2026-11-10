@@ -1,0 +1,9 @@
+{
+    "Sandbox_BardToTheBone": "Bard to the Bone",
+    "Sandbox_BardToTheBone_AttractZombies": "Attract Zombies",
+    "Sandbox_BardToTheBone_AttractZombies_tooltip": "Playing music makes noise that draws zombies.",
+    "Sandbox_BardToTheBone_EnableSkills": "Performance Skills",
+    "Sandbox_BardToTheBone_EnableSkills_tooltip": "Strings, Keys, Winds and Percussion. When off, playing earns no XP, everyone plays without mistakes, and the skills and song difficulty are hidden.",
+    "Sandbox_BardToTheBone_XpMultiplier": "XP Multiplier",
+    "Sandbox_BardToTheBone_XpMultiplier_tooltip": "Multiplies XP for Strings, Keys, Winds and Percussion. Stacks with the game's XP multiplier."
+}

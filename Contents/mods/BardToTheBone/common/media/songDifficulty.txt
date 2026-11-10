@@ -1,0 +1,787 @@
+3 Doors Down - Kryptonite.txt	4	4
+A Perfect Circle - Judith (Lute).txt	8	7
+ABBA - Chiquitita.txt	4	4
+ABBA - Dancing Queen.txt	10	10
+AC-DC - Back in Black (Lute).txt	6	5
+AC-DC - Back in Black.txt	6	6
+AC-DC - Hells Bells.txt	6	5
+AC-DC - Highway to Hell.txt	7	6
+AC-DC - T.N.T.txt	5	5
+AC-DC - Thunderstruck (Lute).txt	10	10
+Ace of Base - All That She Wants.txt	2	1
+Aerosmith - Dream On.txt	5	4
+Aerosmith - Dude (Looks Like a Lady) (Solo).txt	7	7
+Afroman - Because I Got High.txt	3	3
+Alan Silvestri - Back to the Future.txt	8	8
+Alexander Alexandrov - State Anthem of the Soviet Union.txt	5	4
+Alice Cooper - School's Out.txt	5	5
+Alien Ant Farm - Smooth Criminal.txt	4	4
+America - A Horse with No Name.txt	4	4
+America - The Last Unicorn (Solo).txt	3	2
+Andrew Lloyd Webber - The Phantom of the Opera.txt	9	8
+Animaniacs - Theme.txt	6	5
+Aqua - Barbie Girl.txt	3	2
+Attack on Titan - Opening 1.txt	9	8
+Austin Powers - Theme (Solo).txt	6	5
+Azumanga Daioh - Ending.txt	2	1
+Backstreet Boys - I Want It That Way.txt	6	6
+Barenaked Ladies - One Week.txt	10	10
+Barry Manilow - Copacabana.txt	10	9
+Bee Gees - Alone.txt	8	8
+Bee Gees - How Deep Is Your Love (Lute).txt	10	10
+Bee Gees - Stayin' Alive.txt	6	6
+Bill Conti - Rocky Theme.txt	1	0
+Billy Idol - Rebel Yell.txt	5	4
+Billy Idol - White Wedding.txt	9	9
+Billy Joel - New York State of Mind.txt	4	3
+Billy Joel - Uptown Girl.txt	1	1
+Billy Talent - Fallen Leaves.txt	8	8
+Bing Crosby - I'll Be Home for Christmas.txt	2	2
+Black Sabbath - Iron Man.txt	5	5
+Blind Melon - No Rain (Lute Solo).txt	9	9
+Blink-182 - All the Small Things.txt	3	4
+Blink-182 - Rockshow (Vocals).txt	4	5
+Blink-182 - Rockshow.txt	10	9
+Blink-182 - What's My Age Again.txt	4	5
+Bloodhound Gang - Fire Water Burn.txt	7	8
+Blue Oyster Cult - Don't Fear the Reaper (Band).txt	6	5
+Blue Oyster Cult - Don't Fear the Reaper.txt	6	6
+Bob Dylan - It Ain't Me Babe (Solo).txt	3	3
+Bob Dylan - Knockin' on Heaven's Door.txt	5	5
+Bob Dylan - Like a Rolling Stone (Lute).txt	5	5
+Bob Dylan - The Times They Are a-Changin'.txt	9	9
+Bob Marley - Buffalo Soldier (Solo).txt	4	5
+Bob Marley - No Woman, No Cry (Lute Solo).txt	1	1
+Bob Marley - Redemption Song (Lute).txt	0	0
+Bob Seger - Against the Wind.txt	4	3
+Bob Seger - Old Time Rock and Roll.txt	9	9
+Bob Seger - Turn the Page (Lute Solo).txt	4	4
+Bon Jovi - Livin' on a Prayer (Lute).txt	4	4
+Boney M - Daddy Cool (Solo).txt	4	4
+Boney M - Rasputin.txt	9	9
+Bonnie Tyler - Holding Out for a Hero (Solo).txt	6	5
+Bonnie Tyler - Total Eclipse of the Heart (Solo).txt	4	4
+Boots Randolph - Yakety Sax (Benny Hill Theme).txt	10	9
+Boston - More Than a Feeling.txt	6	6
+Brad Fiedel - Terminator 2 Theme (Guitar).txt	4	4
+Braveheart - Theme.txt	2	2
+Bruce Hornsby - The Way It Is (Lute).txt	2	1
+Bryan Adams - (Everything I Do) I Do It for You.txt	5	4
+Bush - Glycerine.txt	9	8
+Cake - The Distance.txt	5	4
+Cameo - Word Up!.txt	8	7
+Camille Saint-Saens - Carnival of the Animals, Kangaroos.txt	4	3
+Camille Saint-Saens - Carnival of the Animals, Royal March of the Lion.txt	8	8
+Camille Saint-Saens - Carnival of the Animals, Tortoises.txt	9	8
+Camille Saint-Saens - Carnival of the Animals, Wild Asses.txt	7	6
+Caramella Girls - Caramelldansen.txt	5	4
+Carl Perkins - Blue Suede Shoes.txt	1	1
+Castlevania - Level 1.txt	6	5
+Castlevania - Vampire Killer (Lead).txt	2	1
+Cave Story - Theme.txt	7	7
+Celine Dion - Fly.txt	5	5
+Cheers - Theme.txt	4	4
+Chrono Cross - Radical Dreamers.txt	4	3
+Chuck Berry - Johnny B. Goode (Solo).txt	10	10
+Clint Mansell - Requiem for a Dream.txt	6	5
+Cold - Suffocate.txt	9	9
+Coldplay - Clocks.txt	8	9
+Coldplay - Speed of Sound.txt	4	4
+Coldplay - Viva la Vida.txt	6	5
+Conker's Bad Fur Day - Windy.txt	9	9
+Consuelo Velazquez - Besame Mucho.txt	6	7
+Coolio - Gangsta's Paradise.txt	5	5
+Cowboy Bebop - The Real Folk Blues.txt	1	0
+Crash Bandicoot - Warped - China.txt	8	7
+Crash Test Dummies - Mmm Mmm Mmm Mmm.txt	4	3
+Creedence Clearwater Revival - Bad Moon Rising.txt	9	9
+Creedence Clearwater Revival - Fortunate Son.txt	10	9
+Creedence Clearwater Revival - Proud Mary.txt	2	1
+Creedence Clearwater Revival - Susie Q.txt	9	9
+Culture Club - Karma Chameleon.txt	8	7
+Curtis Schweitzer - On the Beach at Night (Solo).txt	2	1
+Curtis Schweitzer - On the Beach at Night.txt	2	1
+Cutting Crew - (I Just) Died in Your Arms.txt	8	8
+Cyndi Lauper - Girls Just Want to Have Fun.txt	5	5
+Danzig - Mother (Lute Solo).txt	5	5
+Danzig - Mother.txt	7	7
+David Bowie - Let's Dance.txt	8	8
+David Bowie - Space Oddity (Lute).txt	8	8
+Deep Purple - Smoke on the Water.txt	0	0
+Deliverance - Dueling Banjos (Movie Version).txt	2	1
+Deliverance - Dueling Banjos.txt	10	9
+Desperado - Cancion del Mariachi.txt	4	4
+Diablo - Theme.txt	4	3
+Dick Dale - Misirlou.txt	10	10
+Die Arzte - Manner sind Schweine.txt	7	7
+Die Arzte - Westerland.txt	8	7
+Die Prinzen - Alles nur geklaut (Solo).txt	6	6
+Die Toten Hosen - Alles aus Liebe (Solo).txt	5	5
+Digimon - TV Theme.txt	8	8
+Dio - Holy Diver (Guitar).txt	4	4
+Dire Straits - Sultans of Swing.txt	6	6
+Don Henley - The Boys of Summer.txt	3	2
+Don McLean - American Pie.txt	4	4
+Donkey Kong - Hammer.txt	2	2
+Donkey Kong - Level 1.txt	1	1
+Donkey Kong - Level 3.txt	2	3
+Doom - E2M8.txt	3	2
+Dr. Alban - It's My Life.txt	8	9
+Dragon Warrior - Overworld Theme.txt	0	0
+DragonForce - Black Winter Night.txt	5	4
+DragonForce - Through the Fire and Flames.txt	9	8
+DuckTales - Theme (Lute).txt	2	1
+DuckTales - Theme.txt	2	2
+Eagles - Hotel California (Band).txt	6	5
+Eagles - Hotel California.txt	9	9
+Eddy Grant - Electric Avenue.txt	3	3
+Eduard Khil - Trololo.txt	4	3
+Eiffel 65 - Blue (Da Ba Dee).txt	4	4
+Eiffel 65 - Too Much of Heaven (Solo).txt	4	3
+Electric Light Orchestra - Don't Bring Me Down.txt	10	10
+Electric Light Orchestra - Livin' Thing.txt	5	5
+Electric Light Orchestra - Mr. Blue Sky.txt	6	6
+Elton John - Bennie and the Jets.txt	10	9
+Elton John - Crocodile Rock.txt	10	10
+Elton John - Daniel.txt	1	0
+Elton John - Don't Let the Sun Go Down on Me.txt	5	5
+Elton John - Levon.txt	10	10
+Elton John - Sorry Seems to Be the Hardest Word.txt	4	4
+Elton John - The Last Song.txt	2	2
+Elton John - Tiny Dancer.txt	4	3
+Elvis Presley - Hound Dog.txt	7	7
+Elvis Presley - Viva Las Vegas.txt	3	2
+Eminem - Stan.txt	4	4
+Enya - May It Be (Flute Solo).txt	1	1
+Enya - Only Time.txt	3	2
+Enya - Orinoco Flow.txt	5	5
+Eric Clapton - Cocaine.txt	3	2
+Eric Clapton - Tears in Heaven (Lute Solo).txt	5	5
+Eric Idle - Always Look on the Bright Side of Life.txt	2	2
+Eric Johnson - Cliffs of Dover (Solo).txt	5	5
+Erik Satie - Gymnopedie.txt	2	1
+Europe - The Final Countdown.txt	6	6
+EverQuest - Original Opening Theme.txt	4	4
+F-Zero - Big Blue.txt	8	8
+Falco - Rock Me Amadeus (Part 1).txt	4	3
+Falco - Rock Me Amadeus (Part 2).txt	4	4
+Family Guy - Theme.txt	5	4
+Fatboy Slim - Praise You.txt	7	6
+Fawlty Towers - Theme.txt	7	7
+Final Fantasy - Chocobo Theme (Lute 1, Lute 2).txt	3	2
+Final Fantasy III - World Map.txt	7	6
+Final Fantasy IX - Rose of May (Piano).txt	3	2
+Final Fantasy IX - Vamo' alla Flamenco.txt	9	9
+Final Fantasy VI - Kefka's Theme (Solo).txt	6	6
+Final Fantasy VII - Aerith's Theme.txt	2	2
+Final Fantasy VII - Ahead on Our Way.txt	3	3
+Final Fantasy VII - Anxious Heart.txt	2	1
+Final Fantasy VII - Barret's Theme.txt	5	5
+Final Fantasy VII - Buried in the Snow.txt	7	6
+Final Fantasy VII - Cinco de Chocobo.txt	8	8
+Final Fantasy VII - Costa del Sol.txt	6	5
+Final Fantasy VII - Don of the Slums.txt	6	5
+Final Fantasy VII - Electric de Chocobo.txt	10	9
+Final Fantasy VII - Fanfare.txt	10	10
+Final Fantasy VII - Farm Boy.txt	6	7
+Final Fantasy VII - Fiddle de Chocobo (Duet) (Part 1, Lute).txt	4	3
+Final Fantasy VII - Fiddle de Chocobo.txt	10	10
+Final Fantasy VII - Fighting.txt	10	10
+Final Fantasy VII - Fortress of the Condor.txt	7	7
+Final Fantasy VII - Gold Saucer.txt	9	9
+Final Fantasy VII - Holding My Thoughts in My Heart.txt	3	2
+Final Fantasy VII - Honeybee Manor.txt	6	6
+Final Fantasy VII - Hurry.txt	8	7
+Final Fantasy VII - Infiltrating Shinra Tower.txt	2	1
+Final Fantasy VII - J-E-N-O-V-A.txt	9	9
+Final Fantasy VII - Main Theme.txt	3	3
+Final Fantasy VII - Mako Reactor.txt	9	9
+Final Fantasy VII - On That Day, 5 Years Ago.txt	1	1
+Final Fantasy VII - Opening - Bombing Mission.txt	9	9
+Final Fantasy VII - Opening.txt	9	9
+Final Fantasy VII - Prelude.txt	9	9
+Final Fantasy VII - Red XIII's Theme.txt	4	4
+Final Fantasy VII - Rufus' Welcoming Ceremony.txt	8	8
+Final Fantasy VII - Sandy Badlands.txt	2	1
+Final Fantasy VII - Sephiroth's Theme.txt	2	2
+Final Fantasy VII - Shinra Corporation.txt	2	1
+Final Fantasy VII - Steal the Tiny Bronco.txt	10	10
+Final Fantasy VII - Still More Fighting.txt	10	9
+Final Fantasy VII - The Forested Temple.txt	5	5
+Final Fantasy VII - The Great Warrior.txt	3	3
+Final Fantasy VII - Those Chosen by the Planet.txt	2	2
+Final Fantasy VII - Tifa's Theme.txt	3	2
+Final Fantasy VIII - Fisherman's Horizon (Solo).txt	3	2
+Final Fantasy VIII - Mods de Chocobo.txt	5	4
+Final Fantasy X - Battle Theme 2.txt	10	10
+Final Fantasy X - To Zanarkand.txt	3	2
+Foo Fighters - Everlong.txt	10	9
+Foreigner - Cold as Ice.txt	7	7
+Fraggle Rock - Theme (Solo).txt	4	4
+Frank Sinatra - It Was a Very Good Year (Harp).txt	4	3
+Frank Sinatra - Strangers in the Night (Solo).txt	3	3
+Frederic Chopin - Funeral March.txt	0	0
+Frederic Chopin - Nocturne in E-flat.txt	4	3
+Fuel - Shimmer (Solo).txt	5	5
+Genesis - Invisible Touch.txt	7	6
+George Frideric Handel - Hallelujah Chorus.txt	8	8
+Georges Bizet - Habanera (Carmen).txt	5	5
+Gipsy Kings - Vamos a Bailar (Lute Solo).txt	4	4
+Glass Animals - Dreamland.txt	3	2
+Gnarls Barkley - Crazy.txt	3	2
+Goldfinger - 99 Red Balloons.txt	9	9
+Goo Goo Dolls - Name.txt	4	3
+Gorillaz - Clint Eastwood.txt	6	6
+Grateful Dead - Friend of the Devil (Solo).txt	7	6
+Green Day - American Idiot.txt	9	9
+Green Day - Good Riddance (Time of Your Life).txt	10	10
+Green Day - Wake Me Up When September Ends (Lute).txt	6	5
+Guns N' Roses - November Rain (Solo).txt	4	4
+Guns N' Roses - Paradise City.txt	7	6
+Guns N' Roses - Sweet Child o' Mine.txt	8	7
+Guns N' Roses - Welcome to the Jungle.txt	8	7
+Gurren Lagann - Libera Me from Hell (Piano).txt	3	2
+Gurren Lagann - Libera Me from Hell (Piano, 019).txt	3	2
+Gurren Lagann - Sorairo Days (Full Version).txt	9	9
+Haddaway - What Is Love (Lute Solo).txt	8	7
+Halo - Intro, Battle.txt	4	4
+Harold Faltermeyer - Axel F (Beverly Hills Cop) (Lute).txt	3	3
+Harry Chapin - Cat's in the Cradle.txt	6	5
+Harvey Danger - Flagpole Sitta.txt	6	6
+Heart - Barracuda.txt	9	9
+Heart - Crazy on You (Band).txt	8	8
+Heart - Crazy on You.txt	3	3
+Henry Mancini - Peter Gunn Theme (Solo).txt	4	3
+Henry Mancini - The Pink Panther Theme.txt	1	0
+Homestar Runner - Trogdor.txt	6	6
+Iggy Pop - The Passenger.txt	8	9
+In Flames - The Jester's Dance.txt	6	5
+Inspector Gadget - Theme.txt	4	4
+Iron Butterfly - In-A-Gadda-Da-Vida.txt	4	3
+Iron Maiden - Fear of the Dark.txt	7	6
+Iron Maiden - Run to the Hills.txt	7	6
+Iron Maiden - The Number of the Beast.txt	8	8
+Iron Maiden - The Trooper.txt	10	9
+Irving Berlin - White Christmas.txt	2	1
+J-Cut & Kolt Siewerts - The Flute Tune (Soulpride Remix).txt	2	2
+Jamiroquai - Canned Heat.txt	9	9
+Jamiroquai - Virtual Insanity (Solo).txt	6	6
+Janis Joplin - Me and Bobby McGee (Lute).txt	4	4
+Jason Mraz - I'm Yours (Lute).txt	8	8
+Jeff Buckley - Hallelujah.txt	4	4
+Jeopardy - Think! (Theme).txt	0	0
+Jeremy Soule - Morrowind Main Theme.txt	3	2
+Jethro Tull - Aqualung.txt	10	9
+Jimi Hendrix - All Along the Watchtower.txt	7	6
+Jimi Hendrix - Hey Joe.txt	8	9
+Jimmy Eat World - The Middle.txt	9	8
+Joan Osborne - One of Us.txt	3	3
+Johann Pachelbel - Canon in D (Lute, Strings).txt	4	3
+Johann Sebastian Bach - Air on the G String.txt	3	2
+Johann Sebastian Bach - Bourree (Lute, Harp).txt	3	3
+Johann Sebastian Bach - Fugue in G Minor (Lute, Harp).txt	4	3
+Johann Sebastian Bach - Sarabande (Lute, Harp).txt	2	1
+Johann Sebastian Bach - Toccata and Fugue in D Minor.txt	4	4
+John Carpenter - Halloween Theme (Extended).txt	8	8
+John Denver - Take Me Home, Country Roads.txt	0	0
+John Dowland - Awake Sweet Love (Galliard) (Lute).txt	3	3
+John Lennon - Happy Xmas (War Is Over).txt	7	7
+John Philip Sousa - Semper Fidelis (Lute Solo).txt	4	4
+John Williams - Cantina Band (Main, Support).txt	4	4
+John Williams - Cantina Band.txt	9	9
+John Williams - Duel of the Fates.txt	8	8
+John Williams - Imperial March (Band).txt	9	8
+John Williams - Imperial March.txt	1	0
+John Williams - Indiana Jones Theme.txt	1	1
+John Williams - Raiders March.txt	4	4
+John Williams - Star Wars Main Theme.txt	10	9
+John Williams - Superman Theme (Solo).txt	8	7
+John Williams - Welcome to Jurassic Park.txt	4	3
+Johnny Cash - I Walk the Line (Solo).txt	2	2
+Johnny Nash - I Can See Clearly Now.txt	4	4
+Joseph Haydn - Deutsche Nationalhymne.txt	1	0
+Journey - Any Way You Want It.txt	8	7
+Journey - Don't Stop Believin'.txt	4	4
+Kamelot - Karma.txt	9	9
+Kansas - Carry On Wayward Son.txt	5	4
+Kansas - Dust in the Wind.txt	4	4
+Kenny Loggins - Danger Zone (Clarinet Solo).txt	3	2
+Kirby - Theme.txt	1	1
+Knight Rider - Theme.txt	9	10
+Koji Kondo - Overworld (Jazzy), Super Mario Bros. 2 (Lute).txt	7	7
+Koji Kondo - Overworld Theme, Super Mario Bros. 2 (Solo).txt	6	5
+Koji Kondo - Super Mario Bros. Theme.txt	1	1
+Korn - Freak on a Leash (Drums).txt	3	3
+Lady Gaga - Alejandro (Lute).txt	4	4
+Lady Gaga - Bad Romance.txt	5	4
+Lady Gaga - Poker Face (Lute).txt	5	5
+Lalo Schifrin - Mission Impossible Theme.txt	2	2
+LazyTown - We Are Number One.txt	9	8
+Lead Belly - Where Did You Sleep Last Night.txt	8	7
+Led Zeppelin - Immigrant Song (Band).txt	7	7
+Led Zeppelin - Immigrant Song.txt	7	7
+Led Zeppelin - Stairway to Heaven (Lute).txt	4	3
+Led Zeppelin - Stairway to Heaven.txt	6	6
+Led Zeppelin - The Battle of Evermore.txt	8	9
+Les Miserables - Do You Hear the People Sing (Solo).txt	6	6
+Limahl - The NeverEnding Story (Band).txt	8	8
+Limahl - The NeverEnding Story.txt	7	7
+Linkin Park - Crawling.txt	6	5
+Linkin Park - In the End.txt	4	4
+Little Eva - The Loco-Motion.txt	5	5
+Looney Tunes - Theme.txt	9	9
+Lou Bega - Mambo No. 5 (Solo).txt	8	8
+Ludwig van Beethoven - Fur Elise (Lute, Piano).txt	4	3
+Ludwig van Beethoven - Moonlight Sonata.txt	2	1
+Ludwig van Beethoven - Symphony No. 5.txt	6	5
+Luigi's Mansion - Main Theme.txt	2	1
+MacGyver - Theme.txt	7	7
+Madonna - Papa Don't Preach (Lute).txt	5	5
+Man of La Mancha - Aldonza.txt	9	9
+Man of La Mancha - Finale Ultimo.txt	9	9
+Man of La Mancha - Golden Helmet of Mambrino.txt	10	9
+Man of La Mancha - Man of La Mancha.txt	10	9
+Man of La Mancha - Prison Scene.txt	3	2
+Man of La Mancha - The Dubbing (Underscore).txt	10	9
+Man of La Mancha - The Impossible Dream (Underscore).txt	9	9
+Mariah Carey - Hero.txt	3	3
+Mario Kart DS - Waluigi Pinball.txt	5	5
+Mario Kart Double Dash - Baby Park.txt	10	10
+Mark Snow - The X-Files Theme.txt	0	0
+Mateo Albeniz - Sonata (Zapateado) (Lute).txt	5	5
+Meat Loaf - I'd Do Anything for Love.txt	6	5
+Mecano - Hijo de la Luna.txt	4	3
+Mega Man - Cut Man.txt	9	9
+Mega Man 2 - Dr. Wily Stage 1 (Remix).txt	10	10
+Men Without Hats - The Safety Dance.txt	9	9
+Men at Work - Down Under.txt	3	2
+Metal Gear Solid - Main Theme.txt	4	3
+Metallica - Enter Sandman.txt	4	4
+Metallica - Fade to Black.txt	4	3
+Metallica - Master of Puppets.txt	9	8
+Metroid - Overworld (Piano).txt	5	4
+Michael Jackson - Beat It.txt	9	8
+Michael Jackson - Billie Jean.txt	6	6
+Michael Jackson - Black or White.txt	7	6
+Michael Jackson - Heal the World.txt	5	4
+Michael Land - Monkey Island Intro.txt	8	8
+Michael Land - Monkey Island Theme (Chords).txt	7	8
+Mindy McCready - Ten Thousand Angels.txt	6	6
+Monty Norman - James Bond Theme.txt	8	7
+Monty Python - Brave Sir Robin.txt	1	1
+Mortal Kombat - Theme (Lute 3).txt	1	1
+Mortal Kombat - Theme.txt	4	4
+Mumford & Sons - The Cave.txt	4	3
+Mungo Jerry - In the Summertime.txt	9	10
+Muse - Knights of Cydonia (Lute).txt	8	8
+Natalie Imbruglia - Torn.txt	9	9
+Neal Hefti - Batman Theme.txt	1	0
+Neil Diamond - Girl, You'll Be a Woman Soon (Solo).txt	8	8
+Neil Diamond - Sweet Caroline.txt	5	5
+Nena - 99 Red Balloons.txt	4	4
+Nikolai Rimsky-Korsakov - Flight of the Bumblebee.txt	3	2
+Nine Inch Nails - Hurt.txt	3	2
+Nino Rota - The Godfather Theme (Clarinet, Flute).txt	0	0
+Nino Rota - The Godfather Waltz (Lute, Harp, Piano).txt	2	1
+Nirvana - All Apologies.txt	4	4
+Nirvana - Come as You Are.txt	6	6
+Nirvana - Lithium.txt	6	6
+Nirvana - Rape Me.txt	8	7
+Nirvana - Smells Like Teen Spirit.txt	8	8
+No Doubt - Don't Speak (Lute).txt	7	6
+No Doubt - Don't Speak.txt	9	9
+Nyan Cat - Theme.txt	10	9
+O-Zone - Dragostea Din Tei.txt	6	5
+Oasis - Champagne Supernova.txt	7	8
+Oasis - Wonderwall.txt	7	8
+Of Monsters and Men - Little Talks.txt	2	1
+Oingo Boingo - Dead Man's Party.txt	6	6
+OutKast - Hey Ya!.txt	8	9
+Ozzy Osbourne - Crazy Train (Harp).txt	2	1
+Ozzy Osbourne - Crazy Train (Lute).txt	4	4
+Pantera - 13 Steps to Nowhere.txt	5	4
+Pantera - Cemetery Gates.txt	3	2
+Papa Roach - Last Resort.txt	5	5
+Pat Benatar - Hit Me with Your Best Shot.txt	5	5
+Pat Benatar - Love Is a Battlefield.txt	5	5
+Paul McCartney & Wings - Live and Let Die.txt	6	5
+Peter Schilling - Major Tom.txt	4	4
+Peter, Paul and Mary - Puff, the Magic Dragon (Lute Solo).txt	5	6
+Phil Collins - In the Air Tonight.txt	4	3
+Phoenix Wright - Ace Attorney - Investigation Cornered.txt	5	5
+Phoenix Wright - Ace Attorney - The Steel Samurai.txt	7	7
+Pink Floyd - Comfortably Numb.txt	6	6
+Pink Floyd - Money (Lute Solo).txt	4	4
+Pink Floyd - Run Like Hell.txt	3	4
+Pink Floyd - Wish You Were Here.txt	3	2
+Pinky and the Brain - Theme.txt	5	5
+Pirates of the Caribbean - He's a Pirate.txt	7	6
+Plain White T's - Hey There Delilah (Solo).txt	5	4
+Plants vs. Zombies - Grasswalk.txt	3	3
+Plants vs. Zombies - Loonboon.txt	5	4
+Pokemon Gold and Silver - Azalea Town.txt	6	5
+Pokemon Mystery Dungeon 2 - Primal Dialga (Solo).txt	9	9
+Pokemon Red and Blue - Battle 1.txt	8	8
+Popeye - Theme Song (Horn Solo).txt	1	0
+Portal - Still Alive.txt	4	4
+Portal 2 - Turret Wife Serenade.txt	4	4
+Portal 2 - Want You Gone.txt	5	4
+Power Rangers - Theme.txt	7	7
+Professor Layton - Layton's Theme.txt	6	6
+Pyotr Ilyich Tchaikovsky - Dance of the Sugar Plum Fairy.txt	5	5
+Queen - Another One Bites the Dust.txt	5	4
+Queen - Bohemian Rhapsody.txt	7	7
+Queen - Don't Stop Me Now.txt	6	6
+Queen - Love of My Life (Lute or Harp).txt	2	1
+Queen - Radio Ga Ga.txt	8	7
+Queen - Under Pressure.txt	8	7
+Queen - We Are the Champions (Band).txt	9	9
+Queen - We Are the Champions.txt	3	3
+Queen - We Will Rock You.txt	0	0
+R.E.M. - Losing My Religion.txt	6	5
+Ramin Djawadi - Game of Thrones Theme (Lute, Harp).txt	7	6
+Rammstein - Ich will (Lute).txt	5	6
+Ramones - Blitzkrieg Bop.txt	3	4
+Ray Charles - Hit the Road Jack.txt	5	5
+Ray Charles - Unchain My Heart.txt	8	7
+Ray Parker Jr. - Ghostbusters.txt	6	5
+Red Hot Chili Peppers - Californication.txt	7	7
+Red Hot Chili Peppers - Otherside.txt	7	6
+Red Hot Chili Peppers - Soul to Squeeze.txt	6	5
+Rednex - Cotton Eye Joe.txt	9	8
+Reel Big Fish - She Has a Girlfriend Now.txt	8	8
+Richard Strauss - Also sprach Zarathustra.txt	2	1
+Rick Astley - Never Gonna Give You Up.txt	6	5
+Right Said Fred - I'm Too Sexy (Solo).txt	5	4
+Ritchie Valens - La Bamba (Lute).txt	7	8
+Roxette - Listen to Your Heart.txt	3	3
+Roy Orbison - Blue Bayou.txt	7	8
+Roy Orbison - Oh, Pretty Woman.txt	5	5
+Royal Philharmonic Orchestra - Hooked on Classics.txt	1	1
+Rush - Tom Sawyer.txt	2	1
+S.T.A.L.K.E.R. - He Was a Good Stalker.txt	2	1
+Santana - Black Magic Woman & Oye Como Va.txt	5	4
+Savage Garden - To the Moon and Back.txt	10	10
+Scatman John - Scatman (Ski-Ba-Bop-Ba-Dop-Bop) (Horn, Vocals).txt	2	1
+Scooby-Doo - Theme.txt	6	5
+Scorpions - Rock You Like a Hurricane.txt	8	7
+Scorpions - Still Loving You.txt	2	1
+Seal - Kiss from a Rose (Lute 3).txt	3	3
+Seal - Kiss from a Rose.txt	5	5
+Sebastian Yradier - La Paloma.txt	10	9
+Sesame Street - Theme.txt	4	4
+Shakira - La Tortura (Solo).txt	4	4
+Shirley Temple - On the Good Ship Lollipop.txt	5	5
+Simon & Garfunkel - Bridge Over Troubled Water.txt	2	2
+Simon & Garfunkel - Mrs. Robinson.txt	5	5
+Simon & Garfunkel - The Sound of Silence.txt	6	5
+Slade - Cum on Feel the Noize.txt	4	4
+Slayer - Black Magic.txt	4	4
+Smash Mouth - All Star (Melody).txt	1	1
+Smash Mouth - Walking on the Sun (Horn).txt	2	1
+Smash Mouth - Walking on the Sun.txt	6	6
+Soft Cell - Tainted Love (Band).txt	5	6
+Soft Cell - Tainted Love.txt	3	3
+Sonic the Hedgehog - Green Hill Zone (Lute).txt	1	1
+Soul Asylum - Runaway Train.txt	8	7
+Spin Doctors - Two Princes.txt	9	9
+Stan Jones - Ghost Riders in the Sky.txt	6	6
+StarCraft - Terran Song.txt	1	1
+Starland Vocal Band - Afternoon Delight.txt	8	8
+Stealers Wheel - Stuck in the Middle with You.txt	5	6
+Steve Miller Band - The Joker.txt	1	0
+Sting - Shape of My Heart.txt	3	2
+Street Fighter II - Guile's Theme.txt	4	4
+Super Mario Bros. - Underworld.txt	2	1
+Super Mario Land - Stage 1.txt	5	4
+Super Mario RPG - Forest Maze.txt	10	10
+Super Mario Sunshine - Bianco Hills.txt	4	4
+Super Mario Sunshine - Pinna Park.txt	9	8
+Super Mario Sunshine - Ricco Harbor.txt	10	10
+Super Mario World - Donut Polka.txt	10	9
+Super Smash Bros. Brawl - Concert.txt	10	10
+Super Smash Bros. Melee - Dr. Mario.txt	6	5
+Super Smash Bros. Melee - Hyrule Temple.txt	8	7
+Super Smash Bros. Melee - Menu.txt	9	9
+Super Smash Bros. Melee - Pokemon Stadium.txt	6	6
+Survivor - Eye of the Tiger.txt	7	6
+Sylvester Levay - Airwolf Theme.txt	6	6
+System of a Down - Chop Suey!.txt	9	9
+System of a Down - Hypnotize (Lute).txt	4	4
+Taio Cruz - Dynamite.txt	5	4
+Tears for Fears - Mad World (Lute Solo).txt	2	2
+Terraria - Overworld Day (Harp, Lute).txt	2	1
+Tetris - Theme B.txt	9	8
+The A-Team - Theme.txt	4	4
+The Animals - House of the Rising Sun (Solo).txt	6	6
+The B-52's - Rock Lobster.txt	5	4
+The Beach Boys - California Girls (Solo).txt	10	9
+The Beach Boys - Surfin' USA.txt	4	4
+The Beatles - Eleanor Rigby.txt	2	2
+The Beatles - Help!.txt	10	9
+The Beatles - Hey Jude.txt	5	4
+The Beatles - When I'm Sixty-Four (Lute).txt	3	2
+The Beatles - Yesterday (Band).txt	3	3
+The Beatles - Yesterday.txt	4	4
+The Blues Brothers - Everybody Needs Somebody to Love.txt	7	7
+The Charlie Daniels Band - The Devil Went Down to Georgia (Solo).txt	10	10
+The Chords - Sh-Boom.txt	10	10
+The Clash - Rock the Casbah.txt	5	5
+The Clash - Should I Stay or Should I Go.txt	8	9
+The Cranberries - Zombie.txt	7	8
+The Cure - Boys Don't Cry.txt	6	6
+The Cure - Lullaby.txt	4	4
+The Doors - Light My Fire.txt	4	4
+The Doors - Riders on the Storm (Band).txt	9	9
+The Doors - Riders on the Storm.txt	1	0
+The Dukes of Hazzard - Theme.txt	5	4
+The Flintstones - Theme.txt	1	1
+The Goonies - Theme.txt	1	0
+The Incredible Hulk - Theme.txt	2	2
+The J. Geils Band - Centerfold.txt	6	6
+The Jackson 5 - ABC (Solo).txt	9	9
+The Kingsmen - Louie Louie (Horn).txt	6	5
+The Kingsmen - Louie Louie.txt	8	7
+The Kinks - You Really Got Me.txt	10	9
+The Legend of Zelda - A Link to the Past - Dark World.txt	8	8
+The Legend of Zelda - A Link to the Past - Hyrule Castle.txt	8	7
+The Legend of Zelda - Gerudo Valley.txt	2	1
+The Legend of Zelda - Link's Awakening - Ballad of the Wind Fish.txt	3	2
+The Legend of Zelda - Ocarina of Time - Gerudo Valley.txt	8	8
+The Legend of Zelda - Ocarina of Time - Lost Woods.txt	6	7
+The Legend of Zelda - Ocarina of Time - Saria's Song.txt	3	2
+The Legend of Zelda - Overworld.txt	4	3
+The Legend of Zelda - The Wind Waker - Outset Island.txt	4	4
+The Legend of Zelda - The Wind Waker - Windfall Island.txt	3	2
+The Legend of Zelda - Underworld (Lute 1).txt	2	1
+The Lion King - Hakuna Matata.txt	4	3
+The Little Mermaid - Under the Sea (Harp).txt	6	5
+The Lord of the Rings - The Shire (Solo).txt	8	8
+The Mamas & the Papas - California Dreamin'.txt	7	7
+The Matrix - Theme.txt	8	8
+The Monkees - I'm a Believer.txt	8	8
+The Muppet Show - Theme.txt	9	9
+The Office - Theme.txt	1	1
+The Offspring - All I Want.txt	9	9
+The Offspring - Self Esteem.txt	9	8
+The Offspring - The Kids Aren't Alright.txt	4	3
+The Police - Every Breath You Take.txt	4	4
+The Pretenders - I'll Stand by You.txt	4	3
+The Proclaimers - I'm Gonna Be (500 Miles).txt	9	8
+The Ren & Stimpy Show - Theme.txt	8	8
+The Righteous Brothers - Unchained Melody.txt	3	2
+The Rocky Horror Picture Show - Time Warp.txt	4	3
+The Rolling Stones - Jumpin' Jack Flash.txt	9	9
+The Rolling Stones - Paint It Black.txt	9	10
+The Rolling Stones - Satisfaction.txt	5	4
+The Rolling Stones - Sympathy for the Devil.txt	10	10
+The Smashing Pumpkins - 1979.txt	5	5
+The Surfaris - Wipe Out.txt	5	4
+The Temptations - My Girl (Solo).txt	7	7
+The Tokens - The Lion Sleeps Tonight.txt	4	3
+The Turtles - Happy Together.txt	8	8
+The Weather Girls - It's Raining Men.txt	10	10
+The White Stripes - Seven Nation Army.txt	3	2
+The Who - Baba O'Riley.txt	8	9
+The Who - Behind Blue Eyes.txt	6	5
+The Who - Pinball Wizard (Lute).txt	5	5
+The Wizard of Oz - Somewhere Over the Rainbow.txt	4	3
+They Might Be Giants - Ana Ng.txt	9	9
+They Might Be Giants - Birdhouse in Your Soul (Solo).txt	6	5
+They Might Be Giants - Doctor Worm.txt	6	5
+They Might Be Giants - Istanbul (Not Constantinople) (Drums).txt	4	5
+They Might Be Giants - Istanbul (Not Constantinople) (Solo).txt	6	5
+Thomas Arne - Rule, Britannia!.txt	3	3
+Tina Turner - The Best (Simply the Best).txt	9	9
+Tom Petty - Free Fallin' (Lute Solo).txt	1	1
+Tom Petty - I Won't Back Down.txt	5	5
+Tom Petty - Last Dance with Mary Jane.txt	6	5
+Torfrock - Beinhart (Solo).txt	5	5
+Toto - Africa.txt	4	4
+Touhou - U.N. Owen Was Her.txt	9	9
+Traditional - Amazing Grace.txt	1	1
+Traditional - Angels We Have Heard on High.txt	7	7
+Traditional - Auld Lang Syne.txt	5	4
+Traditional - Danny Boy.txt	4	4
+Traditional - Deck the Halls (Quickstep).txt	9	9
+Traditional - Drunken Sailor.txt	8	9
+Traditional - Greensleeves (Strings, Wind).txt	3	2
+Traditional - Hark! The Herald Angels Sing.txt	4	3
+Traditional - Herr Mannelig.txt	4	4
+Traditional - Home on the Range.txt	0	0
+Traditional - Ievan Polkka.txt	5	5
+Traditional - Jingle Bells (Country).txt	10	10
+Traditional - Joy to the World (Rock Version).txt	8	8
+Traditional - La Cucaracha (Solo).txt	4	3
+Traditional - Old MacDonald Had a Farm.txt	5	5
+Traditional - Row, Row, Row Your Boat.txt	1	1
+Traditional - Scarborough Fair (Band).txt	3	3
+Traditional - Scarborough Fair.txt	0	0
+Traditional - Scotland the Brave.txt	3	3
+Traditional - Silent Night.txt	3	3
+Traditional - The First Noel.txt	6	6
+Traditional - The First Nowell.txt	3	3
+Traditional - The Twelve Days of Christmas.txt	3	2
+Traditional - We Three Kings.txt	10	10
+Traditional - We Wish You a Merry Christmas.txt	6	5
+Traditional - When the Saints Go Marching In.txt	10	10
+Trans-Siberian Orchestra - Carol of the Bells.txt	1	0
+Trans-Siberian Orchestra - Christmas Eve, Sarajevo 12-24.txt	5	4
+Trans-Siberian Orchestra - Requiem.txt	3	2
+U2 - Angel of Harlem.txt	9	10
+U2 - I Still Haven't Found What I'm Looking For.txt	2	2
+U2 - Sweetest Thing (Lute Solo).txt	5	5
+U2 - With or Without You.txt	5	4
+Unknown - 0000.txt	5	5
+Unknown - 0001s.txt	4	4
+Unknown - 0002.txt	5	5
+Unknown - 001129949301 (Lute).txt	3	3
+Unknown - 007.txt	7	7
+Unknown - 009count.txt	7	6
+Unknown - 00total.txt	8	8
+Unknown - 01aunhi.txt	8	8
+Unknown - 02 j j 6.txt	6	5
+Unknown - 023songwera.txt	5	4
+Unknown - 02bagoluck.txt	6	5
+Unknown - 02litxms.txt	10	10
+Unknown - 03 si dm.txt	4	3
+Unknown - 037-klar.txt	10	10
+Unknown - 03hall.txt	10	10
+Unknown - 06bnphon.txt	10	10
+Unknown - 08MSTeam.txt	10	10
+Unknown - 0lespet.txt	7	7
+Unknown - 0w.txt	5	5
+Unknown - 0x.txt	7	6
+Unknown - 1builtct.txt	8	8
+Unknown - 1comnhom.txt	10	10
+Unknown - 1cutsdee.txt	3	3
+Unknown - 1niteaday.txt	4	4
+Unknown - 1well.txt	1	1
+Unknown - 500 Miles.txt	6	6
+Unknown - Acoustic Medley.txt	4	3
+Unknown - Africa.txt	7	7
+Unknown - Always On My Mind (Lute Solo).txt	4	3
+Unknown - Another World.txt	4	4
+Unknown - Around the World.txt	6	5
+Unknown - Bach.txt	7	7
+Unknown - Bad Boys (Lute Solo).txt	8	8
+Unknown - Battle Theme.txt	7	7
+Unknown - Beautiful People (Lute).txt	8	7
+Unknown - Bicycle.txt	6	6
+Unknown - Birdies.txt	10	10
+Unknown - Black Fire.txt	7	7
+Unknown - Breezy.txt	1	1
+Unknown - Bynn the Breaker.txt	6	6
+Unknown - Canon Noel (Harp).txt	3	3
+Unknown - Coco.txt	8	8
+Unknown - Cowboy.txt	7	6
+Unknown - Crocket.txt	10	10
+Unknown - Crush.txt	5	4
+Unknown - Cyan (Solo).txt	3	3
+Unknown - DC Aquarius.txt	8	8
+Unknown - Dark Woods.txt	9	8
+Unknown - Diamond Day.txt	6	6
+Unknown - Die Glocken von Rom.txt	10	10
+Unknown - Diersee.txt	7	6
+Unknown - Dream.txt	10	10
+Unknown - Dust.txt	5	5
+Unknown - Fanfare.txt	9	8
+Unknown - Feel My Blade.txt	10	9
+Unknown - Fiesta.txt	6	6
+Unknown - Final Boss.txt	10	10
+Unknown - First Dance.txt	4	4
+Unknown - Fly Away.txt	6	7
+Unknown - Follow You.txt	2	2
+Unknown - Fool.txt	7	6
+Unknown - Free Sax.txt	10	9
+Unknown - Fun Fun.txt	10	9
+Unknown - Gladiator.txt	6	5
+Unknown - Godzilla.txt	4	3
+Unknown - Goin Around.txt	10	10
+Unknown - Halloween.txt	4	3
+Unknown - Home (2).txt	3	2
+Unknown - Home.txt	4	4
+Unknown - Huacha.txt	10	10
+Unknown - I Offer My Life to You.txt	8	7
+Unknown - Intro Theme.txt	7	7
+Unknown - Iomene.txt	7	7
+Unknown - Johnny Guitar.txt	10	10
+Unknown - Kingdom Baron.txt	7	7
+Unknown - Krainor.txt	9	10
+Unknown - Let the Good Times Roll.txt	10	10
+Unknown - Lisboa.txt	10	10
+Unknown - Luryen.txt	3	3
+Unknown - Main Theme.txt	8	7
+Unknown - Mellow Harp (Harp).txt	2	1
+Unknown - Memory of Megi.txt	5	4
+Unknown - Mpntbgm1.txt	6	6
+Unknown - Munchy Monk.txt	4	4
+Unknown - Naikanomtom.txt	7	6
+Unknown - Natsukashiki.txt	3	2
+Unknown - Nightin.txt	8	8
+Unknown - No Bravery.txt	7	7
+Unknown - One Way Ticket.txt	10	10
+Unknown - One.txt	6	6
+Unknown - Overture.txt	10	9
+Unknown - Overworld.txt	4	4
+Unknown - Paganini.txt	3	2
+Unknown - Patiharn.txt	4	4
+Unknown - PlayFa.txt	4	4
+Unknown - Ponaig.txt	5	4
+Unknown - Positive Force Verde.txt	8	7
+Unknown - Power of Love.txt	8	7
+Unknown - Promise.txt	10	9
+Unknown - Ratanakosin.txt	8	8
+Unknown - Rest a While.txt	5	5
+Unknown - Reunmayura.txt	5	5
+Unknown - Rock.txt	10	10
+Unknown - Rukronjai.txt	5	4
+Unknown - Sacred Tree.txt	5	5
+Unknown - Santa.txt	10	10
+Unknown - Schunder Song.txt	8	9
+Unknown - Searchlight of Love.txt	5	4
+Unknown - Secret.txt	9	9
+Unknown - Shine (Horn).txt	3	2
+Unknown - Shine (Lute).txt	4	4
+Unknown - Shot Through the Heart.txt	6	6
+Unknown - Shot in the Dark.txt	6	5
+Unknown - Sleigh.txt	10	10
+Unknown - Smoky.txt	10	10
+Unknown - Soldier.txt	7	6
+Unknown - Starlight (Drums).txt	3	3
+Unknown - Starlight.txt	4	4
+Unknown - Surfing.txt	5	4
+Unknown - Tatrisa.txt	5	5
+Unknown - The Decisive Battle.txt	5	4
+Unknown - The Distance.txt	2	1
+Unknown - The Rock City Boy.txt	4	3
+Unknown - We Go!.txt	5	4
+Unknown - Wedding.txt	7	6
+Unknown - Weirdsc.txt	7	8
+Unknown - Wreath.txt	5	5
+Unknown - Xmas.txt	5	4
+Unknown - Yatika.txt	5	4
+Unknown - ZZZ.txt	5	4
+Unknown - cv4-1.txt	4	3
+Unknown - grmusic1.txt	10	10
+Unknown - nem.txt	3	3
+Unknown - thewndr.txt	5	5
+Utada Hikaru - Simple and Clean.txt	3	2
+Van Halen - Jump.txt	6	5
+Van Halen - Right Now.txt	1	1
+Van Morrison - Moondance.txt	6	6
+Vengaboys - Boom, Boom, Boom, Boom!!.txt	10	9
+Vengaboys - We Like to Party.txt	6	5
+Vertical Horizon - Everything You Want.txt	8	8
+Village People - Y.M.C.A.txt	7	6
+Warcraft II - Theme.txt	10	10
+WarioWare Touched - Ashley's Theme.txt	6	5
+Weezer - My Name Is Jonas.txt	5	5
+Werner Thomas - Chicken Dance.txt	1	1
+Wild Arms - Opening.txt	7	7
+Wolfgang Amadeus Mozart - Requiem, Lacrimosa.txt	4	3
+Wolfgang Amadeus Mozart - Requiem, Rex Tremendae.txt	7	6
+Yasunori Shiono - Iris's Theme (Lufia II).txt	2	2
+ZZ Top - La Grange (Solo).txt	7	7
+a-ha - Take On Me (Main).txt	1	1
+a-ha - Take On Me.txt	4	3

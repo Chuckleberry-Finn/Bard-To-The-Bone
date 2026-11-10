@@ -11,7 +11,6 @@
 ### Disclaimers:
 1. I am not a musically inclined person, so there's probably obvious mistakes made / issues with this system. If you're expecting a high fidelity experience this mod is not for you.
 2. How Project Zomboid handles threads, framerates, and ticks can impact timings and playback may suffer because of this.
-3. **This mod is meant as a casual instrument system.**<br>I won't be introducing a skill system integration, nor a way to manually play instruments.<br><br><sup>If you'd like a music mod that integrates well with a skill system (and a number of wonderful features) check out [Lifestyle](https://steamcommunity.com/sharedfiles/filedetails/?id=2997342681); If you'd like a much deeper immersive mod that requires manually playing instruments see [Bard Interactive Music](https://steamcommunity.com/sharedfiles/filedetails/?id=3176639185).</sup>
 <br><br>
 
 ### What is ABC Notation?
@@ -27,8 +26,41 @@
 <br><br>
 
 ### [Bard to The Bone Song Library](./Contents/mods/BardToTheBone/common/media/SONGLIBRARY_README.MD)
-**Collection of 900+ songs ready to be entered in-game.**<br>
+**Collection of 780+ songs ready to be played in-game.**<br>
 *<sup>Modified from the [Starbound Song Pack](https://github.com/luxx/sbsp)</sup>*
+<br><br>
+
+### How to Add Your Own Songs (Step by Step)
+
+**1. Get a song**
+- **Already in ABC?** Copy the text from a site like [abcnotation.com](https://abcnotation.com/) and skip to step 3.
+- **Have a MIDI file?** Find one on a site like [freemidi.org](https://freemidi.org/), or use your own, and go to step 2.
+
+**2. Convert the MIDI to ABC**
+- **Easiest:** open the [Online MIDI to ABC Tool](https://michaeleskin.com/tools/midi2abc/midi2abc.html), load the MIDI and copy the ABC text it gives you.
+- **Offline:** drag the MIDI onto [Midi2ABC.exe](https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/releases/tag/Midi2ABC). The `.abc` file appears next to the exe.<br>
+<sup>Midi2ABC puts every instrument into one track. For a band song where each player picks their own part, use [easyABC](https://github.com/jwdj/EasyABC) instead, which keeps the instruments as separate voices (`V:1`, `V:2`, ...).</sup>
+
+**3. Check it sounds right (optional)**
+- Paste the ABC into the [Online ABC Player and Editor](https://abc.rectanglered.com/) and press play. Fix anything odd here before taking it in-game.
+
+**4. Put it in the game** (either way works)
+- **In-game:** equip an instrument, open its song window, click the arrow at the start of the button row to open the editor, press **New**, paste the ABC and press **Save**.
+- **As a file:** save the text as a `.txt` or `.abc` file in `Zomboid/Lua/BardToTheBoneSongLibrary/`<br>
+<sup>(on Windows: `C:/Users/<you>/Zomboid/Lua/BardToTheBoneSongLibrary/`)</sup>, then press **Reload Songs** in the song window's gear menu.
+
+**5. Play it**
+- Pick the song from the list and press **Play**.
+- If it has several parts, the voice button next to Play lets you pick one. Leave it on **All** to play the whole song.
+- In multiplayer, start the same song as someone nearby and you'll join in, in time.
+
+**If something's off**
+- **Too fast or too slow:** change or add the `Q:` line, e.g. `Q:1/4=120` (bigger is faster).
+- **Wrong name in the list:** the list shows `C:` (artist) and `T:` (title) as "Artist - Title".
+- **Nothing plays:** make sure the header has `X:`, `T:` and `K:` lines and the notes come after `K:`.
+- **A big pile of notes on one instrument:** that MIDI had every instrument merged; convert it with easyABC to keep the parts separate.
+
+<sup>The in-game **Song Guide** button (gear menu) opens this page.</sup>
 <br><br>
 
 **Useful Links:**
