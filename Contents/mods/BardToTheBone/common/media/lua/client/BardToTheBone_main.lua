@@ -21,6 +21,7 @@ Bard.clock = { requested = 0 }
 Bard.clockRefreshMs = 60000
 Bard.bandDelayMs = 500
 Bard.bandJoinWindowMs = 3000
+Bard.bandRange = 10
 Bard.xpPerMinute = 10
 Bard.xpSendMs = 5000
 Bard.xpActiveMs = 2000
@@ -1193,6 +1194,12 @@ function Bard.playLoadedSongs(player)
                 break
             end
         end
+        else
+            data.eventIndex = data.eventIndex or 1
+            local songTime = bard.elapsedTime - bard.timeShift
+            while data.eventIndex <= #data.events and data.events[data.eventIndex].timeOffset <= songTime do
+                data.eventIndex = data.eventIndex + 1
+            end
         end
     end
 
@@ -1216,6 +1223,7 @@ end
 function Bard.isVoicePlayed(bard, voiceId, data)
     if data.isPercussionVoice and not bard.isPercussion then return false end
     local selectedVoice = bard.selectedVoice
+    if type(selectedVoice) == "table" then return selectedVoice[voiceId] == true end
     return (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
 end
 
@@ -1326,13 +1334,15 @@ function Bard.receiveClock(data)
 end
 
 
-function Bard.findBand(songKey, durationMs)
+function Bard.findBand(songKey, durationMs, player)
     if not songKey or not Bard.clock.offset then return end
     local now = getTimestampMs()
     local serverNow = Bard.serverNow()
     local best, bestReceived
     for _, state in pairs(Bard.remotePlayers) do
-        if state.songKey == songKey and state.bandStart and state.lastReceived and (now - state.lastReceived) <= Bard.bandJoinWindowMs then
+        local performer = state.player
+        local near = (not player) or (performer and IsoUtils.DistanceTo(player:getX(), player:getY(), player:getZ(), performer:getX(), performer:getY(), performer:getZ()) <= Bard.bandRange)
+        if near and state.songKey == songKey and state.bandStart and state.lastReceived and (now - state.lastReceived) <= Bard.bandJoinWindowMs then
             local position = serverNow - state.bandStart
             if position >= 0 and ((not durationMs) or position < durationMs) then
                 if (not bestReceived) or state.lastReceived > bestReceived then
@@ -1607,6 +1617,15 @@ function Bard.getMistakes(level, difficulty)
 end
 
 
+function Bard.getVoiceKey(selectedVoice)
+    if type(selectedVoice) ~= "table" then return selectedVoice or "All" end
+    local ids = {}
+    for voiceId in pairs(selectedVoice) do table.insert(ids, voiceId) end
+    table.sort(ids)
+    return table.concat(ids, ",")
+end
+
+
 ---@param player IsoPlayer|IsoGameCharacter
 function Bard.updateMusicLevel(player, bard)
     local level = Bard.getMusicLevel(player, bard.family)
@@ -1661,7 +1680,7 @@ end
 
 
 function Bard.getComplexity(bard)
-    local key = bard.selectedVoice or "All"
+    local key = Bard.getVoiceKey(bard.selectedVoice)
     bard.complexity = bard.complexity or {}
     if bard.complexity[key] then return bard.complexity[key] end
 
@@ -1766,12 +1785,22 @@ function Bard.flushMusicXp(player, bard)
 end
 
 
-Bard.instrumentSpecials = {}
+Bard.instrumentSpecialAnim = {}
 
-function Bard.instrumentSpecials.sexySax(player)
+function Bard.instrumentSpecialAnim.sexySax(player)
     if ZombRand(100) < 7 then
         player:setVariable("BttB_Special", "BttB_SexySaxPlaying")
     end
+end
+
+Bard.instrumentSpecialUI = {}
+
+---@param item InventoryItem
+function Bard.instrumentSpecialUI.blackBlueRed(item)
+    local index = item:getModelIndex()
+    print("MODEL INDEX: ", index)
+    local colors = {"black","blue","red"}
+    return colors[index+1]
 end
 
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
@@ -1780,11 +1809,11 @@ end
 Bard.instrumentData = {
     ["Base.Banjo"] = { decay = 300, soundDir = "banjo", family = "Strings", anim = "strumming" },
     ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", family = "Strings", anim = "strumming" },
-    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
-    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", needsAmp = true, },
+    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", uiColorSpecial = "blackBlueRed", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
+    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", uiColorSpecial = "blackBlueRed", needsAmp = true, },
     ["Base.Keytar"] = { decay = 700, soundDir = "keytar", family = "Keys", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
     ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", family = "Winds", anim = "Harmonica" },
-    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", special = "sexySax"},
+    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", specialAnim = "sexySax"},
     ["Base.Violin"] = { decay = 100, soundDir = "violin", family = "Strings", anim = "Violin", left = "Violin_Bow", right = "Violin" },
     ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", family = "Percussion", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
     ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute" },

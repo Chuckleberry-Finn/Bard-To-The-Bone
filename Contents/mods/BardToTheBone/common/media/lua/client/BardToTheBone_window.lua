@@ -39,6 +39,36 @@ BardUIWindow.starWidth = 14
 BardUIWindow.sortArrowScale = 0.5
 BardUIWindow.volumeIconSize = 15
 BardUIWindow.progressColor = { r = 0.4, g = 1.0, b = 0.3, a = 0.2 }
+
+BardUIWindow.defaultPalette = { bg = { 0, 0, 0 }, border = { 0.4, 0.4, 0.4 } }
+BardUIWindow.familyPalettes = {
+    Strings = { bg = { 0.15, 0.10, 0.06 }, border = { 0.72, 0.55, 0.34 } },
+    Keys = { bg = { 0.07, 0.07, 0.08 }, border = { 0.82, 0.80, 0.74 } },
+    Winds = { bg = { 0.14, 0.11, 0.04 }, border = { 0.88, 0.74, 0.32 } },
+    Percussion = { bg = { 0.13, 0.06, 0.06 }, border = { 0.82, 0.42, 0.36 } },
+}
+BardUIWindow.palettes = {
+    banjo = { bg = { 0.16, 0.12, 0.07 }, border = { 0.80, 0.66, 0.42 } },
+    guitar = { bg = { 0.17, 0.11, 0.06 }, border = { 0.84, 0.60, 0.32 } },
+
+    red = { bg = { 0.18, 0.05, 0.05 }, border = { 0.88, 0.30, 0.24 } },
+    blue = { bg = { 0.05, 0.07, 0.16 }, border = { 0.38, 0.50, 0.90 } },
+    black = { bg = { 0.18, 0.18, 0.18 }, border = { 0.5, 0.5, 0.5 } },
+
+    keytar = { bg = { 0.12, 0.05, 0.18 }, border = { 0.74, 0.38, 0.98 } },
+    harmonica = { bg = { 0.09, 0.10, 0.12 }, border = { 0.72, 0.77, 0.84 } },
+    saxophone = { bg = { 0.15, 0.11, 0.03 }, border = { 0.92, 0.74, 0.28 } },
+    violin = { bg = { 0.16, 0.06, 0.04 }, border = { 0.78, 0.38, 0.22 } },
+    xylophone = { bg = { 0.15, 0.08, 0.06 }, border = { 0.88, 0.54, 0.36 } },
+    flute = { bg = { 0.07, 0.10, 0.15 }, border = { 0.66, 0.80, 0.94 } },
+    bikehorn = { bg = { 0.16, 0.13, 0.02 }, border = { 1.00, 0.84, 0.20 } },
+    trumpet = { bg = { 0.16, 0.12, 0.03 }, border = { 0.96, 0.80, 0.30 } },
+    whistle = { bg = { 0.06, 0.12, 0.10 }, border = { 0.56, 0.82, 0.66 } },
+    piano = { bg = { 0.06, 0.06, 0.07 }, border = { 0.86, 0.83, 0.76 } },
+    grandPiano = { bg = { 0.05, 0.05, 0.06 }, border = { 0.84, 0.70, 0.40 } },
+    drumkit = { bg = { 0.14, 0.05, 0.07 }, border = { 0.88, 0.36, 0.42 } },
+    bottle = { bg = { 0.04, 0.12, 0.07 }, border = { 0.42, 0.82, 0.56 } },
+}
 BardUIWindow.volumeIconAlpha = 0.8
 BardUIWindow.volumeIconFadedAlpha = 0.35
 BardUIWindow.volumeTextAlpha = 0.8
@@ -99,17 +129,16 @@ function BardUIWindow:initialise()
 
     local rowX = self.padding
     local editorFont = BardUIWindow.getSmallestFont()
-    local editorText = "abc"
-    local editorWidth = getTextManager():MeasureStringX(editorFont, editorText) + 4
-    self.editorButton = ISButton:new(rowX, buttonY, editorWidth, buttonHeight, editorText, self, BardUIWindow.onEditorButton)
-    self.editorButton:initialise()
-    self.editorButton:instantiate()
-    self.editorButton:setFont(editorFont)
-    self.editorButton:setWidth(editorWidth)
-    self.editorButton:setTooltip(getText("IGUI_BardToTheBone_ToggleEditor"))
-    self:addChild(self.editorButton)
+    local guideLabel = getText("IGUI_BardToTheBone_SongGuide")
+    local guideWidth = getTextManager():MeasureStringX(editorFont, guideLabel) + (self.padding * 2)
+    self.guideButton = ISButton:new(rowX, buttonY, guideWidth, buttonHeight, guideLabel, self, BardUIWindow.onGuideButton)
+    self.guideButton:initialise()
+    self.guideButton:instantiate()
+    self.guideButton:setFont(editorFont)
+    self.guideButton:setTooltip(getText("IGUI_BardToTheBone_SongGuide_tooltip"))
+    self:addChild(self.guideButton)
 
-    rowX = self.editorButton.x + self.editorButton.width + (self.padding/2)
+    rowX = self.guideButton.x + self.guideButton.width + (self.padding/2)
     local buttonWidth = (self.playRowBaseX - (self.padding/2) - rowX - (self.padding * 1.5)) / 4
 
     self.saveButton = ISButton:new(rowX, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_Save"), self, BardUIWindow.onSave)
@@ -175,7 +204,7 @@ function BardUIWindow:initialise()
     self.playButtonStopColorMouseOver = { r = 0.6, g = 0.08, b = 0.08, a = 1 }
 
     self.voices = {}
-    self.voice = nil -- nil/"All" => play every voice (matches old, pre-voice-picker behavior)
+    self.voice = nil
 
     local volumeRowY = self.playButton.y + self.saveButton.height + self.padding
     self.volumeRowY = volumeRowY
@@ -288,17 +317,13 @@ function BardUIWindow:initialise()
     self.reloadButton:setFont(optionsFont)
     self.optionsPanel:addChild(self.reloadButton)
 
-    local guideLabel = getText("IGUI_BardToTheBone_SongGuide")
-    local guideWidth = getTextManager():MeasureStringX(optionsFont, guideLabel) + (self.padding * 2)
-    local optionButtonWidth = math.max(reloadWidth, guideWidth)
-    self.guideButton = ISButton:new(self.optionsPanel.width - optionButtonWidth - (self.padding / 2), optionsY + buttonHeight, optionButtonWidth, buttonHeight, guideLabel, self, BardUIWindow.onGuideButton)
-    self.guideButton:initialise()
-    self.guideButton:instantiate()
-    self.guideButton:setFont(optionsFont)
-    self.guideButton:setTooltip(getText("IGUI_BardToTheBone_SongGuide_tooltip"))
-    self.optionsPanel:addChild(self.guideButton)
-    self.reloadButton:setWidth(optionButtonWidth)
-    self.reloadButton:setX(self.optionsPanel.width - optionButtonWidth - (self.padding / 2))
+    local editorText = getText("IGUI_BardToTheBone_Editor")
+    self.editorButton = ISButton:new(self.optionsPanel.width - reloadWidth - (self.padding / 2), optionsY + buttonHeight, reloadWidth, buttonHeight, editorText, self, BardUIWindow.onEditorButton)
+    self.editorButton:initialise()
+    self.editorButton:instantiate()
+    self.editorButton:setFont(optionsFont)
+    self.editorButton:setTooltip(getText("IGUI_BardToTheBone_ToggleEditor"))
+    self.optionsPanel:addChild(self.editorButton)
 
     self.localSongs = {}
     self.librarySongs = {}
@@ -306,6 +331,7 @@ function BardUIWindow:initialise()
 
     self:setInfo(getText("IGUI_BardToTheBone_Info"))
 
+    self:applyPalette()
     self:layoutSections()
     self:onLoadAll()
     self:refreshVoiceButton()
@@ -318,14 +344,14 @@ function BardUIWindow:layoutSections()
     self.abcEntry:setVisible(not collapsed)
 
     local rowY = collapsed and (self:titleBarHeight() + self.padding) or (self.abcEntry.y + self.abcEntry.height + self.padding)
-    for _,button in ipairs({ self.editorButton, self.saveButton, self.revertButton, self.newButton, self.removeButton, self.voiceButton, self.playButton }) do
+    for _,button in ipairs({ self.guideButton, self.saveButton, self.revertButton, self.newButton, self.removeButton, self.voiceButton, self.playButton }) do
         button:setY(rowY)
     end
     for _,button in ipairs({ self.saveButton, self.revertButton, self.newButton, self.removeButton }) do
         button:setVisible(not collapsed)
     end
 
-    local rowStart = collapsed and (self.editorButton.x + self.editorButton.width + (self.padding/2)) or self.editorRowEndX
+    local rowStart = collapsed and (self.guideButton.x + self.guideButton.width + (self.padding/2)) or self.editorRowEndX
     local rowEnd = self.width - self.padding
     self.playRowBaseWidth = math.min(rowEnd - rowStart, self.playRowMaxWidth)
     self.playRowBaseX = rowEnd - self.playRowBaseWidth
@@ -937,7 +963,75 @@ function BardUIWindow:refreshEditButtons()
 
     if unsaved then
         self.saveButton.backgroundColor = { r = 0, g = 0.5, b = 0, a = 0.5 }
+    elseif self.palette then
+        self.saveButton.backgroundColor = BardUIWindow.paletteColor(self.palette.button)
     end
+end
+
+
+function BardUIWindow.getPalette(instrument)
+    local data = Bard.getInstrumentData(instrument)
+
+    local uiColorSpecial = data.uiColorSpecial and Bard.instrumentSpecialUI[data.uiColorSpecial](instrument)
+
+    local base = data and (BardUIWindow.palettes[uiColorSpecial] or BardUIWindow.palettes[data.uiColor]
+            or BardUIWindow.palettes[data.soundDir] or BardUIWindow.familyPalettes[data.family]) or BardUIWindow.defaultPalette
+
+    local bg, border = base.bg, base.border
+    local function color(rgb, scale, a) return { r = rgb[1] * scale, g = rgb[2] * scale, b = rgb[3] * scale, a = a } end
+    local function mix(t, a) return { r = bg[1] + (border[1] - bg[1]) * t, g = bg[2] + (border[2] - bg[2]) * t, b = bg[3] + (border[3] - bg[3]) * t, a = a } end
+    return {
+        window = color(bg, 1, 0.85),
+        windowBorder = color(border, 1, 0.85),
+        button = color(bg, 0.7, 1),
+        buttonHover = mix(0.3, 1),
+        buttonBorder = color(border, 1, 0.75),
+        entry = color(bg, 0.5, 0.8),
+        entryBorder = color(border, 0.8, 0.9),
+        list = color(bg, 0.6, 0.85),
+        listBorder = color(border, 0.8, 0.9),
+        selection = color(border, 1, 0.25),
+        hover = color(border, 1, 0.12),
+    }
+end
+
+
+function BardUIWindow.paletteColor(c)
+    return { r = c.r, g = c.g, b = c.b, a = c.a }
+end
+
+
+function BardUIWindow:applyPalette()
+    local palette = BardUIWindow.getPalette(self.instrument)
+    self.palette = palette
+    local copy = BardUIWindow.paletteColor
+
+    self.backgroundColor = copy(palette.window)
+    --self.borderColor = copy(palette.windowBorder)
+
+    for _, button in ipairs({ self.editorButton, self.saveButton, self.revertButton, self.newButton, self.removeButton, self.voiceButton, self.playButton,
+                              self.styleButton, self.optionsButton, self.reloadButton, self.guideButton, self.titleHeader, self.levelHeader }) do
+        button.backgroundColor = copy(palette.button)
+        button.backgroundColorMouseOver = copy(palette.buttonHover)
+        button.borderColor = copy(palette.buttonBorder)
+    end
+    self.playButtonDefaultColor = copy(palette.button)
+    self.playButtonDefaultColorMouseOver = copy(palette.buttonHover)
+
+    for _, entry in ipairs({ self.abcEntry, self.searchEntry }) do
+        entry.backgroundColor = copy(palette.entry)
+        entry.borderColor = copy(palette.entryBorder)
+    end
+
+    self.songList.backgroundColor = copy(palette.list)
+    self.songList.borderColor = copy(palette.listBorder)
+    self.songList.selectionColor = copy(palette.selection)
+    self.songList.mouseOverHighlightColor = copy(palette.hover)
+    self.optionsPanel.backgroundColor = copy(palette.list)
+    self.optionsPanel.borderColor = copy(palette.listBorder)
+
+    self:refreshEditButtons()
+    self:refreshPlayButtonState()
 end
 
 
@@ -1086,18 +1180,49 @@ function BardUIWindow:setVoice(voice)
 end
 
 
+function BardUIWindow:isVoiceChecked(voiceId)
+    return (not self.voice) or self.voice[voiceId] == true
+end
+
+
+function BardUIWindow:onVoiceAll()
+    self:setVoice(nil)
+    self:onVoice()
+end
+
+
+function BardUIWindow:onVoiceToggle(voiceId)
+    local selected = {}
+    local count, total = 0, 0
+    for _, v in ipairs(self.voices) do
+        total = total + 1
+        local checked = self:isVoiceChecked(v.id)
+        if v.id == voiceId then checked = not checked end
+        if checked then
+            selected[v.id] = true
+            count = count + 1
+        end
+    end
+    if count == 0 then
+        self:onVoice()
+        return
+    end
+    self:setVoice(count < total and selected or nil)
+    self:onVoice()
+end
+
+
 function BardUIWindow:onVoice()
     local playerNum = self.character:getPlayerNum()
     self.contextMenu = ISContextMenu.get(playerNum,self:getX()+self.voiceButton:getX()+self.voiceButton:getWidth(), self:getY()+self.voiceButton:getY())
     self.contextMenu.player = playerNum
 
-    local allOption = self.contextMenu:addOption(getText("IGUI_BardToTheBone_AllVoices"), self, BardUIWindow.setVoice, "All")
-    if (not self.voice) or self.voice == "All" then allOption.notAvailable = true end
+    local allOption = self.contextMenu:addOption(getText("IGUI_BardToTheBone_AllVoices"), self, BardUIWindow.onVoiceAll)
+    self.contextMenu:setOptionChecked(allOption, not self.voice)
 
     for _, v in ipairs(self.voices) do
-        ---@type ISContextMenu
-        local option = self.contextMenu:addOption(v.name, self, BardUIWindow.setVoice, v.id)
-        if v.id == self.voice then option.notAvailable = true end
+        local option = self.contextMenu:addOption(v.name, self, BardUIWindow.onVoiceToggle, v.id)
+        self.contextMenu:setOptionChecked(option, self:isVoiceChecked(v.id))
     end
 end
 
@@ -1122,13 +1247,17 @@ function BardUIWindow:refreshVoiceButton()
     local text = self.abcEntry and self.abcEntry:getText() or ""
     self.voices = Bard.getVoiceOrder(text)
 
-    -- Drop the selection if it no longer exists in the (possibly edited) tune
-    if self.voice and self.voice ~= "All" then
-        local stillValid = false
+    if self.voice then
+        local kept = {}
+        local count, total = 0, 0
         for _, v in ipairs(self.voices) do
-            if v.id == self.voice then stillValid = true; break end
+            total = total + 1
+            if self.voice[v.id] then
+                kept[v.id] = true
+                count = count + 1
+            end
         end
-        if not stillValid then self.voice = nil end
+        self.voice = (count > 0 and count < total) and kept or nil
     end
 
     self:layoutPlayRow()
@@ -1222,6 +1351,7 @@ function BardUIWindow:switchInstrument(character, instrument)
         Bard.players[id].selectedVoice = self.voice
     end
 
+    self:applyPalette()
     self:refreshPlayButtonState()
 end
 

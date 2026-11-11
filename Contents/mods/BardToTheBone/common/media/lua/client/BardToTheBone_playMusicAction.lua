@@ -52,8 +52,8 @@ function BardToTheBonePlayMusic:start()
     end
 
     self.character:clearVariable("BttB_Special")
-    if instrumentData.special then
-        Bard.instrumentSpecials[instrumentData.special](self.character)
+    if instrumentData.specialAnim then
+        Bard.instrumentSpecialAnim[instrumentData.specialAnim](self.character)
     end
 end
 
@@ -80,7 +80,7 @@ function BardToTheBonePlayMusic:startPlayback(id, instrumentData)
     Bard.players[id].styles = instrumentData.styles
 
     if isClient() and Bard.clock.offset then
-        local bandStart = Bard.findBand(self.songKey, self.songDuration)
+        local bandStart = Bard.findBand(self.songKey, self.songDuration, self.character)
         Bard.players[id].bandStart = bandStart or Bard.serverNow()
         Bard.players[id].joinedBand = bandStart ~= nil
         Bard.skipTo(Bard.players[id], Bard.serverNow() - Bard.players[id].bandStart)

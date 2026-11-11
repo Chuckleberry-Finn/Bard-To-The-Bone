@@ -152,3 +152,10 @@ Part 2:
 
 - FIX: C-flat and B-sharp notes playing an octave off.
 [ ------ ]
+
+[ 11/11/26 ]
+- NEW: Pick any mix of parts to play: the v button is now a checklist, All turns every part back on.
+- NEW: The song window is coloured to match the instrument in your hands!
+- TWEAK: Band mode only joins players within 10 tiles.
+- FIX: Switching a part back on mid-song no longer plays all the notes it skipped at once.
+[ ------ ]
