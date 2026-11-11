@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Bard to the Bone - MIDI to ABC</title>
+<style>
+    :root {
+        --bg: #0d1117;
+        --bg-subtle: #161b22;
+        --bg-inset: #010409;
+        --border: #30363d;
+        --border-muted: #21262d;
+        --text: #e6edf3;
+        --muted: #7d8590;
+        --link: #2f81f7;
+        --btn-bg: #21262d;
+        --btn-hover: #30363d;
+        --btn-border: rgba(240, 246, 252, 0.1);
+        --primary: #238636;
+        --primary-hover: #2ea043;
+        --primary-text: #ffffff;
+        --accent-subtle: rgba(56, 139, 253, 0.1);
+        --accent-border: #1f6feb;
+        --success: #3fb950;
+        --danger: #f85149;
+        --danger-subtle: rgba(248, 81, 73, 0.1);
+        --label-bg: #0d1117;
+        --drum: #d29922;
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topbar {
+        background: var(--bg-subtle);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
+    }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .topbar h1 { margin: 0; font-size: 20px; font-weight: 600; }
+    .topbar h1 a { color: var(--text); }
+    main.wrap { padding-top: 24px; padding-bottom: 48px; }
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        counter-reset: step;
+    }
+    .steps li {
+        counter-increment: step;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 12px 14px 12px 46px;
+        position: relative;
+        color: var(--muted);
+        background: var(--bg);
+    }
+    .steps li b { color: var(--text); display: block; }
+    .steps li::before {
+        content: counter(step);
+        position: absolute;
+        left: 14px;
+        top: 12px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--btn-bg);
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+    }
+    @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+    .drop {
+        border: 2px dashed var(--border);
+        border-radius: 6px;
+        background: var(--bg-subtle);
+        padding: 36px 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .drop:hover, .drop.over { border-color: var(--accent-border); background: var(--accent-subtle); }
+    .drop strong { display: block; font-size: 16px; font-weight: 600; }
+    .drop span { color: var(--muted); }
+    .drop input { display: none; }
+    details.options {
+        margin-top: 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+    }
+    details.options summary {
+        cursor: pointer;
+        padding: 8px 14px;
+        color: var(--muted);
+        user-select: none;
+    }
+    details.options[open] summary { border-bottom: 1px solid var(--border-muted); }
+    .option-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px 16px;
+        padding: 14px;
+    }
+    .option-grid label.title { display: block; font-weight: 600; margin-bottom: 6px; }
+    .option-grid .note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+    select, input[type=text] {
+        width: 100%;
+        background: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 5px 12px;
+        font: inherit;
+        line-height: 20px;
+    }
+    select:focus, input[type=text]:focus { outline: none; border-color: var(--accent-border); box-shadow: 0 0 0 3px var(--accent-subtle); }
+    .check { display: flex; gap: 8px; align-items: flex-start; }
+    .check input { margin-top: 3px; }
+    .card {
+        margin-top: 16px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        overflow: hidden;
+    }
+    .card-head {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 10px 14px;
+        background: var(--bg-subtle);
+        border-bottom: 1px solid var(--border);
+    }
+    .card-head input { flex: 1; font-weight: 600; }
+    .card-head .file { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 35%; }
+    .labels { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px 0; }
+    .label {
+        border: 1px solid var(--border);
+        border-radius: 2em;
+        padding: 0 9px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        color: var(--muted);
+        background: var(--label-bg);
+    }
+    .label b { color: var(--text); font-weight: 600; }
+    .label.drum b { color: var(--drum); }
+    textarea {
+        display: block;
+        width: calc(100% - 28px);
+        margin: 12px 14px;
+        min-height: 200px;
+        resize: vertical;
+        background: var(--bg-inset);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 12px;
+        font: 12px/1.5 ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        white-space: pre;
+    }
+    .actions { display: flex; gap: 8px; align-items: center; padding: 0 14px 14px; }
+    button {
+        border: 1px solid var(--btn-border);
+        border-radius: 6px;
+        padding: 5px 16px;
+        font: inherit;
+        font-weight: 500;
+        line-height: 20px;
+        cursor: pointer;
+        background: var(--btn-bg);
+        color: var(--text);
+    }
+    button:hover { background: var(--btn-hover); }
+    button.primary { background: var(--primary); color: var(--primary-text); border-color: rgba(31, 35, 40, 0.15); }
+    button.primary:hover { background: var(--primary-hover); }
+    .status { color: var(--success); font-size: 12px; }
+    .error { margin: 12px 14px; padding: 10px 12px; border: 1px solid var(--danger); border-radius: 6px; background: var(--danger-subtle); color: var(--danger); }
+    footer { border-top: 1px solid var(--border-muted); padding: 20px 0 32px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="wrap">
+        <h1><a href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone</a> / MIDI to ABC</h1>
+    </div>
+</div>
+
+<main class="wrap">
+    <ol class="steps">
+        <li><b>Drop a MIDI below</b></li>
+        <li><b>Copy or Download</b></li>
+        <li><b>Paste it in game</b></li>
+    </ol>
+
+    <div class="drop" id="drop">
+        <strong>Drop MIDI files here</strong>
+        <span>or click to choose files</span>
+        <input type="file" id="file" accept=".mid,.midi,.kar,audio/midi,audio/x-midi" multiple>
+    </div>
+
+    <details class="options">
+        <summary>Options</summary>
+        <div class="option-grid">
+            <div>
+                <label class="title" for="split">Parts</label>
+                <select id="split">
+                    <option value="track">One per instrument</option>
+                    <option value="channel">One per MIDI channel</option>
+                    <option value="single">All in one part</option>
+                </select>
+                <div class="note">Players pick a part with the v button next to Play.</div>
+            </div>
+            <div>
+                <label class="title" for="grid">Timing</label>
+                <select id="grid">
+                    <option value="24">Normal</option>
+                    <option value="4">Simple (for jittery MIDIs)</option>
+                    <option value="0">Exact</option>
+                </select>
+                <div class="note">Simple tidies up MIDIs that were played in live.</div>
+            </div>
+            <div>
+                <span class="title" style="font-weight:600;display:block;margin-bottom:6px">Drums</span>
+                <div class="check">
+                    <input type="checkbox" id="drums" checked>
+                    <label for="drums">Keep the drum part<br><span class="note" style="margin:0">It only plays on the drum kit.</span></label>
+                </div>
+            </div>
+            <div>
+                <span class="title" style="font-weight:600;display:block;margin-bottom:6px">Layers</span>
+                <div class="check">
+                    <input type="checkbox" id="combine" checked>
+                    <label for="combine">Combine layered tracks<br><span class="note" style="margin:0">Drops echo and copy tracks, and folds tracks like "Piano 2" or "Piano Detune" into "Piano".</span></label>
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <div id="results"></div>
+</main>
+
+<footer>
+    <div class="wrap">
+        Save downloads in <code>Zomboid/Lua/BardToTheBoneSongLibrary/</code> and press <b>Reload Songs</b> in the song window's gear menu.
+        &middot; <a href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone on GitHub</a>
+    </div>
+</footer>
+
+<script src="midi2abc.js"></script>
+<script>
+(function () {
+    "use strict";
+    var drop = document.getElementById("drop");
+    var fileInput = document.getElementById("file");
+    var results = document.getElementById("results");
+    var loaded = [];
+
+    function options(entry) {
+        return {
+            title: entry.title,
+            split: document.getElementById("split").value,
+            grid: Number(document.getElementById("grid").value),
+            includeDrums: document.getElementById("drums").checked,
+            combineLayers: document.getElementById("combine").checked
+        };
+    }
+
+    function titleFromFile(name) {
+        return name.replace(/\.(mid|midi|kar)$/i, "").replace(/_+/g, " ").trim() || "Untitled";
+    }
+
+    function safeFileName(title) {
+        return (title.replace(/[\\/:*?"<>|]+/g, "").trim() || "song") + ".txt";
+    }
+
+    function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+    }
+
+    function label(name, value, extra) {
+        var node = el("span", "label" + (extra ? " " + extra : ""));
+        if (name) node.appendChild(document.createTextNode(name + " "));
+        node.appendChild(el("b", "", value));
+        return node;
+    }
+
+    function copyText(area, status) {
+        var done = function () {
+            status.textContent = "Copied!";
+            setTimeout(function () { status.textContent = ""; }, 1800);
+        };
+        var fallback = function () {
+            area.select();
+            document.execCommand("copy");
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(area.value).then(done, fallback);
+        else fallback();
+    }
+
+    function render(entry) {
+        var card = entry.card;
+        card.innerHTML = "";
+        var head = el("div", "card-head");
+        var titleInput = el("input");
+        titleInput.type = "text";
+        titleInput.value = entry.title;
+        titleInput.title = "Song title";
+        titleInput.addEventListener("change", function () {
+            entry.title = titleInput.value.trim() || titleFromFile(entry.fileName);
+            convert(entry);
+        });
+        head.appendChild(titleInput);
+        head.appendChild(el("span", "file", entry.fileName));
+        card.appendChild(head);
+
+        if (entry.error) {
+            card.appendChild(el("div", "error", "Couldn't convert this file: " + entry.error));
+            return;
+        }
+
+        var result = entry.result;
+        var labels = el("div", "labels");
+        result.voices.forEach(function (voice) {
+            var node = label("", voice.name, voice.isDrum ? "drum" : "");
+            node.appendChild(document.createTextNode(" " + voice.notes + " notes"));
+            labels.appendChild(node);
+        });
+        labels.appendChild(label("Key", result.key));
+        labels.appendChild(label("Tempo", result.tempo.indexOf("1/4=") === 0 ? result.tempo.slice(4) + " bpm" : result.tempo));
+        card.appendChild(labels);
+
+        var area = el("textarea");
+        area.value = result.abc;
+        area.spellcheck = false;
+        card.appendChild(area);
+
+        var actions = el("div", "actions");
+        var copy = el("button", "primary", "Copy");
+        var download = el("button", "", "Download .txt");
+        var status = el("span", "status");
+        copy.addEventListener("click", function () { copyText(area, status); });
+        download.addEventListener("click", function () {
+            var blob = new Blob([area.value.replace(/\n/g, "\r\n")], { type: "text/plain" });
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = safeFileName(entry.title);
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(function () {
+                URL.revokeObjectURL(link.href);
+                link.remove();
+            }, 0);
+        });
+        actions.appendChild(copy);
+        actions.appendChild(download);
+        actions.appendChild(status);
+        card.appendChild(actions);
+    }
+
+    function convert(entry) {
+        try {
+            entry.result = BttbMidi2Abc.convert(entry.bytes, options(entry));
+            entry.error = null;
+        } catch (e) {
+            entry.result = null;
+            entry.error = e && e.message ? e.message : String(e);
+        }
+        render(entry);
+    }
+
+    function addFiles(files) {
+        Array.prototype.forEach.call(files, function (file) {
+            if (!/\.(mid|midi|kar)$/i.test(file.name)) return;
+            var reader = new FileReader();
+            reader.onload = function () {
+                var entry = {
+                    fileName: file.name,
+                    title: titleFromFile(file.name),
+                    bytes: new Uint8Array(reader.result),
+                    card: el("section", "card")
+                };
+                loaded.push(entry);
+                results.insertBefore(entry.card, results.firstChild);
+                convert(entry);
+            };
+            reader.readAsArrayBuffer(file);
+        });
+    }
+
+    drop.addEventListener("click", function () { fileInput.click(); });
+    fileInput.addEventListener("change", function () {
+        addFiles(fileInput.files);
+        fileInput.value = "";
+    });
+    ["dragenter", "dragover"].forEach(function (type) {
+        drop.addEventListener(type, function (e) {
+            e.preventDefault();
+            drop.classList.add("over");
+        });
+    });
+    ["dragleave", "drop"].forEach(function (type) {
+        drop.addEventListener(type, function (e) {
+            e.preventDefault();
+            drop.classList.remove("over");
+        });
+    });
+    drop.addEventListener("drop", function (e) { addFiles(e.dataTransfer.files); });
+    document.addEventListener("dragover", function (e) { e.preventDefault(); });
+    document.addEventListener("drop", function (e) {
+        e.preventDefault();
+        if (e.target !== drop && !drop.contains(e.target)) addFiles(e.dataTransfer.files);
+    });
+    ["split", "grid", "drums", "combine"].forEach(function (id) {
+        document.getElementById(id).addEventListener("change", function () { loaded.forEach(convert); });
+    });
+})();
+</script>
+</body>
+</html>

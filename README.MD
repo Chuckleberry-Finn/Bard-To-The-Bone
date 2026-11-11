@@ -37,15 +37,15 @@
 - **Have a MIDI file?** Find one on a site like [freemidi.org](https://freemidi.org/), or use your own, and go to step 2.
 
 **2. Convert the MIDI to ABC**
-- **Easiest:** open the [Online MIDI to ABC Tool](https://michaeleskin.com/tools/midi2abc/midi2abc.html), load the MIDI and copy the ABC text it gives you.
-- **Offline:** drag the MIDI onto [Midi2ABC.exe](https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/releases/tag/Midi2ABC). The `.abc` file appears next to the exe.<br>
-<sup>Midi2ABC puts every instrument into one track. For a band song where each player picks their own part, use [easyABC](https://github.com/jwdj/EasyABC) instead, which keeps the instruments as separate voices (`V:1`, `V:2`, ...).</sup>
+- Open the [Bard to the Bone MIDI to ABC Converter](https://chuckleberry-finn.github.io/Bard-To-The-Bone/), drop the MIDI in and press **Copy** (or **Download**).<br>
+<sup>Every instrument becomes its own part (`V:1`, `V:2`, ...) so a band can each pick one, and drums go to the drum kit. It runs in your browser; nothing is uploaded.</sup>
 
 **3. Check it sounds right (optional)**
-- Paste the ABC into the [Online ABC Player and Editor](https://abc.rectanglered.com/) and press play. Fix anything odd here before taking it in-game.
+- Paste the ABC into the [Online ABC Player and Editor](https://abc.rectanglered.com/) and press play. Fix anything odd here before taking it in-game.<br>
+<sup>Songs from the converter are written for this mod and may not play right in other ABC players; try those in-game instead.</sup>
 
 **4. Put it in the game** (either way works)
-- **In-game:** equip an instrument, open its song window, click the arrow at the start of the button row to open the editor, press **New**, paste the ABC and press **Save**.
+- **In-game:** equip an instrument, open its song window, click **abc** at the start of the button row to open the editor, press **New**, paste the ABC and press **Save**.
 - **As a file:** save the text as a `.txt` or `.abc` file in `Zomboid/Lua/BardToTheBoneSongLibrary/`<br>
 <sup>(on Windows: `C:/Users/<you>/Zomboid/Lua/BardToTheBoneSongLibrary/`)</sup>, then press **Reload Songs** in the song window's gear menu.
 
@@ -58,7 +58,7 @@
 - **Too fast or too slow:** change or add the `Q:` line, e.g. `Q:1/4=120` (bigger is faster).
 - **Wrong name in the list:** the list shows `C:` (artist) and `T:` (title) as "Artist - Title".
 - **Nothing plays:** make sure the header has `X:`, `T:` and `K:` lines and the notes come after `K:`.
-- **A big pile of notes on one instrument:** that MIDI had every instrument merged; convert it with easyABC to keep the parts separate.
+- **A big pile of notes on one instrument:** that ABC had every instrument merged; convert the MIDI again with the [converter](https://chuckleberry-finn.github.io/Bard-To-The-Bone/) set to **Per instrument**.
 
 <sup>The in-game **Song Guide** button (gear menu) opens this page.</sup>
 <br><br>
@@ -68,14 +68,17 @@
 **[Online ABC Player and Editor](https://abc.rectanglered.com/)**<br>
 <sup>An online interface for playing and editing ABC notations.</sup>
 
+**[onlinesequencer](https://onlinesequencer.net/sequences)**<br>
+<sup>Online MIDI sequencer/player for creating ones own songs, also hosts user generated content.</sup>
+
 **[freemidi.org](https://freemidi.org/)**<br>
 <sup>A collection of MIDIs you can use an ABC converter on.</sup>
 
-**[Online MIDI to ABC Tool](https://michaeleskin.com/tools/midi2abc/midi2abc.html)**<br>
-<sup>Convert MIDIs of songs to ABC for use in the game.</sup>
+**[Bard to the Bone MIDI to ABC Converter](https://chuckleberry-finn.github.io/Bard-To-The-Bone/)**<br>
+<sup>Converts MIDIs to ABC made for this mod: one part per instrument, drums kept for the drum kit, timing checked against the in-game player.</sup>
 
 **[Midi2ABC.exe](https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/releases/tag/Midi2ABC)**<br>
-<sup>MIDI to ABC converter executable, supports selecting file(s) and drag and drop.<br>
+<sup>Older offline converter, supports selecting file(s) and drag and drop.<br>
 **Note: This uses a modified easyABC script, and produces everything in a single track.**<br>
 *All files are generated in folder alongside the exe.*</sup>
 
@@ -85,9 +88,6 @@
 
 **[abcnotation.com](https://abcnotation.com/)**<br>
 <sup>A great website that features all things ABC-notation, includes: thousands of public-domain songs, links to various related programs and information.</sup>
-
-**[onlinesequencer](https://onlinesequencer.net/)**<br>
-<sup>Online MIDI sequencer/player for creating ones own songs, also hosts user generated content.</sup>
 
 <br><br>
 
