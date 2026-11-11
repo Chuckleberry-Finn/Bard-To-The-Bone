@@ -33,8 +33,8 @@
 ### How to Add Your Own Songs (Step by Step)
 
 **1. Get a song**
+- Find a MIDI on [onlinesequencer](https://onlinesequencer.net/sequences) or [freemidi.org](https://freemidi.org/), or use your own, and go to step 2.
 - **Already in ABC?** Copy the text from a site like [abcnotation.com](https://abcnotation.com/) and skip to step 3.
-- **Have a MIDI file?** Find one on a site like [freemidi.org](https://freemidi.org/), or use your own, and go to step 2.
 
 **2. Convert the MIDI to ABC**
 - Open the [Bard to the Bone MIDI to ABC Converter](https://chuckleberry-finn.github.io/Bard-To-The-Bone/), drop the MIDI in and press **Copy** (or **Download**).<br>
