@@ -159,3 +159,7 @@ Part 2:
 - TWEAK: Band mode only joins players within 10 tiles.
 - FIX: Switching a part back on mid-song no longer plays all the notes it skipped at once.
 [ ------ ]
+
+[ 11/13/26 ]
+- TWEAK: UI Layout, editor button moved up, closing options closes editor, new moved to the left
+[ ------ ]

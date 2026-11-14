@@ -45,7 +45,7 @@
 <sup>Songs from the converter are written for this mod and may not play right in other ABC players; try those in-game instead.</sup>
 
 **4. Put it in the game** (either way works)
-- **In-game:** equip an instrument, open its song window, click **abc** at the start of the button row to open the editor, press **New**, paste the ABC and press **Save**.
+- **In-game:** equip an instrument, open its song window, open the gear menu next to the search bar and click **abc Editor**, press **New**, paste the ABC and press **Save**.
 - **As a file:** save the text as a `.txt` or `.abc` file in `Zomboid/Lua/BardToTheBoneSongLibrary/`<br>
 <sup>(on Windows: `C:/Users/<you>/Zomboid/Lua/BardToTheBoneSongLibrary/`)</sup>, then press **Reload Songs** in the song window's gear menu.
 

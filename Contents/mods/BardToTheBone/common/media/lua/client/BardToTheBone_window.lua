@@ -141,12 +141,19 @@ function BardUIWindow:initialise()
     rowX = self.guideButton.x + self.guideButton.width + (self.padding/2)
     local buttonWidth = (self.playRowBaseX - (self.padding/2) - rowX - (self.padding * 1.5)) / 4
 
-    self.saveButton = ISButton:new(rowX, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_Save"), self, BardUIWindow.onSave)
+    self.newButton = ISButton:new(rowX, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_New"), self, BardUIWindow.onNewButton)
+    self.newButton:initialise()
+    self.newButton:instantiate()
+    self:addChild(self.newButton)
+
+    local buttonOffset = self.newButton.x + self.newButton.width + (self.padding/2)
+
+    self.saveButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_Save"), self, BardUIWindow.onSave)
     self.saveButton:initialise()
     self.saveButton:instantiate()
     self:addChild(self.saveButton)
 
-    local buttonOffset = self.saveButton.x + self.saveButton.width + (self.padding/2)
+    buttonOffset = self.saveButton.x + self.saveButton.width + (self.padding/2)
 
     self.revertButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_Revert"), self, BardUIWindow.onRevertButton)
     self.revertButton:initialise()
@@ -154,13 +161,6 @@ function BardUIWindow:initialise()
     self:addChild(self.revertButton)
 
     buttonOffset = self.revertButton.x + self.revertButton.width + (self.padding/2)
-
-    self.newButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_New"), self, BardUIWindow.onNewButton)
-    self.newButton:initialise()
-    self.newButton:instantiate()
-    self:addChild(self.newButton)
-
-    buttonOffset = self.newButton.x + self.newButton.width + (self.padding/2)
 
     self.removeButton = ISButton:new(buttonOffset, buttonY, buttonWidth, buttonHeight, getText("IGUI_BardToTheBone_Remove"), self, BardUIWindow.onRemoveButton)
     self.removeButton:initialise()
@@ -311,19 +311,22 @@ function BardUIWindow:initialise()
     self.favouritesTickBox:addOption(favouritesLabel)
     self.favouritesTickBox:setSelected(1, settings.get("favouritesOnly"))
 
-    self.reloadButton = ISButton:new(self.optionsPanel.width - reloadWidth - (self.padding / 2), optionsY, reloadWidth, buttonHeight, reloadLabel, self, BardUIWindow.onReloadSongs)
-    self.reloadButton:initialise()
-    self.reloadButton:instantiate()
-    self.reloadButton:setFont(optionsFont)
-    self.optionsPanel:addChild(self.reloadButton)
-
     local editorText = getText("IGUI_BardToTheBone_Editor")
-    self.editorButton = ISButton:new(self.optionsPanel.width - reloadWidth - (self.padding / 2), optionsY + buttonHeight, reloadWidth, buttonHeight, editorText, self, BardUIWindow.onEditorButton)
+    local optionButtonWidth = math.max(reloadWidth, getTextManager():MeasureStringX(optionsFont, editorText) + (self.padding * 2))
+    local optionButtonX = self.optionsPanel.width - optionButtonWidth - (self.padding / 2)
+
+    self.editorButton = ISButton:new(optionButtonX, optionsY, optionButtonWidth, buttonHeight, editorText, self, BardUIWindow.onEditorButton)
     self.editorButton:initialise()
     self.editorButton:instantiate()
     self.editorButton:setFont(optionsFont)
     self.editorButton:setTooltip(getText("IGUI_BardToTheBone_ToggleEditor"))
     self.optionsPanel:addChild(self.editorButton)
+
+    self.reloadButton = ISButton:new(optionButtonX, optionsY + buttonHeight, optionButtonWidth, buttonHeight, reloadLabel, self, BardUIWindow.onReloadSongs)
+    self.reloadButton:initialise()
+    self.reloadButton:instantiate()
+    self.reloadButton:setFont(optionsFont)
+    self.optionsPanel:addChild(self.reloadButton)
 
     self.localSongs = {}
     self.librarySongs = {}
@@ -331,6 +334,7 @@ function BardUIWindow:initialise()
 
     self:setInfo(getText("IGUI_BardToTheBone_Info"))
 
+    if not settings.get("editorCollapsed") then settings.set("editorCollapsed", true) end
     self:applyPalette()
     self:layoutSections()
     self:onLoadAll()
@@ -821,6 +825,7 @@ end
 function BardUIWindow:onOptionsButton()
     local visible = not self.optionsPanel:isVisible()
     self.optionsPanel:setVisible(visible)
+    if not visible then settings.set("editorCollapsed", true) end
 
     self:layoutSections()
 end
@@ -972,7 +977,7 @@ end
 function BardUIWindow.getPalette(instrument)
     local data = Bard.getInstrumentData(instrument)
 
-    local uiColorSpecial = data.uiColorSpecial and Bard.instrumentSpecialUI[data.uiColorSpecial](instrument)
+    local uiColorSpecial = data and data.uiColorSpecial and Bard.instrumentSpecialUI[data.uiColorSpecial](instrument)
 
     local base = data and (BardUIWindow.palettes[uiColorSpecial] or BardUIWindow.palettes[data.uiColor]
             or BardUIWindow.palettes[data.soundDir] or BardUIWindow.familyPalettes[data.family]) or BardUIWindow.defaultPalette

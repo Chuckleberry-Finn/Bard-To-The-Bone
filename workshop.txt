@@ -3,8 +3,15 @@ id=3484029638
 title=Bard to the Bone
 description=[h2]Bard-To-The-Bone is a Project Zomboid mod that lets players perform music using ABC notation, with support for all vanilla instruments and custom ones.[/h2]
 description=
+description=[b]Key Features:[/b]
+description=- Play any song you can think of (provided you can get their abc notation, check the github for a guide on this.)
+description=- Right Click supported instruments (including piano and drums) and select Play.
+description=- Favorite songs, sort, filter, search, etc. The mod comes packed with 700+ abc notations.
+description=- Edit, tweak, compose songs in the editor.
+description=- Skills based on instrument families (keys, strings, winds, percussion) determine how well the song is performed. Songs are automatically rated based on their density, note variety, bpm, etc.
+description=- Performance attracts zombies.
+description=
 description=[h1][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone]Github (For Read-Me & Issue Reporting)[/url][/h1]
-description=[h1][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone/blob/main/Contents/mods/BardToTheBone/common/media/SONGLIBRARY_README.MD]Song Library[/url][/h1]
 description=
 description=[img]https://raw.githubusercontent.com/ChuckTheSheep/chuckImages/main/newRequired.png[/img]
 description=[url=https://ko-fi.com/chuckleberryfinn][img]https://raw.githubusercontent.com/ChuckTheSheep/chuckImages/main/kofi_big.png[/img][/url]
