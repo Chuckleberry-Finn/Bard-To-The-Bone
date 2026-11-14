@@ -50,6 +50,12 @@ BardUIWindow.familyPalettes = {
 BardUIWindow.palettes = {
     banjo = { bg = { 0.16, 0.12, 0.07 }, border = { 0.80, 0.66, 0.42 } },
     guitar = { bg = { 0.17, 0.11, 0.06 }, border = { 0.84, 0.60, 0.32 } },
+    lute = { bg = { 0.14, 0.07, 0.05 }, border = { 0.90, 0.70, 0.40 } },
+    harp = { bg = { 0.15, 0.12, 0.07 }, border = { 0.95, 0.86, 0.56 } },
+    clarinet = { bg = { 0.05, 0.05, 0.07 }, border = { 0.62, 0.70, 0.86 } },
+    frenchhorn = { bg = { 0.15, 0.09, 0.03 }, border = { 0.93, 0.62, 0.30 } },
+    snaredrum = { bg = { 0.06, 0.07, 0.16 }, border = { 0.88, 0.26, 0.24 } },
+    bongos = { bg = { 0.16, 0.09, 0.04 }, border = { 0.86, 0.62, 0.34 } },
 
     red = { bg = { 0.18, 0.05, 0.05 }, border = { 0.88, 0.30, 0.24 } },
     blue = { bg = { 0.05, 0.07, 0.16 }, border = { 0.38, 0.50, 0.90 } },
@@ -787,7 +793,7 @@ function BardUIWindow:scoreNextSong()
 
     self.skillsEnabled = netWorkHandler.skillsEnabled()
     if not self.skillsEnabled then return end
-    self.musicLevel = Bard.getMusicLevel(self.character, self.family)
+    self.musicLevel = Bard.getMusicLevel(self.character, self.family, Bard.getAccessoryBonus(self.character, self.instrumentData))
     if Bard.players[self.character:getUsername()] then return end
 
     for _,songs in ipairs({ self.localSongs, self.librarySongs }) do
@@ -1276,7 +1282,7 @@ function BardUIWindow:update()
     if not BardUIWindow.instance then return end
 
     local square = (not self.isItem) and self.instrument:getSquare()
-    if (self.isItem and (self.character:getPrimaryHandItem() ~= self.instrument))
+    if (self.isItem and (not Bard.isInstrumentReady(self.character, self.instrument)))
             or (not self.isItem and ((not square) or (square:DistToProper(self.character) > 1.5))) then
         BardUIWindow.instance:close()
         return
@@ -1340,7 +1346,8 @@ function BardUIWindow:switchInstrument(character, instrument)
     local data = Bard.getInstrumentData(instrument)
     self.isPercussion = data and data.isPercussion
     self.family = data and data.family
-    self.musicLevel = Bard.getMusicLevel(character, self.family)
+    self.instrumentData = data
+    self.musicLevel = Bard.getMusicLevel(character, self.family, Bard.getAccessoryBonus(character, data))
     if data and data.styles then
         self.styles = data.styles
         self.style = data.styles[1]
@@ -1394,7 +1401,8 @@ function BardUIWindow:new(character, instrument)
     local data = Bard.getInstrumentData(instrument)
     o.isPercussion = data and data.isPercussion
     o.family = data and data.family
-    o.musicLevel = Bard.getMusicLevel(character, o.family)
+    o.instrumentData = data
+    o.musicLevel = Bard.getMusicLevel(character, o.family, Bard.getAccessoryBonus(character, data))
     o.skillsEnabled = netWorkHandler.skillsEnabled()
     Bard.requestClock(character, true)
     if data and data.styles then

@@ -7,14 +7,14 @@ bardNetworkHandler.xpTimes = {}
 bardNetworkHandler.familyPerks = { Strings = "BardStrings", Keys = "BardKeys", Winds = "BardWinds", Percussion = "BardPercussion" }
 
 ---@param player IsoPlayer|IsoGameCharacter
-function bardNetworkHandler.sendUpdate(player)
+function bardNetworkHandler.sendUpdate(player, calming)
     if not player then return end
 
     local sq = player:getSquare()
     if not sq then return end
     local x, y, z = sq:getX(), sq:getY(), sq:getZ()
 
-    local dataToSend = { x, y, z }
+    local dataToSend = { x, y, z, calming and true or nil }
 
     if isClient() then
         sendClientCommand(player, "BardToTheBone", "update", dataToSend)
@@ -25,7 +25,7 @@ end
 
 
 ---@param listener IsoPlayer|IsoGameCharacter
-function bardNetworkHandler.applyToListener(listener, x, y, z)
+function bardNetworkHandler.applyToListener(listener, x, y, z, calming)
     if not listener then return end
 
     local lx, ly, lz = listener:getX(), listener:getY(), listener:getZ()
@@ -36,24 +36,27 @@ function bardNetworkHandler.applyToListener(listener, x, y, z)
         local stats = listener:getStats()
         stats:set(CharacterStat.BOREDOM, stats:get(CharacterStat.BOREDOM) - 0.5 )
         stats:set(CharacterStat.UNHAPPINESS, stats:get(CharacterStat.UNHAPPINESS) - 0.5 )
+        if calming then
+            stats:set(CharacterStat.PANIC, stats:get(CharacterStat.PANIC) - 0.5 )
+        end
     end
 end
 
 
 function bardNetworkHandler.receiveUpdate(data)--x, y, z
 
-    local x, y, z = data[1], data[2], data[3]
+    local x, y, z, calming = data[1], data[2], data[3], data[4]
 
     if isServer() then
         local players = getOnlinePlayers()
         for i=0, players:size()-1 do
-            bardNetworkHandler.applyToListener(players:get(i), x, y, z)
+            bardNetworkHandler.applyToListener(players:get(i), x, y, z, calming)
         end
         return
     end
 
     for i=0, getNumActivePlayers()-1 do
-        bardNetworkHandler.applyToListener(getSpecificPlayer(i), x, y, z)
+        bardNetworkHandler.applyToListener(getSpecificPlayer(i), x, y, z, calming)
     end
 end
 

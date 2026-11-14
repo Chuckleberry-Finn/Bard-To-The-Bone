@@ -1,5 +1,28 @@
 module Base
 {
+	model Lute
+    {
+        mesh = lute,
+        scale = 0.009,
+
+        attachment world
+        {
+            offset = -0.0009 0.2764 -0.0668,
+            rotate = 0.0000 -90.0000 0.0000,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = -0.0198 -0.0398 -0.0231,
+            rotate = -7.6943 -1.5106 -4.7844,
+        }
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.0198 -0.0398 -0.0231,
+            rotate = -7.6943 -1.5106 -4.7844,
+        }
+    }
 	model Violin_Bow
 	{
 		mesh = violinBow,
@@ -52,4 +75,111 @@ module Base
 			rotate = 0.0000 0.0000 0.0000,
 		}
 	}
+	model Drumstick_Play
+    {
+        mesh = Weapons/1Handed/Drumstick,
+        texture = Weapons/1Handed/Drumstick,
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.0372 0.0481 -0.0936,
+            rotate = 139.9940 1.2177 -13.7106,
+        }
+
+        attachment Bip01_Prop2
+        {
+            offset = 0.0433 0.0137 -0.1412,
+            rotate = 124.1521 -51.9982 21.6878,
+        }
+    }
+	model SnareDrum
+    {
+        mesh = snaredrum,
+        texture = snaredrum,
+        scale = 0.03,
+
+        attachment stomach
+        {
+            offset = -0.0023 0.0513 -0.2309,
+            rotate = 96.4427 8.6465 -2.3145,
+        }
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+    }
+	model Bongos
+    {
+        mesh = bongos,
+        texture = bongos,
+        scale = 0.03,
+
+        attachment stomach
+        {
+            offset = -0.0128 0.1001 -0.1861,
+            rotate = 96.9944 5.0421 -2.8253,
+        }
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 0.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop1
+        {
+            offset = 0.0773 -0.0527 0.1283,
+            rotate = -50.8031 49.1092 37.6917,
+        }
+    }
+	model Clarinet
+    {
+        mesh = clarinet,
+        scale = 0.008,
+
+        attachment world
+        {
+            offset = -0.0066 0.18 0.0208,
+            rotate = 0.0 90.0 0.0,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = -0.0012 -0.0221 -0.0055,
+            rotate = 0.0 -86.9102 0.0,
+        }
+    }
+	model FrenchHorn
+    {
+        mesh = frenchhorn,
+        scale = 0.015,
+        attachment world
+        {
+            offset = -0.0504 0.191 0.0,
+            rotate = 0.0 0.0 7.847,
+        }
+        attachment Bip01_Prop2
+        {
+            offset = -0.0118 -0.012 0.0051,
+            rotate = -62.7117 -83.2849 -63.507,
+        }
+    }
+	model Harp
+    {
+        mesh = harp,
+        scale = 0.05,
+
+        attachment world
+        {
+            offset = -0.0436 0.0019 -0.0070,
+            rotate = 16.8075 -4.2403 0.2001,
+        }
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.1023 0.0987 -0.0036,
+            rotate = 141.6629 74.5406 -150.8620,
+        }
+    }
 }

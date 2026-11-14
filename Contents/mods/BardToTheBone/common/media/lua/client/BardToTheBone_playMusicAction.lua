@@ -7,7 +7,7 @@ local netWorkHandler = require "BardToTheBone_networkHandler"
 BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
 
 function BardToTheBonePlayMusic:isValid()
-    local held = self.heldItem and (self.character:getPrimaryHandItem() == self.item)
+    local held = self.heldItem and Bard.isInstrumentReady(self.character, self.item)
     local square = (not self.heldItem) and self.item:getSquare()
     local near = square and (square:DistToProper(self.character) <= 1.5)
     return (held or near)
@@ -42,13 +42,17 @@ function BardToTheBonePlayMusic:start()
         self:startPlayback(id, instrumentData)
     end
 
-    self:setOverrideHandModels(instrumentData.right or self.item, instrumentData.left)
+    Bard.players[id].levelBonus = Bard.getAccessoryBonus(self.character, instrumentData)
+    self.calmsPanic = instrumentData.calmsPanic
+    self:setOverrideHandModels(Bard.getHandModels(self.character, instrumentData, self.item))
 
     if instrumentData.anim then
         self:setActionAnim("BttB_"..instrumentData.anim)
         local defaultVoiceId = (self.voiceOrder and self.voiceOrder[1]) or Bard.next(Bard.players[id].music)
         local bpm = Bard.players[id].music[defaultVoiceId].bpm or 180
-        self.character:setVariable("BttB_playSpeed", (1 * (bpm / 180)))
+        self.playSpeed = (bpm / 180) * (instrumentData.animSpeed or 1)
+        self.currentSpeed = self.playSpeed
+        self.character:setVariable("BttB_playSpeed", self.playSpeed)
     end
 
     self.character:clearVariable("BttB_Special")
@@ -121,10 +125,18 @@ function BardToTheBonePlayMusic:update()
         self:setCurrentTime(math.max(0, math.min(self.maxTime - 1, progress)))
     end
 
+    if bard and self.playSpeed then
+        local speed = Bard.isResting(bard) and 0 or self.playSpeed
+        if speed ~= self.currentSpeed then
+            self.currentSpeed = speed
+            self.character:setVariable("BttB_playSpeed", speed)
+        end
+    end
+
     self.ticks = self.ticks+1
     if self.ticks > 10 then
         self.ticks = 0
-        netWorkHandler.sendUpdate(self.character)
+        netWorkHandler.sendUpdate(self.character, self.calmsPanic)
     end
 end
 
@@ -147,7 +159,8 @@ function BardToTheBonePlayMusic:new(character, instrument, abcNotation, style, v
 
     o.caloriesModifier = 2.5
 
-    local music, duration, voiceOrder, durationMs = Bard.startPlayback(character, abcNotation, voice)
+    local instrumentData = Bard.getInstrumentData(instrument)
+    local music, duration, voiceOrder, durationMs = Bard.startPlayback(character, abcNotation, voice, instrumentData and instrumentData.isPercussion, instrumentData and instrumentData.percussionPieces, instrumentData and instrumentData.percussionFallback, instrumentData and instrumentData.percussionOctaveShift)
     o.music = music
     o.voiceOrder = voiceOrder
     o.songKey = Bard.getSongKey(abcNotation)

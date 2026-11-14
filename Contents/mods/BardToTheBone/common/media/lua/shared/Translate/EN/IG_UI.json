@@ -32,8 +32,8 @@
     "IGUI_BardToTheBone_ModOptions": "Bard to the Bone",
     "IGUI_BardToTheBone_MuteInstruments": "Mute Instruments",
     "IGUI_BardToTheBone_MuteInstruments_tooltip": "Silences every instrument you hear, yours and other players'. Zombies can still hear them.",
-    "IGUI_perks_BardStrings_Description": "Reduces mistakes when playing string instruments: guitars, bass, banjo and violin. Trained by playing them.",
+    "IGUI_perks_BardStrings_Description": "Reduces mistakes when playing string instruments: guitars, bass, banjo, lute, harp and violin. Trained by playing them.",
     "IGUI_perks_BardKeys_Description": "Reduces mistakes when playing keyboard instruments: pianos and keytar. Trained by playing them.",
-    "IGUI_perks_BardWinds_Description": "Reduces mistakes when playing wind instruments: flute, saxophone, trumpet, harmonica, whistles and bottles. Trained by playing them.",
-    "IGUI_perks_BardPercussion_Description": "Reduces mistakes when playing percussion instruments: drums and xylophone. Trained by playing them."
+    "IGUI_perks_BardWinds_Description": "Reduces mistakes when playing wind instruments: flute, clarinet, saxophone, trumpet, French horn, harmonica, whistles and bottles. Trained by playing them.",
+    "IGUI_perks_BardPercussion_Description": "Reduces mistakes when playing percussion instruments: drums, snare drum, bongos and xylophone. Trained by playing them."
 }

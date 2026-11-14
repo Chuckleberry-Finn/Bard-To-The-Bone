@@ -59,11 +59,21 @@ GM_PERCUSSION_MAP = {
 # --full below generates every GM piece if you want a bigger/different kit.
 CORE_KIT = [36, 38, 41, 47, 48, 49, 51]
 
+KITS = {
+    "drumkit": CORE_KIT,
+    "snaredrum": [37, 38, 40],
+    "triangle": [80, 81],
+    "tambourine": [54],
+    "bongos": [60, 61],
+}
+
 parser = argparse.ArgumentParser(description="Generate a General MIDI drum kit's OGG samples")
-parser.add_argument('--outdir', type=str, default='drumkit', help='Output directory for OGG files (should match the instrument soundDir, e.g. "drumkit")')
-parser.add_argument('--full', action='store_true', help='Generate all 47 GM percussion pieces instead of just the CORE_KIT subset')
+parser.add_argument('--kit', type=str, default='drumkit', choices=sorted(KITS), help='Which instrument to generate pieces for; also the default output folder')
+parser.add_argument('--outdir', type=str, default=None, help='Output directory for OGG files (defaults to the kit name, which should match the instrument soundDir)')
+parser.add_argument('--full', action='store_true', help='Generate all 47 GM percussion pieces instead of just the chosen kit')
 parser.add_argument('--hit-velocity', type=int, default=100, help='Note-on velocity (0-127); percussion samples are usually not velocity-layered per-sample, but louder velocity can pick a different articulation in some soundfonts')
 args = parser.parse_args()
+args.outdir = args.outdir or args.kit
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 args.outdir = os.path.join(script_dir, 'generated', args.outdir)
@@ -170,7 +180,7 @@ def convert_midi_file(midi_path):
         return name, "error"
 
 
-pieces = GM_PERCUSSION_MAP if args.full else {n: GM_PERCUSSION_MAP[n] for n in CORE_KIT}
+pieces = GM_PERCUSSION_MAP if args.full else {n: GM_PERCUSSION_MAP[n] for n in KITS[args.kit]}
 
 midi_paths = []
 tasks = []

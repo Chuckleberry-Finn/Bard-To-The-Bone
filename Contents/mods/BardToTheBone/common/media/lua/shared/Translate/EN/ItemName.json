@@ -1,3 +1,9 @@
 {
-    "Base.Xylophone": "Xylophone"
+    "Base.Xylophone": "Xylophone",
+    "Base.Lute": "Lute",
+    "Base.Harp": "Harp",
+    "Base.Clarinet": "Clarinet",
+    "Base.FrenchHorn": "French Horn",
+    "Base.SnareDrum": "Snare Drum",
+    "Base.Bongos": "Bongos"
 }

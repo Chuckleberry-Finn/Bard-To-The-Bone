@@ -4,6 +4,65 @@ local bardDistributions = {}
 
 bardDistributions.instruments = {
 
+    ["Lute"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
+    ["Harp"] = {
+        chance = 1,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
+    ["Clarinet"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
+    ["SnareDrum"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
+    ["Bongos"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
+    ["FrenchHorn"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+        }
+    },
+
     ["Xylophone"] = {
         chance = 4,
         containers = {

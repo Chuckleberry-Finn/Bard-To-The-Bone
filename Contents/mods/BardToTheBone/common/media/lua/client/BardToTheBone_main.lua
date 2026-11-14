@@ -22,6 +22,8 @@ Bard.clockRefreshMs = 60000
 Bard.bandDelayMs = 500
 Bard.bandJoinWindowMs = 3000
 Bard.bandRange = 10
+Bard.rhythmMergeMs = 75
+Bard.rhythmKickBelow = 48
 Bard.xpPerMinute = 10
 Bard.xpSendMs = 5000
 Bard.xpActiveMs = 2000
@@ -922,8 +924,116 @@ end
 
 function Bard.next(t) for k, _ in pairs(t) do return k end end
 
-function Bard.startPlayback(player, abc, requestedVoice)
+function Bard.hasPercussionVoice(music)
+    for _, data in pairs(music) do
+        if data.isPercussionVoice then return true end
+    end
+    return false
+end
+
+
+function Bard.drumNote(midi, timeOffset)
+    local note = Bard.midiToNote(midi)
+    note.rest = false
+    note.durationMs = 120
+    note.timeOffset = timeOffset
+    return note
+end
+
+
+Bard.drumPitchBands = {
+    { below = 48, piece = 35 },
+    { below = 56, piece = 41 },
+    { below = 64, piece = 38 },
+    { below = 72, piece = 48 },
+    { piece = 42 },
+}
+
+function Bard.drumPieceForPitch(midi)
+    for _, band in ipairs(Bard.drumPitchBands) do
+        if (not band.below) or midi < band.below then return band.piece end
+    end
+end
+
+
+function Bard.toDrumVoice(data)
+    local events, current = {}, nil
+    for _, event in ipairs(data.events) do
+        for _, note in ipairs(event.notes) do
+            if not note.rest then
+                local midi = Bard.noteToMidi(note)
+                if current and event.timeOffset - current.time < Bard.rhythmMergeMs then
+                    if midi < current.low then current.low = midi end
+                    if midi > current.high then current.high = midi end
+                else
+                    current = { time = event.timeOffset, low = midi, high = midi }
+                    table.insert(events, current)
+                end
+            end
+        end
+    end
+
+    data.events = {}
+    for _, hit in ipairs(events) do
+        local notes = { Bard.drumNote(Bard.drumPieceForPitch(hit.high), hit.time) }
+        if hit.low < Bard.rhythmKickBelow and hit.high >= Bard.rhythmKickBelow then
+            table.insert(notes, Bard.drumNote(35, hit.time))
+        end
+        table.insert(data.events, { timeOffset = hit.time, notes = notes })
+    end
+    data.isPercussionVoice = true
+    data.isRhythm = true
+    data.stats = nil
+end
+
+
+function Bard.hasRhythmVoice(music)
+    for _, data in pairs(music) do
+        if data.isRhythm then return true end
+    end
+    return false
+end
+
+
+function Bard.drumPartPlays(music, pieces, fallback, octaveShift)
+    for _, data in pairs(music) do
+        if data.isPercussionVoice then
+            for _, event in ipairs(data.events) do
+                for _, note in ipairs(event.notes) do
+                    if Bard.percussionSoundName(note, octaveShift, pieces, fallback) then return true end
+                end
+            end
+        end
+    end
+    return false
+end
+
+
+function Bard.addRhythmVoice(music, pieces, fallback, octaveShift)
+    if Bard.hasPercussionVoice(music) and Bard.drumPartPlays(music, pieces, fallback, octaveShift) then return end
+    for _, data in pairs(music) do Bard.toDrumVoice(data) end
+end
+
+
+Bard.restPauseMs = 400
+
+function Bard.isResting(bard)
+    if not bard.music or not bard.elapsedTime then return false end
+    if bard.lastNoteTime and (bard.elapsedTime - bard.lastNoteTime) < Bard.restPauseMs then return false end
+    local songTime = bard.elapsedTime - (bard.timeShift or 0)
+    for voiceId, data in pairs(bard.music) do
+        if Bard.isVoicePlayed(bard, voiceId, data) then
+            local event = data.events[data.eventIndex or 1]
+            if event and (event.timeOffset - songTime) < Bard.restPauseMs then return false end
+        end
+    end
+    return true
+end
+
+
+function Bard.startPlayback(player, abc, requestedVoice, isPercussion, pieces, fallback, octaveShift)
     local music, totalMilliseconds, voiceOrder = Bard.parseABC(abc)
+    if isPercussion then Bard.addRhythmVoice(music, pieces, fallback, octaveShift) end
 
     local durationTicks = getGameTime():getMultiplierFromTimeDelta(totalMilliseconds / 1000)
 
@@ -1020,6 +1130,93 @@ Bard.drumKitFallback = {
     [80] = 51, -- Mute Triangle        -> ride (bright/metallic)
     [81] = 51, -- Open Triangle        -> ride
 }
+
+Bard.drumLocation = "BttB Drum"
+
+function Bard.isInstrumentReady(player, item)
+    if player:getPrimaryHandItem() == item then return true end
+    local data = Bard.getInstrumentData(item)
+    return (data and data.wornLocation and item:isWorn()) and true or false
+end
+
+
+function Bard.updateWornInstruments(player)
+    local worn
+    local wornItems = player:getWornItems()
+    for i=0, wornItems:size()-1 do
+        local item = wornItems:get(i):getItem()
+        local data = item and Bard.getInstrumentData(item)
+        if data and data.wornLocation then worn = item end
+    end
+    if player:getAttachedItem(Bard.drumLocation) ~= worn then
+        player:setAttachedItem(Bard.drumLocation, worn)
+    end
+end
+
+
+Bard.wornCheckMs = 500
+Bard.nextWornCheck = {}
+
+function Bard.checkWornInstruments(player)
+    if not player:isLocalPlayer() then return end
+    local id = player:getPlayerNum()
+    local now = getTimestampMs()
+    if Bard.nextWornCheck[id] and now < Bard.nextWornCheck[id] then return end
+    Bard.nextWornCheck[id] = now + Bard.wornCheckMs
+    Bard.updateWornInstruments(player)
+end
+
+
+Bard.snareDrumPieces = {
+    [37] = "SideStick",
+    [38] = "AcousticSnare",
+    [40] = "ElectricSnare",
+}
+
+Bard.bongoPieces = {
+    [60] = "HiBongo",
+    [61] = "LowBongo",
+}
+
+Bard.bongoFallback = {
+    [35] = 61,
+    [36] = 61,
+    [37] = 60,
+    [38] = 60,
+    [39] = 60,
+    [40] = 60,
+    [41] = 61,
+    [42] = 60,
+    [43] = 61,
+    [44] = 60,
+    [45] = 61,
+    [46] = 60,
+    [47] = 61,
+    [48] = 60,
+    [50] = 60,
+    [62] = 60,
+    [63] = 60,
+    [64] = 61,
+    [65] = 60,
+    [66] = 61,
+    [75] = 60,
+}
+
+Bard.snareDrumFallback = {
+    [35] = 38,
+    [39] = 38,
+    [41] = 38,
+    [42] = 37,
+    [43] = 38,
+    [44] = 37,
+    [45] = 38,
+    [46] = 40,
+    [47] = 38,
+    [48] = 38,
+    [50] = 38,
+    [75] = 37,
+}
+
 
 ---@param note table
 ---@param octaveShift number|nil optional correction if a given ABC source's
@@ -1222,6 +1419,7 @@ end
 
 function Bard.isVoicePlayed(bard, voiceId, data)
     if data.isPercussionVoice and not bard.isPercussion then return false end
+    if bard.isPercussion and not data.isPercussionVoice then return false end
     local selectedVoice = bard.selectedVoice
     if type(selectedVoice) == "table" then return selectedVoice[voiceId] == true end
     return (not selectedVoice) or selectedVoice == "All" or voiceId == selectedVoice
@@ -1595,10 +1793,33 @@ end
 
 
 ---@param player IsoPlayer|IsoGameCharacter
-function Bard.getMusicLevel(player, family)
+function Bard.getMusicLevel(player, family, bonus)
     local perk = netWorkHandler.getFamilyPerk(family)
     if not perk or not netWorkHandler.skillsEnabled() then return 10 end
-    return player:getPerkLevel(perk)
+    return math.min(10, player:getPerkLevel(perk) + (bonus or 0))
+end
+
+
+function Bard.hasAccessory(player, data)
+    local accessory = data and data.accessory
+    local held = accessory and player:getSecondaryHandItem()
+    return (held and held:getFullType() == accessory) and true or false
+end
+
+
+function Bard.getAccessoryBonus(player, data)
+    return Bard.hasAccessory(player, data) and 1 or 0
+end
+
+
+function Bard.getHandModels(player, data, item)
+    if not data.accessory then
+        if data.wornLocation then return nil, nil end
+        return data.right or item, data.left
+    end
+    local model = Bard.hasAccessory(player, data) and data.accessoryModel or nil
+    if data.accessoryHands == 2 then return model, model end
+    return data.right or item, model or data.left
 end
 
 
@@ -1628,11 +1849,11 @@ end
 
 ---@param player IsoPlayer|IsoGameCharacter
 function Bard.updateMusicLevel(player, bard)
-    local level = Bard.getMusicLevel(player, bard.family)
+    local level = Bard.getMusicLevel(player, bard.family, bard.levelBonus)
     if (level ~= bard.level) or (bard.selectedVoice ~= bard.mistakesVoice) then
         bard.level = level
         bard.mistakesVoice = bard.selectedVoice
-        bard.mistakes = Bard.getMistakes(level, Bard.getSongDifficulty(Bard.getComplexity(bard), bard.isPercussion))
+        bard.mistakes = Bard.getMistakes(level, Bard.getSongDifficulty(Bard.getComplexity(bard), bard.isPercussion, Bard.hasRhythmVoice(bard.music)))
     end
 end
 
@@ -1726,8 +1947,13 @@ end
 
 Bard.difficultySpan = 5.8
 Bard.percussionDifficultySpan = 3.7
+Bard.rhythmDifficultyFloor = 0.45
+Bard.rhythmDifficultySpan = 1.45
 
-function Bard.getSongDifficulty(complexity, isPercussion)
+function Bard.getSongDifficulty(complexity, isPercussion, isRhythm)
+    if isPercussion and isRhythm then
+        return math.max(0, math.min(10, (complexity - Bard.rhythmDifficultyFloor) * 10 / Bard.rhythmDifficultySpan))
+    end
     local span = isPercussion and Bard.percussionDifficultySpan or Bard.difficultySpan
     return math.max(0, math.min(10, (complexity - 1) * 10 / span))
 end
@@ -1736,10 +1962,11 @@ end
 function Bard.scoreSong(abc)
     local music = Bard.parseABC(abc)
     local melodic = Bard.getComplexity({ music = music, isPercussion = false })
+    Bard.addRhythmVoice(music)
     local percussion = Bard.getComplexity({ music = music, isPercussion = true })
     return {
         melodic = (melodic > 0) and math.floor(Bard.getSongDifficulty(melodic) + 0.5) or nil,
-        percussion = (percussion > 0) and math.floor(Bard.getSongDifficulty(percussion, true) + 0.5) or nil,
+        percussion = (percussion > 0) and math.floor(Bard.getSongDifficulty(percussion, true, Bard.hasRhythmVoice(music)) + 0.5) or nil,
     }
 end
 
@@ -1798,7 +2025,6 @@ Bard.instrumentSpecialUI = {}
 ---@param item InventoryItem
 function Bard.instrumentSpecialUI.blackBlueRed(item)
     local index = item:getModelIndex()
-    print("MODEL INDEX: ", index)
     local colors = {"black","blue","red"}
     return colors[index+1]
 end
@@ -1807,16 +2033,22 @@ end
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundScripts.py`
 Bard.instrumentData = {
-    ["Base.Banjo"] = { decay = 300, soundDir = "banjo", family = "Strings", anim = "strumming" },
-    ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", family = "Strings", anim = "strumming" },
-    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", uiColorSpecial = "blackBlueRed", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
-    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", uiColorSpecial = "blackBlueRed", needsAmp = true, },
+    ["Base.Banjo"] = { decay = 300, soundDir = "banjo", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
+    ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
+    ["Base.Lute"] = { decay = 450, soundDir = "lute", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
+    ["Base.Harp"] = { decay = 900, soundDir = "harp", family = "Strings", anim = "SmallHarp" },
+    ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick", uiColorSpecial = "blackBlueRed", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
+    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick", uiColorSpecial = "blackBlueRed", needsAmp = true, },
     ["Base.Keytar"] = { decay = 700, soundDir = "keytar", family = "Keys", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
     ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", family = "Winds", anim = "Harmonica" },
     ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", specialAnim = "sexySax"},
     ["Base.Violin"] = { decay = 100, soundDir = "violin", family = "Strings", anim = "Violin", left = "Violin_Bow", right = "Violin" },
+    ["Base.SnareDrum"] = { decay = 150, soundDir = "snaredrum", family = "Percussion", anim = "SnareDrum", animSpeed = 1.5, calmsPanic = true, wornLocation = Bard.drumLocation, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2, isPercussion = true, percussionPieces = Bard.snareDrumPieces, percussionFallback = Bard.snareDrumFallback },
+    ["Base.Bongos"] = { decay = 200, soundDir = "bongos", family = "Percussion", anim = "SnareDrum", animSpeed = 1.5, wornLocation = Bard.drumLocation, isPercussion = true, percussionPieces = Bard.bongoPieces, percussionFallback = Bard.bongoFallback },
     ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", family = "Percussion", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
     ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute" },
+    ["Base.Clarinet"] = { decay = 300, soundDir = "clarinet", family = "Winds", anim = "SaxPlaying" },
+    ["Base.FrenchHorn"] = { decay = 500, soundDir = "frenchhorn", family = "Winds", anim = "Trumpet" },
     ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", family = "Winds", anim = "Rubberducky", },
     ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", family = "Winds", anim = "Trumpet" },
     ["Base.Whistle"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
@@ -1839,7 +2071,7 @@ Bard.instrumentMapObjectData = {
     },
 
 
-    ["Drum"] = { decay = 120, soundDir = "drumkit", family = "Percussion", anim = "Xylophone", isPercussion = true,
+    ["Drum"] = { decay = 120, soundDir = "drumkit", family = "Percussion", anim = "Drumming", animSpeed = 1.5, isPercussion = true, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2,
                  sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
                              "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
     },

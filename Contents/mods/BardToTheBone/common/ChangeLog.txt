@@ -155,11 +155,22 @@ Part 2:
 
 [ 11/11/26 ]
 - NEW: Pick any mix of parts to play: the v button is now a checklist, All turns every part back on.
-- NEW: The song window is coloured to match the instrument in your hands!
+- NEW: The song window is coloured to match the instrument in your hands.
 - TWEAK: Band mode only joins players within 10 tiles.
+- TWEAK: The abc Editor button is in the gear menu.
+- TWEAK: Song Guide is now More Songs, at the start of the button row, followed by New.
+
 - FIX: Switching a part back on mid-song no longer plays all the notes it skipped at once.
 [ ------ ]
 
-[ 11/13/26 ]
-- TWEAK: UI Layout, editor button moved up, closing options closes editor, new moved to the left
+[ 11/19/26 ]
+- NEW: Lute, Clarinet, Harp, French Horn, Snare Drum, Bongos.
+- NEW: Play equips a guitar pick or drumstick from your inventory and gives +1 level bonus.
+
+- TWEAK: Closing the options menu closes the editor.
+
+Snare Drums:
+- The snare drum and bongos are worn on the stomach/waist.
+- Playing the snare drum calms panic.
+- Drums only play drum parts, songs without one get a rhythm to tap along to.
 [ ------ ]
