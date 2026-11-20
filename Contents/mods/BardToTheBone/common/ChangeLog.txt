@@ -174,3 +174,9 @@ Snare Drums:
 - Playing the snare drum calms panic.
 - Drums only play drum parts, songs without one get a rhythm to tap along to.
 [ ------ ]
+
+[ 11/20/26 ]
+- Fixed French Horn's shading (Tunes)
+- Tweaked the French Horn's play animation. (toxicmuffin)
+- Tweaked the Harp's play animation.
+[ ------ ]

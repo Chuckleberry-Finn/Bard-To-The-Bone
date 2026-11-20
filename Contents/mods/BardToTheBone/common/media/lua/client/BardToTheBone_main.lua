@@ -2048,7 +2048,7 @@ Bard.instrumentData = {
     ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", family = "Percussion", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
     ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute" },
     ["Base.Clarinet"] = { decay = 300, soundDir = "clarinet", family = "Winds", anim = "SaxPlaying" },
-    ["Base.FrenchHorn"] = { decay = 500, soundDir = "frenchhorn", family = "Winds", anim = "Trumpet" },
+    ["Base.FrenchHorn"] = { decay = 500, soundDir = "frenchhorn", family = "Winds", anim = "FrenchHorn" },
     ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", family = "Winds", anim = "Rubberducky", },
     ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", family = "Winds", anim = "Trumpet" },
     ["Base.Whistle"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
