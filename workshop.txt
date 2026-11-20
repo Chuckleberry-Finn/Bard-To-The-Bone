@@ -13,6 +13,8 @@ description=- Edit, tweak, compose songs in the editor.
 description=- Skills based on instrument families (keys, strings, winds, percussion) determine how well the song is performed. Songs are automatically rated based on their density, note variety, bpm, etc.
 description=- Performance attracts zombies.
 description=
+description=[img=https://raw.githubusercontent.com/Chuckleberry-Finn/Bard-To-The-Bone/refs/heads/main/images/BardToTheBoneVanillaInstruments.png][/img]
+description=
 description=[h1][url=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone]Github (For Read-Me & Issue Reporting)[/url][/h1]
 description=
 description=[img]https://raw.githubusercontent.com/ChuckTheSheep/chuckImages/main/newRequired.png[/img]
