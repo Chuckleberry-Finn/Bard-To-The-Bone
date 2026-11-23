@@ -4,6 +4,9 @@ Events.OnTick.Add(Bard.updateRemotePlayers)
 Events.OnCreatePlayer.Add(function(_, player) Bard.updateWornInstruments(player) end)
 Events.OnClothingUpdated.Add(function(player) if instanceof(player, "IsoPlayer") and player:isLocalPlayer() then Bard.updateWornInstruments(player) end end)
 Events.OnPlayerUpdate.Add(Bard.checkWornInstruments)
+Events.OnCreatePlayer.Add(function(_, player) Bard.retintContainer(player:getInventory()) end)
+Events.OnRefreshInventoryWindowContainers.Add(Bard.retintInventoryPage)
+Events.LoadGridsquare.Add(Bard.retintSquare)
 
 local function onServerCommand(_module, _command, _data)
     if _module ~= "BardToTheBone" then return end

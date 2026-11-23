@@ -68,16 +68,15 @@ KITS = {
 }
 
 parser = argparse.ArgumentParser(description="Generate a General MIDI drum kit's OGG samples")
-parser.add_argument('--kit', type=str, default='drumkit', choices=sorted(KITS), help='Which instrument to generate pieces for; also the default output folder')
+parser.add_argument('--kit', type=str, default='drumkit', choices=sorted(KITS) + ['all'], help='Which instrument to generate pieces for; also the default output folder. "all" generates every kit into its own folder')
 parser.add_argument('--outdir', type=str, default=None, help='Output directory for OGG files (defaults to the kit name, which should match the instrument soundDir)')
 parser.add_argument('--full', action='store_true', help='Generate all 47 GM percussion pieces instead of just the chosen kit')
 parser.add_argument('--hit-velocity', type=int, default=100, help='Note-on velocity (0-127); percussion samples are usually not velocity-layered per-sample, but louder velocity can pick a different articulation in some soundfonts')
 args = parser.parse_args()
-args.outdir = args.outdir or args.kit
+if args.kit == 'all' and (args.outdir or args.full):
+    parser.error('--kit all writes each kit to its own folder, so it can not be combined with --outdir or --full')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-args.outdir = os.path.join(script_dir, 'generated', args.outdir)
-os.makedirs(args.outdir, exist_ok=True)
 
 fluidsynth_path = os.path.join(script_dir, "fluidSynth", "bin", "fluidsynth.exe")
 soundfont_path = os.path.join(script_dir, "fluidSynth", "FluidR3_GM.sf2")
@@ -180,30 +179,38 @@ def convert_midi_file(midi_path):
         return name, "error"
 
 
-pieces = GM_PERCUSSION_MAP if args.full else {n: GM_PERCUSSION_MAP[n] for n in KITS[args.kit]}
+def generate_kit(kit, outdir, pieces):
+    os.makedirs(outdir, exist_ok=True)
+    midi_paths = []
+    tasks = []
 
-midi_paths = []
-tasks = []
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        for note_number, name in pieces.items():
+            future = executor.submit(generate_midi, note_number, name, outdir)
+            tasks.append(future)
 
-with ThreadPoolExecutor(max_workers=8) as executor:
-    for note_number, name in pieces.items():
-        future = executor.submit(generate_midi, note_number, name, args.outdir)
-        tasks.append(future)
+        for future in as_completed(tasks):
+            path = future.result()
+            if path:
+                midi_paths.append(path)
 
-    for future in as_completed(tasks):
-        path = future.result()
-        if path:
-            midi_paths.append(path)
+    print(f"MIDI generation complete: {len(midi_paths)} files written to {outdir}")
+    print("Pausing briefly before MIDI to OGG conversion...")
+    time.sleep(1)
 
-print(f"MIDI generation complete: {len(midi_paths)} files written to {args.outdir}")
-print("Pausing briefly before MIDI to OGG conversion...")
-time.sleep(1)
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(convert_midi_file, path): path for path in midi_paths}
+        for future in as_completed(futures):
+            name, status = future.result()
+            print(f"  {status.upper():7s} {name}")
 
-with ThreadPoolExecutor(max_workers=8) as executor:
-    futures = {executor.submit(convert_midi_file, path): path for path in midi_paths}
-    for future in as_completed(futures):
-        name, status = future.result()
-        print(f"  {status.upper():7s} {name}")
+    print(f"[ Done ] {len(midi_paths)} drum OGG files generated in: {outdir}")
+    print("Reminder: these filenames must match Bard.gmPercussionMap in BardToTheBone_main.lua exactly.")
 
-print(f"[ Done ] {len(midi_paths)} drum OGG files generated in: {args.outdir}")
-print("Reminder: these filenames must match Bard.gmPercussionMap in BardToTheBone_main.lua exactly.")
+
+kits = sorted(KITS) if args.kit == 'all' else [args.kit]
+for kit in kits:
+    pieces = GM_PERCUSSION_MAP if args.full else {n: GM_PERCUSSION_MAP[n] for n in KITS[kit]}
+    outdir = os.path.join(script_dir, 'generated', args.outdir or kit)
+    print(f"[ {kit} ]")
+    generate_kit(kit, outdir, pieces)

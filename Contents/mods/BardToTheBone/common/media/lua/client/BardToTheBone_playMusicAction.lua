@@ -7,6 +7,7 @@ local netWorkHandler = require "BardToTheBone_networkHandler"
 BardToTheBonePlayMusic = ISBaseTimedAction:derive("BardToTheBonePlayMusic")
 
 function BardToTheBonePlayMusic:isValid()
+    if Bard.isDriving(self.character) then return false end
     local held = self.heldItem and Bard.isInstrumentReady(self.character, self.item)
     local square = (not self.heldItem) and self.item:getSquare()
     local near = square and (square:DistToProper(self.character) <= 1.5)
@@ -43,6 +44,7 @@ function BardToTheBonePlayMusic:start()
     end
 
     Bard.players[id].levelBonus = Bard.getAccessoryBonus(self.character, instrumentData)
+    Bard.players[id].hasAccessory = Bard.hasAccessory(self.character, instrumentData)
     self.calmsPanic = instrumentData.calmsPanic
     self:setOverrideHandModels(Bard.getHandModels(self.character, instrumentData, self.item))
 
@@ -83,6 +85,9 @@ function BardToTheBonePlayMusic:startPlayback(id, instrumentData)
     Bard.players[id].needsAmp = instrumentData.needsAmp
     Bard.players[id].ampStyles = instrumentData.ampStyles
     Bard.players[id].styles = instrumentData.styles
+    Bard.players[id].autoStyle = instrumentData.autoStyle
+    Bard.players[id].accessoryStyles = instrumentData.accessoryStyles
+    Bard.players[id].styleHits = instrumentData.styleHits
 
     if isClient() and Bard.clock.offset then
         local bandStart = Bard.findBand(self.songKey, self.songDuration, self.character)

@@ -903,7 +903,7 @@ function Bard.completeAction(player, skipQueueStop, finished, paused)
     end
     if bard and isClient() then
         if finished then
-            Bard.flushNetworkNotes(player, bard, bard.instrumentID .. (bard.style or ""), bard.decay or 200, true)
+            Bard.flushNetworkNotes(player, bard, Bard.getStyleFolder(bard, Bard.getPlayableStyle(bard)), bard.decay or 200, true)
         else
             netWorkHandler.sendStop(player)
         end
@@ -1133,10 +1133,19 @@ Bard.drumKitFallback = {
 
 Bard.drumLocation = "BttB Drum"
 
+Bard.drivingSpeedKmh = 1
+
+function Bard.isDriving(player)
+    local vehicle = player:getVehicle()
+    if not (vehicle and vehicle:isDriver(player)) then return false end
+    return math.abs(vehicle:getCurrentSpeedKmHour()) > Bard.drivingSpeedKmh
+end
+
+
 function Bard.isInstrumentReady(player, item)
     if player:getPrimaryHandItem() == item then return true end
     local data = Bard.getInstrumentData(item)
-    return (data and data.wornLocation and item:isWorn()) and true or false
+    return (data and (data.wornLocation or data.playsWorn) and item:isWorn()) and true or false
 end
 
 
@@ -1348,7 +1357,11 @@ function Bard.playLoadedSongs(player)
         bard.nextAmpCheck = bard.elapsedTime + Bard.ampCheckMs
         bard.amplified = bard.needsAmp and Bard.findPoweredAmp(player) or false
     end
-    local instrumentID = bard.instrumentID .. (Bard.getPlayableStyle(bard) or "")
+    local style = Bard.getPlayableStyle(bard)
+    local autoStyle = (style == "Auto") and bard.autoStyle
+    bard.autoFolders = autoStyle and true or nil
+    local instrumentID = Bard.getStyleFolder(bard, style)
+    local forcedHit = bard.styleHits and bard.styleHits[style] and percussionPieces and percussionPieces[bard.styleHits[style]]
 
     bard.playingNotes = bard.playingNotes or {}
 
@@ -1370,10 +1383,12 @@ function Bard.playLoadedSongs(player)
                 if mistakes.slip > 0 and ZombRandFloat(0, 1) < mistakes.slip then slip = ZombRandFloat(0, mistakes.slipMs) end
 
                 for _, note in ipairs(event.notes) do
-                    local sound = Bard.noteToSound(note, instrumentID, isPercussion, percussionOctaveShift, percussionPieces, percussionFallback)
-                    if sound and instrumentID then
+                    local folder = autoStyle and Bard.getStyleFolder(bard, Bard.pickAutoStyle(autoStyle, note)) or instrumentID
+                    local sound = Bard.noteToSound(note, folder, isPercussion, percussionOctaveShift, percussionPieces, percussionFallback)
+                    if sound and forcedHit then sound = forcedHit end
+                    if sound and folder then
                         bard.lastNoteTime = bard.elapsedTime
-                        if Bard.performNote(player, bard, note, sound, instrumentID, eventTime, slip) then madeSound = true end
+                        if Bard.performNote(player, bard, note, sound, folder, eventTime, slip) then madeSound = true end
                     end
                 end
 
@@ -1445,6 +1460,8 @@ function Bard.performNote(player, bard, note, sound, instrumentID, eventTime, sl
 
     if bard.needsAmp and not bard.amplified then gain = gain * Bard.unpluggedVolume end
 
+    if bard.autoFolders then sound = "!" .. instrumentID .. "_" .. sound end
+
     local localDelay = slip + (bard.bandStart and Bard.bandDelayMs or 0)
     if localDelay > 0 then
         table.insert(bard.delayedNotes, { at = bard.elapsedTime + localDelay, sound = sound, duration = duration, gain = gain })
@@ -1457,9 +1474,26 @@ function Bard.performNote(player, bard, note, sound, instrumentID, eventTime, sl
 end
 
 
+function Bard.getStyleFolder(bard, style)
+    if not style or style == "Auto" or bard.styleHits then return bard.instrumentID end
+    return bard.instrumentID .. style
+end
+
+
+function Bard.pickAutoStyle(autoStyle, note)
+    local value = (autoStyle.by == "length") and (note.durationMs or 0) or Bard.noteToMidi(note)
+    for _, band in ipairs(autoStyle.bands) do
+        if (not band.below) or value < band.below then return band.style end
+    end
+end
+
+
 function Bard.getPlayableStyle(bard)
     local style = bard.style
     if style and bard.ampStyles and bard.ampStyles[style] and not bard.amplified then
+        return bard.styles and bard.styles[1] or style
+    end
+    if style and bard.accessoryStyles and bard.accessoryStyles[style] and not bard.hasAccessory then
         return bard.styles and bard.styles[1] or style
     end
     return style
@@ -1597,7 +1631,8 @@ function Bard.playNote(player, state, instrumentID, sound, durationMs, started, 
             table.remove(state.playingNotes, 1)
         end
     end
-    local soundID = emitter:playSoundImpl(instrumentID .. "_" .. sound, nil)
+    local event = (sound:sub(1, 1) == "!") and sound:sub(2) or (instrumentID .. "_" .. sound)
+    local soundID = emitter:playSoundImpl(event, nil)
     emitter:setVolume(soundID, state.volume/100 * (gain or 1))
 
     table.insert(state.playingNotes, {
@@ -1820,9 +1855,25 @@ function Bard.getAccessoryBonus(player, data)
 end
 
 
+function Bard.queueAccessory(character, instrument, style)
+    local data = Bard.getInstrumentData(instrument)
+    local accessory = data and data.accessory
+    if not accessory or Bard.hasAccessory(character, data) then return false end
+    local wanted = data.accessoryAlways or (style and data.accessoryStyles and data.accessoryStyles[style])
+    if not wanted then return false end
+    local item = character:getInventory():getFirstTypeRecurse(accessory)
+    if not item then return false end
+    if luautils.haveToBeTransfered(character, item) then
+        ISTimedActionQueue.add(ISInventoryTransferAction:new(character, item, item:getContainer(), character:getInventory()))
+    end
+    ISTimedActionQueue.add(ISEquipWeaponAction:new(character, item, 50, false))
+    return true
+end
+
+
 function Bard.getHandModels(player, data, item)
     if not data.accessory then
-        if data.wornLocation then return nil, nil end
+        if data.wornLocation or data.playsWorn then return nil, nil end
         return data.right or item, data.left
     end
     local model = Bard.hasAccessory(player, data) and data.accessoryModel or nil
@@ -2037,30 +2088,89 @@ function Bard.instrumentSpecialUI.blackBlueRed(item)
     return colors[index+1]
 end
 
+function Bard.instrumentSpecialUI.ocarina(item)
+    return "ocarina" .. (item:getModData().BttB_Tint or "White")
+end
+
+Bard.tintedTypes = { ["Base.Ocarina"] = true }
+
+function Bard.retint(item)
+    if item and Bard.tintedTypes[item:getFullType()] and not item:isCustomColor() then
+        BardToTheBone_OnCreate.applyTint(item)
+    end
+end
+
+function Bard.retintContainer(container)
+    if not container then return end
+    for fullType in pairs(Bard.tintedTypes) do
+        local items = container:getAllTypeRecurse(fullType)
+        for i=0, items:size()-1 do
+            Bard.retint(items:get(i))
+        end
+    end
+end
+
+function Bard.retintSquare(square)
+    local objects = square:getWorldObjects()
+    for i=0, objects:size()-1 do
+        Bard.retint(objects:get(i):getItem())
+    end
+end
+
+function Bard.retintInventoryPage(page, reason)
+    if reason ~= "end" or not page.backpacks then return end
+    for _, button in ipairs(page.backpacks) do
+        Bard.retintContainer(button.inventory)
+    end
+end
+
 ---THESE MATCH THE SOUNDS IN SCRIPTS/sounds_BardToTheBone
 -- The folders in sound/instruments/ are used as IDs
 -- SEE: python script `autoGenSoundScripts.py`
+Bard.saxAutoStyle = { by = "pitch", bands = {
+    { below = 48, style = "Baritone" },
+    { below = 58, style = "Tenor" },
+    { below = 68, style = "Alto" },
+    { style = "Soprano" },
+} }
+
+Bard.violinAutoStyle = { by = "length", bands = {
+    { below = 110, style = "Pizzicato" },
+    { style = "Bowed" },
+} }
+
+Bard.fluteAutoStyle = { by = "pitch", bands = {
+    { below = 84, style = "Concert" },
+    { style = "Piccolo" },
+} }
+
+Bard.snareStyleHits = { Snare = 38, Rimshot = 37 }
+
+Bard.whistleData = { decay = 200, maxNotes = 1, soundDir = "whistle", family = "Winds", anim = "Whistle" }
+
 Bard.instrumentData = {
     ["Base.Banjo"] = { decay = 300, soundDir = "banjo", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
     ["Base.GuitarAcoustic"] = { decay = 600, soundDir = "guitar", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
     ["Base.Lute"] = { decay = 450, soundDir = "lute", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick" },
     ["Base.Harp"] = { decay = 900, soundDir = "harp", family = "Strings", anim = "SmallHarp" },
     ["Base.GuitarElectric"] = { decay = 800, soundDir = "electric_guitar", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick", uiColorSpecial = "blackBlueRed", styles = { "Clean","Muted","Overdrive","Distortion","Harmonics" }, needsAmp = true, ampStyles = { Overdrive = true, Distortion = true }, },
-    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick", uiColorSpecial = "blackBlueRed", needsAmp = true, },
+    ["Base.GuitarElectricBass"] = { decay = 900, soundDir = "electric_bass", family = "Strings", anim = "strumming", accessory = "Base.GuitarPick", accessoryModel = "GuitarPick", uiColorSpecial = "blackBlueRed", styles = { "Finger","Picked","Fretless","Slap" }, needsAmp = true, accessoryStyles = { Picked = true }, },
     ["Base.Keytar"] = { decay = 700, soundDir = "keytar", family = "Keys", anim = "Keytar", styles = { "Square","Sawtooth","Calliope","Chiff","Charang","Voice","Fifths","Brass" }, },
     ["Base.Harmonica"] = { decay = 200, soundDir = "harmonica", family = "Winds", anim = "Harmonica" },
-    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", specialAnim = "sexySax"},
-    ["Base.Violin"] = { decay = 100, soundDir = "violin", family = "Strings", anim = "Violin", left = "Violin_Bow", right = "Violin" },
-    ["Base.SnareDrum"] = { decay = 150, soundDir = "snaredrum", family = "Percussion", anim = "SnareDrum", animSpeed = 1.5, calmsPanic = true, wornLocation = Bard.drumLocation, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2, isPercussion = true, percussionPieces = Bard.snareDrumPieces, percussionFallback = Bard.snareDrumFallback },
+    ["Base.Ocarina"] = { decay = 200, soundDir = "ocarina", family = "Winds", anim = "Harmonica", uiColorSpecial = "ocarina" },
+    ["Base.Saxophone"] = { decay = 400, soundDir = "saxophone", family = "Winds", anim = "SaxPlaying", specialAnim = "sexySax", styles = { "Auto","Soprano","Alto","Tenor","Baritone" }, autoStyle = Bard.saxAutoStyle },
+    ["Base.Violin"] = { decay = 100, soundDir = "violin", family = "Strings", anim = "Violin", left = "Violin_Bow", right = "Violin", styles = { "Auto","Bowed","Pizzicato","Tremolo" }, autoStyle = Bard.violinAutoStyle },
+    ["Base.SnareDrum"] = { decay = 150, soundDir = "snaredrum", family = "Percussion", anim = "SnareDrum", animSpeed = 1.5, calmsPanic = true, wornLocation = Bard.drumLocation, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2, accessoryAlways = true, isPercussion = true, percussionPieces = Bard.snareDrumPieces, percussionFallback = Bard.snareDrumFallback, styles = { "Auto","Snare","Rimshot" }, styleHits = Bard.snareStyleHits },
     ["Base.Bongos"] = { decay = 200, soundDir = "bongos", family = "Percussion", anim = "SnareDrum", animSpeed = 1.5, wornLocation = Bard.drumLocation, isPercussion = true, percussionPieces = Bard.bongoPieces, percussionFallback = Bard.bongoFallback },
     ["Base.Xylophone"] = { decay = 250, soundDir = "xylophone", family = "Percussion", anim = "Xylophone", left = "Xylophone_Mallet", right = "Xylophone"},
-    ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute" },
+    ["Base.Flute"] = { decay = 300, soundDir = "flute", family = "Winds", anim = "Flute", styles = { "Auto","Concert","Piccolo" }, autoStyle = Bard.fluteAutoStyle },
     ["Base.Clarinet"] = { decay = 300, soundDir = "clarinet", family = "Winds", anim = "SaxPlaying" },
     ["Base.FrenchHorn"] = { decay = 500, soundDir = "frenchhorn", family = "Winds", anim = "FrenchHorn" },
     ["Base.Rubberducky"] = { decay = 150, soundDir = "bikehorn", family = "Winds", anim = "Rubberducky", },
-    ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", family = "Winds", anim = "Trumpet" },
-    ["Base.Whistle"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
-    ["Base.Whistle_Bone"] = { decay = 200, soundDir = "whistle", family = "Winds", anim = "Whistle"},
+    ["Base.Trumpet"] = { decay = 500, soundDir = "trumpet", family = "Winds", anim = "Trumpet", styles = { "Open","Muted" } },
+    ["Base.Whistle"] = Bard.whistleData,
+    ["Base.Whistle_Bone"] = Bard.whistleData,
+    ["Base.Hat_Cowboy_Plastic"] = { decay = 200, maxNotes = 1, soundDir = "whistle", family = "Winds", anim = "Whistle", playsWorn = true },
 }
 
 
@@ -2069,7 +2179,7 @@ Bard.instrumentMapObjectData = {
     --[""] = { soundDir = "", anim = ""},
 
     --recreational_01_12,13  8,9
-    ["Piano"] = { decay = 500, soundDir = "piano", family = "Keys", anim = "Piano",
+    ["Piano"] = { decay = 500, soundDir = "piano", family = "Keys", anim = "Piano", styles = { "Default","HonkyTonk" },
                   sprites = { "recreational_01_12", "recreational_01_13", "recreational_01_8", "recreational_01_9", }
     },
 
@@ -2079,7 +2189,7 @@ Bard.instrumentMapObjectData = {
     },
 
 
-    ["Drum"] = { decay = 120, soundDir = "drumkit", family = "Percussion", anim = "Drumming", animSpeed = 1.5, isPercussion = true, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2,
+    ["Drum"] = { decay = 120, soundDir = "drumkit", family = "Percussion", anim = "Drumming", animSpeed = 1.5, isPercussion = true, accessory = "Base.Drumstick", accessoryModel = "Drumstick_Play", accessoryHands = 2, accessoryAlways = true,
                  sprites = { "recreational_01_56", "recreational_01_57", "recreational_01_58", "recreational_01_59", "recreational_01_60", "recreational_01_61",
                              "recreational_01_64", "recreational_01_65", "recreational_01_66", "recreational_01_67", "recreational_01_68", "recreational_01_69", },
     },
@@ -2114,6 +2224,7 @@ Bard.bottleData = { decay = 100, maxNotes = 1, soundDir = "bottle", family = "Wi
 Bard.instrumentTagData = {
     [ItemTag.GLASS_BOTTLE] = Bard.bottleData,
     [ItemTag.GLASS_BOTTLE_SMALL] = Bard.bottleData,
+    [ItemTag.WHISTLE] = Bard.whistleData,
 }
 
 Bard.populatedFromTagData = false
@@ -2127,7 +2238,7 @@ function Bard.populateTagData()
             ---@type Item
             local item = items:get(i)
             local moduleDotType = item:getFullName()
-            Bard.instrumentData[moduleDotType] = data
+            Bard.instrumentData[moduleDotType] = Bard.instrumentData[moduleDotType] or data
         end
     end
 

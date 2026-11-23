@@ -206,4 +206,15 @@ module Base
         StaticModel = Bongos,
         WorldStaticModel = Bongos,
     }
+
+    item Ocarina
+    {
+        DisplayCategory = Instrument,
+        ItemType = base:normal,
+        Weight = 0.2,
+        Icon = Ocarina,
+        StaticModel = Ocarina,
+        WorldStaticModel = Ocarina,
+        OnCreate = BardToTheBone_OnCreate.ocarina,
+    }
 }

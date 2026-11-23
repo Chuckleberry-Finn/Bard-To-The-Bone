@@ -17,20 +17,6 @@ function bardContext.nonSquareLocation:set(square, xOffset, yOffset)
 end
 
 
-function bardContext.queueAccessory(character, instrument)
-    local data = Bard.getInstrumentData(instrument)
-    local accessory = data and data.accessory
-    if not accessory or Bard.hasAccessory(character, data) then return false end
-    local item = character:getInventory():getFirstTypeRecurse(accessory)
-    if not item then return false end
-    if luautils.haveToBeTransfered(character, item) then
-        ISTimedActionQueue.add(ISInventoryTransferAction:new(character, item, item:getContainer(), character:getInventory()))
-    end
-    ISTimedActionQueue.add(ISEquipWeaponAction:new(character, item, 50, false))
-    return true
-end
-
-
 function bardContext.triggerTimedAction(character, instrument, square, dir)
     local actionQueue = ISTimedActionQueue.getTimedActionQueue(character)
     local currentAction = actionQueue.queue[1]
@@ -44,9 +30,9 @@ function bardContext.triggerTimedAction(character, instrument, square, dir)
             ISTimedActionQueue.add(transfer)
         end
 
-        local accessoryQueued = bardContext.queueAccessory(character, instrument)
+        local accessoryQueued = Bard.queueAccessory(character, instrument)
         local data = Bard.getInstrumentData(instrument)
-        if data and data.wornLocation then
+        if data and (data.wornLocation or data.playsWorn) then
             if accessoryQueued or not instrument:isWorn() then
                 if not instrument:isWorn() then ISTimedActionQueue.add(ISWearClothing:new(character, instrument)) end
                 ISTimedActionQueue.add(ISQueueActionsAction:new(character, BardUIWindow.open, instrument))
@@ -62,7 +48,7 @@ function bardContext.triggerTimedAction(character, instrument, square, dir)
         end
     end
 
-    local accessoryQueued = (not instanceof(instrument, "InventoryItem")) and bardContext.queueAccessory(character, instrument)
+    local accessoryQueued = (not instanceof(instrument, "InventoryItem")) and Bard.queueAccessory(character, instrument)
 
     if square and ( square:DistToProper(character) > 1.51 ) then
         local xOffset = dir and dir == IsoDirections.E and 1.5 or 0

@@ -63,6 +63,18 @@ bardDistributions.instruments = {
         }
     },
 
+    ["Ocarina"] = {
+        chance = 2,
+        containers = {
+            "CrateInstruments",
+            "BandPracticeInstruments",
+            "ClosetInstruments",
+            "MusicStoreOthers",
+            "Gifts",
+            "GiftStoreToys",
+        }
+    },
+
     ["Xylophone"] = {
         chance = 4,
         containers = {

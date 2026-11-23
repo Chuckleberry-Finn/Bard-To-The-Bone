@@ -182,4 +182,22 @@ module Base
             rotate = 141.6629 74.5406 -150.8620,
         }
     }
+	model Ocarina
+    {
+        mesh = ocarina,
+        texture = Ocarina_White,
+        scale = 0.05,
+
+        attachment world
+        {
+            offset = 0.0000 0.0000 0.0000,
+            rotate = 90.0000 0.0000 0.0000,
+        }
+
+        attachment Bip01_Prop1
+        {
+            offset = -0.0306 0.0320 0.0458,
+            rotate = 1.0998 -31.2625 1.3608,
+        }
+    }
 }

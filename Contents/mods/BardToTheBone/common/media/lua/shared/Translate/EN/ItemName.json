@@ -5,5 +5,6 @@
     "Base.Clarinet": "Clarinet",
     "Base.FrenchHorn": "French Horn",
     "Base.SnareDrum": "Snare Drum",
-    "Base.Bongos": "Bongos"
+    "Base.Bongos": "Bongos",
+    "Base.Ocarina": "Ocarina"
 }

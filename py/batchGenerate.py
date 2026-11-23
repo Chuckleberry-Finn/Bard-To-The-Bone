@@ -11,7 +11,10 @@ instruments = [
     {"program": 106, "folder": "banjo"},
     # "bikehorn" has no midi
     {"program": 76, "folder": "bottle", "extra": ["--dry", "--velocity", "55", "--note-ticks", "120", "--max-seconds", "0.3", "--highpass", "500", "--lowpass", "3500", "--min-note", "62", "--max-note", "101", "--gain", "1.0"]},
-    {"program": 34, "folder": "electric_bass"},
+    {"program": 34, "folder": "electric_bassFinger"},
+    {"program": 35, "folder": "electric_bassPicked"},
+    {"program": 36, "folder": "electric_bassFretless"},
+    {"program": 37, "folder": "electric_bassSlap"},
 
     {"program": 28, "folder": "electric_guitarClean"},
     {"program": 29, "folder": "electric_guitarMuted"},
@@ -21,11 +24,12 @@ instruments = [
 
     {"program": 72, "folder": "clarinet"},
     {"program": 61, "folder": "frenchhorn"},
-    {"program": 74, "folder": "flute"},
+    {"program": 74, "folder": "fluteConcert"},
+    {"program": 73, "folder": "flutePiccolo"},
     {"program": 10, "folder": "glockenspiel"},
     {"program": 1, "folder": "grandPiano"},
     {"program": 25, "folder": "guitar"},
-    {"program": 25, "folder": "lute"},
+    {"program": 26, "folder": "lute", "extra": ["--bank", "16"]},
     {"program": 23, "folder": "harmonica"},
     {"program": 47, "folder": "harp"},
 
@@ -38,13 +42,21 @@ instruments = [
     {"program": 87, "folder": "keytarFifths"},
     {"program": 88, "folder": "keytarBrass"},
 
-    {"program": 2, "folder": "piano"},
+    {"program": 2, "folder": "pianoDefault"},
+    {"program": 4, "folder": "pianoHonkyTonk"},
+    {"program": 80, "folder": "ocarina"},
     {"program": 75, "folder": "recorder"},
-    {"program": 67, "folder": "saxophone"},
+    {"program": 67, "folder": "saxophoneTenor"},
+    {"program": 65, "folder": "saxophoneSoprano"},
+    {"program": 66, "folder": "saxophoneAlto"},
+    {"program": 68, "folder": "saxophoneBaritone"},
     {"program": 58, "folder": "trombone"},
-    {"program": 57, "folder": "trumpet"},
-    {"program": 41, "folder": "violin"},
-    {"program": 79, "folder": "whistle"},
+    {"program": 57, "folder": "trumpetOpen"},
+    {"program": 60, "folder": "trumpetMuted"},
+    {"program": 41, "folder": "violinBowed"},
+    {"program": 46, "folder": "violinPizzicato"},
+    {"program": 45, "folder": "violinTremolo"},
+    {"program": 79, "folder": "whistle", "extra": ["--dry", "--drum-note", "72", "--drum-root", "101", "--min-note", "89", "--max-note", "101", "--max-seconds", "2.5"]},
     {"program": 14, "folder": "xylophone", "extra": ["--dry", "--velocity", "60", "--note-ticks", "480", "--max-seconds", "1.5", "--highpass", "600", "--lowpass", "4000", "--min-note", "84", "--max-note", "105", "--gain", "1.0"]},
 
 ]

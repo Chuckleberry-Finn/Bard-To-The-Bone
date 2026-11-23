@@ -61,6 +61,16 @@ BardUIWindow.palettes = {
     blue = { bg = { 0.05, 0.07, 0.16 }, border = { 0.38, 0.50, 0.90 } },
     black = { bg = { 0.18, 0.18, 0.18 }, border = { 0.5, 0.5, 0.5 } },
 
+    ocarinaClay = { bg = { 0.16, 0.08, 0.05 }, border = { 0.86, 0.52, 0.34 } },
+    ocarinaBlue = { bg = { 0.05, 0.08, 0.17 }, border = { 0.40, 0.58, 0.94 } },
+    ocarinaGreen = { bg = { 0.05, 0.12, 0.06 }, border = { 0.46, 0.78, 0.48 } },
+    ocarinaRed = { bg = { 0.17, 0.05, 0.05 }, border = { 0.90, 0.34, 0.30 } },
+    ocarinaBlack = { bg = { 0.08, 0.08, 0.09 }, border = { 0.56, 0.56, 0.60 } },
+    ocarinaWhite = { bg = { 0.14, 0.14, 0.13 }, border = { 0.94, 0.92, 0.86 } },
+    ocarinaPurple = { bg = { 0.11, 0.06, 0.17 }, border = { 0.72, 0.52, 0.96 } },
+    ocarinaPink = { bg = { 0.17, 0.07, 0.12 }, border = { 0.98, 0.62, 0.80 } },
+    ocarinaGold = { bg = { 0.16, 0.12, 0.03 }, border = { 0.98, 0.82, 0.36 } },
+
     keytar = { bg = { 0.12, 0.05, 0.18 }, border = { 0.74, 0.38, 0.98 } },
     harmonica = { bg = { 0.09, 0.10, 0.12 }, border = { 0.72, 0.77, 0.84 } },
     saxophone = { bg = { 0.15, 0.11, 0.03 }, border = { 0.92, 0.74, 0.28 } },
@@ -779,7 +789,8 @@ function BardUIWindow:refreshAmpStatus()
 
     local data = Bard.getInstrumentData(self.instrument)
     local needsAmp = data and data.ampStyles and self.style and data.ampStyles[self.style]
-    local missing = needsAmp and not Bard.findPoweredAmp(self.character)
+    local needsPick = data and data.accessoryStyles and self.style and data.accessoryStyles[self.style]
+    local missing = (needsAmp and not Bard.findPoweredAmp(self.character)) or (needsPick and not Bard.hasAccessory(self.character, data))
     local color = missing and BardUIWindow.missingAmpColor or BardUIWindow.styleTextColor
     local text = self.styleButton.textColor
     text.r, text.g, text.b, text.a = color.r, color.g, color.b, color.a
@@ -1091,6 +1102,7 @@ function BardUIWindow:onPlay()
         return
     end
 
+    Bard.queueAccessory(self.character, self.instrument, self.style)
     local action = BardToTheBonePlayMusic:new(self.character, self.instrument, notes, self.style, self.volume, self.voice)
     if action then action.song = self.selectedSong end
     ISTimedActionQueue.add(action)
@@ -1165,11 +1177,13 @@ function BardUIWindow:onStyle()
     self.contextMenu.player = playerNum
     local data = Bard.getInstrumentData(self.instrument)
     local amplified = data and data.needsAmp and Bard.findPoweredAmp(self.character)
+    local holdsAccessory = Bard.hasAccessory(self.character, data)
     for _,style in pairs(self.styles) do
         ---@type ISContextMenu
         local option = self.contextMenu:addOption(style, self, BardUIWindow.setStyle, style)
         local needsAmp = data and data.ampStyles and data.ampStyles[style] and not amplified
-        if needsAmp then
+        local needsPick = data and data.accessoryStyles and data.accessoryStyles[style] and not holdsAccessory
+        if needsAmp or needsPick then
             option.notAvailable = true
         elseif style == self.style then
             option.isDisabled = true
@@ -1177,6 +1191,10 @@ function BardUIWindow:onStyle()
         if needsAmp then
             local tooltip = ISWorldObjectContextMenu.addToolTip()
             tooltip.description = getText("IGUI_BardToTheBone_NeedsAmp")
+            option.toolTip = tooltip
+        elseif needsPick then
+            local tooltip = ISWorldObjectContextMenu.addToolTip()
+            tooltip.description = getText("IGUI_BardToTheBone_NeedsPick")
             option.toolTip = tooltip
         end
     end

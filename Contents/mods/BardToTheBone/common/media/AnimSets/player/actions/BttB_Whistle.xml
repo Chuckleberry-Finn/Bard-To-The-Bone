@@ -2,7 +2,7 @@
 <animNode>
         <m_Name>BttB_Whistle</m_Name>
         <m_AnimName>BttB_Whistle</m_AnimName>
-        <m_BlendTime>0.1</m_BlendTime>
+        <m_BlendTime>0.4</m_BlendTime>
         <m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
         <m_SpeedScale>BttB_playSpeed</m_SpeedScale>
         <m_Conditions>

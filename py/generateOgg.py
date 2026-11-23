@@ -44,6 +44,7 @@ note_map = {
 parser = argparse.ArgumentParser(description="Generate and convert MIDI note files")
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 parser.add_argument('--program', type=int, default=41, help='General MIDI instrument number (1-128), as listed on the Wikipedia page above')
+parser.add_argument('--bank', type=int, default=0, help='Soundfont bank for variation instruments, e.g. 16 with program 26 for Mandolin (0 = General MIDI)')
 parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
 parser.add_argument('--dry', action='store_true', help='Render without the soundfont reverb and chorus')
 parser.add_argument('--velocity', type=int, default=90, help='Note-on velocity (1-127)')
@@ -55,6 +56,8 @@ parser.add_argument('--crush-bits', type=int, default=0, help='Reduce to this ma
 parser.add_argument('--transpose', type=int, default=0, help='Shift every note by this many semitones (12 = one octave up)')
 parser.add_argument('--min-note', type=int, default=0, help='Move lower notes up by octaves until they reach this MIDI number')
 parser.add_argument('--max-note', type=int, default=127, help='Move higher notes down by octaves until they reach this MIDI number')
+parser.add_argument('--drum-note', type=int, default=0, help='Build every note from this General MIDI percussion sound (e.g. 72 Long Whistle), retuned per note and looped to --max-seconds (0 = off)')
+parser.add_argument('--drum-root', type=int, default=60, help='MIDI note the --drum-note sound already sounds at, used to retune it')
 parser.add_argument('--gain', type=float, default=0, help='FluidSynth render gain, for quiet instruments that come out as silent (0 = FluidSynth default)')
 args = parser.parse_args()
 if not 1 <= args.program <= 128:
@@ -80,6 +83,8 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
     track = MidiTrack()
     mid.tracks.append(track)
 
+    if args.bank:
+        track.append(Message('control_change', control=0, value=args.bank, time=0))
     track.append(Message('program_change', program=program - 1, time=0))
     sounding = midi_note + args.transpose
     while sounding > args.max_note:
@@ -87,10 +92,14 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
     while sounding < args.min_note:
         sounding += 12
 
-    track.append(Message('note_on', note=sounding, velocity=args.velocity, time=0))
-    track.append(Message('note_off', note=sounding, velocity=64, time=args.note_ticks))
-
     midi_path = Path(outdir) / f"{note_name}{octave}.mid"
+    if args.drum_note:
+        drum_shift[midi_path.as_posix()] = sounding - args.drum_root
+        track.append(Message('note_on', channel=9, note=args.drum_note, velocity=args.velocity, time=0))
+        track.append(Message('note_off', channel=9, note=args.drum_note, velocity=64, time=args.note_ticks))
+    else:
+        track.append(Message('note_on', note=sounding, velocity=args.velocity, time=0))
+        track.append(Message('note_off', note=sounding, velocity=64, time=args.note_ticks))
     mid.save(midi_path)
     mid = None
 
@@ -108,6 +117,38 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
 
     print(f"Failed to fully write or access MIDI file: {midi_path}")
     return None
+
+
+drum_shift = {}
+
+
+def retune_and_sustain(y, sr, semitones, seconds):
+    # Varispeed: play the sound faster or slower so its pitch moves by `semitones`
+    ratio = 2 ** (semitones / 12)
+    y = librosa.resample(y, orig_sr=sr, target_sr=int(round(sr / ratio)))
+
+    # Trim silence, then loop the steady middle (between attack and release) until it lasts `seconds`
+    audible = np.where(np.abs(y) > np.max(np.abs(y)) * 0.05)[0]
+    if len(audible) == 0:
+        return y
+    y = y[audible[0]:audible[-1] + 1]
+    target = int(sr * seconds)
+    if len(y) >= target:
+        return y[:target]
+
+    attack = int(len(y) * 0.2)
+    release = int(len(y) * 0.8)
+    body = y[attack:release]
+    fade = min(int(sr * 0.02), len(body) // 4)
+    if fade < 2:
+        return y
+    ramp = np.linspace(0, 1, fade)
+
+    out = y[:release].copy()
+    while len(out) < target:
+        joined = out[-fade:] * (1 - ramp) + body[:fade] * ramp
+        out = np.concatenate([out[:-fade], joined, body[fade:]])
+    return out[:target]
 
 
 def convert_midi_file(midi_path):
@@ -132,6 +173,8 @@ def convert_midi_file(midi_path):
         subprocess.run(command, check=True, timeout=120, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
+        if args.drum_note:
+            y = retune_and_sustain(y, sr, drum_shift[midi_path], args.max_seconds)
         y = y[:int(sr * args.max_seconds)]
 
         if args.highpass > 0 or args.lowpass > 0:

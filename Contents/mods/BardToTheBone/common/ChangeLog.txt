@@ -187,3 +187,21 @@ Snare Drums:
 
 - NEW artwork/poster on the workshop page, don't forget to give it a thumbs up. :)
 [ ------ ]
+
+[ 11/23/26 ]
+- NEW: Ocarina, found in nine colours: white, clay, blue, green, red, black, purple, pink and gold. The song window matches its colour.
+- NEW: Play styles, picked from the style button:
+  - Saxophone: Auto, Soprano, Alto, Tenor, Baritone. Auto picks by pitch, from baritone for low notes to soprano for high ones.
+  - Violin: Auto, Bowed, Pizzicato, Tremolo. Auto plucks very short notes and bows the rest.
+  - Trumpet: Open, Muted.
+  - Flute: Auto, Concert, Piccolo. Auto switches to piccolo from C6 up.
+  - Electric Bass: Finger, Picked, Fretless, Slap. Picked needs a guitar pick in your secondary hand, and shows in red without one.
+  - Upright Piano: Default, HonkyTonk.
+  - Snare Drum: Auto, Snare, Rimshot.
+- TWEAK: The Lute now sounds like a mandolin instead of sharing the acoustic guitar's sound.
+- TWEAK: Whistles now sound like a referee's whistle.
+- NEW: The Plastic Cowboy Hat with Whistle can be played as a whistle while worn. (GoofyGooberBill)
+- TWEAK: Playing stops when you drive. Sitting in a parked car is fine, and passengers can keep playing. (yabibiii)
+- TWEAK: Drumsticks are equipped whenever you play a drum, from the right-click menu or the song window.
+- TWEAK: A guitar pick is only equipped automatically for a style that needs one (Picked bass). A pick you hold yourself still gives +1 level on any instrument that uses one.
+[ ------ ]

@@ -29,6 +29,7 @@
     "IGUI_perks_BardPercussion": "Percussion",
     "IGUI_BardToTheBone_StyleTooltip": "Sound style",
     "IGUI_BardToTheBone_NeedsAmp": "Needs a powered guitar amplifier nearby.",
+    "IGUI_BardToTheBone_NeedsPick": "Needs a guitar pick in the secondary hand.",
     "IGUI_BardToTheBone_ModOptions": "Bard to the Bone",
     "IGUI_BardToTheBone_MuteInstruments": "Mute Instruments",
     "IGUI_BardToTheBone_MuteInstruments_tooltip": "Silences every instrument you hear, yours and other players'. Zombies can still hear them.",
