@@ -2101,8 +2101,11 @@ function Bard.validChecks.bottleIsEmpty(item)
 end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
+Bard.bottleData = { decay = 350, soundDir = "bottle", family = "Winds", anim = "Bottle", validCheck = "bottleIsEmpty"}
+
 Bard.instrumentTagData = {
-    [ItemTag.GLASS_BOTTLE] = { decay = 350, soundDir = "bottle", family = "Winds", anim = "Bottle", validCheck = "bottleIsEmpty"},
+    [ItemTag.GLASS_BOTTLE] = Bard.bottleData,
+    [ItemTag.GLASS_BOTTLE_SMALL] = Bard.bottleData,
 }
 
 Bard.populatedFromTagData = false
