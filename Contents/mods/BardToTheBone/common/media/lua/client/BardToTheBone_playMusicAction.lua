@@ -71,6 +71,7 @@ function BardToTheBonePlayMusic:startPlayback(id, instrumentData)
     Bard.players[id].instrumentID = instrumentData.soundDir
     Bard.players[id].startTime = getTimestampMs()
     Bard.players[id].decay = instrumentData.decay
+    Bard.players[id].maxNotes = instrumentData.maxNotes
     Bard.players[id].isPercussion = instrumentData.isPercussion
     Bard.players[id].percussionOctaveShift = instrumentData.percussionOctaveShift
     Bard.players[id].percussionPieces = instrumentData.percussionPieces

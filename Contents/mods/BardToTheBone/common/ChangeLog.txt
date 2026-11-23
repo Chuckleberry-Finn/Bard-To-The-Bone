@@ -180,3 +180,10 @@ Snare Drums:
 - Tweaked the French Horn's play animation. (toxicmuffin)
 - Tweaked the Harp's play animation.
 [ ------ ]
+
+[ 11/22/26 ]
+- FIX: Small bottles can be blown into.
+- TWEAK: Xylophone and Bottle playing made to sound less impressive and dinkier.
+
+- NEW artwork/poster on the workshop page, don't forget to give it a thumbs up. :)
+[ ------ ]

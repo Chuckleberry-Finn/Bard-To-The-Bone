@@ -45,9 +45,22 @@ parser = argparse.ArgumentParser(description="Generate and convert MIDI note fil
 # https://en.wikipedia.org/wiki/General_MIDI#Program_change_events
 parser.add_argument('--program', type=int, default=41, help='General MIDI instrument number (1-128), as listed on the Wikipedia page above')
 parser.add_argument('--outdir', type=str, default='violin', help='Output directory for OGG files')
+parser.add_argument('--dry', action='store_true', help='Render without the soundfont reverb and chorus')
+parser.add_argument('--velocity', type=int, default=90, help='Note-on velocity (1-127)')
+parser.add_argument('--note-ticks', type=int, default=7680, help='Note length in ticks (960 per beat)')
+parser.add_argument('--max-seconds', type=float, default=7.0, help='Longest sample length in seconds')
+parser.add_argument('--highpass', type=float, default=0, help='Cut frequencies below this many Hz (0 = off)')
+parser.add_argument('--lowpass', type=float, default=0, help='Cut frequencies above this many Hz (0 = off)')
+parser.add_argument('--crush-bits', type=int, default=0, help='Reduce to this many bits for a crunchy sound (0 = off)')
+parser.add_argument('--transpose', type=int, default=0, help='Shift every note by this many semitones (12 = one octave up)')
+parser.add_argument('--min-note', type=int, default=0, help='Move lower notes up by octaves until they reach this MIDI number')
+parser.add_argument('--max-note', type=int, default=127, help='Move higher notes down by octaves until they reach this MIDI number')
+parser.add_argument('--gain', type=float, default=0, help='FluidSynth render gain, for quiet instruments that come out as silent (0 = FluidSynth default)')
 args = parser.parse_args()
 if not 1 <= args.program <= 128:
     parser.error('--program must be a General MIDI instrument number from 1 to 128')
+if not 0 <= args.min_note <= args.max_note - 11 <= 116:
+    parser.error('--min-note and --max-note must be within 0-127 and at least 11 apart')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 args.outdir = os.path.join(script_dir, 'generated', args.outdir)
@@ -68,8 +81,14 @@ def generate_midi(note_name, octave, midi_note, program, outdir):
     mid.tracks.append(track)
 
     track.append(Message('program_change', program=program - 1, time=0))
-    track.append(Message('note_on', note=midi_note, velocity=90, time=0))
-    track.append(Message('note_off', note=midi_note, velocity=64, time=7680))
+    sounding = midi_note + args.transpose
+    while sounding > args.max_note:
+        sounding -= 12
+    while sounding < args.min_note:
+        sounding += 12
+
+    track.append(Message('note_on', note=sounding, velocity=args.velocity, time=0))
+    track.append(Message('note_off', note=sounding, velocity=64, time=args.note_ticks))
 
     midi_path = Path(outdir) / f"{note_name}{octave}.mid"
     mid.save(midi_path)
@@ -104,25 +123,40 @@ def convert_midi_file(midi_path):
         return name, "missing"
 
     try:
-        subprocess.run([
-            fluidsynth_path,
-            "-ni", "-F", str(wav_path), "-r", "44100",
-            soundfont_path,
-            str(midi_path)
-        ], check=True, timeout=120, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        command = [fluidsynth_path, "-ni", "-F", str(wav_path), "-r", "44100"]
+        if args.dry:
+            command += ["-R", "0", "-C", "0"]
+        if args.gain > 0:
+            command += ["-g", str(args.gain)]
+        command += [soundfont_path, str(midi_path)]
+        subprocess.run(command, check=True, timeout=120, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
         y, sr = librosa.load(wav_path, sr=None)
-        max_duration_sec = 7
-        y = y[:int(sr * max_duration_sec)]
+        y = y[:int(sr * args.max_seconds)]
+
+        if args.highpass > 0 or args.lowpass > 0:
+            from scipy.signal import butter, sosfilt
+            if args.highpass > 0:
+                y = sosfilt(butter(2, args.highpass, btype='highpass', fs=sr, output='sos'), y)
+            if args.lowpass > 0:
+                y = sosfilt(butter(2, args.lowpass, btype='lowpass', fs=sr, output='sos'), y)
+
+        if args.crush_bits > 0:
+            steps = 2 ** (args.crush_bits - 1)
+            y = np.round(y * steps) / steps
 
         fade_in_duration = int(sr * 0.005)
         y[:fade_in_duration] *= np.linspace(0, 1, fade_in_duration)
 
-        fade_out_duration = int(sr * 0.5)
+        fade_out_duration = min(int(sr * 0.5), len(y) // 2)
         y[-fade_out_duration:] *= np.linspace(1, 0, fade_out_duration)
 
         meter = pyln.Meter(sr)
-        loudness = meter.integrated_loudness(y)
+        measured = y
+        block = int(sr * meter.block_size)
+        if len(measured) <= block:
+            measured = np.pad(measured, (0, block - len(measured) + int(sr * 0.1)))
+        loudness = meter.integrated_loudness(measured)
 
         if not np.isfinite(loudness) or np.max(np.abs(y)) < 0.01:
             os.remove(wav_path)

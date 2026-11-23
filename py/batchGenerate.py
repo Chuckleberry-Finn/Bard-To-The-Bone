@@ -10,7 +10,7 @@ instruments = [
     {"program": 22, "folder": "accordion"},
     {"program": 106, "folder": "banjo"},
     # "bikehorn" has no midi
-    {"program": 77, "folder": "bottle"},
+    {"program": 76, "folder": "bottle", "extra": ["--dry", "--velocity", "55", "--note-ticks", "120", "--max-seconds", "0.3", "--highpass", "500", "--lowpass", "3500", "--min-note", "62", "--max-note", "101", "--gain", "1.0"]},
     {"program": 34, "folder": "electric_bass"},
 
     {"program": 28, "folder": "electric_guitarClean"},
@@ -45,7 +45,7 @@ instruments = [
     {"program": 57, "folder": "trumpet"},
     {"program": 41, "folder": "violin"},
     {"program": 79, "folder": "whistle"},
-    {"program": 14, "folder": "xylophone"},
+    {"program": 14, "folder": "xylophone", "extra": ["--dry", "--velocity", "60", "--note-ticks", "480", "--max-seconds", "1.5", "--highpass", "600", "--lowpass", "4000", "--min-note", "84", "--max-note", "105", "--gain", "1.0"]},
 
 ]
 
@@ -73,7 +73,7 @@ for inst in selected:
         sys.executable, script,
         "--program", program,
         "--outdir", outdir
-    ])
+    ] + inst.get("extra", []))
 
     if result.returncode != 0:
         print(f"Failed to generate {outdir}\n")

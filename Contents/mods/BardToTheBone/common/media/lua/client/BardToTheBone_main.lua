@@ -1591,6 +1591,12 @@ end
 function Bard.playNote(player, state, instrumentID, sound, durationMs, started, gain)
     if modOptions.isMuted() then return end
     local emitter = player:getEmitter()
+    if state.maxNotes then
+        while #state.playingNotes >= state.maxNotes do
+            emitter:stopSoundLocal(state.playingNotes[1].id)
+            table.remove(state.playingNotes, 1)
+        end
+    end
     local soundID = emitter:playSoundImpl(instrumentID .. "_" .. sound, nil)
     emitter:setVolume(soundID, state.volume/100 * (gain or 1))
 
@@ -1674,6 +1680,7 @@ function Bard.flushNetworkNotes(player, bard, instrumentID, decay, force)
         i = instrumentID,
         v = bard.volume,
         dc = decay,
+        mn = bard.maxNotes,
         n = batch.n,
         t = batch.t,
         d = batch.d,
@@ -1716,6 +1723,7 @@ function Bard.receiveNotes(data)
     state.instrumentID = data.i
     state.volume = data.v
     state.decay = data.dc
+    state.maxNotes = data.mn
     state.lastReceived = now
 
     local base = state.anchor
@@ -2101,7 +2109,7 @@ function Bard.validChecks.bottleIsEmpty(item)
 end
 
 ---SIMILAR TO ABOVE, BUT WITH TAGS, GETS POPULATED FIRST TIME `getInstrumentData` IS CALLED.
-Bard.bottleData = { decay = 350, soundDir = "bottle", family = "Winds", anim = "Bottle", validCheck = "bottleIsEmpty"}
+Bard.bottleData = { decay = 100, maxNotes = 1, soundDir = "bottle", family = "Winds", anim = "Bottle", validCheck = "bottleIsEmpty"}
 
 Bard.instrumentTagData = {
     [ItemTag.GLASS_BOTTLE] = Bard.bottleData,
