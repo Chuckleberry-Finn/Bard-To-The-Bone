@@ -1,0 +1,11 @@
+X:1
+T:BIRDSONG - aoqia
+M:4/4
+L:1/8
+Q:1/4=120
+K:F#
+V:1 name="BIRDSONG"
+[B,,4F8A8d4] [F,4c4] | [F,,8A,8F8A8c8] | [G,,8F8G8c8] | [D,8F8G8c8] |
+[B,,4F4A4c8] [F,4F4] | [C,8=F8^F8G8c8] | [D,8F8G8c8] | [F,8C8F8G8c8] |
+[B,,4F8A8d4] [F,4c4] | [D,8F8A8c8] | [F,,8F8G8c8] | [G,,8G,8F8G8B8] |
+[B,,31/4C31/4F31/4A73/12z6] G7/4 z/4 | [D,8A,8=F8^F8G8] | [C,185/12G,33/4C17/2=F41/4^F8G15c46/3] | [F8z/] C15/2 |]
