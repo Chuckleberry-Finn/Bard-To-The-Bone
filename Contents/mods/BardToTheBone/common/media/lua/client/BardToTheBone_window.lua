@@ -88,7 +88,7 @@ BardUIWindow.palettes = {
 BardUIWindow.volumeIconAlpha = 0.8
 BardUIWindow.volumeIconFadedAlpha = 0.35
 BardUIWindow.volumeTextAlpha = 0.8
-BardUIWindow.guideURL = "https://steamcommunity.com/linkfilter/?u=https://github.com/Chuckleberry-Finn/Bard-To-The-Bone"
+BardUIWindow.guideURL = "https://steamcommunity.com/linkfilter/?u=https://chuckleberry-finn.github.io/Bard-To-The-Bone/"
 BardUIWindow.starAlphaOff = 0.3
 BardUIWindow.ampInterval = 60
 BardUIWindow.missingAmpColor = { r = 0.85, g = 0.25, b = 0.2, a = 1 }
