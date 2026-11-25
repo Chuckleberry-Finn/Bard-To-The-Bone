@@ -205,7 +205,6 @@
     .save-info .path { display: block; margin-top: 2px; }
     .save-info .footnote { display: block; font-size: 11px; opacity: 0.8; }
     .save-info .line { display: block; }
-    .save-info .github { display: block; margin-top: 6px; text-align: center; }
     .topbar .wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; max-width: none; padding: 0 24px; }
     .topbar .lead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; flex: 1 1 100%; min-width: 0; }
     .topbar .lead .browse { margin-left: auto; flex-wrap: nowrap; min-width: 0; }
@@ -234,6 +233,8 @@
     a.btn.kofi { background: #e8607a; border-color: #e8607a; color: #ffffff; }
     a.btn.kofi:hover { background: #c44860; border-color: #c44860; }
     a.btn svg { flex-shrink: 0; }
+    .support { display: flex; justify-content: center; margin-top: 16px; }
+    .support a.btn { padding: 7px 18px; }
     .browse select { width: auto; }
     .browse input[type=text] { width: 260px; }
     .layout.browsing .wrap { max-width: none; }
@@ -273,8 +274,8 @@
         </div>
         </div>
         <div class="links">
+            <a class="btn" href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>GitHub</a>
             <a class="btn" href="https://chuckleberry-finn.github.io/" target="_blank" rel="noopener">Chuck's Mods</a>
-            <a class="btn kofi" href="https://ko-fi.com/Y8Y551NJ2" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 2.68.723 4.311zm6.173.478c-.928.116-1.682-.652-1.682-.652V7.373c1.6.068 2.307 1.171 2.307 1.171s.957 1.975-.625 4.393z"/></svg>Support me on Ko-fi</a>
         </div>
     </div>
 </div>
@@ -346,7 +347,10 @@
         <code class="path">C:\<wbr>Users\<wbr>&lt;YOURUSER&gt;\<wbr>Zomboid\<wbr>Lua\<wbr>BardToTheBoneSongLibrary\</code>
         <small class="footnote">Or whichever letter your main drive is on.</small>
         <span class="line">Files there will be loaded on game start, or by using the reload button.</span>
-        <a class="github" href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone on GitHub</a>
+    </div>
+
+    <div class="support">
+        <a class="btn kofi" href="https://ko-fi.com/Y8Y551NJ2" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 2.68.723 4.311zm6.173.478c-.928.116-1.682-.652-1.682-.652V7.373c1.6.068 2.307 1.171 2.307 1.171s.957 1.975-.625 4.393z"/></svg>Support me on Ko-fi</a>
     </div>
 
     <div id="results"></div>
