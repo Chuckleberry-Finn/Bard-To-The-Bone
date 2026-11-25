@@ -192,10 +192,48 @@
     button.primary:hover { background: var(--primary-hover); }
     .status { color: var(--success); font-size: 12px; }
     .error { margin: 12px 14px; padding: 10px 12px; border: 1px solid var(--danger); border-radius: 6px; background: var(--danger-subtle); color: var(--danger); }
-    footer { border-top: 1px solid var(--border-muted); padding: 20px 0 32px; color: var(--muted); font-size: 12px; }
-    .topbar .wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .save-info {
+        margin-top: 12px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        padding: 10px 14px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+    .save-info code { color: var(--text); }
+    .save-info .path { display: block; margin-top: 2px; }
+    .save-info .footnote { display: block; font-size: 11px; opacity: 0.8; }
+    .save-info .line { display: block; }
+    .save-info .github { display: block; margin-top: 6px; text-align: center; }
+    .topbar .wrap { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; max-width: none; padding: 0 24px; }
+    .topbar .lead { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; flex: 1 1 100%; min-width: 0; }
+    .topbar .lead .browse { margin-left: auto; flex-wrap: nowrap; min-width: 0; }
+    .topbar .lead .browse select { min-width: 0; flex: 0 1 auto; }
+    @media (min-width: 901px) {
+        .topbar .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(356px, 536px); gap: 0; }
+        .topbar .links { padding-left: 16px; }
+    }
     .topbar h1 { flex: 1; min-width: 220px; }
     .browse { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .links { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+    a.btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--btn-border);
+        border-radius: 6px;
+        padding: 5px 14px;
+        font-weight: 500;
+        line-height: 20px;
+        white-space: nowrap;
+        background: var(--btn-bg);
+        color: var(--text);
+    }
+    a.btn:hover { background: var(--btn-hover); text-decoration: none; }
+    a.btn.kofi { background: #e8607a; border-color: #e8607a; color: #ffffff; }
+    a.btn.kofi:hover { background: #c44860; border-color: #c44860; }
+    a.btn svg { flex-shrink: 0; }
     .browse select { width: auto; }
     .browse input[type=text] { width: 260px; }
     .layout.browsing .wrap { max-width: none; }
@@ -222,6 +260,7 @@
 <body>
 <div class="topbar">
     <div class="wrap">
+        <div class="lead">
         <h1><a href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone</a> / MIDI to ABC</h1>
         <div class="browse">
             <select id="site" title="Find MIDIs">
@@ -231,6 +270,11 @@
             </select>
             <input type="text" id="siteUrl" placeholder="https://..." hidden>
             <button class="primary" id="loadSite">Load Site</button>
+        </div>
+        </div>
+        <div class="links">
+            <a class="btn" href="https://chuckleberry-finn.github.io/" target="_blank" rel="noopener">Chuck's Mods</a>
+            <a class="btn kofi" href="https://ko-fi.com/Y8Y551NJ2" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 2.68.723 4.311zm6.173.478c-.928.116-1.682-.652-1.682-.652V7.373c1.6.068 2.307 1.171 2.307 1.171s.957 1.975-.625 4.393z"/></svg>Support me on Ko-fi</a>
         </div>
     </div>
 </div>
@@ -297,16 +341,18 @@
         </div>
     </details>
 
+    <div class="save-info">
+        Converted .txt files can be saved to your cache, usually found at
+        <code class="path">C:\<wbr>Users\<wbr>&lt;YOURUSER&gt;\<wbr>Zomboid\<wbr>Lua\<wbr>BardToTheBoneSongLibrary\</code>
+        <small class="footnote">Or whichever letter your main drive is on.</small>
+        <span class="line">Files there will be loaded on game start, or by using the reload button.</span>
+        <a class="github" href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone on GitHub</a>
+    </div>
+
     <div id="results"></div>
 </main>
 </div>
 
-<footer>
-    <div class="wrap">
-        Save downloads in <code>Zomboid/Lua/BardToTheBoneSongLibrary/</code> and press <b>Reload Songs</b> in the song window's gear menu.
-        &middot; <a href="https://github.com/Chuckleberry-Finn/Bard-To-The-Bone">Bard to the Bone on GitHub</a>
-    </div>
-</footer>
 
 <script src="midi2abc.js"></script>
 <script>
@@ -522,8 +568,12 @@
         document.documentElement.style.setProperty("--topbar-height", topbar.offsetHeight + "px");
     }
 
+    function siteTarget() {
+        return site.value === "custom" ? normalizeUrl(siteUrl.value) : site.value;
+    }
+
     function loadSite() {
-        var url = site.value === "custom" ? normalizeUrl(siteUrl.value) : site.value;
+        var url = siteTarget();
         if (!url) {
             siteUrl.focus();
             return;
@@ -551,6 +601,7 @@
     if (savedSite && Array.prototype.some.call(site.options, function (o) { return o.value === savedSite; })) site.value = savedSite;
     siteUrl.value = stored("bttb-site-url") || "";
     showCustom();
+    if (siteTarget() && window.matchMedia("(min-width: 901px)").matches) loadSite();
 })();
 </script>
 </body>
