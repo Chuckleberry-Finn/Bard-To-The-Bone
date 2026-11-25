@@ -3,6 +3,8 @@ id=3484029638
 title=Bard to the Bone
 description=[h2]Bard-To-The-Bone is a Project Zomboid mod that lets players perform music using ABC notation, with support for all vanilla instruments and custom ones.[/h2]
 description=
+description=[h1][url=https://chuckleberry-finn.github.io/Bard-To-The-Bone/]Load Your Own Songs[/url][/h1]
+description=
 description=[img=https://raw.githubusercontent.com/Chuckleberry-Finn/Bard-To-The-Bone/refs/heads/main/images/BardToTheBoneNewInstruments.png][/img]
 description=
 description=[b]Key Features:[/b]
