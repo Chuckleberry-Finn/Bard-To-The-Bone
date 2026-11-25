@@ -219,7 +219,7 @@
     .topbar .lead .browse { margin-left: auto; flex-wrap: nowrap; min-width: 0; }
     .topbar .lead .browse select { min-width: 0; flex: 0 1 auto; }
     @media (min-width: 901px) {
-        .topbar .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(356px, 536px); gap: 0; }
+        .topbar .wrap { display: grid; grid-template-columns: minmax(0, 1fr) calc(var(--converter-width, 560px) - 24px); gap: 0; }
         .topbar .links { padding-left: 16px; }
     }
     .topbar h1 { flex: 1; min-width: 220px; }
@@ -249,12 +249,20 @@
     .layout.browsing .wrap { max-width: none; }
     .layout.browsing {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(380px, 560px);
+        grid-template-columns: minmax(0, 1fr) var(--converter-width, 560px);
         height: calc(100vh - var(--topbar-height, 64px));
     }
     .layout.browsing main.wrap { overflow-y: auto; padding-top: 16px; margin: 0; width: 100%; }
-    .layout.browsing .steps { grid-template-columns: 1fr; }
-    .browser { display: none; flex-direction: column; border-right: 1px solid var(--border); background: var(--bg-inset); min-height: 0; }
+    .layout.browsing .steps { gap: 8px; margin-bottom: 14px; }
+    .layout.browsing .steps li { padding: 8px 8px 8px 36px; font-size: 13px; line-height: 1.3; }
+    .layout.browsing .steps li::before { left: 8px; top: 50%; margin-top: -11px; }
+    .layout.browsing .steps li b { display: inline; }
+    .browser { display: none; flex-direction: column; border-right: 1px solid var(--border); background: var(--bg-inset); min-height: 0; position: relative; }
+    .resizer { position: absolute; top: 0; bottom: 0; right: -5px; width: 10px; cursor: col-resize; z-index: 5; }
+    .resizer::after { content: ""; position: absolute; top: 0; bottom: 0; left: 4px; width: 2px; background: transparent; transition: background 0.15s; }
+    .resizer:hover::after, .layout.resizing .resizer::after { background: var(--accent-border); }
+    .layout.resizing { cursor: col-resize; user-select: none; }
+    .layout.resizing iframe { pointer-events: none; }
     .layout.browsing .browser { display: flex; }
     .browser-bar { display: flex; gap: 10px; align-items: center; padding: 6px 12px; background: var(--bg-subtle); border-bottom: 1px solid var(--border); font-size: 12px; color: var(--muted); }
     .browser-bar .url { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -263,6 +271,7 @@
     .browser-note { padding: 6px 12px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border-muted); }
     @media (max-width: 900px) {
         .layout.browsing { display: block; height: auto; }
+        .resizer { display: none; }
         .browser iframe { flex: none; height: 70vh; }
     }
 </style>
@@ -297,6 +306,7 @@
         <button id="browserClose" title="Close the site">Close</button>
     </div>
     <iframe id="browserFrame" title="MIDI site" referrerpolicy="no-referrer"></iframe>
+    <div class="resizer" id="resizer" title="Drag to resize, double-click to reset"></div>
     <div class="browser-note">Download a MIDI here, then drop it in the converter. If this stays blank, the site doesn't allow being shown inside other pages, so use Open in new tab.</div>
 </aside>
 
@@ -610,7 +620,48 @@
         layout.classList.remove("browsing");
         frame.removeAttribute("src");
     });
-    window.addEventListener("resize", sizeLayout);
+    var resizer = document.getElementById("resizer");
+    var defaultWidth = 560;
+    var minConverter = 380;
+    var minSite = 320;
+
+    function setConverterWidth(width, save) {
+        var max = Math.max(minConverter, window.innerWidth - minSite);
+        width = Math.round(Math.min(max, Math.max(minConverter, width)));
+        document.documentElement.style.setProperty("--converter-width", width + "px");
+        if (save) stored("bttb-converter-width", String(width));
+        return width;
+    }
+
+    function savedWidth() {
+        return Number(stored("bttb-converter-width")) || defaultWidth;
+    }
+
+    resizer.addEventListener("pointerdown", function (e) {
+        resizer.setPointerCapture(e.pointerId);
+        layout.classList.add("resizing");
+        e.preventDefault();
+    });
+    resizer.addEventListener("pointermove", function (e) {
+        if (!layout.classList.contains("resizing")) return;
+        setConverterWidth(window.innerWidth - e.clientX, false);
+    });
+    resizer.addEventListener("pointerup", function (e) {
+        if (!layout.classList.contains("resizing")) return;
+        layout.classList.remove("resizing");
+        setConverterWidth(window.innerWidth - e.clientX, true);
+        sizeLayout();
+    });
+    resizer.addEventListener("dblclick", function () {
+        setConverterWidth(defaultWidth, true);
+        sizeLayout();
+    });
+
+    window.addEventListener("resize", function () {
+        setConverterWidth(savedWidth(), false);
+        sizeLayout();
+    });
+    setConverterWidth(savedWidth(), false);
 
     var savedSite = stored("bttb-site");
     if (savedSite && Array.prototype.some.call(site.options, function (o) { return o.value === savedSite; })) site.value = savedSite;
