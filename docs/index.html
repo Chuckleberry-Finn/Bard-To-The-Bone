@@ -202,6 +202,15 @@
         font-size: 12px;
     }
     .save-info code { color: var(--text); }
+    .save-info .lead-line { display: block; color: var(--text); font-weight: 600; margin-bottom: 6px; }
+    .glow { color: var(--success); animation: glow 1.6s ease-in-out infinite; }
+    @keyframes glow {
+        0%, 100% { color: var(--success); text-shadow: 0 0 2px rgba(63, 185, 80, 0.4); }
+        50% { color: #7ee787; text-shadow: 0 0 6px rgba(63, 185, 80, 0.9), 0 0 14px rgba(63, 185, 80, 0.6); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .glow { animation: none; text-shadow: 0 0 6px rgba(63, 185, 80, 0.7); }
+    }
     .save-info .path { display: block; margin-top: 2px; }
     .save-info .footnote { display: block; font-size: 11px; opacity: 0.8; }
     .save-info .line { display: block; }
@@ -345,7 +354,8 @@
     <div id="results"></div>
 
     <div class="save-info">
-        Converted .txt files can be saved to your cache, usually found at
+        <b class="lead-line"><span class="glow">Copy</span> converted songs into the In-Game Song Editor, under options, select New.</b>
+        Converted .txt files can also be saved to your cache, usually found at
         <code class="path">C:\<wbr>Users\<wbr>&lt;YOURUSER&gt;\<wbr>Zomboid\<wbr>Lua\<wbr>BardToTheBoneSongLibrary\</code>
         <small class="footnote">Or whichever letter your main drive is on.</small>
         <span class="line">Files there will be loaded on game start, or by using the reload button.</span>
